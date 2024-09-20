@@ -1,3 +1,0 @@
-google-shopping-merchant-inventories
-google-auth-oauthlib
-google-auth
