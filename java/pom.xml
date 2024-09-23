@@ -118,6 +118,11 @@
       <version>0.1.0</version>
     </dependency>
     <dependency>
+      <groupId>com.google.shopping</groupId>
+      <artifactId>google-shopping-merchant-promotions</artifactId>
+      <version>0.1.0</version>
+    </dependency>
+    <dependency>
       <groupId>com.google.protobuf</groupId>
       <artifactId>protobuf-java</artifactId>
       <version>3.25.3</version>
