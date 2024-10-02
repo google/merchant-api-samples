@@ -13,9 +13,9 @@ The Merchant API is a redesign of the Content API for Shopping.
 ## Choose Your Method of Authentication
 
 Before getting started, check the Getting Started section of the
-[Content API for Shopping documentation](https://developers.google.com/shopping-content/v2/quickstart).
+[Content API for Shopping documentation](https://developers.google.com/merchant/api/guides/quickstart).
 You may want to use
-[service accounts](https://developers.google.com/shopping-content/v2/how-tos/service-accounts)
+[service accounts](https://developers.google.com/merchant/api/guides/authorization/access-your-account)
 instead to simplify the authentication flow. These samples also support using
 [Google Application Default Credentials](https://developers.google.com/identity/protocols/application-default-credentials).
 
@@ -71,10 +71,10 @@ Just make sure to enable the Merchant API in the API Console.
     loaded, in the order:
 
     1.  [Service
-        accounts](https://developers.google.com/shopping-content/v2/how-tos/service-accounts)
+        accounts](https://developers.google.com/merchant/api/guides/authorization/access-your-account)
         credentials
     2.  [OAuth2
-        client](https://developers.google.com/shopping-content/v2/how-tos/authorizing)
+        client](https://developers.google.com/merchant/api/guides/authorization/access-client-accounts)
         credentials
 
 3.  Take the example `merchant-info.json` from the repository
