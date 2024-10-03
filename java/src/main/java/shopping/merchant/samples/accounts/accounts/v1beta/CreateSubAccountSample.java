@@ -16,7 +16,6 @@ package shopping.merchant.samples.accounts.accounts.v1beta;
 
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.protobuf.Empty;
 import com.google.shopping.merchant.accounts.v1beta.Account;
 import com.google.shopping.merchant.accounts.v1beta.AccountsServiceClient;
 import com.google.shopping.merchant.accounts.v1beta.AccountsServiceSettings;
@@ -64,7 +63,7 @@ public class CreateSubAccountSample {
               .addService(
                   AddAccountService.newBuilder()
                       .setProvider(parent)
-                      .setAccountAggregation(Empty.getDefaultInstance())
+                      .setAccountAggregation(AccountAggregation.getDefaultInstance())
                       .build())
               .build();
 
