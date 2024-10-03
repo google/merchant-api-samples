@@ -52,7 +52,13 @@ public class DeleteAccountSample {
     // Calls the API and catches and prints any network failures/errors.
     try (AccountsServiceClient accountsServiceClient =
         AccountsServiceClient.create(accountsServiceSettings)) {
-      DeleteAccountRequest request = DeleteAccountRequest.newBuilder().setName(name).build();
+      DeleteAccountRequest request =
+          DeleteAccountRequest.newBuilder()
+              .setName(name)
+              // Optional. If set to true, the account will be deleted even if it has offers or
+              // provides services to other accounts. Defaults to 'false'.
+              .setForce(true)
+              .build();
 
       System.out.println("Sending Delete Account request");
       accountsServiceClient.deleteAccount(request); // No response returned on success.
