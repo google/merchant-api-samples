@@ -68,6 +68,9 @@ public class GetTermsOfServiceAgreementStateSample {
           termsOfServiceAgreementStateServiceClient.getTermsOfServiceAgreementState(request);
 
       System.out.println("Retrieved TermsOfServiceAgreementState below");
+      // If the terms of service needs to be accepted, the "required" field will include the
+      // specific version of the terms of service which needs to be accepted, alongside a link to
+      // the terms of service itself.
       System.out.println(response);
     } catch (Exception e) {
       System.out.println(e);
