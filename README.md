@@ -13,7 +13,7 @@ The Merchant API is a redesign of the Content API for Shopping.
 ## Choose Your Method of Authentication
 
 Before getting started, check the Getting Started section of the
-[Content API for Shopping documentation](https://developers.google.com/merchant/api/guides/quickstart).
+[Merchant API documentation](https://developers.google.com/merchant/api/guides/quickstart).
 You may want to use
 [service accounts](https://developers.google.com/merchant/api/guides/authorization/access-your-account)
 instead to simplify the authentication flow. These samples also support using
