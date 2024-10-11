@@ -46,8 +46,7 @@ public class UpdateAutofeedSettingsSample {
             .toString();
 
     // Create AutofeedSettings with the updated fields.
-    AutofeedSettings autofeedSettings =
-        AutofeedSettings.newBuilder().setName(name).setEnabled(true).build();
+    AutofeedSettings autofeedSettings = AutofeedSettings.newBuilder().setName(name).build();
 
     FieldMask fieldMask = FieldMask.newBuilder().addPaths("*").build();
 

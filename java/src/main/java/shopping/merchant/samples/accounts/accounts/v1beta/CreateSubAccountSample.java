@@ -17,6 +17,7 @@ package shopping.merchant.samples.accounts.accounts.v1beta;
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.shopping.merchant.accounts.v1beta.Account;
+import com.google.shopping.merchant.accounts.v1beta.AccountAggregation;
 import com.google.shopping.merchant.accounts.v1beta.AccountsServiceClient;
 import com.google.shopping.merchant.accounts.v1beta.AccountsServiceSettings;
 import com.google.shopping.merchant.accounts.v1beta.CreateAndConfigureAccountRequest;
