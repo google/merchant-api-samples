@@ -42,14 +42,14 @@ project appropriately for access to the Google APIs Client Library for Java.
 This section assumes you've already cloned the code and are reading from a local
 directory. If not, clone the code to a local directory,  and set up the project
 appropriately for access to the Google APIs Client Library for Java 
-(see the prerequisities section above).
+(see the prerequisites section above).
 
 Build and run any of the included samples in your preferred IDE.
 
 If using maven, to build and run your samples, navigate to the directory of
 the pom.xml. Then run `mvn compile`.
 
-If the code compiles succesfully, then run `mvn exec`, followed by the name of
+If the code compiles successfully, then run `mvn exec`, followed by the name of
 the sample you wish to execute. The specific syntax is shown in the examples
 below.
 

@@ -105,22 +105,22 @@
     <dependency>
       <groupId>com.google.shopping</groupId>
       <artifactId>google-shopping-merchant-products</artifactId>
-      <version>0.7.0</version>
+      <version>0.8.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.shopping</groupId>
       <artifactId>google-shopping-merchant-datasources</artifactId>
-      <version>0.7.0</version>
+      <version>0.8.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.shopping</groupId>
       <artifactId>google-shopping-merchant-accounts</artifactId>
-      <version>0.7.0</version>
+      <version>0.8.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.shopping</groupId>
       <artifactId>google-shopping-merchant-promotions</artifactId>
-      <version>0.7.0</version>
+      <version>0.8.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.protobuf</groupId>
