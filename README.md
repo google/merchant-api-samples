@@ -48,12 +48,13 @@ Just make sure to enable the Merchant API in the API Console.
 
     If you are using a service account:
 
-    *   Put the JSON file you downloaded when creating the service account to
-        the file `service-account.json` in the configuration
-        subdirectory.
+    *   [Create a service account](https://cloud.google.com/iam/docs/service-accounts-create#creating)
+    *   [Create and download a service account key](https://cloud.google.com/iam/docs/keys-create-delete#iam-service-account-keys-create-console) in JSON format.
+    *   Rename the JSON file you downloaded to `service-account.json` and move it to the configuration subdirectory.
 
     If you are using an OAuth2 client ID:
 
+    *   Register your application and [generate OAuth 2.0 Client ID](https://developers.google.com/merchant/api/guides/authorization/access-client-accounts#OAuth2Authorizing).
     *   Download your [OAuth2 client
         credentials](https://console.developers.google.com/apis/credentials) to
         the file `client-secrets.json` in the configuration subdirectory.
