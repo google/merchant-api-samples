@@ -22,7 +22,7 @@ pip install -r requirements.txt
 For your convenience, you can run the following command from this directory to
 install all needed dependencies via [pip](https://pip.pypa.io/):
 
-    $ pip install -r requirements.txt
+    pip install -r requirements.txt
 
 ## Setup Authentication and Sample Configuration
 
@@ -37,6 +37,6 @@ directory. If not, check out the code to a local directory.
 
 1.  Start up a sample:
 
-        $ python -m examples.inventories.insert_regional_inventory
+        python -m examples.inventories.insert_regional_inventory
 
 1.  Examine your shell output, be inspired and start hacking an amazing new app!
