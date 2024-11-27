@@ -40,23 +40,28 @@ Just make sure to enable the Merchant API in the API Console.
 
 2.  Set up your desired authentication method.
 
-    If you are using Google Application Default Credentials:
+    If you want to use Google Application Default Credentials:
 
     *   Follow the directions on the [Google Application Default
         Credentials](https://developers.google.com/identity/protocols/application-default-credentials)
         page.
 
-    If you are using a service account:
+    If you want to use a service account:
 
-    *   Put the JSON file you downloaded when creating the service account to
-        the file `service-account.json` in the configuration
-        subdirectory.
+    1.   [Create a service
+         account](https://cloud.google.com/iam/docs/service-accounts-create#creating)
+    1.   [Create and download a service account
+         key](https://cloud.google.com/iam/docs/keys-create-delete#iam-service-account-keys-create-console)
+         in JSON format.
+    1.   Rename the JSON file you downloaded to `service-account.json` and move
+         it to the configuration subdirectory.
 
-    If you are using an OAuth2 client ID:
+    If you want to use an OAuth2 client ID:
 
-    *   Download your [OAuth2 client
-        credentials](https://console.developers.google.com/apis/credentials) to
-        the file `client-secrets.json` in the configuration subdirectory.
+    1.   Register your application and [generate OAuth 2.0 Client ID](https://developers.google.com/merchant/api/guides/authorization/access-client-accounts#OAuth2Authorizing).
+    1.   Download your [OAuth2 client
+         credentials](https://console.developers.google.com/apis/credentials) to
+         the file `client-secrets.json` in the configuration subdirectory.
 
         **Note:** The samples assume that you are using an OAuth2 client ID that
         can use a loopback IP address to retrieve tokens. If you are not or are

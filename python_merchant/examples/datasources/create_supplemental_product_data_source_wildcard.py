@@ -44,7 +44,7 @@ def create_supplemental_product_data_source_wildcard():
 
   # Creates a DataSource and populates its attributes.
   data_source = merchant_datasources_v1beta.DataSource()
-  data_source.display_name = "Example Supplemental DataSource"
+  data_source.display_name = "Example Wildcard Supplemental DataSource"
   data_source.supplemental_product_data_source = supplemental_datasource
 
   # Creates the request.

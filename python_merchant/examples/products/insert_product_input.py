@@ -52,12 +52,13 @@ def create_product_input():
   shipping_option_2.country = "FR"
   shipping_option_2.service = "2nd class post"
 
-  # Sets product attributes.
+  # Sets product attributes. Make sure to replace these values with your own.
   attributes = merchant_products_v1beta.Attributes()
   attributes.title = "A Tale of Two Cities"
   attributes.description = "A classic novel about the French Revolution"
   attributes.link = "https://exampleWebsite.com/tale-of-two-cities.html"
   attributes.image_link = "https://exampleWebsite.com/tale-of-two-cities.jpg"
+  attributes.price = price
   attributes.availability = "in stock"
   attributes.condition = "new"
   attributes.google_product_category = "Media > Books"
@@ -103,7 +104,10 @@ def insert_product_input():
   except RuntimeError as e:
     print("Input failed")
     print(e)
-
+    # After the product is inserted, the product ID will be returned in the
+    # response. We recommend that you check the Merchant Center to ensure that
+    # the product is approved and visible to users before using the product ID
+    # in any downstream processes.
 
 # [END InsertProductInput]
 

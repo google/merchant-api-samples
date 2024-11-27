@@ -48,7 +48,7 @@ def create_primary_product_data_source_wildcard():
 
   # Creates a DataSource and populates its attributes.
   data_source = DataSource()
-  data_source.display_name = "Example Primary DataSource"
+  data_source.display_name = "Example Wildcard Primary DataSource"
   data_source.primary_product_data_source = primary_datasource
 
   # Creates the request.
