@@ -15,12 +15,15 @@
 """A module to get a Product."""
 
 # [START GetProduct]
+from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
 from google.shopping import merchant_products_v1beta
 
-# ENSURE you fill in the merchant account and product ID for the sample to
+
+_ACCOUNT = configuration.Configuration().read_merchant_info()
+
+# ENSURE you fill in the product ID for the sample to
 # work.
-_ACCOUNT = "[INSERT_ACCOUNT_HERE]"
 # In the format of `channel~contentLanguage~feedLabel~offerId`
 _PRODUCT = "[INSERT_PRODUCT_HERE]"
 _NAME = f"accounts/{_ACCOUNT}/products/{_PRODUCT}"

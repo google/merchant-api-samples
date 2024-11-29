@@ -15,15 +15,16 @@
 """A module to insert a Product Input."""
 
 # [START InsertProductInput]
+from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
 from google.shopping import merchant_products_v1beta
 from google.shopping.type import Channel
 from google.shopping.type import Price
 
-# ENSURE you fill in the merchant account and datasource ID for the sample to
-# work.
-_ACCOUNT = "[INSERT_ACCOUNT_HERE]"
+
+_ACCOUNT = configuration.Configuration().read_merchant_info()
 _PARENT = f"accounts/{_ACCOUNT}"
+
 # You can only insert products into datasource types of Input "API" and
 # "FILE", and of Type "Primary" or "Supplemental."
 _DATA_SOURCE = "[INSERT_DATA_SOURCE_HERE]"

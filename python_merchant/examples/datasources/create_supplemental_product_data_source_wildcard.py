@@ -18,11 +18,11 @@ This works only for API supplemental feeds.
 """
 
 # [START CreateSupplementalProductDatasourceWildcard]
+from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
 from google.shopping import merchant_datasources_v1beta
 
-# ENSURE you fill in the merchant account for the sample to work.
-_ACCOUNT = "[INSERT_ACCOUNT_HERE]"
+_ACCOUNT = configuration.Configuration().read_merchant_info()
 _PARENT = f"accounts/{_ACCOUNT}"
 
 

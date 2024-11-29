@@ -14,11 +14,29 @@
 # limitations under the License.
 """A module to interact with authentication configuration data."""
 
+import json
 import os
 
 
 class Configuration(object):
   """Simple config object for authentication details."""
+
+  _MERCHANT_INFO_PATH = "../merchant-info.json"
+
+  def read_merchant_info(self):
+    """Reads the merchant ID from the merchant-info.json file."""
+    if os.path.isfile(self._MERCHANT_INFO_PATH):
+      # Open and read the JSON file
+      with open(self._MERCHANT_INFO_PATH, "r") as merchant_info:
+        merchant_id = json.load(merchant_info)["merchantId"]
+        print("Using Merchant with ID: " + str(merchant_id))
+        return str(merchant_id)
+    else:
+      print(
+          "Default config file can't be found! Please add the merchantId"
+          " in merchant-info.json as explained in the README"
+      )
+      exit(1)
 
   def get_config(self):
     """Returns config object to be used for authentication purposes."""
@@ -36,4 +54,3 @@ class Configuration(object):
     }
 
     return config_object
-

@@ -15,12 +15,13 @@
 """A module to insert a Local Inventory."""
 
 # [START InsertLocalInventory]
+from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
 from google.shopping import merchant_inventories_v1beta
 
-# ENSURE you fill in the merchant account and product ID for the sample to
+# ENSURE you fill in product ID and store code for the sample to
 # work.
-_ACCOUNT = "INSERT_ACCOUNT_HERE"
+_ACCOUNT = configuration.Configuration().read_merchant_info()
 _PRODUCT = "INSERT_PRODUCT_HERE"
 _PARENT = f"accounts/{_ACCOUNT}/products/{_PRODUCT}"
 # ENSURE you fill in store code for the sample to work.

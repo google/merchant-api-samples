@@ -15,12 +15,13 @@
 """A module to delete a Regional Inventory."""
 
 # [START DeleteRegionalInventory]
+from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
 from google.shopping import merchant_inventories_v1beta
 
-# ENSURE you fill in the merchant account and product ID and region ID
+# ENSURE you fill in the product ID and region ID
 # for the sample to work.
-_ACCOUNT = "[INSERT_ACCOUNT_HERE]"
+_ACCOUNT = configuration.Configuration().read_merchant_info()
 _PRODUCT = "[INSERT_PRODUCT_HERE]"
 _REGION = "[INSERT_REGION_HERE]"
 _NAME = f"accounts/{_ACCOUNT}/products/{_PRODUCT}/regionalInventories/{_REGION}"

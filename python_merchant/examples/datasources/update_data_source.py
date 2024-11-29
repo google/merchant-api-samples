@@ -15,13 +15,14 @@
 """A module to update a DataSource."""
 
 # [START UpdateDataSource]
+from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
 from google.protobuf import field_mask_pb2
 from google.shopping import merchant_datasources_v1beta
 
-# ENSURE you fill in the merchant account and datasource ID for the sample to
+# ENSURE you fill in the datasource ID for the sample to
 # work.
-_ACCOUNT = "[INSERT_ACCOUNT_HERE]"
+_ACCOUNT = configuration.Configuration().read_merchant_info()
 # An ID automatically assigned to the datasource after creation by Google.
 _DATASOURCE = "[INSERT_DATASOURCE_HERE]"
 _NAME = f"accounts/{_ACCOUNT}/dataSources/{_DATASOURCE}"

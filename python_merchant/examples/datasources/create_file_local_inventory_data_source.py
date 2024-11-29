@@ -15,6 +15,7 @@
 """This class demonstrates how to create a local inventory datasource."""
 
 # [START CreateFileLocalInventoryDatasource]
+from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
 from google.shopping.merchant_datasources_v1beta import CreateDataSourceRequest
 from google.shopping.merchant_datasources_v1beta import DataSource
@@ -22,8 +23,7 @@ from google.shopping.merchant_datasources_v1beta import DataSourcesServiceClient
 from google.shopping.merchant_datasources_v1beta import FileInput
 from google.shopping.merchant_datasources_v1beta import LocalInventoryDataSource
 
-# ENSURE you fill in the merchant account for the sample to work.
-_ACCOUNT = "[INSERT_ACCOUNT_HERE]"
+_ACCOUNT = configuration.Configuration().read_merchant_info()
 _PARENT = f"accounts/{_ACCOUNT}"
 
 

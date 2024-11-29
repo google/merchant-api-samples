@@ -15,12 +15,15 @@
 """A module to delete a Product Input."""
 
 # [START DeleteProductInput]
+from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
 from google.shopping import merchant_products_v1beta
 
-# ENSURE you fill in the merchant account, product ID and data source for the
+
+_ACCOUNT = configuration.Configuration().read_merchant_info()
+
+# ENSURE you fill in the product ID and data source for the
 # sample to work.
-_ACCOUNT = "[INSERT_ACCOUNT_HERE]"
 # In the format of `channel~contentLanguage~feedLabel~offerId`
 _PRODUCT = "[INSERT_PRODUCT_HERE]"
 _DATA_SOURCE = "[INSERT_DATA_SOURCE_HERE]"
