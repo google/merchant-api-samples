@@ -28,7 +28,7 @@ import shopping.merchant.samples.utils.Config;
 public class GetAccountSample {
 
   // [START get_account]
-  public static void getAccount(Config config, String accountId) throws Exception {
+  public static void getAccount(Config config) throws Exception {
 
     // Obtains OAuth token based on the user's configuration.
     GoogleCredentials credential = new Authenticator().authenticate();
@@ -38,6 +38,9 @@ public class GetAccountSample {
         AccountsServiceSettings.newBuilder()
             .setCredentialsProvider(FixedCredentialsProvider.create(credential))
             .build();
+
+    // Gets the account ID from the config file.
+    String accountId = config.getAccountId().toString();
 
     // Creates account name to identify account.
     String name = AccountName.newBuilder().setAccount(accountId).build().toString();
@@ -63,9 +66,6 @@ public class GetAccountSample {
 
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
-    // The ID of the MC account you want to retrieve.
-    String accountId = "123456789";
-
-    getAccount(config, accountId);
+    getAccount(config);
   }
 }

@@ -31,7 +31,7 @@ public class DeleteAccountSample {
   // all sub-accounts will also be deleted.
   // Admin user access is required to execute this method.
 
-  public static void deleteAccount(Config config, String accountId) throws Exception {
+  public static void deleteAccount(Config config) throws Exception {
 
     // Obtains OAuth token based on the user's configuration.
     GoogleCredentials credential = new Authenticator().authenticate();
@@ -41,6 +41,9 @@ public class DeleteAccountSample {
         AccountsServiceSettings.newBuilder()
             .setCredentialsProvider(FixedCredentialsProvider.create(credential))
             .build();
+
+    // Gets the account ID from the config file.
+    String accountId = config.getAccountId().toString();
 
     // Creates account name to identify the account.
     String name =
@@ -72,9 +75,6 @@ public class DeleteAccountSample {
 
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
-    // The ID of the MC account you want to delete.
-    String accountId = "123456789";
-
-    deleteAccount(config, accountId);
+    deleteAccount(config);
   }
 }
