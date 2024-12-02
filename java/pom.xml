@@ -100,27 +100,27 @@
     <dependency>
       <groupId>com.google.shopping</groupId>
       <artifactId>google-shopping-merchant-inventories</artifactId>
-      <version>0.30.0</version>
+      <version>0.29.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.shopping</groupId>
       <artifactId>google-shopping-merchant-products</artifactId>
-      <version>0.10.0</version>
+      <version>0.9.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.shopping</groupId>
       <artifactId>google-shopping-merchant-datasources</artifactId>
-      <version>0.10.0</version>
+      <version>0.9.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.shopping</groupId>
       <artifactId>google-shopping-merchant-accounts</artifactId>
-      <version>0.10.0</version>
+      <version>0.9.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.shopping</groupId>
       <artifactId>google-shopping-merchant-promotions</artifactId>
-      <version>0.10.0</version>
+      <version>0.9.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.protobuf</groupId>
@@ -134,7 +134,7 @@
     <dependency>
       <groupId>com.google.auth</groupId>
       <artifactId>google-auth-library-oauth2-http</artifactId>
-      <version>1.30.0</version>
+      <version>1.24.0</version>
     </dependency>
     <dependency>
         <groupId>com.google.api</groupId>
