@@ -1,6 +1,7 @@
 google-shopping-merchant-datasources
 google-shopping-merchant-inventories
 google-shopping-merchant-products
+google-shopping-merchant-promotions
 google-auth-oauthlib
 google-auth
 googleapis-common-protos
