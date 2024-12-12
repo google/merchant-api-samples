@@ -22,14 +22,19 @@ If you are using OAuth 2.0 Client IDs and secrets to get a new refresh token,
 you need to run the following file (`GenerateUserCredentials.php`) from the root
 directory, which will generate and store your refresh token, client id, and
 client secret on your local machine in a file called `token.json`.
+First of all, run Composer in the root directory to install the necessary dependencies.
+
+```
+composer install
+```
 
 Below is an example of how to run the `GenerateUserCredentials.php` code sample
 file.
 
-    ```
-    $ php examples/Authentication/GenerateUserCredentials.php # Runs a program to generate and store your on User Credentials on your local machine.
-    ```
-
+```
+php examples/Authentication/GenerateUserCredentials.php
+```
+    
 These samples expect you to authenticate by either having your refresh token
 stored in your root directory on your local machine, or to be using a service
 account to authenticate.
@@ -37,14 +42,7 @@ account to authenticate.
 ## Running the Samples
 
 We are assuming you've checked out the code and are reading this from a local
-directory. If not, check out the code to a local directory. The instructions
-below assume that you are using Composer.
-
-1. Run Composer in the root directory to install the necessary dependencies.
-
-   ```
-   $ composer install
-   ```
+directory. If not, check out the code to a local directory. 
 
 1. If you are using OAuth 2.0 Client IDs and secrets, ensure you've first ran
 `GenerateUserCredentials.php` and you have a file called `token.json` on your
@@ -52,11 +50,11 @@ local machine. Once you have the `token.json` file or if you're using a service
 account to authenticate, proceed to the next step.
 
 1. Run one of the following samples on the command line from the root directory.
-Below is an example of how to run the `InsertRegionalInventory.php` code
+Below is an example of how to run the `ListProducts.php` code
 sample file.
 
-    ```
-    $ php examples/products/v1beta/ListProducts.php # Runs a program to insert a regional inventory.
-    ```
+```
+php examples/products/v1beta/ListProducts.php
+```
 
 1. Examine your shell output, be inspired and start hacking an amazing new app!
