@@ -25,7 +25,12 @@ import com.google.shopping.merchant.accounts.v1beta.ListAccountIssuesRequest;
 import shopping.merchant.samples.utils.Authenticator;
 import shopping.merchant.samples.utils.Config;
 
-/** This class demonstrates how to list all the account issues of an account. */
+/**
+ * This class demonstrates how to list all the account issues of an account.
+ *
+ * If you want to query the account issues of all the sub-accounts of an MCA, see
+ * ListMcaAccountIssuesSampleAsync.
+ */
 public class ListAccountIssuesSample {
 
   // [START list_account_issues]
