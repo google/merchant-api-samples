@@ -31,7 +31,7 @@ import shopping.merchant.samples.utils.Config;
 public class GetProgramSample {
 
   // [START get_program]
-  public static void getProgram(Config config) throws Exception {
+  public static void getProgram(Config config, String program) throws Exception {
 
     // Obtains OAuth token based on the user's configuration.
     GoogleCredentials credential = new Authenticator().authenticate();
@@ -46,7 +46,7 @@ public class GetProgramSample {
     String name =
         ProgramName.newBuilder()
             .setAccount(config.getAccountId().toString())
-            .setProgram("free-listings")
+            .setProgram(program)
             .build()
             .toString();
 
@@ -72,6 +72,9 @@ public class GetProgramSample {
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
 
-    getProgram(config);
+    // Replace this with the name of the program to retrieve.
+    String program = "free-listings";
+
+    getProgram(config, program);
   }
 }
