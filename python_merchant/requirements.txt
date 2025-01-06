@@ -1,7 +1,7 @@
-google-shopping-merchant-datasources
-google-shopping-merchant-inventories
-google-shopping-merchant-products
-google-shopping-merchant-promotions
+google-shopping-merchant-datasources==0.1.6
+google-shopping-merchant-inventories==0.1.12
+google-shopping-merchant-products==0.2.0
+google-shopping-merchant-promotions==0.1.5
 google-auth-oauthlib
 google-auth
 googleapis-common-protos
