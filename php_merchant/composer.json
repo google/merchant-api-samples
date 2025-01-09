@@ -11,7 +11,8 @@
     "react/http": "^1.2.0",
     "google/shopping-merchant-inventories": "^0.5.1",
     "google/shopping-merchant-products": "^0.2.0",
-    "google/shopping-merchant-datasources": "^0.2.3"
+    "google/shopping-merchant-datasources": "^0.2.3",
+    "google/shopping-merchant-promotions": "^0.1.2"
   },
   "authors": [
     {
