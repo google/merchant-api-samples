@@ -9,9 +9,10 @@
     "google/gax": "^1.36.0",
     "php": ">=8.0",
     "react/http": "^1.2.0",
+    "google/shopping-merchant-accounts": "^0.3.2",
+    "google/shopping-merchant-datasources": "^0.2.3",
     "google/shopping-merchant-inventories": "^0.5.1",
     "google/shopping-merchant-products": "^0.2.0",
-    "google/shopping-merchant-datasources": "^0.2.3",
     "google/shopping-merchant-promotions": "^0.1.2"
   },
   "authors": [
