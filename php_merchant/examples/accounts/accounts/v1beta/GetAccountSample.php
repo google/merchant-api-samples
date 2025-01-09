@@ -19,7 +19,6 @@ require_once __DIR__ . '/../../../Authentication/Authentication.php';
 require_once __DIR__ . '/../../../Authentication/Config.php';
 
 use Google\ApiCore\ApiException;
-use Google\Shopping\Merchant\Accounts\V1beta\AccountName;
 use Google\Shopping\Merchant\Accounts\V1beta\Client\AccountsServiceClient;
 use Google\Shopping\Merchant\Accounts\V1beta\GetAccountRequest;
 
