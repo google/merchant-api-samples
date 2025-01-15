@@ -126,7 +126,7 @@ class InsertProductInput
                     'availability' => 'in stock',
                     'condition' => 'new',
                     'google_product_category' => 'Media > Books',
-                    'gtin' => '9780007350896',
+                    'gtin' => ['9780007350896'],
                     'shipping' => [$shipping, $shipping2]
                 ]
             );

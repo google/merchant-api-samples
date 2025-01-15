@@ -20,8 +20,9 @@ import os
 
 class Configuration(object):
   """Simple config object for authentication details."""
-
-  _MERCHANT_INFO_PATH = "../merchant-info.json"
+  config_path = os.path.join(os.path.expanduser("~"), "shopping-samples")
+  config_dir = os.path.join(config_path, "content")
+  _MERCHANT_INFO_PATH = os.path.join(config_dir, "merchant-info.json")
 
   def read_merchant_info(self):
     """Reads the merchant ID from the merchant-info.json file."""

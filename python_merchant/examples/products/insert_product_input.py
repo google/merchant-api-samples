@@ -63,7 +63,7 @@ def create_product_input():
   attributes.availability = "in stock"
   attributes.condition = "new"
   attributes.google_product_category = "Media > Books"
-  attributes.gtin = "9780007350896"
+  attributes.gtin = ["9780007350896"]
   attributes.shipping = [shipping_option_1, shipping_option_2]
 
   return merchant_products_v1beta.ProductInput(
