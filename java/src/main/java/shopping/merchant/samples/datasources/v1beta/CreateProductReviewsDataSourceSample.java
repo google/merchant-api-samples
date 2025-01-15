@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package shopping.merchant.samples.reviews.v1beta;
+package shopping.merchant.samples.datasources.v1beta;
 
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
