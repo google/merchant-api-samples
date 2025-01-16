@@ -1,3 +1,4 @@
+google-shopping-merchant-accounts==0.2.3
 google-shopping-merchant-datasources==0.1.6
 google-shopping-merchant-inventories==0.1.12
 google-shopping-merchant-products==0.2.0
