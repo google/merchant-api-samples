@@ -13,7 +13,7 @@
 // limitations under the License.
 
 package shopping.merchant.samples.accounts.accounts.v1beta;
-
+// [START merchantapi_list_subaccounts]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.shopping.merchant.accounts.v1beta.Account;
@@ -31,7 +31,6 @@ public class ListSubAccountsSample {
     return String.format("accounts/%s", accountId);
   }
 
-  // [START list_subaccounts]
   public static void listSubAccounts(Config config) throws Exception {
 
     // Obtains OAuth token based on the user's configuration.
@@ -73,10 +72,9 @@ public class ListSubAccountsSample {
     }
   }
 
-  // [END list_subaccounts]
-
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
     listSubAccounts(config);
   }
 }
+// [END merchantapi_list_subaccounts]

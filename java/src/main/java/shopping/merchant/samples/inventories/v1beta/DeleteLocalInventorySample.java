@@ -13,7 +13,7 @@
 // limitations under the License.
 
 package shopping.merchant.samples.inventories.v1beta;
-
+// [START merchantapi_delete_local_inventory]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.shopping.merchant.inventories.v1beta.DeleteLocalInventoryRequest;
@@ -26,7 +26,6 @@ import shopping.merchant.samples.utils.Config;
 /** This class demonstrates how to delete a Local inventory for a given product */
 public class DeleteLocalInventorySample {
 
-  // [START delete_local_inventory]
   public static void deleteLocalInventory(Config config, String productId, String storeCode)
       throws Exception {
     GoogleCredentials credential = new Authenticator().authenticate();
@@ -58,7 +57,6 @@ public class DeleteLocalInventorySample {
       System.out.println(e);
     }
   }
-  // [END delete_local_inventory]
 
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
@@ -71,3 +69,4 @@ public class DeleteLocalInventorySample {
     deleteLocalInventory(config, productId, storeCode);
   }
 }
+// [END merchantapi_delete_local_inventory]

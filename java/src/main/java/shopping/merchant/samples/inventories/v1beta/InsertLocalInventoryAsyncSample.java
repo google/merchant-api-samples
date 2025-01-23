@@ -13,7 +13,7 @@
 // limitations under the License.
 
 package shopping.merchant.samples.inventories.v1beta;
-
+// [START merchantapi_insert_local_inventory_async]
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
@@ -46,7 +46,6 @@ import shopping.merchant.samples.utils.Config;
  */
 public class InsertLocalInventoryAsyncSample {
 
-  // [START insert_local_inventory_async]
   /* Gets the names of all the local products for a given merchant center account. */
   public static List<String> getLocalProductNames(GoogleCredentials credential, String accountId)
       throws IOException {
@@ -160,8 +159,6 @@ public class InsertLocalInventoryAsyncSample {
     }
   }
 
-  // [END insert_local_inventory_async]
-
   public static void main(String[] args) throws Exception {
     GoogleCredentials credential = new Authenticator().authenticate();
     String accountId = Config.load().getAccountId().toString();
@@ -172,3 +169,4 @@ public class InsertLocalInventoryAsyncSample {
     insertLocalInventoryAsync(credential, accountId, storeCode);
   }
 }
+// [END merchantapi_insert_local_inventory_async]

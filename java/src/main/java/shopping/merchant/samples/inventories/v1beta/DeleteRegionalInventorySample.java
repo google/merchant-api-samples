@@ -13,7 +13,7 @@
 // limitations under the License.
 
 package shopping.merchant.samples.inventories.v1beta;
-
+// [START merchantapi_delete_regional_inventory]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.shopping.merchant.inventories.v1beta.DeleteRegionalInventoryRequest;
@@ -26,13 +26,8 @@ import shopping.merchant.samples.utils.Config;
 /** This class demonstrates how to delete a regional inventory for a given product */
 public class DeleteRegionalInventorySample {
 
-  // [START delete_regional_inventory]
   public static void deleteRegionalInventory(Config config, String productId, String regionId)
       throws Exception {
-    // TODO(brothman): Please add more line comments to explain what each significant step is doing.
-    // For example:
-    // Obtains OAuth tokens based on the configuration.
-    // Creates service settings using the credentials above. Etc
 
     GoogleCredentials credential = new Authenticator().authenticate();
 
@@ -64,7 +59,6 @@ public class DeleteRegionalInventorySample {
       System.out.println(e);
     }
   }
-  // [END delete_regional_inventory]
 
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
@@ -77,3 +71,4 @@ public class DeleteRegionalInventorySample {
     deleteRegionalInventory(config, productId, regionId);
   }
 }
+// [END merchantapi_delete_regional_inventory]

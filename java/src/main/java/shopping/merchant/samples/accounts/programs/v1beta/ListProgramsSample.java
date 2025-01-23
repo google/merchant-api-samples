@@ -13,7 +13,7 @@
 // limitations under the License.
 
 package shopping.merchant.samples.accounts.programs.v1beta;
-
+// [START merchantapi_list_programs]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.shopping.merchant.accounts.v1beta.AccountName;
@@ -30,7 +30,6 @@ import shopping.merchant.samples.utils.Config;
  */
 public class ListProgramsSample {
 
-  // [START list_programs]
   public static void listPrograms(Config config) throws Exception {
 
     // Obtains OAuth token based on the user's configuration.
@@ -69,11 +68,10 @@ public class ListProgramsSample {
     }
   }
 
-  // [END list_programs]
-
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
 
     listPrograms(config);
   }
 }
+// [END merchantapi_list_programs]

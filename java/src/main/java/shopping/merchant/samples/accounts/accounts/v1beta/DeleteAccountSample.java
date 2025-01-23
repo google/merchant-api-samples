@@ -13,7 +13,7 @@
 // limitations under the License.
 
 package shopping.merchant.samples.accounts.accounts.v1beta;
-
+// [START merchantapi_delete_account]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.shopping.merchant.accounts.v1beta.AccountName;
@@ -26,7 +26,6 @@ import shopping.merchant.samples.utils.Config;
 /** This class demonstrates how to delete a given Merchant Center account. */
 public class DeleteAccountSample {
 
-  // [START delete_account]
   // This method can delete a standalone, MCA or sub-account. If you delete an MCA,
   // all sub-accounts will also be deleted.
   // Admin user access is required to execute this method.
@@ -71,10 +70,9 @@ public class DeleteAccountSample {
     }
   }
 
-  // [END delete_account]
-
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
     deleteAccount(config);
   }
 }
+// [END merchantapi_delete_account]

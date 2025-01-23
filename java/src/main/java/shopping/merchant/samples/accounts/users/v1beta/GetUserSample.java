@@ -13,7 +13,7 @@
 // limitations under the License.
 
 package shopping.merchant.samples.accounts.users.v1beta;
-
+// [START merchantapi_get_user]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.shopping.merchant.accounts.v1beta.GetUserRequest;
@@ -27,7 +27,6 @@ import shopping.merchant.samples.utils.Config;
 /** This class demonstrates how to get a single user for a given Merchant Center account. */
 public class GetUserSample {
 
-  // [START get_user]
   public static void getUser(Config config, String email) throws Exception {
 
     // Obtains OAuth token based on the user's configuration.
@@ -63,8 +62,6 @@ public class GetUserSample {
     }
   }
 
-  // [END get_user]
-
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
     // The email address of this user. If you want to get the user information
@@ -75,3 +72,4 @@ public class GetUserSample {
     getUser(config, email);
   }
 }
+// [END merchantapi_get_user]

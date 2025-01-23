@@ -13,7 +13,7 @@
 // limitations under the License.
 
 package shopping.merchant.samples.inventories.v1beta;
-
+// [START merchantapi_insert_local_inventory]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.shopping.merchant.inventories.v1beta.InsertLocalInventoryRequest;
@@ -31,7 +31,6 @@ public class InsertLocalInventorySample {
     return String.format("accounts/%s/products/%s", accountId, productId);
   }
 
-  // [START insert_local_inventory]
   public static void insertLocalInventory(Config config, String productId, String storeCode)
       throws Exception {
     GoogleCredentials credential = new Authenticator().authenticate();
@@ -67,7 +66,6 @@ public class InsertLocalInventorySample {
       System.out.println(e);
     }
   }
-  // [END insert_local_inventory]
 
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
@@ -79,3 +77,4 @@ public class InsertLocalInventorySample {
     insertLocalInventory(config, productId, storeCode);
   }
 }
+// [END merchantapi_insert_local_inventory]

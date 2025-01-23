@@ -1,4 +1,3 @@
-package shopping.merchant.samples.promotions.v1beta;
 
 // Copyright 2023 Google LLC
 //
@@ -14,6 +13,8 @@ package shopping.merchant.samples.promotions.v1beta;
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+package shopping.merchant.samples.promotions.v1beta;
+// [START merchantapi_insert_promotions_async]
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
@@ -43,7 +44,6 @@ import shopping.merchant.samples.utils.Config;
 /** This class demonstrates how to insert multiple promotions asynchronously. */
 public class InsertPromotionsAsyncSample {
 
-  // [START insert_promotions_async]
   private static String generateRandomString() {
     String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     Random random = new Random();
@@ -146,10 +146,10 @@ public class InsertPromotionsAsyncSample {
     }
   }
 
-  // [END insert_promotions_async]
 
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
     asyncInsertPromotions(config.getAccountId().toString(), "<YOUR_DATA_SOURCE_ID>");
   }
 }
+// [END merchantapi_insert_promotions_async]

@@ -13,7 +13,7 @@
 // limitations under the License.
 
 package shopping.merchant.samples.accounts.regions.v1beta;
-
+// [START merchantapi_delete_region]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.shopping.merchant.accounts.v1beta.DeleteRegionRequest;
@@ -26,7 +26,6 @@ import shopping.merchant.samples.utils.Config;
 /** This class demonstrates how to delete a given region from a Merchant Center account. */
 public class DeleteRegionSample {
 
-  // [START delete_region]
   public static void deleteRegion(Config config, String region) throws Exception {
 
     // Obtains OAuth token based on the user's configuration.
@@ -51,8 +50,6 @@ public class DeleteRegionSample {
     }
   }
 
-  // [END delete_region]
-
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
 
@@ -70,3 +67,4 @@ public class DeleteRegionSample {
     deleteRegion(config, region);
   }
 }
+// [END merchantapi_delete_region]

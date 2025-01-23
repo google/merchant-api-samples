@@ -13,7 +13,7 @@
 // limitations under the License.
 
 package shopping.merchant.samples.accounts.emailpreferences.v1beta;
-
+// [START merchantapi_update_email_preferences]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.protobuf.FieldMask;
@@ -32,7 +32,6 @@ import shopping.merchant.samples.utils.Config;
  */
 public class UpdateEmailPreferencesSample {
 
-  // [START update_email_preferences]
   public static void updateEmailPreferences(Config config, String email) throws Exception {
 
     GoogleCredentials credential = new Authenticator().authenticate();
@@ -74,8 +73,6 @@ public class UpdateEmailPreferencesSample {
     }
   }
 
-  // [END update_email_preferences]
-
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
     // The email address of this user. If you want to get the user information
@@ -87,3 +84,4 @@ public class UpdateEmailPreferencesSample {
     updateEmailPreferences(config, email);
   }
 }
+// [END merchantapi_update_email_preferences]

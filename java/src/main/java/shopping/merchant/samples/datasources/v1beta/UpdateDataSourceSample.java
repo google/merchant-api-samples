@@ -13,7 +13,7 @@
 // limitations under the License.
 
 package shopping.merchant.samples.datasources.v1beta;
-
+// [START merchantapi_update_data_source]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.protobuf.FieldMask;
@@ -35,7 +35,6 @@ import shopping.merchant.samples.utils.Config;
  */
 public class UpdateDataSourceSample {
 
-  // [START update_data_source]
   public static String updateDataSource(Config config, String displayName, String dataSourceId)
       throws Exception {
     GoogleCredentials credential = new Authenticator().authenticate();
@@ -156,8 +155,6 @@ public class UpdateDataSourceSample {
     }
   }
 
-  // [END update_data_source]
-
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
     // The updated displayed datasource name in the Merchant Center UI.
@@ -169,3 +166,4 @@ public class UpdateDataSourceSample {
     updateDataSource(config, displayName, dataSourceId);
   }
 }
+// [END merchantapi_update_data_source]

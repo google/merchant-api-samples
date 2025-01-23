@@ -13,7 +13,7 @@
 // limitations under the License.
 
 package shopping.merchant.samples.accounts.users.v1beta;
-
+// [START merchantapi_delete_user]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.shopping.merchant.accounts.v1beta.DeleteUserRequest;
@@ -26,7 +26,6 @@ import shopping.merchant.samples.utils.Config;
 /** This class demonstrates how to delete a user for a given Merchant Center account. */
 public class DeleteUserSample {
 
-  // [START delete_user]
   public static void deleteUser(Config config, String email) throws Exception {
 
     // Obtains OAuth token based on the user's configuration.
@@ -58,8 +57,6 @@ public class DeleteUserSample {
     }
   }
 
-  // [END delete_user]
-
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
     // The email address of this user. If you want to delete the user information
@@ -70,3 +67,4 @@ public class DeleteUserSample {
     deleteUser(config, email);
   }
 }
+// [END merchantapi_delete_user]

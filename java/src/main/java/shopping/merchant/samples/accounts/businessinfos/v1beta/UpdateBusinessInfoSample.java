@@ -13,7 +13,7 @@
 // limitations under the License.
 
 package shopping.merchant.samples.accounts.businessinfos.v1beta;
-
+// [START merchantapi_update_businessinfo]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.protobuf.FieldMask;
@@ -29,7 +29,6 @@ import shopping.merchant.samples.utils.Config;
 /** This class demonstrates how to update a BusinessInfo to a new address. */
 public class UpdateBusinessInfoSample {
 
-  // [START update_businessinfo]
   public static void updateBusinessInfo(Config config) throws Exception {
 
     GoogleCredentials credential = new Authenticator().authenticate();
@@ -80,11 +79,10 @@ public class UpdateBusinessInfoSample {
     }
   }
 
-  // [END update_businessInfo]
-
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
 
     updateBusinessInfo(config);
   }
 }
+// [END merchantapi_update_businessInfo]

@@ -13,7 +13,7 @@
 // limitations under the License.
 
 package shopping.merchant.samples.accounts.programs.v1beta;
-
+// [START merchantapi_get_program]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.shopping.merchant.accounts.v1beta.GetProgramRequest;
@@ -30,7 +30,6 @@ import shopping.merchant.samples.utils.Config;
  */
 public class GetProgramSample {
 
-  // [START get_program]
   public static void getProgram(Config config, String program) throws Exception {
 
     // Obtains OAuth token based on the user's configuration.
@@ -67,8 +66,6 @@ public class GetProgramSample {
     }
   }
 
-  // [END get_program]
-
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
 
@@ -78,3 +75,5 @@ public class GetProgramSample {
     getProgram(config, program);
   }
 }
+// [END merchantapi_get_program]
+

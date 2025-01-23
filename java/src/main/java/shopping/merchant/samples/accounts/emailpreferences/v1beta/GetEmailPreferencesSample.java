@@ -13,7 +13,7 @@
 // limitations under the License.
 
 package shopping.merchant.samples.accounts.emailpreferences.v1beta;
-
+// [START merchantapi_get_email_preferences]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.shopping.merchant.accounts.v1beta.EmailPreferences;
@@ -27,7 +27,6 @@ import shopping.merchant.samples.utils.Config;
 /** This class demonstrates how to get the email preferences of a Merchant Center account. */
 public class GetEmailPreferencesSample {
 
-  // [START get_email_preferences]
   public static void getEmailPreferences(Config config, String email) throws Exception {
 
     // Obtains OAuth token based on the user's configuration.
@@ -65,8 +64,6 @@ public class GetEmailPreferencesSample {
     }
   }
 
-  // [END get_email_preferences]
-
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
     // The email address of this user. If you want to get the user information
@@ -78,3 +75,4 @@ public class GetEmailPreferencesSample {
     getEmailPreferences(config, email);
   }
 }
+// [END merchantapi_get_email_preferences]

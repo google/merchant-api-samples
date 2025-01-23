@@ -13,7 +13,7 @@
 // limitations under the License.
 
 package shopping.merchant.samples.accounts.homepages.v1beta;
-
+// [START merchantapi_unclaim_homepage]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.shopping.merchant.accounts.v1beta.Homepage;
@@ -27,7 +27,6 @@ import shopping.merchant.samples.utils.Config;
 /** This class demonstrates how to unclaim the homepage for a given Merchant Center account. */
 public class UnclaimHomepageSample {
 
-  // [START unclaim_homepage]
   // Executing this method requires admin access.
   public static void unclaimHomepage(Config config) throws Exception {
 
@@ -62,11 +61,10 @@ public class UnclaimHomepageSample {
     }
   }
 
-  // [END unclaim_homepage]
-
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
 
     unclaimHomepage(config);
   }
 }
+// [END merchantapi_unclaim_homepage]

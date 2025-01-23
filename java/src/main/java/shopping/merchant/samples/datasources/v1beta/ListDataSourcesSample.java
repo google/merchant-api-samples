@@ -14,6 +14,7 @@
 
 package shopping.merchant.samples.datasources.v1beta;
 
+// [START merchantapi_list_data_sources]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.shopping.merchant.datasources.v1beta.DataSource;
@@ -32,7 +33,6 @@ public class ListDataSourcesSample {
     return String.format("accounts/%s", accountId);
   }
 
-  // [START list_data_sources]
   public static ArrayList<DataSource> listDataSources(Config config) throws Exception {
 
     // Obtains OAuth token based on the user's configuration.
@@ -86,11 +86,10 @@ public class ListDataSourcesSample {
     }
   }
 
-  // [END list_data_sources]
-
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
 
     listDataSources(config);
   }
 }
+// [END merchantapi_list_data_sources]

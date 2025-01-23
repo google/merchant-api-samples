@@ -13,7 +13,7 @@
 // limitations under the License.
 
 package shopping.merchant.samples.accounts.termsofservices.v1beta;
-
+// [START merchantapi_get_termsofservice]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.shopping.merchant.accounts.v1beta.GetTermsOfServiceRequest;
@@ -27,7 +27,6 @@ import shopping.merchant.samples.utils.Config;
 /** This class demonstrates how to get a TermsOfService for a specific version. */
 public class GetTermsOfServiceSample {
 
-  // [START get_termsofservice]
   public static void getTermsOfService(Config config) throws Exception {
 
     // Obtains OAuth token based on the user's configuration.
@@ -60,11 +59,10 @@ public class GetTermsOfServiceSample {
     }
   }
 
-  // [END get_termsofservice]
-
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
 
     getTermsOfService(config);
   }
 }
+// [END merchantapi_get_termsofservice]

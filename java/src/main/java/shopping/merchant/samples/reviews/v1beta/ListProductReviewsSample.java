@@ -14,6 +14,7 @@
 
 package shopping.merchant.samples.reviews.v1beta;
 
+// [START merchantapi_list_product_reviews]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.shopping.merchant.reviews.v1beta.ListProductReviewsRequest;
@@ -27,7 +28,6 @@ import shopping.merchant.samples.utils.Config;
 /** This class demonstrates how to list all the product reviews in a given account. */
 public class ListProductReviewsSample {
 
-  // [START list_product_reviews]
   public static void listProductReviews(String accountId) throws Exception {
     GoogleCredentials credential = new Authenticator().authenticate();
 
@@ -62,10 +62,9 @@ public class ListProductReviewsSample {
     }
   }
 
-  // [END list_product_reviews]
-
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
     listProductReviews(config.getAccountId().toString());
   }
 }
+// [END merchantapi_list_product_reviews]

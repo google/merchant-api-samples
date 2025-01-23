@@ -13,7 +13,7 @@
 // limitations under the License.
 
 package shopping.merchant.samples.datasources.v1beta;
-
+// [START merchantapi_get_file_upload]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.shopping.merchant.datasources.v1beta.FileUpload;
@@ -27,7 +27,6 @@ import shopping.merchant.samples.utils.Config;
 /** This class demonstrates how to get the latest data source file upload. */
 public class GetFileUploadSample {
 
-  // [START get_file_upload]
   public static void getFileUpload(Config config, String datasourceId) throws Exception {
 
     // Obtains OAuth token based on the user's configuration.
@@ -66,8 +65,6 @@ public class GetFileUploadSample {
     }
   }
 
-  // [END get_file_upload]
-
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
     // An ID assigned to a datasource by Google.
@@ -76,3 +73,4 @@ public class GetFileUploadSample {
     getFileUpload(config, datasourceId);
   }
 }
+// [END merchantapi_get_file_upload]

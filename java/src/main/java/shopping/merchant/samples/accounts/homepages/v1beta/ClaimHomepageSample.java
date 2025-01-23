@@ -13,7 +13,7 @@
 // limitations under the License.
 
 package shopping.merchant.samples.accounts.homepages.v1beta;
-
+// [START merchantapi_claim_homepage]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.shopping.merchant.accounts.v1beta.ClaimHomepageRequest;
@@ -27,7 +27,6 @@ import shopping.merchant.samples.utils.Config;
 /** This class demonstrates how to claim the homepage for a given Merchant Center account. */
 public class ClaimHomepageSample {
 
-  // [START claim_homepage]
   // Executing this method requires admin access.
   public static void claimHomepage(Config config) throws Exception {
 
@@ -74,11 +73,10 @@ public class ClaimHomepageSample {
     }
   }
 
-  // [END claim_homepage]
-
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
 
     claimHomepage(config);
   }
 }
+// [END merchantapi_claim_homepage]

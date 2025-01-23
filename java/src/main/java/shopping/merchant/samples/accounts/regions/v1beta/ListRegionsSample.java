@@ -13,7 +13,7 @@
 // limitations under the License.
 
 package shopping.merchant.samples.accounts.regions.v1beta;
-
+// [START merchantapi_list_regions]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.shopping.merchant.accounts.v1beta.ListRegionsRequest;
@@ -31,7 +31,6 @@ public class ListRegionsSample {
     return String.format("accounts/%s", accountId);
   }
 
-  // [START list_regions]
   public static void listRegions(Config config) throws Exception {
 
     // Obtains OAuth token based on the user's configuration.
@@ -73,11 +72,10 @@ public class ListRegionsSample {
     }
   }
 
-  // [END list_regions]
-
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
 
     listRegions(config);
   }
 }
+// [END merchantapi_list_regions]

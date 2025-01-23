@@ -15,7 +15,7 @@
 package shopping.merchant.samples.accounts.accountissues.v1beta;
 
 import static com.google.api.core.ApiFutures.transform;
-
+// [START merchantapi_list_account_issues]
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
@@ -105,7 +105,6 @@ public class ListMcaAccountIssuesSampleAsync {
         executor);
   }
 
-  // [START list_account_issues]
   public static void listAccountIssues(Config config) throws Exception {
 
     // Obtains OAuth token based on the user's configuration.
@@ -163,10 +162,9 @@ public class ListMcaAccountIssuesSampleAsync {
     }
   }
 
-  // [END list_account_issues]
-
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
     listAccountIssues(config);
   }
 }
+// [END merchantapi_list_account_issues]

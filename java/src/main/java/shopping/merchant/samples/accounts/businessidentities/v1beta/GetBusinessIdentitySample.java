@@ -13,7 +13,7 @@
 // limitations under the License.
 
 package shopping.merchant.samples.accounts.businessidentities.v1beta;
-
+// [START merchantapi_get_business_identity]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.shopping.merchant.accounts.v1beta.BusinessIdentity;
@@ -27,7 +27,6 @@ import shopping.merchant.samples.utils.Config;
 /** This class demonstrates how to get the business identity of a Merchant Center account. */
 public class GetBusinessIdentitySample {
 
-  // [START get_business_identity]
   public static void getBusinessIdentity(Config config) throws Exception {
 
     // Obtains OAuth token based on the user's configuration.
@@ -64,11 +63,10 @@ public class GetBusinessIdentitySample {
     }
   }
 
-  // [END get_business_identity]
-
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
 
     getBusinessIdentity(config);
   }
 }
+// [END merchantapi_get_business_identity]

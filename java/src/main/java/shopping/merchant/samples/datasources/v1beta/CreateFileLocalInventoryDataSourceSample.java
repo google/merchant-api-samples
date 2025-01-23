@@ -13,7 +13,7 @@
 // limitations under the License.
 
 package shopping.merchant.samples.datasources.v1beta;
-
+// [START merchantapi_create_file_local_inventory_data_source]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.shopping.merchant.datasources.v1beta.CreateDataSourceRequest;
@@ -32,7 +32,6 @@ public class CreateFileLocalInventoryDataSourceSample {
     return String.format("accounts/%s", merchantId);
   }
 
-  // [START create_file_local_inventory_data_source]
   private static FileInput setFileInput() {
     // If FetchSettings are not set, then this will be an `UPLOAD` file type
     // that you must manually upload via the Merchant Center UI.
@@ -85,8 +84,6 @@ public class CreateFileLocalInventoryDataSourceSample {
     }
   }
 
-  // [END create_file_local_inventory_data_source]
-
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
     // The displayed datasource name in the Merchant Center UI.
@@ -98,3 +95,4 @@ public class CreateFileLocalInventoryDataSourceSample {
     createDataSource(config, displayName, fileInput);
   }
 }
+// [END merchantapi_create_file_local_inventory_data_source]

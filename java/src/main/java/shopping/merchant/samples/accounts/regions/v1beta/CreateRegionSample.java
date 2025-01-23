@@ -13,7 +13,7 @@
 // limitations under the License.
 
 package shopping.merchant.samples.accounts.regions.v1beta;
-
+// [START merchantapi_create_region]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.shopping.merchant.accounts.v1beta.CreateRegionRequest;
@@ -32,7 +32,6 @@ public class CreateRegionSample {
     return String.format("accounts/%s", accountId);
   }
 
-  // [START create_region]
   public static void createRegion(Config config, String regionId) throws Exception {
 
     // Obtains OAuth token based on the user's configuration.
@@ -81,8 +80,6 @@ public class CreateRegionSample {
     }
   }
 
-  // [END create_region]
-
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
     // The unique ID of this region.
@@ -91,3 +88,4 @@ public class CreateRegionSample {
     createRegion(config, regionId);
   }
 }
+// [END merchantapi_create_region]

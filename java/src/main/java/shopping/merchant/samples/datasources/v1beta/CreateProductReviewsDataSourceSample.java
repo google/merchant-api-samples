@@ -13,7 +13,7 @@
 // limitations under the License.
 
 package shopping.merchant.samples.datasources.v1beta;
-
+// [START merchantapi_create_product_reviews_data_source]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.shopping.merchant.datasources.v1beta.CreateDataSourceRequest;
@@ -28,7 +28,6 @@ import shopping.merchant.samples.utils.Config;
 /** This class demonstrates how to create a product review data source. */
 public class CreateProductReviewsDataSourceSample {
 
-  // [START create_product_reviews_data_source]
   private static void createProductReviewsDataSource(String accountId) throws IOException {
 
     GoogleCredentials credential = new Authenticator().authenticate();
@@ -60,10 +59,9 @@ public class CreateProductReviewsDataSourceSample {
     }
   }
 
-  // [END create_product_reviews_data_source]
-
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
     createProductReviewsDataSource(config.getAccountId().toString());
   }
 }
+// [END merchantapi_create_product_reviews_data_source]

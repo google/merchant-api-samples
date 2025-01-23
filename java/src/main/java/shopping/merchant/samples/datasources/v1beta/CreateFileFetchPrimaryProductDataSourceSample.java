@@ -13,7 +13,7 @@
 // limitations under the License.
 
 package shopping.merchant.samples.datasources.v1beta;
-
+// [START merchantapi_create_file_fetch_primary_product_data_source]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.shopping.merchant.datasources.v1beta.CreateDataSourceRequest;
@@ -34,7 +34,6 @@ public class CreateFileFetchPrimaryProductDataSourceSample {
     return String.format("accounts/%s", merchantId);
   }
 
-  // [START create_file_fetch_primary_product_data_source]
   private static FileInput setFileInput() {
     FetchSettings fetchSettings =
         FetchSettings.newBuilder()
@@ -100,7 +99,6 @@ public class CreateFileFetchPrimaryProductDataSourceSample {
     }
   }
 
-  // [END create_file_fetch_primary_product_data_source]
 
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
@@ -113,3 +111,4 @@ public class CreateFileFetchPrimaryProductDataSourceSample {
     createDataSource(config, displayName, fileInput);
   }
 }
+// [END merchantapi_create_file_fetch_primary_product_data_source]

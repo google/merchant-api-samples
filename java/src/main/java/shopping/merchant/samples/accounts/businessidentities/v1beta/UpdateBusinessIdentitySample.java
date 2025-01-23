@@ -13,7 +13,7 @@
 // limitations under the License.
 
 package shopping.merchant.samples.accounts.businessidentities.v1beta;
-
+// [START merchantapi_update_business_identity]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.protobuf.FieldMask;
@@ -28,7 +28,6 @@ import shopping.merchant.samples.utils.Config;
 /** This class demonstrates how to update a business identity. */
 public class UpdateBusinessIdentitySample {
 
-  // [START update_business_identity]
   public static void updateBusinessIdentity(Config config) throws Exception {
 
     GoogleCredentials credential = new Authenticator().authenticate();
@@ -76,11 +75,10 @@ public class UpdateBusinessIdentitySample {
     }
   }
 
-  // [END update_business_identity]
-
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
 
     updateBusinessIdentity(config);
   }
 }
+// [END merchantapi_update_business_identity]

@@ -13,7 +13,7 @@
 // limitations under the License.
 
 package shopping.merchant.samples.productsdatasourcesworkflow.v1beta;
-
+// [START merchantapi_add_supplemental_datasource_to_primary_datasource]
 import shopping.merchant.samples.datasources.v1beta.UpdateDataSourceSample;
 import shopping.merchant.samples.utils.Config;
 
@@ -23,7 +23,6 @@ import shopping.merchant.samples.utils.Config;
  */
 public class AddSupplementalDataSourceToPrimaryDataSourceSample {
 
-  // [START add_supplemental_datasource_to_primary_datasource]
   public static void addSupplementalDataSourceToPrimaryDataSource(
       Config config,
       String primaryDataSourceName,
@@ -40,8 +39,6 @@ public class AddSupplementalDataSourceToPrimaryDataSourceSample {
         secondSupplementalDataSourceName);
   }
 
-  // [END add_supplemental_datasource_to_primary_datasource]
-
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
     // The names of the primary and supplemental datasources.
@@ -56,3 +53,4 @@ public class AddSupplementalDataSourceToPrimaryDataSourceSample {
         secondSupplementalDataSourceName);
   }
 }
+// [END merchantapi_add_supplemental_datasource_to_primary_datasource]

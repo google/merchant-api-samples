@@ -13,7 +13,7 @@
 // limitations under the License.
 
 package shopping.merchant.samples.products.v1beta;
-
+// [START merchantapi_delete_product_input]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.shopping.merchant.products.v1beta.DeleteProductInputRequest;
@@ -26,7 +26,6 @@ import shopping.merchant.samples.utils.Config;
 /** This class demonstrates how to delete a product for a given Merchant Center account */
 public class DeleteProductInputSample {
 
-  // [START delete_product_input]
   public static void deleteProductInput(Config config, String productId, String dataSource)
       throws Exception {
 
@@ -64,8 +63,6 @@ public class DeleteProductInputSample {
     }
   }
 
-  // [END delete_product_input]
-
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
     // An ID assigned to a product by Google. In the format
@@ -81,3 +78,4 @@ public class DeleteProductInputSample {
     deleteProductInput(config, productId, dataSource);
   }
 }
+// [END merchantapi_delete_product_input]

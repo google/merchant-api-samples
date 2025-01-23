@@ -13,7 +13,7 @@
 // limitations under the License.
 
 package shopping.merchant.samples.accounts.termsofservices.v1beta;
-
+// [START merchantapi_retrieve_for_application_termsofservice_agreementstate]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.shopping.merchant.accounts.v1beta.RetrieveForApplicationTermsOfServiceAgreementStateRequest;
@@ -33,7 +33,6 @@ public class RetrieveForApplicationTermsOfServiceAgreementStateSample {
     return String.format("accounts/%s", accountId);
   }
 
-  // [START retrieve_for_application_termsofservice_agreementstate]
   public static void retrieveForApplicationTermsOfServiceAgreementState(Config config)
       throws Exception {
 
@@ -73,11 +72,10 @@ public class RetrieveForApplicationTermsOfServiceAgreementStateSample {
     }
   }
 
-  // [END retrieve_for_application_termsofservice_agreementstate]
-
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
 
     retrieveForApplicationTermsOfServiceAgreementState(config);
   }
 }
+// [END merchantapi_retrieve_for_application_termsofservice_agreementstate]

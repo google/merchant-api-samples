@@ -13,7 +13,7 @@
 // limitations under the License.
 
 package shopping.merchant.samples.accounts.shippingsettings.v1beta;
-
+// [START merchantapi_get_shippingsettings]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.shopping.merchant.accounts.v1beta.GetShippingSettingsRequest;
@@ -27,7 +27,6 @@ import shopping.merchant.samples.utils.Config;
 /** This class demonstrates how to get the ShippingSettings for a given Merchant Center account. */
 public class GetShippingSettingsSample {
 
-  // [START get_shippingsettings]
   public static void getShippingSettings(Config config) throws Exception {
 
     // Obtains OAuth token based on the user's configuration.
@@ -64,11 +63,10 @@ public class GetShippingSettingsSample {
     }
   }
 
-  // [END get_shipping_settings]
-
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
 
     getShippingSettings(config);
   }
 }
+// [END merchantapi_get_shippingsettings]

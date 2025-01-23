@@ -13,7 +13,7 @@
 // limitations under the License.
 
 package shopping.merchant.samples.accounts.termsofservices.v1beta;
-
+// [START merchantapi_retrieve_latest_termsofservice]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.shopping.merchant.accounts.v1beta.RetrieveLatestTermsOfServiceRequest;
@@ -27,7 +27,6 @@ import shopping.merchant.samples.utils.Config;
 /** This class demonstrates how to retrieve the latest TermsOfService a specific region and kind. */
 public class RetrieveLatestTermsOfServiceSample {
 
-  // [START retrieve_latest_termsofservice]
   public static void retrieveLatestTermsOfService(Config config) throws Exception {
 
     // Obtains OAuth token based on the user's configuration.
@@ -59,11 +58,10 @@ public class RetrieveLatestTermsOfServiceSample {
     }
   }
 
-  // [END retrieve_latest_termsofservice]
-
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
 
     retrieveLatestTermsOfService(config);
   }
 }
+// [END merchantapi_retrieve_latest_termsofservice]

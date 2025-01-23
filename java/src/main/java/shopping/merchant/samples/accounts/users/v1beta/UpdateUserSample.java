@@ -13,7 +13,7 @@
 // limitations under the License.
 
 package shopping.merchant.samples.accounts.users.v1beta;
-
+// [START merchantapi_update_user]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.protobuf.FieldMask;
@@ -29,7 +29,6 @@ import shopping.merchant.samples.utils.Config;
 /** This class demonstrates how to update a user to make it an admin of the MC account. */
 public class UpdateUserSample {
 
-  // [START update_user]
   public static void updateUser(Config config, String email, AccessRight accessRight)
       throws Exception {
 
@@ -67,8 +66,6 @@ public class UpdateUserSample {
     }
   }
 
-  // [END update_user]
-
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
     String email = "testUser@gmail.com";
@@ -80,3 +77,4 @@ public class UpdateUserSample {
     updateUser(config, email, accessRight);
   }
 }
+// [END merchantapi_update_user]

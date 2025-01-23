@@ -13,7 +13,7 @@
 // limitations under the License.
 
 package shopping.merchant.samples.accounts.termsofservices.v1beta;
-
+// [START merchantapi_get_termsofservice_agreementstate]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.shopping.merchant.accounts.v1beta.GetTermsOfServiceAgreementStateRequest;
@@ -30,7 +30,6 @@ import shopping.merchant.samples.utils.Config;
  */
 public class GetTermsOfServiceAgreementStateSample {
 
-  // [START get__termsofservice_agreementstate]
   public static void getTermsOfServiceAgreementState(Config config) throws Exception {
 
     // Obtains OAuth token based on the user's configuration.
@@ -77,7 +76,6 @@ public class GetTermsOfServiceAgreementStateSample {
     }
   }
 
-  // [END get__termsofservice_agreementstate]
 
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
@@ -85,3 +83,4 @@ public class GetTermsOfServiceAgreementStateSample {
     getTermsOfServiceAgreementState(config);
   }
 }
+// [END merchantapi_get_termsofservice_agreementstate]

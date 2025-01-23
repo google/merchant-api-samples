@@ -1,4 +1,3 @@
-package shopping.merchant.samples.promotions.v1beta;
 
 // Copyright 2023 Google LLC
 //
@@ -14,6 +13,8 @@ package shopping.merchant.samples.promotions.v1beta;
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+package shopping.merchant.samples.promotions.v1beta;
+// [START merchantapi_list_promotions_sample]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.shopping.merchant.promotions.v1beta.ListPromotionsRequest;
@@ -27,7 +28,6 @@ import shopping.merchant.samples.utils.Config;
 /** This class demonstrates how to list promotions. */
 public class ListPromotionsSample {
 
-  // [START list_promotions_sample]
   public static void listPromotions(String accountId) throws Exception {
     GoogleCredentials credential = new Authenticator().authenticate();
 
@@ -64,10 +64,9 @@ public class ListPromotionsSample {
     }
   }
 
-  // [END list_promotions_sample]
-
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
     listPromotions(config.getAccountId().toString());
   }
 }
+// [END merchantapi_list_promotions_sample]

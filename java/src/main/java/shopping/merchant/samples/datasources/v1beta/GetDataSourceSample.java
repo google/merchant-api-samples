@@ -13,7 +13,7 @@
 // limitations under the License.
 
 package shopping.merchant.samples.datasources.v1beta;
-
+// [START merchantapi_get_datasource]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.shopping.merchant.datasources.v1beta.DataSource;
@@ -27,7 +27,6 @@ import shopping.merchant.samples.utils.Config;
 /** This class demonstrates how to get a specific datasource for a given Merchant Center account. */
 public class GetDataSourceSample {
 
-  // [START get_datasource]
   public static DataSource getDataSource(Config config, String dataSourceId) throws Exception {
 
     // Obtains OAuth token based on the user's configuration.
@@ -68,8 +67,6 @@ public class GetDataSourceSample {
     }
   }
 
-  // [END get_datasource]
-
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
     // An ID assigned to a datasource by Google.
@@ -78,3 +75,4 @@ public class GetDataSourceSample {
     getDataSource(config, datasourceId);
   }
 }
+// [END merchantapi_get_datasource]

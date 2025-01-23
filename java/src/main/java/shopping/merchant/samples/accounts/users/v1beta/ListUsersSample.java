@@ -13,7 +13,7 @@
 // limitations under the License.
 
 package shopping.merchant.samples.accounts.users.v1beta;
-
+// [START merchantapi_list_users]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.shopping.merchant.accounts.v1beta.ListUsersRequest;
@@ -31,7 +31,6 @@ public class ListUsersSample {
     return String.format("accounts/%s", accountId);
   }
 
-  // [START list_users]
   public static void listUsers(Config config) throws Exception {
 
     // Obtains OAuth token based on the user's configuration.
@@ -72,11 +71,10 @@ public class ListUsersSample {
     }
   }
 
-  // [END list_users]
-
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
 
     listUsers(config);
   }
 }
+// [END merchantapi_list_users]

@@ -13,7 +13,7 @@
 // limitations under the License.
 
 package shopping.merchant.samples.accounts.termsofservices.v1beta;
-
+// [START merchantapi_accept_termsofservice]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.shopping.merchant.accounts.v1beta.AcceptTermsOfServiceRequest;
@@ -25,7 +25,6 @@ import shopping.merchant.samples.utils.Config;
 /** This class demonstrates how to accept the TermsOfService agreement in a given account. */
 public class AcceptTermsOfServiceSample {
 
-  // [START accept_termsofservice]
   public static void acceptTermsOfService(String accountId, String tosVersion, String regionCode)
       throws Exception {
 
@@ -59,8 +58,6 @@ public class AcceptTermsOfServiceSample {
     }
   }
 
-  // [END accept_termsofservice]
-
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
 
@@ -73,3 +70,4 @@ public class AcceptTermsOfServiceSample {
     acceptTermsOfService(config.getAccountId().toString(), "VERSION_HERE", "REGION_CODE_HERE");
   }
 }
+// [END merchantapi_accept_termsofservice]

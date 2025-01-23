@@ -13,7 +13,7 @@
 // limitations under the License.
 
 package shopping.merchant.samples.datasources.v1beta;
-
+// [START merchantapi_delete_data_source]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.shopping.merchant.datasources.v1beta.DataSourceName;
@@ -26,7 +26,6 @@ import shopping.merchant.samples.utils.Config;
 /** This class demonstrates how to delete a datasource. */
 public class DeleteDataSourceSample {
 
-  // [START delete_data_source]
   public static void deleteDataSource(Config config, String dataSourceId) throws Exception {
     GoogleCredentials credential = new Authenticator().authenticate();
 
@@ -62,8 +61,6 @@ public class DeleteDataSourceSample {
     }
   }
 
-  // [END delete_data_source]
-
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
     // An ID automatically assigned to the datasource after creation by Google.
@@ -72,3 +69,4 @@ public class DeleteDataSourceSample {
     deleteDataSource(config, dataSourceId);
   }
 }
+// [END merchantapi_delete_data_source]

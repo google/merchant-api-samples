@@ -13,7 +13,7 @@
 // limitations under the License.
 
 package shopping.merchant.samples.products.v1beta;
-
+// [START merchantapi_get_product]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.shopping.merchant.products.v1beta.GetProductRequest;
@@ -26,7 +26,6 @@ import shopping.merchant.samples.utils.Config;
 /** This class demonstrates how to get a single product for a given Merchant Center account */
 public class GetProductSample {
 
-  // [START get_product]
   public static void getProduct(Config config, String product) throws Exception {
 
     // Obtains OAuth token based on the user's configuration.
@@ -55,8 +54,6 @@ public class GetProductSample {
     }
   }
 
-  // [END get_product]
-
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
     // The name of the `product`, returned after a `Product.insert` request. We recommend
@@ -66,3 +63,4 @@ public class GetProductSample {
     getProduct(config, product);
   }
 }
+// [END merchantapi_get_product]

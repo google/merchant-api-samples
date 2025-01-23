@@ -13,7 +13,7 @@
 // limitations under the License.
 
 package shopping.merchant.samples.accounts.shippingsettings.v1beta;
-
+// [START merchantapi_insert_shippingsettings]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.shopping.merchant.accounts.v1beta.DeliveryTime;
@@ -36,7 +36,6 @@ public class InsertShippingSettingsSample {
     return String.format("accounts/%s", accountId);
   }
 
-  // [START insert_shippingsettings]
   public static void insertShippingSettings(Config config) throws Exception {
 
     // Obtains OAuth token based on the user's configuration.
@@ -109,11 +108,10 @@ public class InsertShippingSettingsSample {
     }
   }
 
-  // [END insert_shippingsettings]
-
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
 
     insertShippingSettings(config);
   }
 }
+// [END merchantapi_insert_shippingsettings]

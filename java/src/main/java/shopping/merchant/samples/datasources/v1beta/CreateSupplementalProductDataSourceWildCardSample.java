@@ -13,7 +13,7 @@
 // limitations under the License.
 
 package shopping.merchant.samples.datasources.v1beta;
-
+// [START merchantapi_create_supplemental_product_data_source_wildcard]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.shopping.merchant.datasources.v1beta.CreateDataSourceRequest;
@@ -34,7 +34,6 @@ public class CreateSupplementalProductDataSourceWildCardSample {
     return String.format("accounts/%s", merchantId);
   }
 
-  // [START create_supplemental_product_data_source_wildcard]
   public static String createDataSource(Config config, String displayName) throws Exception {
     GoogleCredentials credential = new Authenticator().authenticate();
 
@@ -72,8 +71,6 @@ public class CreateSupplementalProductDataSourceWildCardSample {
     }
   }
 
-  // [END create_supplemental_product_data_source_wildcard]
-
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
     // The displayed datasource name in the Merchant Center UI.
@@ -82,3 +79,4 @@ public class CreateSupplementalProductDataSourceWildCardSample {
     createDataSource(config, displayName);
   }
 }
+// [END merchantapi_create_supplemental_product_data_source_wildcard]

@@ -13,7 +13,7 @@
 // limitations under the License.
 
 package shopping.merchant.samples.inventories.v1beta;
-
+// [START merchantapi_list_regional_inventories]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.shopping.merchant.inventories.v1beta.ListRegionalInventoriesRequest;
@@ -31,7 +31,6 @@ public class ListRegionalInventoriesSample {
     return String.format("accounts/%s/products/%s", accountId, productId);
   }
 
-  // [START list_regional_inventories]
   public static void listRegionalInventories(Config config, String productId) throws Exception {
     GoogleCredentials credential = new Authenticator().authenticate();
 
@@ -67,7 +66,6 @@ public class ListRegionalInventoriesSample {
       System.out.println(e);
     }
   }
-  // [END list_regional_inventories]
 
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
@@ -77,3 +75,4 @@ public class ListRegionalInventoriesSample {
     listRegionalInventories(config, productId);
   }
 }
+// [END merchantapi_list_regional_inventories]

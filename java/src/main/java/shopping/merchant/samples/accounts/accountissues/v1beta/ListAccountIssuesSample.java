@@ -14,6 +14,7 @@
 
 package shopping.merchant.samples.accounts.accountissues.v1beta;
 
+// [START merchantapi_list_account_issues]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.shopping.merchant.accounts.v1beta.AccountIssue;
@@ -33,7 +34,7 @@ import shopping.merchant.samples.utils.Config;
  */
 public class ListAccountIssuesSample {
 
-  // [START list_account_issues]
+  
   public static void listAccountIssues(Config config) throws Exception {
 
     // Obtains OAuth token based on the user's configuration.
@@ -77,10 +78,9 @@ public class ListAccountIssuesSample {
     }
   }
 
-  // [END list_account_issues]
-
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
     listAccountIssues(config);
   }
 }
+// [END merchantapi_list_account_issues]

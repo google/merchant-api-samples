@@ -13,7 +13,7 @@
 // limitations under the License.
 
 package shopping.merchant.samples.accounts.programs.v1beta;
-
+// [START merchantapi_disable_program]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.shopping.merchant.accounts.v1beta.DisableProgramRequest;
@@ -27,7 +27,6 @@ import shopping.merchant.samples.utils.Config;
 /** This class demonstrates how to disable a shopping program for a Merchant Center account. */
 public class DisableProgramSample {
 
-  // [START disable_program]
   public static void disableProgram(Config config, String program) throws Exception {
 
     // Obtains OAuth token based on the user's configuration.
@@ -64,8 +63,6 @@ public class DisableProgramSample {
     }
   }
 
-  // [END disable_program]
-
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
 
@@ -75,3 +72,4 @@ public class DisableProgramSample {
     disableProgram(config, program);
   }
 }
+// [END merchantapi_disable_program]

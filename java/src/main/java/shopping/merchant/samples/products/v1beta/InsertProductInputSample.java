@@ -13,7 +13,7 @@
 // limitations under the License.
 
 package shopping.merchant.samples.products.v1beta;
-
+// [START merchantapi_insert_product_input]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.shopping.merchant.products.v1beta.Attributes;
@@ -34,7 +34,6 @@ public class InsertProductInputSample {
     return String.format("accounts/%s", accountId);
   }
 
-  // [START insert_product_input]
   public static void insertProductInput(Config config, String dataSource) throws Exception {
 
     // Obtains OAuth token based on the user's configuration.
@@ -117,8 +116,6 @@ public class InsertProductInputSample {
     }
   }
 
-  // [END insert_product_input]
-
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
     // Identifies the data source that will own the product input.
@@ -127,3 +124,4 @@ public class InsertProductInputSample {
     insertProductInput(config, dataSource);
   }
 }
+// [END merchantapi_insert_product_input]

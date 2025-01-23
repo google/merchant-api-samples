@@ -13,7 +13,7 @@
 // limitations under the License.
 
 package shopping.merchant.samples.products.v1beta;
-
+// [START merchantapi_insert_product_input]
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
@@ -84,7 +84,6 @@ public class InsertProductInputAsyncSample {
         .build();
   }
 
-  // [START insert_product_input]
   public static void asyncInsertProductInput(Config config, String dataSource) throws Exception {
 
     // Obtains OAuth token based on the user's configuration.
@@ -152,8 +151,6 @@ public class InsertProductInputAsyncSample {
     }
   }
 
-  // [END insert_product_input]
-
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
     // Identifies the data source that will own the product input.
@@ -162,3 +159,4 @@ public class InsertProductInputAsyncSample {
     asyncInsertProductInput(config, dataSource);
   }
 }
+// [END merchantapi_insert_product_input]

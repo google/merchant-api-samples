@@ -13,7 +13,7 @@
 // limitations under the License.
 
 package shopping.merchant.samples.reviews.v1beta;
-
+// [START merchantapi_delete_product_review]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.shopping.merchant.reviews.v1beta.DeleteProductReviewRequest;
@@ -25,7 +25,6 @@ import shopping.merchant.samples.utils.Config;
 /** This class demonstrates how to delete a product review. */
 public class DeleteProductReviewSample {
 
-  // [START delete_product_review]
   public static void deleteProductReview(String accountId, String productReviewId)
       throws Exception {
     GoogleCredentials credential = new Authenticator().authenticate();
@@ -51,11 +50,10 @@ public class DeleteProductReviewSample {
     }
   }
 
-  // [END delete_product_review]
-
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
     String productReviewId = "YOUR_PRODUCT_REVIEW_ID";
     deleteProductReview(config.getAccountId().toString(), productReviewId);
   }
 }
+// [END merchantapi_delete_product_review]

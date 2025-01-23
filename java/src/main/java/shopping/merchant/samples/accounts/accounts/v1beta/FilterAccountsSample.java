@@ -13,7 +13,7 @@
 // limitations under the License.
 
 package shopping.merchant.samples.accounts.accounts.v1beta;
-
+// [START merchantapi_filter_accounts]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.shopping.merchant.accounts.v1beta.Account;
@@ -27,7 +27,6 @@ import shopping.merchant.samples.utils.Config;
 /** This class demonstrates how to filter the accounts the user making the request has access to. */
 public class FilterAccountsSample {
 
-  // [START filter_accounts]
   public static void filterAccounts(Config config) throws Exception {
 
     // Obtains OAuth token based on the user's configuration.
@@ -75,11 +74,10 @@ public class FilterAccountsSample {
     }
   }
 
-  // [END filter_accounts]
-
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
 
     filterAccounts(config);
   }
 }
+// [END merchantapi_filter_accounts]

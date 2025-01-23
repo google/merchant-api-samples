@@ -13,7 +13,7 @@
 // limitations under the License.
 
 package shopping.merchant.samples.reviews.v1beta;
-
+// [START merchantapi_insert_product_reviews_async]
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
@@ -38,7 +38,6 @@ import shopping.merchant.samples.utils.Config;
 /** This class demonstrates how to insert multiple product reviews asynchronously. */
 public class InsertProductReviewsAsyncSample {
 
-  // [START insert_product_reviews_async]
   private static String generateRandomString() {
     String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     Random random = new Random();
@@ -135,10 +134,9 @@ public class InsertProductReviewsAsyncSample {
     }
   }
 
-  // [END insert_product_reviews_async]
-
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
     asyncInsertProductReviews(config.getAccountId().toString(), "YOUR_DATA_SOURCE_ID");
   }
 }
+// [END merchantapi_insert_product_reviews_async]  

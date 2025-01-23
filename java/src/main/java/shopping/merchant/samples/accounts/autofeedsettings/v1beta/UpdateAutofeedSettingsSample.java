@@ -13,7 +13,7 @@
 // limitations under the License.
 
 package shopping.merchant.samples.accounts.autofeedsettings.v1beta;
-
+// [START merchantapi_update_autofeedsettings]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.protobuf.FieldMask;
@@ -28,7 +28,6 @@ import shopping.merchant.samples.utils.Config;
 /** This class demonstrates how to update AutofeedSettings to be enabled. */
 public class UpdateAutofeedSettingsSample {
 
-  // [START update_autofeedsettings]
   public static void updateAutofeedSettings(Config config) throws Exception {
 
     GoogleCredentials credential = new Authenticator().authenticate();
@@ -68,11 +67,10 @@ public class UpdateAutofeedSettingsSample {
     }
   }
 
-  // [END update_autofeedsettings]
-
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
 
     updateAutofeedSettings(config);
   }
 }
+// [END merchantapi_update_autofeedsettings]
