@@ -44,7 +44,7 @@ import shopping.merchant.samples.utils.Authenticator;
 import shopping.merchant.samples.utils.Config;
 
 /** This class demonstrates how to list the account issues of all the sub-accounts of an MCA. */
-public class ListMcaAccountIssuesSampleAsync {
+public class ListMcaAccountIssuesAsyncSample {
 
   /** Returns the list of issues for the given account. */
   private static ApiFuture<ListAccountIssuesResponse> getAccountIssues(
