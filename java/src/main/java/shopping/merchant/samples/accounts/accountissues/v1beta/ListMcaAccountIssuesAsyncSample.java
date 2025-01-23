@@ -14,8 +14,9 @@
 
 package shopping.merchant.samples.accounts.accountissues.v1beta;
 
+// [START merchantapi_list_account_issues_async]
 import static com.google.api.core.ApiFutures.transform;
-// [START merchantapi_list_account_issues]
+
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
@@ -167,4 +168,4 @@ public class ListMcaAccountIssuesSampleAsync {
     listAccountIssues(config);
   }
 }
-// [END merchantapi_list_account_issues]
+// [END merchantapi_list_account_issues_async]
