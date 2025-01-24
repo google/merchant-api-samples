@@ -14,7 +14,7 @@
 # limitations under the License.
 """A module to get a DataSource."""
 
-# [START merchantapi_get_data_source]
+# [START merchantapi_get_datasource]
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
 from google.shopping import merchant_datasources_v1beta
@@ -52,4 +52,4 @@ def get_data_source():
 if __name__ == "__main__":
   get_data_source()
 
-# [END merchantapi_get_data_source]
+# [END merchantapi_get_datasource]

@@ -85,4 +85,4 @@ public class UpdateBusinessInfoSample {
     updateBusinessInfo(config);
   }
 }
-// [END merchantapi_update_businessInfo]
+// [END merchantapi_update_businessinfo]

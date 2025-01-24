@@ -14,7 +14,7 @@
 # limitations under the License.
 """This class demonstrates how to insert a File primary product datasource."""
 
-# [START merchantapi_create_file_with_upload_type_primary_product_data_source]
+# [START merchantapi_create_file_fetch_primary_product_data_source]
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
 from google.shopping.merchant_datasources_v1beta import CreateDataSourceRequest
@@ -81,4 +81,4 @@ def create_file_with_upload_type_primary_product_data_source():
 if __name__ == "__main__":
   create_file_with_upload_type_primary_product_data_source()
 
-# [END merchantapi_create_file_with_upload_type_primary_product_data_source]
+# [END merchantapi_create_file_fetch_primary_product_data_source]

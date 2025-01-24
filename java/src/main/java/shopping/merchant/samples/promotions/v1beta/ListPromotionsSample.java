@@ -14,7 +14,7 @@
 // limitations under the License.
 
 package shopping.merchant.samples.promotions.v1beta;
-// [START merchantapi_list_promotions_sample]
+// [START merchantapi_list_promotions]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.shopping.merchant.promotions.v1beta.ListPromotionsRequest;
@@ -69,4 +69,4 @@ public class ListPromotionsSample {
     listPromotions(config.getAccountId().toString());
   }
 }
-// [END merchantapi_list_promotions_sample]
+// [END merchantapi_list_promotions]

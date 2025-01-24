@@ -19,7 +19,7 @@
 require_once __DIR__ . '/../../../vendor/autoload.php';
 require_once __DIR__ . '/../../Authentication/Authentication.php';
 require_once __DIR__ . '/../../Authentication/Config.php';
-// [START merchantapi_list_promotions_sample]
+// [START merchantapi_list_promotions]
 use Google\ApiCore\ApiException;
 use Google\Shopping\Merchant\Promotions\V1beta\ListPromotionsRequest;
 use Google\Shopping\Merchant\Promotions\V1beta\Promotion;
@@ -94,4 +94,4 @@ class ListPromotions
 // Run the script
 $sample = new ListPromotions();
 $sample->callSample();
-// [END merchantapi_list_promotions_sample]
+// [END merchantapi_list_promotions]
