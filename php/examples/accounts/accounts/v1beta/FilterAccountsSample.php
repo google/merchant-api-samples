@@ -82,4 +82,4 @@ class FilterAccounts
 
 $sample = new FilterAccounts();
 $sample->callSample();
-// [START merchantapi_filter_accounts]
+// [END merchantapi_filter_accounts]
