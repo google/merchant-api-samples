@@ -62,4 +62,4 @@ def list_sub_accounts():
 if __name__ == "__main__":
   list_sub_accounts()
 
-# [END listSubAccounts]
+# [END merchantapi_list_subaccounts]
