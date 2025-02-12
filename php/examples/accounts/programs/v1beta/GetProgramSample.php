@@ -14,9 +14,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-require_once __DIR__ . '/../../../vendor/autoload.php';
-require_once __DIR__ . '/../../Authentication/Authentication.php';
-require_once __DIR__ . '/../../Authentication/Config.php';
+require_once __DIR__ . '/../../../../vendor/autoload.php';
+require_once __DIR__ . '/../../../Authentication/Authentication.php';
+require_once __DIR__ . '/../../../Authentication/Config.php';
 // [START merchantapi_get_program]
 use Google\ApiCore\ApiException;
 use Google\Shopping\Merchant\Accounts\V1beta\Client\ProgramsServiceClient;
