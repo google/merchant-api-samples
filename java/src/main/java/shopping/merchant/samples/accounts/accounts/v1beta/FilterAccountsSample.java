@@ -46,8 +46,8 @@ public class FilterAccountsSample {
       String filter = "accountName = \"*store*\" AND relationship(providerId = 123)";
 
       // Filter for all subaccounts of account "123":
-      // String filter2 = "relationship(callerHasAccessToProvider() AND providerId = 123 AND
-      // service(type = \"ACCOUNT_AGGREGATION\"))";
+      // String filter2 = "relationship(providerId = 123 AND service(type =
+      // \"ACCOUNT_AGGREGATION\"))";
 
       // String filter3 = "relationship(service(handshakeState = \"APPROVED\" AND type =
       // \"ACCOUNT_MANAGEMENT\") AND providerId = 123)";

@@ -46,7 +46,7 @@ class FilterAccounts
             $filter = "accountName = \"*store*\" AND relationship(providerId = 123)";
 
             // Filter for all subaccounts of account "123":
-            // $filter = "relationship(callerHasAccessToProvider() AND providerId = 123 AND service(type = \"ACCOUNT_AGGREGATION\"))";
+            // $filter = "relationship(providerId = 123 AND service(type = \"ACCOUNT_AGGREGATION\"))";
 
             // $filter = "relationship(service(handshakeState = \"APPROVED\" AND type =
             // \"ACCOUNT_MANAGEMENT\") AND providerId = 123)";
