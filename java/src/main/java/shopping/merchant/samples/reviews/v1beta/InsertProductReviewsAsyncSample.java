@@ -50,6 +50,7 @@ public class InsertProductReviewsAsyncSample {
 
   // Returns a product review with a random ID.
   private static ProductReview createProductReview(String accountId) {
+    // MAKE SURE YOU PASS AN ACTUAL PRODUCT REVIEW ID HERE.
     String productReviewId = generateRandomString();
 
     ProductReviewAttributes attributes =
@@ -72,7 +73,6 @@ public class InsertProductReviewsAsyncSample {
             .build();
 
     return ProductReview.newBuilder()
-        .setName(String.format("accounts/%s/productReviews/%s", accountId, productReviewId))
         .setProductReviewId(productReviewId)
         .setAttributes(attributes)
         .build();
