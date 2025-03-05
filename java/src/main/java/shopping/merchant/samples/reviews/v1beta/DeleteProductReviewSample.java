@@ -13,6 +13,7 @@
 // limitations under the License.
 
 package shopping.merchant.samples.reviews.v1beta;
+
 // [START merchantapi_delete_product_review]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;

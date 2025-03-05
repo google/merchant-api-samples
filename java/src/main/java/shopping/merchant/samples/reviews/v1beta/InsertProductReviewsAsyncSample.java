@@ -13,6 +13,7 @@
 // limitations under the License.
 
 package shopping.merchant.samples.reviews.v1beta;
+
 // [START merchantapi_insert_product_reviews_async]
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
@@ -139,4 +140,4 @@ public class InsertProductReviewsAsyncSample {
     asyncInsertProductReviews(config.getAccountId().toString(), "YOUR_DATA_SOURCE_ID");
   }
 }
-// [END merchantapi_insert_product_reviews_async]  
+// [END merchantapi_insert_product_reviews_async]
