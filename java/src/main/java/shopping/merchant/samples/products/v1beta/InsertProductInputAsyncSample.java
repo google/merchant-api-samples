@@ -13,6 +13,7 @@
 // limitations under the License.
 
 package shopping.merchant.samples.products.v1beta;
+
 // [START merchantapi_insert_product_input_async]
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;

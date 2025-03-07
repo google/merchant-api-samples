@@ -40,7 +40,7 @@ def list_promotions():
   try:
     print("Sending list promotions request:")
     response = client.list_promotions(request=request)
-    # Counts the promotions
+
     count = 0
 
     # Iterates over all returned promotions and prints them.

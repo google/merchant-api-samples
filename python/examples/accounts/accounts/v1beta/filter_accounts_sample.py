@@ -30,7 +30,7 @@ def filter_accounts():
   # Create a client.
   client = AccountsServiceClient(credentials=credentials)
 
-  # Filter for accounts with display names containing "store" and a provider with the ID "123":
+  # Create the filter string.
   filter_string = 'accountName = "*store*" AND relationship(providerId = 123)'
 
   # Create the request.
