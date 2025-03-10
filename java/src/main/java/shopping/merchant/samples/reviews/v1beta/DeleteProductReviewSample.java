@@ -53,6 +53,7 @@ public class DeleteProductReviewSample {
 
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
+    //Modify below with a valid Product Review ID
     String productReviewId = "YOUR_PRODUCT_REVIEW_ID";
     deleteProductReview(config.getAccountId().toString(), productReviewId);
   }
