@@ -31,8 +31,7 @@ import shopping.merchant.samples.utils.Config;
  */
 public class GetNotificationSubscriptionSample {
 
-  public static NotificationSubscription getNotificationSubscription(Config config)
-      throws Exception {
+  public static void getNotificationSubscription(Config config) throws Exception {
 
     // Obtains OAuth token based on the user's configuration.
     GoogleCredentials credential = new Authenticator().authenticate();
@@ -69,7 +68,6 @@ public class GetNotificationSubscriptionSample {
 
       System.out.println("Retrieved Notification Subscription below:");
       System.out.println(response);
-      return response;
     } catch (Exception e) {
       System.out.println(e);
     }
