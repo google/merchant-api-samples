@@ -134,6 +134,11 @@
     </dependency>
     <dependency>
       <groupId>com.google.shopping</groupId>
+      <artifactId>google-shopping-merchant-reports</artifactId>
+      <version>0.35.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.shopping</groupId>
       <artifactId>google-shopping-merchant-reviews</artifactId>
       <version>0.2.0</version>
     </dependency>
