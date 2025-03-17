@@ -5,6 +5,7 @@ google-shopping-merchant-notifications==0.1.6
 google-shopping-merchant-products==0.2.0
 google-shopping-merchant-promotions==0.1.5
 google-shopping-merchant-quota==0.1.6
+google-shopping-merchant-reports==0.1.13
 google-auth-oauthlib
 google-auth
 googleapis-common-protos
