@@ -14,7 +14,7 @@
 
 package shopping.merchant.samples.quota.v1beta;
 
-// [START merchantapi_list_quota_sample]
+// [START merchantapi_list_quota]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.shopping.merchant.quota.v1beta.ListQuotaGroupsRequest;
@@ -68,4 +68,4 @@ public class ListQuotaSample {
     listQuotas(config.getAccountId().toString());
   }
 }
-// [END merchantapi_list_quota_sample]
+// [END merchantapi_list_quota]
