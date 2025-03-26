@@ -63,7 +63,8 @@ Just make sure to enable the Merchant API in the API Console.
          credentials](https://console.developers.google.com/apis/credentials) to
          the file `client-secrets.json` in the configuration subdirectory.
 
-        **Note:** The samples assume that you are using an OAuth2 client ID that
+        > [!NOTE]
+        > The samples assume that you are using an OAuth2 client ID that
         can use a loopback IP address to retrieve tokens. If you are not or are
         unsure that you are, please visit the
         [OAuth2 for Mobile & Desktop Apps](https://developers.google.com/identity/protocols/OAuth2InstalledApp)

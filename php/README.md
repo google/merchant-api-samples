@@ -50,11 +50,11 @@ local machine. Once you have the `token.json` file or if you're using a service
 account to authenticate, proceed to the next step.
 
 1. Run one of the following samples on the command line from the root directory.
-Below is an example of how to run the `ListProducts.php` code
+Below is an example of how to run the `ListProductsSample.php` code
 sample file.
 
 ```
-php examples/products/v1beta/ListProducts.php
+php examples/products/v1beta/ListProductsSample.php
 ```
 
 1. Examine your shell output, be inspired and start hacking an amazing new app!

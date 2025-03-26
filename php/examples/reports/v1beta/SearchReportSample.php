@@ -68,10 +68,10 @@ class SearchReportSample
             . " FROM product_performance_view"
             . " WHERE date BETWEEN '2025-03-03' AND '2025-03-10'";
 
-        // String productPerformanceViewQuery = "SELECT offer_id, clicks FROM product_performance_view
+        // $productPerformanceViewQuery = "SELECT offer_id, clicks FROM product_performance_view
         // WHERE clicks > 100 AND marketing_method = 'ADS' AND date DURING LAST_30_DAYS";
 
-        // String bestSellersProductsViewQuery = "SELECT title, brand, categoryL1 FROM
+        // $bestSellersProductsViewQuery = "SELECT title, brand, category_l1 FROM
         // best_sellers_product_cluster_view WHERE date BETWEEN '2024-03-10' AND '2025-03-10'";
 
         // Create the search report request.
