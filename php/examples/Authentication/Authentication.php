@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -142,14 +142,18 @@ class Authentication
             // Decode the JSON file.
             $json_data = json_decode($json, true);
 
+            $path = 'web';
             $redirectUrl = str_replace('tcp:', 'http:', $socket->getAddress());
+            if(is_null($json_data[$path])){
+                $path = 'installed';
+            }
             $oauth2 = new OAuth2(
                 [
-                    'clientId' => $json_data['web']['client_id'],
-                    'clientSecret' => $json_data['web']['client_secret'],
-                    'authorizationUri' => $json_data['web']['auth_uri'],
+                    'clientId' => $json_data[$path]['client_id'],
+                    'clientSecret' => $json_data[$path]['client_secret'],
+                    'authorizationUri' => $json_data[$path]['auth_uri'],
                     'redirectUri' => $redirectUrl,
-                    'tokenCredentialUri' => $json_data['web']['token_uri'],
+                    'tokenCredentialUri' => $json_data[$path]['token_uri'],
                     'scope' => self::SCOPE,
                     // Create a 'state' token to prevent request forgery. See
                     // https://developers.google.com/identity/protocols/OpenIDConnect#createxsrftoken
@@ -203,10 +207,13 @@ class Authentication
                          . 'your new refresh token to generate an access token and '
                          . 'succesfully authenticate your request.'
                          . PHP_EOL;
-
+                   $path = 'web';
+                   if(is_null($json_data[$path])){
+                        $path = 'installed';
+                    }
                     $token_file_credentials = [
-                        'client_id' => $json_data['web']['client_id'],
-                        'client_secret' => $json_data['web']['client_secret'],
+                        'client_id' => $json_data[$path]['client_id'],
+                        'client_secret' => $json_data[$path]['client_secret'],
                         'refresh_token' => $refreshToken
                     ];
 
@@ -241,3 +248,4 @@ class Authentication
         }
     }
 }
+
