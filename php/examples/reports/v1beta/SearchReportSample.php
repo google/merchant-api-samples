@@ -61,24 +61,84 @@ class SearchReportSample
         // The parent has the format: accounts/{accountId}
         $parent = self::getParent($config['accountId']);
 
-        // Change the query below. Documentation can be found at
+        // Uncomment the desired query from below. Documentation can be found at
         // https://developers.google.com/merchant/api/guides/reports/query-language
-        $productPerformanceViewQuery =
-            "SELECT offer_id, clicks, impressions"
-            . " FROM product_performance_view"
-            . " WHERE date BETWEEN '2025-03-03' AND '2025-03-10'";
+        // The query below is an example of a query for the product_view.
+        $query =
+            "SELECT offer_id,"
+                . "id,"
+                . "price,"
+                . "gtin,"
+                . "item_issues,"
+                . "channel,"
+                . "language_code,"
+                . "feed_label,"
+                . "title,"
+                . "brand,"
+                . "category_l1,"
+                . "product_type_l1,"
+                . "availability,"
+                . "shipping_label,"
+                . "thumbnail_link,"
+                . "click_potential"
+                . " FROM product_view"; 
 
-        // $productPerformanceViewQuery = "SELECT offer_id, clicks FROM product_performance_view
-        // WHERE clicks > 100 AND marketing_method = 'ADS' AND date DURING LAST_30_DAYS";
+      /*
+      // The query below is an example of a query for the price_competitiveness_product_view.
+      $query =
+            "SELECT offer_id,"
+                . "id,"
+                . "benchmark_price,"
+                . "report_country_code,"
+                . "price,"
+                . "title,"
+                . "brand,"
+                . "category_l1,"
+                . "product_type_l1"
+                . " FROM price_competitiveness_product_view"
+                . " WHERE date BETWEEN '2023-03-03' AND '2025-03-10'"; */
+      /*
+      // The query below is an example of a query for the price_insights_product_view.
+      $query =
+            "SELECT offer_id,"
+                . "id,"
+                . "suggested_price,"
+                . "price,"
+                . "effectiveness,"
+                . "title,"
+                . "brand,"
+                . "category_l1,"
+                . "product_type_l1,"
+                . "predicted_impressions_change_fraction,"
+                . "predicted_clicks_change_fraction,"
+                . "predicted_conversions_change_fraction"
+                . " FROM price_insights_product_view"; */
 
-        // $bestSellersProductsViewQuery = "SELECT title, brand, category_l1 FROM
-        // best_sellers_product_cluster_view WHERE date BETWEEN '2024-03-10' AND '2025-03-10'";
+        /*
+        // The query below is an example of a query for the product_performance_view.
+        $query =
+            "SELECT offer_id,"
+                . "conversion_value,"
+                . "marketing_method,"
+                . "customer_country_code,"
+                . "title,"
+                . "brand,"
+                . "category_l1,"
+                . "product_type_l1,"
+                . "custom_label0,"
+                . "clicks,"
+                . "impressions,"
+                . "click_through_rate,"
+                . "conversions,"
+                . "conversion_rate"
+                . " FROM product_performance_view"
+                . " WHERE date BETWEEN '2023-03-03' AND '2025-03-10'"; */
 
         // Create the search report request.
         $request = new SearchRequest(
             [
                 'parent' => $parent,
-                'query' => $productPerformanceViewQuery,
+                'query' => $query,
             ]
         );
 
