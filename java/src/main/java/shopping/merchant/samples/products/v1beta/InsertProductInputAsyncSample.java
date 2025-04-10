@@ -71,7 +71,7 @@ public class InsertProductInputAsyncSample {
             .setAvailability("in stock")
             .setCondition("new")
             .setGoogleProductCategory("Media > Books")
-            .setGtin(0, "9780007350896")
+            .addGtin("9780007350896")
             .addShipping(shipping)
             .addShipping(shipping2)
             .build();
