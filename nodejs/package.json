@@ -14,7 +14,7 @@
     "@google-shopping/datasources": "^0.5.0",
     "@google-shopping/products": "^0.3.0",
     "google-auth-library": "*",
-    "open": "*",
+    "open": ">=6.0.0",
     "server-destroy": "^1.0.1"
 }
 }
