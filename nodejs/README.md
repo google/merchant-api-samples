@@ -1,4 +1,4 @@
-# Google Merchant API for Shopping Node.js Samples
+# Google Merchant API Node.js Samples
 
 This is a set of simple samples written in Node.js, which provide a minimal
 example of Google Shopping integration within a command line application.

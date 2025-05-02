@@ -1,4 +1,4 @@
-# Google Merchant API for Shopping Python Samples
+# Google Merchant API Python Samples
 
 This is a set of simple samples written in Python, which provide a minimal
 example of Google Shopping integration within a command line application.

@@ -1,4 +1,4 @@
-# Google Merchant API for Shopping PHP Samples
+# Google Merchant API PHP Samples
 
 This is a set of simple samples written in PHP, which provide a minimal
 example of Google Shopping integration within a command line application.
