@@ -41,9 +41,11 @@ async function filterDisapprovedProducts(config) {
   // Create the ProductsServiceClient.
   const productsClient = new ProductsServiceClient(options);
 
-  // Construct the request object for listing products.
+  // Construct the request object for listing products. Set the page size to
+  // the maximum value.
   const request = {
     parent: parent,
+    pageSize: 250
   };
 
   console.log('Sending list products request:');

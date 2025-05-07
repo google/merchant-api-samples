@@ -50,7 +50,12 @@ public class ListProductsSample {
         ProductsServiceClient.create(productsServiceSettings)) {
 
       // The parent has the format: accounts/{account}
-      ListProductsRequest request = ListProductsRequest.newBuilder().setParent(parent).build();
+      // Page size is set to the maximum value. If you are returned more
+      // responses than your page size, this code will automatically
+      // re-call the service with the `pageToken` until all responses
+      // are returned.
+      ListProductsRequest request =
+          ListProductsRequest.newBuilder().setParent(parent).setPageSize(250).build();
 
       System.out.println("Sending list products request:");
       ListProductsPagedResponse response = productsServiceClient.listProducts(request);

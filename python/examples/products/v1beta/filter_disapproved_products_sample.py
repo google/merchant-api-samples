@@ -34,8 +34,10 @@ def filter_disapproved_products():
       credentials=credentials
   )
 
-  # Creates the request.
-  request = merchant_products_v1beta.ListProductsRequest(parent=_PARENT)
+  # Creates the request. Set the page size to the maximum value.
+  request = merchant_products_v1beta.ListProductsRequest(
+      parent=_PARENT, page_size=250
+  )
 
   # Makes the request and catches and prints any error messages.
   try:

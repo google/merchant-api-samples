@@ -66,16 +66,14 @@ class ListProducts
         $parent = self::getParent($config['accountId']);
 
         // Creates the request.
-        $request = new ListProductsRequest(['parent' => $parent]);
+        // Page size is set to the maximum value. If you are returned more
+        // responses than your page size, this code will automatically
+        // re-call the service with the `pageToken` until all responses
+        // are returned.
+        $request = new ListProductsRequest(['parent' => $parent, 'page_size' => 250]);
 
         // Calls the API and catches and prints any network failures/errors.
         try {
-
-            // Page size is set to the default value. If you are returned more
-            // responses than your page size, this code will automatically
-            // re-call the service with the `pageToken` until all responses
-            // are returned.
-            $parameters = ['pageSize' => 25000];
 
             echo "Sending list products request:\n";
             /**

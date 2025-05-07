@@ -42,9 +42,10 @@ async function main() {
     // Create client
     const productsClient = new ProductsServiceClient(options);
 
-    // Construct request
+    // Construct request. Set the page size to the maximum value.
     const request = {
-      parent
+      parent: parent,
+      pageSize: 250
     };
 
     // Run request

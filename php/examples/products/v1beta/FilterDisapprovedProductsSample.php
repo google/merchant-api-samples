@@ -70,8 +70,8 @@ class FilterDisapprovedProducts
         // Creates parent to identify the account from which to list all products.
         $parent = self::getParent($config['accountId']);
 
-        // Creates the request.
-        $request = new ListProductsRequest(['parent' => $parent]);
+        // Creates the request. Set the page size to the maximum value.
+        $request = new ListProductsRequest(['parent' => $parent, 'page_size' => 250]);
 
         // Calls the API and catches and prints any network failures/errors.
         try {

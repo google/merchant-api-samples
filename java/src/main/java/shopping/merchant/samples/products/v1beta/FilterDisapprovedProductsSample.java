@@ -60,7 +60,8 @@ public class FilterDisapprovedProductsSample {
         ProductsServiceClient.create(productsServiceSettings)) {
 
       // The parent has the format: accounts/{account}
-      ListProductsRequest request = ListProductsRequest.newBuilder().setParent(parent).build();
+      ListProductsRequest request =
+          ListProductsRequest.newBuilder().setParent(parent).setPageSize(250).build();
 
       System.out.println("Sending list products request:");
       System.out.println("Will filter through response for disapproved products.");
