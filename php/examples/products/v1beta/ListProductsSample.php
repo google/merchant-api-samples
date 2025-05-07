@@ -82,7 +82,7 @@ class ListProducts
              *
              * @var PagedListResponse $response
              */
-            $response = $productsServiceClient->listProducts($request, $parameters);
+            $response = $productsServiceClient->listProducts($request);
 
             /**
              * Loop through every product and print out its data.
