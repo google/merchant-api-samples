@@ -1,12 +1,12 @@
 <?php
 /**
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -24,23 +24,33 @@ use Google\Shopping\Merchant\DataSources\V1beta\Client\DataSourcesServiceClient;
 use Google\Shopping\Merchant\DataSources\V1beta\CreateDataSourceRequest;
 use Google\Shopping\Merchant\DataSources\V1beta\DataSource;
 use Google\Shopping\Merchant\DataSources\V1beta\PrimaryProductDataSource;
-use Google\Shopping\Merchant\DataSources\V1beta\PrimaryProductDataSource\Channel;
+use Google\Shopping\Type\Destination\DestinationEnum;
 
 /**
- * Sample class to create a primary product datasource for the "en" and "GB"
+ * This class demonstrates how to create a primary product datasource for the "en" and "GB"
  * `feedLabel` and `contentLanguage` combination.
  */
 class CreatePrimaryProductDataSourceSample
 {
-    // [START CreatePrimaryProductDataSource]
+    /**
+     * A helper function to create the parent string for DataSource resources.
+     *
+     * @param string $accountId The Merchant Center account ID.
+     * @return string The parent resource name in the format `accounts/{account_id}`.
+     */
+    private static function getParent(string $accountId): string
+    {
+        return sprintf("accounts/%s", $accountId);
+    }
+
     /**
      * Creates a new primary product data source.
      *
-     * @param int    $merchantId The Merchant Center account ID.
-     * @param string $displayName The displayed data source name in the Merchant Center UI.
-     * @return string The name of the newly created data source.
+     * @param array $config The configuration array containing the account ID.
+     * @param string $displayName The display name for the new data source.
+     * @return void
      */
-    function createDataSource(int $merchantId, string $displayName): string
+    public static function createDataSourceSample(array $config, string $displayName): void
     {
         // Gets the OAuth credentials to make the request.
         $credentials = Authentication::useServiceAccountOrTokenFile();
@@ -48,60 +58,75 @@ class CreatePrimaryProductDataSourceSample
         // Creates options config containing credentials for the client to use.
         $options = ['credentials' => $credentials];
 
-        // Creates a client.
+        // Creates a DataSourcesServiceClient.
         $dataSourcesServiceClient = new DataSourcesServiceClient($options);
 
-        // Format: accounts/{merchantId}
-        $parent = sprintf('accounts/%s', $merchantId);
+        // Constructs the parent resource name from the account ID.
+        $parent = self::getParent($config['accountId']);
 
-        // The type of data that this datasource will receive.
-        $primaryProductDataSource = (new PrimaryProductDataSource())
-            // Channel can be "ONLINE_PRODUCTS" or "LOCAL_PRODUCTS" or "PRODUCTS" .
-            // While accepted, datasources with channel "products" representing unified products
+        // Defines the primary product data source specific settings.
+        $primaryProductDataSource = new PrimaryProductDataSource([
+            // Channel can be "ONLINE_PRODUCTS" or "LOCAL_PRODUCTS" or "PRODUCTS".
+            // While accepted, datasources with channel "PRODUCTS" representing unified products
             // currently cannot be used with the Products bundle.
-            ->setChannel(Channel::ONLINE_PRODUCTS)
-            ->setCountries(['GB'])
-            ->setContentLanguage('en')
-            ->setFeedLabel('GB');
+            'channel' => PrimaryProductDataSource\Channel::ONLINE_PRODUCTS,
+            'countries' => ['GB'],
+            'content_language' => 'en',
+            'feed_label' => 'GB',
+            // The destinations do not necessarily have to be explicitly listed in which case the
+            // default enabled destinations will be used.
+            'destinations' => [
+                new PrimaryProductDataSource\Destination([
+                    'destination' => DestinationEnum::SHOPPING_ADS,
+                    'state' => PrimaryProductDataSource\Destination\State::ENABLED
+                ]),
+                new PrimaryProductDataSource\Destination([
+                    'destination' => DestinationEnum::FREE_LISTINGS,
+                    'state' => PrimaryProductDataSource\Destination\State::DISABLED
+                ])
+            ]
+        ]);
 
-        // Creates the data source.
-        $dataSource = (new DataSource())
-            ->setDisplayName($displayName)
-            ->setPrimaryProductDataSource($primaryProductDataSource);
+        // Creates the DataSource object.
+        $dataSource = new DataSource([
+            'display_name' => $displayName,
+            'primary_product_data_source' => $primaryProductDataSource
+        ]);
 
-        // Creates the request.
-        $request = (new CreateDataSourceRequest())
-            ->setParent($parent)
-            ->setDataSource($dataSource);
+        // Prepares the request message to create the data source.
+        $request = new CreateDataSourceRequest([
+            'parent' => $parent,
+            'data_source' => $dataSource
+        ]);
 
         // Calls the API and catches and prints any network failures/errors.
         try {
-            print('Sending Create Primary Product DataSource request' . PHP_EOL);
+            print "Sending Create PrimaryProduct DataSource request\n";
+            // Issues the create data source request.
             $response = $dataSourcesServiceClient->createDataSource($request);
-            print('Created DataSource Name below' . PHP_EOL);
-            print($response->getName() . PHP_EOL);
-            return $response->getName();
-        } catch (ApiException $ex) {
-            print('Call failed with message: ' . $ex->getMessage() . PHP_EOL);
-            exit(1);
+            print("Created DataSource below\n");
+            print($response->serializeToJsonString() . PHP_EOL);
+        } catch (ApiException $e) {
+            printf("ApiException was thrown: %s\n", $e->getMessage());
         }
     }
 
-    // Helper to execute the sample.
-    function callSample(): void
+    /**
+     * Helper to execute the sample.
+     *
+     * @return void
+     */
+    public function callSample(): void
     {
         $config = Config::generateConfig();
-        // The Merchant Center Account ID.
-        $merchantId = $config['accountId'];
-
         // The displayed datasource name in the Merchant Center UI.
-        $displayName = 'British Primary Product Data';
+        $displayName = "British Primary Product Data";
 
-        $this->createDataSource($merchantId, $displayName);
+        self::createDataSourceSample($config, $displayName);
     }
 }
 
-
+// Run the script.
 $sample = new CreatePrimaryProductDataSourceSample();
 $sample->callSample();
 // [END merchantapi_create_primary_product_data_source]
