@@ -36,7 +36,7 @@ def search_report(account_id):
   parent = f"accounts/{account_id}"
 
   # Uncomment the desired query from below. Documentation can be found at
-  # https://developers.google.com/merchant/api/guides/reports/query-language
+  # https://developers.google.com/merchant/api/reference/rest/reports_v1beta/accounts.reports#ReportRow
   # The query below is an example of a query for the product_view.
   query = (
       "SELECT offer_id,"

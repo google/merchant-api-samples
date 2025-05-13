@@ -43,7 +43,7 @@ public class SearchReportSample {
       String parent = String.format("accounts/%s", accountId);
 
       // Uncomment the desired query from below. Documentation can be found at
-      // https://developers.google.com/merchant/api/guides/reports/query-language
+      // https://developers.google.com/merchant/api/reference/rest/reports_v1beta/accounts.reports#ReportRow
       // The query below is an example of a query for the product_view.
       String query =
           "SELECT offer_id,"
