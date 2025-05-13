@@ -64,7 +64,7 @@ public class RenderProductIssuesSample {
                       .build())
               .build();
 
-      System.out.println("Sending RenderAccountIssues request");
+      System.out.println("Sending RenderProductIssues request");
 
       RenderProductIssuesResponse response = client.renderProductIssues(request);
 
@@ -96,7 +96,7 @@ public class RenderProductIssuesSample {
         UserInputActionRenderingOption.REDIRECT_TO_MERCHANT_CENTER;
     // An ID assigned to a product by Google. In the format
     // channel~contentLanguage~feedLabel~offerId
-    String productId = "online~en~SK~p-b-id";
+    String productId = "online~en~label~sku123";
 
     renderProductIssuesSample(config, productId, languageCode, timeZone, inputActionOption);
   }
