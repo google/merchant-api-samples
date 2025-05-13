@@ -28,6 +28,8 @@ import com.google.shopping.merchant.ordertracking.v1beta.OrderTrackingSignalsSer
 import com.google.shopping.type.Price;
 import com.google.type.DateTime;
 import com.google.type.TimeZone;
+import java.util.Arrays;
+import java.util.List;
 import shopping.merchant.samples.utils.Authenticator;
 import shopping.merchant.samples.utils.Config;
 
@@ -37,7 +39,8 @@ public class CreateOrderTrackingSignalSample {
     return String.format("accounts/%s", accountId);
   }
 
-  private static void createOrderTrackingSignal(Config config) throws Exception {
+  private static void createOrderTrackingSignal(Config config, List<String> productIds)
+      throws Exception {
     GoogleCredentials credentials = new Authenticator().authenticate();
     OrderTrackingSignalsServiceSettings orderTrackingSignalsServiceSettings =
         OrderTrackingSignalsServiceSettings.newBuilder()
@@ -45,6 +48,9 @@ public class CreateOrderTrackingSignalSample {
             .build();
 
     String parent = getParent(config.getAccountId().toString());
+
+    String firstProductId = productIds.get(0);
+    String secondProductId = productIds.get(1);
 
     DateTime orderCreatedTime =
         DateTime.newBuilder()
@@ -133,7 +139,7 @@ public class CreateOrderTrackingSignalSample {
                   OrderTrackingSignal.newBuilder()
                       // Unique order ID across all merchants orders.
                       .setOrderId("unique_order_id443455")
-                      // If sending signal on behalf of another mercahtnt use setMerchantId to
+                      // If sending signal on behalf of another merchant use setMerchantId to
                       // indicate the merchant.
                       // .setMerchantId(123L)
                       .setOrderCreatedTime(orderCreatedTime)
@@ -144,16 +150,20 @@ public class CreateOrderTrackingSignalSample {
                       .addLineItems(
                           LineItemDetails.newBuilder()
                               .setQuantity(2)
-                              .setProductId("channel~contentLanguage~feedLabel~offerId1")
+                              .setProductId(firstProductId)
                               .setLineItemId("item1"))
                       .addLineItems(
                           LineItemDetails.newBuilder()
                               .setQuantity(1)
-                              .setProductId("channel~contentLanguage~feedLabel~offerId2")
-                              .setGtin("001234567890")
+                              .setProductId(secondProductId)
+                              .setLineItemId("item2")
+                              // Optional fields used to identify the product when product ID is not
+                              // sufficient.
                               .setMpn("00638HAY")
                               .setProductTitle("Tshirt-small-blue")
-                              .setLineItemId("item2"))
+                              .setBrand("Brand1")
+                              // Any GTIN associated with the product.
+                              .setGtin("001234567890"))
                       // Mapping of line items to shipments.
                       .addShipmentLineItemMapping(
                           ShipmentLineItemMapping.newBuilder()
@@ -193,7 +203,12 @@ public class CreateOrderTrackingSignalSample {
 
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
-    createOrderTrackingSignal(config);
+    // All products in the order. Replace with actual products in the order. Be sure to include all
+    // products in the order.
+    String productId1 = "online~en~us~sku123";
+    String productId2 = "online~en~us~skuabc";
+    List<String> productIds = Arrays.asList(productId1, productId2);
+    createOrderTrackingSignal(config, productIds);
   }
 }
 // [END merchantapi_create_order_tracking_signal]
