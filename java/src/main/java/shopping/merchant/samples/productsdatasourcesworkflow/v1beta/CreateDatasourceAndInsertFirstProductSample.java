@@ -28,11 +28,7 @@ public class CreateDatasourceAndInsertFirstProductSample {
     // and store its `name` to use to insert the product.
     String dataSourceName =
         CreatePrimaryProductDataSourceWildCardSample.createDataSource(config, displayName);
-
-    System.out.println(
-        "Waiting for 300 seconds so the new datasource can propagate in the system...");
-    Thread.sleep(300000); // 300,000 milliseconds = 300 seconds
-
+    // Products can be inserted immediately after the datasource is created.
     InsertProductInputSample.insertProductInput(config, dataSourceName);
   }
 

@@ -109,8 +109,8 @@ public class InsertProductInputAsyncSample {
         InsertProductInputRequest request =
             InsertProductInputRequest.newBuilder()
                 .setParent(parent)
-                // You can only insert products into datasource types of Input "API" and "FILE", and
-                // of Type "Primary" or "Supplemental."
+                // You can only insert products into datasource types of Input "API", and of Type
+                // "Primary" or "Supplemental."
                 // This field takes the `name` field of the datasource.
                 .setDataSource(dataSource)
                 // If this product is already owned by another datasource, when re-inserting, the
