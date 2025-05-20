@@ -21,7 +21,12 @@ from google.shopping.merchant_accounts_v1beta import ListAccountsRequest
 
 
 def list_accounts():
-  """Lists all the accounts the user making the request has access to."""
+  """Lists all the accounts the user making the request has access to.
+
+  Please note that "list_accounts" method charge API quota on behalf of each
+  specific user running the request. "list_sub_accounts" method is more suitable
+  to list large number of sub-accounts.
+  """
 
   # Get OAuth credentials.
   credentials = generate_user_credentials.main()

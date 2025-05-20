@@ -25,6 +25,9 @@ use Google\Shopping\Merchant\Accounts\V1beta\ListAccountsRequest;
 
 /**
  * This class demonstrates how to list all the accounts the user making the request has access to.
+ * Please note that "listAccounts" method charge API quota on behalf of each specific 
+ * user running the request. "listSubAccounts" method is more suitable to list 
+ * large number of sub-accounts.
  */
 class ListAccounts
 {

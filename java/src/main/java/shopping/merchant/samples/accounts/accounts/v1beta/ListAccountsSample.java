@@ -12,11 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// THIS ONE GETS A CANCELED ERROR STRANGELY ENOUGH - DEBUG:
-// com.google.api.gax.rpc.CancelledException: io.grpc.StatusRuntimeException: CANCELLED: Failed to
-// read message.
-
 package shopping.merchant.samples.accounts.accounts.v1beta;
+
 // [START merchantapi_list_accounts]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
@@ -30,6 +27,8 @@ import shopping.merchant.samples.utils.Config;
 
 /**
  * This class demonstrates how to list all the accounts the user making the request has access to.
+ * Please note that "listAccounts" method charge API quota on behalf of each specific user running the
+ * request. "listSubAccounts" method is more suitable to list large number of sub-accounts.
  */
 public class ListAccountsSample {
 
