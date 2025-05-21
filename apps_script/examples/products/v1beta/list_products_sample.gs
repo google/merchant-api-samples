@@ -20,7 +20,7 @@
 function productList() {
   // IMPORTANT:
   // Enable the Merchant API Products Bundle Advanced Service and call it
-  // "Products"
+  // "MerchantApiProducts"
 
   // Replace this with your Merchant Center ID.
   const accountId = '<MERCHANT_CENTER_ID>';
@@ -38,7 +38,7 @@ function productList() {
     // Call the Products.list API method. Use the pageToken to iterate through
     // all pages of results.
     do {
-      response = Products.Accounts.Products.list(parent, {pageToken, pageSize});
+      response = MerchantApiProducts.Accounts.Products.list(parent, {pageToken, pageSize});
       console.log(response);
       pageToken = response.nextPageToken;
     } while (pageToken); // Exits when there is no next page token.

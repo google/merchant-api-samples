@@ -20,7 +20,7 @@
 function listDataSources() {
   // IMPORTANT:
   // Enable the Merchant API DataSources Bundle Advanced Service and call it
-  // "DataSources"
+  // "MerchantApiDataSources"
 
   // Replace this with your Merchant Center ID.
   const accountId = '<MERCHANT_CENTER_ID>';
@@ -37,7 +37,7 @@ function listDataSources() {
     // all pages of results.
     do {
       response =
-          DataSources.Accounts.DataSources.list(parent, {pageSize, pageToken});
+          MerchantApiDataSources.Accounts.DataSources.list(parent, {pageSize, pageToken});
       for (const datasource of response.dataSources) {
         dataSources.push(datasource);
         if (datasource.primaryProductDataSource) {

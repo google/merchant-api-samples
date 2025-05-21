@@ -19,7 +19,7 @@
 function listAccountIssues() {
   // IMPORTANT:
   // Enable the Merchant API Accounts Bundle Advanced Service and call it
-  // "Accounts"
+  // "MerchantApiAccounts"
 
   // Replace this with your Merchant Center ID.
   const accountId = "<MERCHANT_CENTER_ID>";
@@ -36,7 +36,7 @@ function listAccountIssues() {
     // Call the Account.Issues.list API method. Use the pageToken to iterate
     // through all pages of results.
     do {
-      response = Accounts.Accounts.Issues.list(parent, {pageSize, pageToken});
+      response = MerchantApiAccounts.Accounts.Issues.list(parent, {pageSize, pageToken});
       for (const issue of response.accountIssues) {
         console.log(issue);
         count++;

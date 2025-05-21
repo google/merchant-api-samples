@@ -20,7 +20,7 @@
 function productInsert() {
   // IMPORTANT:
   // Enable the Merchant API Products Bundle Advanced Service and call it
-  // "Products"
+  // "MerchantApiProducts"
 
   // Replace this with your Merchant Center ID.
   const accountId = 'INSERT_MERCHANT_ID';
@@ -56,7 +56,7 @@ function productInsert() {
   try {
     console.log('Sending insert ProductInput request');
     // Call the ProductInputs.insert API method.
-    response = Products.Accounts.ProductInputs.insert(
+    response = MerchantApiProducts.Accounts.ProductInputs.insert(
         productResource, parent, {dataSource});
     // RESTful insert returns the JSON object as a response.
     console.log('Inserted ProductInput below');

@@ -20,9 +20,9 @@
 function filterDisapprovedProducts() {
   // IMPORTANT:
   // Enable the Merchant API Reports Bundle Advanced Service and call it
-  // "Reports"
+  // "MerchantApiReports"
   // Enable the Merchant API Products Bundle Advanced Service and call it
-  // "Products"
+  // "MerchantApiProducts"
 
   // Replace this with your Merchant Center ID.
   const accountId = '<INSERT_MERCHANT_CENTER_ID>';
@@ -49,14 +49,14 @@ function filterDisapprovedProducts() {
     // all pages of results.
     do {
       response =
-          Reports.Accounts.Reports.search({query, pageSize, pageToken}, parent);
+          MerchantApiReports.Accounts.Reports.search({query, pageSize, pageToken}, parent);
       for (const reportRow of response.results) {
         console.log("Printing data from Product View:");
         console.log(reportRow);
 
         // OPTIONALLY, you can get the full product details by calling the GetProduct method.
         let productName = parent + "/products/" + reportRow.getProductView().getId();
-        product = Products.Accounts.Products.get(productName);
+        product = MerchantApiProducts.Accounts.Products.get(productName);
         console.log(product);
       }
       pageToken = response.nextPageToken;

@@ -19,7 +19,7 @@
 function getProduct() {
   // IMPORTANT:
   // Enable the Merchant API Products Bundle Advanced Service and call it
-  // "Products"
+  // "MerchantApiProducts"
 
   // Replace this with your Merchant Center ID.
   const accountId = '<MERCHANT_CENTER_ID>';
@@ -39,7 +39,7 @@ function getProduct() {
   try {
     console.log('Sending get Product request');
     // Call the Products.get API method.
-    product = Products.Accounts.Products.get(name);
+    product = MerchantApiProducts.Accounts.Products.get(name);
     console.log(product);
   } catch (e) {
     console.log('ERROR!');

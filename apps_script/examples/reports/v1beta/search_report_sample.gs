@@ -20,7 +20,7 @@
 function searchReport() {
   // IMPORTANT:
   // Enable the Merchant API Reports Bundle Advanced Service and call it
-  // "Reports"
+  // "MerchantApiReports"
 
   // Replace this with your Merchant Center ID.
   const accountId = '<MERCHANT_CENTER_ID>';
@@ -106,7 +106,7 @@ function searchReport() {
     // all pages of results.
     do {
       response =
-          Reports.Accounts.Reports.search({query, pageSize, pageToken}, parent);
+          MerchantApiReports.Accounts.Reports.search({query, pageSize, pageToken}, parent);
       for (const reportRow of response.results) {
         console.log(reportRow);
       }
