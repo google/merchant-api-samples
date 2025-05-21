@@ -91,7 +91,7 @@ def main():
 
 def get_credentials_from_token(config):
   """Generates OAuth2 refresh token from stored local token file."""
-  credentials = token_storage.Storage(config, _SCOPE).get()
+  credentials = token_storage.Storage(config, [_SCOPE]).get()
   return credentials
 
 
