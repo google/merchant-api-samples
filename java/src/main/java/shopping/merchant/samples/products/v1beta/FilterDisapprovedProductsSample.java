@@ -36,7 +36,7 @@ import shopping.merchant.samples.utils.Config;
 public class FilterDisapprovedProductsSample {
 
   // Gets the product details for a given product using the GetProduct method.
-  public static void getProduct(GoogleCredentials credential, Config config, String product)
+  public static void getProduct(GoogleCredentials credential, Config config, String productName)
       throws Exception {
 
     // Creates service settings using the credentials retrieved above.
@@ -50,7 +50,7 @@ public class FilterDisapprovedProductsSample {
         ProductsServiceClient.create(productsServiceSettings)) {
 
       // The name has the format: accounts/{account}/products/{productId}
-      GetProductRequest request = GetProductRequest.newBuilder().setName(product).build();
+      GetProductRequest request = GetProductRequest.newBuilder().setName(productName).build();
       Product response = productsServiceClient.getProduct(request);
       System.out.println(response);
     } catch (Exception e) {
@@ -99,13 +99,13 @@ public class FilterDisapprovedProductsSample {
         System.out.println("Printing data from Product View:");
         System.out.println(row);
         // Optionally, you can get the full product details by calling the GetProduct method.
-        String product =
+        String productName =
             "accounts/"
                 + config.getAccountId().toString()
                 + "/products/"
                 + row.getProductView().getId();
         System.out.println("Getting full product details by calling GetProduct method:");
-        getProduct(credential, config, product);
+        getProduct(credential, config, productName);
       }
 
     } catch (Exception e) {
