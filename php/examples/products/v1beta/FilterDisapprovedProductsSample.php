@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,123 +18,120 @@
 require_once __DIR__ . '/../../../vendor/autoload.php';
 require_once __DIR__ . '/../../Authentication/Authentication.php';
 require_once __DIR__ . '/../../Authentication/Config.php';
-
-use Google\ApiCore\ApiException;
-use Google\ApiCore\PagedListResponse;
 // [START merchantapi_filter_disapproved_products]
-use Google\Shopping\Merchant\Products\V1beta\ListProductsRequest;
-use Google\Shopping\Merchant\Products\V1beta\Product;
+use Google\ApiCore\ApiException;
 use Google\Shopping\Merchant\Products\V1beta\Client\ProductsServiceClient;
-
+use Google\Shopping\Merchant\Products\V1beta\GetProductRequest;
+use Google\Shopping\Merchant\Reports\V1beta\Client\ReportServiceClient;
+use Google\Shopping\Merchant\Reports\V1beta\SearchRequest;
 
 /**
- * This class demonstrates how to filter through all the products returned via
- * `Products.List` to find all the disapproved products for a given Merchant Center
- * account.
+ * This class demonstrates how to get the list of all the disapproved products for a given merchant
+ * center account.
  */
 class FilterDisapprovedProducts
 {
-
     /**
-     * A helper function to create the parent string.
+     * Gets the product details for a given product using the GetProduct method.
      *
-     * @param array $accountId The account that owns the product.
-     *
-     * @return string The parent has the format: `accounts/{account_id}`
+     * @param mixed $credentials The OAuth credentials.
+     * @param array $config The configuration data, including 'accountId'.
+     * @param string $productName The full resource name of the product to retrieve.
+     *      Format: accounts/{account}/products/{product}
      */
-    private static function getParent($accountId)
-    {
-        return sprintf("accounts/%s", $accountId);
-    }
-
-    /**
-     * Filters to find all disapproved products in your Merchant Center account.
-     *
-     * @param array $config
-     *      The configuration data used for authentication and getting the acccount
-     *      ID.
-     *
-     * @return void
-     */
-    public static function filterDisapprovedProductsSample($config): void
-    {
-        // Obtains OAuth token based on the user's configuration.
-        $credentials = Authentication::useServiceAccountOrTokenFile();
-
+    private static function getProduct(
+        $credentials,
+        array $config,
+        string $productName
+    ): void {
         // Creates options config containing credentials for the client to use.
         $options = ['credentials' => $credentials];
 
-        // Creates a client.
+        // Creates a ProductsServiceClient.
         $productsServiceClient = new ProductsServiceClient($options);
-
-        // Creates parent to identify the account from which to list all products.
-        $parent = self::getParent($config['accountId']);
-
-        // Creates the request. Set the page size to the maximum value.
-        $request = new ListProductsRequest(['parent' => $parent, 'page_size' => 250]);
 
         // Calls the API and catches and prints any network failures/errors.
         try {
+            // Construct the GetProductRequest.
+            // The name has the format: accounts/{account}/products/{productId}
+            $request = new GetProductRequest(['name' => $productName]);
 
-            // Page size is set to the default value. If you are returned more
-            // responses than your page size, this code will automatically
-            // re-call the service with the `pageToken` until all responses
-            // are returned.
-            $parameters = ['pageSize' => 25000];
+            // Make the API call.
+            $response = $productsServiceClient->getProduct($request);
 
-            $disapprovedProducts = [];
-
-            echo "Sending list products request:\n";
-            echo ("Will filter through response for disapproved products.");
-
-            /**
-             * Call the listProducts service and get back a response object
-             * with all products.
-             *
-             * @var PagedListResponse $response
-             */
-            $response = $productsServiceClient->listProducts($request, $parameters);
-
-            /**
-             * Filter through all the destinations and capture if the product
-             * is disapproved in any country.
-             *
-             * @var Product $product
-             */
-            foreach ($response as $product) {
-                $destinationStatuses = $product
-                    ->getProductStatus()
-                    ->getDestinationStatuses();
-
-                foreach ($destinationStatuses as $destinationStatus) {
-                    if (count($destinationStatus->getDisapprovedCountries()) > 0) {
-                        $disapprovedProducts[] = $product;
-                        // Exit the inner loop, so we don't add the same product
-                        // multiple times if it's disapproved for different
-                        // destinations.
-                        break;
-                    }
-                }
-                // The product includes the `productStatus` field that shows approval
-                // and disapproval information.
-                printf(
-                    'Disapproved Product data: %s%s',
-                    $product->serializeToJsonString(),
-                    PHP_EOL
-                );
-
-            }
-            echo "The following count of disapproved products were returned: ";
-            echo count($disapprovedProducts) . PHP_EOL;
+            // Prints the retrieved product.
+            // Protobuf messages are printed as JSON strings for readability.
+            print $response->serializeToJsonString() . "\n";
         } catch (ApiException $e) {
-            printf('Call failed with message: %s%s', $ex->getMessage(), PHP_EOL);
+            // Prints any errors that occur during the API call.
+            printf("ApiException was thrown: %s\n", $e->getMessage());
+        }
+    }
+
+    /**
+     * Filters disapproved products for a given Merchant Center account using the Reporting API,
+     * then prints the details for each disapproved product.
+     *
+     * @param array $config The configuration data used for authentication and
+     *      getting the account ID.
+     */
+    public static function filterDisapprovedProductsSample(array $config): void
+    {
+        // Gets the OAuth credentials to make the request.
+        $credentials = Authentication::useServiceAccountOrTokenFile();
+
+        // Creates options config containing credentials for the Report client to use.
+        $reportClientOptions = ['credentials' => $credentials];
+
+        // Creates a ReportServiceClient.
+        $reportServiceClient = new ReportServiceClient($reportClientOptions);
+
+        // The parent resource name for the report.
+        // Format: accounts/{accountId}
+        $parent = sprintf("accounts/%s", $config['accountId']);
+
+        // The query to select disapproved products from the product_view.
+        // This query retrieves offer_id, id, title, and price for products
+        // that are 'NOT_ELIGIBLE_OR_DISAPPROVED'.
+        $query = "SELECT offer_id, id, title, price FROM product_view"
+            . " WHERE aggregated_reporting_context_status = 'NOT_ELIGIBLE_OR_DISAPPROVED'";
+
+        // Create the search report request.
+        $request = new SearchRequest([
+            'parent' => $parent,
+            'query' => $query
+        ]);
+
+        print "Sending search report request for Product View.\n";
+        // Calls the Reports.search API method.
+        try {
+            $response = $reportServiceClient->search($request);
+            print "Received search reports response: \n";
+
+            // Iterates over all report rows in all pages.
+            // The client library automatically handles pagination.
+            foreach ($response->iterateAllElements() as $row) {
+                print "Printing data from Product View:\n";
+                // Prints the ReportRow object as a JSON string.
+                print $row->serializeToJsonString() . "\n";
+
+                // Get the full product resource name from the report row.
+                // The `id` field in ProductView is the product's full resource name.
+                // Format: `accounts/{account}/products/{product}`
+                $productName = $parent . "/products/" . $row->getProductView()->getId();
+                // OPTIONAL: Call getProduct to retrieve and print full product details.
+                // Pass the original credentials and config.
+                print "Getting full product details by calling GetProduct method:\n";
+                self::getProduct($credentials, $config, $productName);
+            }
+        } catch (ApiException $e) {
+            // Prints any errors that occur during the API call.
+            printf("ApiException was thrown: %s\n", $e->getMessage());
         }
     }
 
     /**
      * Helper to execute the sample.
-     *
-     * @return void
      */
     public function callSample(): void
     {
@@ -142,7 +139,6 @@ class FilterDisapprovedProducts
         self::filterDisapprovedProductsSample($config);
     }
 }
-
 
 // Run the script
 $sample = new FilterDisapprovedProducts();
