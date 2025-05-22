@@ -17,81 +17,118 @@
 const fs = require('fs');
 const authUtils = require('../../authentication/authenticate.js');
 const {ProductsServiceClient} = require('@google-shopping/products').v1beta;
+const {ReportServiceClient} = require('@google-shopping/reports').v1beta;
 
 /**
- * Lists all products for a given merchant and filters for disapproved ones.
- * @param {!object} config - The configuration object.
+ * Gets the product details for a given product using the GetProduct method.
+ * @param {!Object} authClient - The authenticated Google API client.
+ * @param {string} productName - The name of the product to retrieve, in the
+ *   format: accounts/{account}/products/{productId}.
  */
-async function filterDisapprovedProducts(config) {
-  // Read merchant_id from merchant-info.json.
-  const merchantInfo =
-      JSON.parse(fs.readFileSync(config.merchantInfoFile, 'utf8'));
-  const merchantId = merchantInfo.merchantId;
+async function getProduct(authClient, productName) {
+  // Create options object for the client, including authentication.
+  const productOptions = {authClient: authClient};
 
-  // Construct the parent resource name.
-  // Format: accounts/{account}
-  const parent = `accounts/${merchantId}`;
-
-  // Get credentials.
-  const authClient = await authUtils.getOrGenerateUserCredentials();
-
-  // Create options object for the client.
-  const options = {authClient: authClient};
-
-  // Create the ProductsServiceClient.
-  const productsClient = new ProductsServiceClient(options);
-
-  // Construct the request object for listing products. Set the page size to
-  // the maximum value.
-  const request = {
-    parent: parent,
-    pageSize: 250
-  };
-
-  console.log('Sending list products request:');
-  console.log('Will filter through response for disapproved products.');
-
-  const disapprovedProducts = [];
+  // Create the Products API client.
+  const productsClient = new ProductsServiceClient(productOptions);
 
   try {
-    // Call the API to list products using async iteration.
-    const iterable = productsClient.listProductsAsync(request);
-
-    // Iterate over all products returned.
-    for await (const product of iterable) {
-      // Check if the product has status information.
-      if (product.productStatus && product.productStatus.destinationStatuses) {
-        // Iterate through destination statuses.
-        for (const destinationStatus of
-                 product.productStatus.destinationStatuses) {
-          // Check if the product is disapproved in any country for this
-          // destination.
-          if (destinationStatus.disapprovedCountries &&
-              destinationStatus.disapprovedCountries.length > 0) {
-            disapprovedProducts.push(product);
-            // Break the inner loop to avoid adding the same product multiple
-            // times if disapproved for multiple destinations.
-            break;
-          }
-        }
-      }
-    }
-    console.log(`The following count of disapproved products were returned: ${
-        disapprovedProducts.length}`);
-    // You can optionally print the disapproved products themselves:
-    // disapprovedProducts.forEach(product => console.log(product));
+    // Construct the request object.
+    const request = {name: productName};
+    // Call the API to get the product.
+    // getProduct returns a Promise that resolves to an array.
+    // The first element is the product resource.
+    const response = await productsClient.getProduct(request);
+    console.log(response);
   } catch (error) {
-    console.error('An error occurred:');
-    console.error(error.message);
+    // Log any errors that occur during the API call.
+    console.log(error);
   }
 }
 
 /**
- * Calls the filterDisapprovedProducts function with the configuration.
+ * Filters disapproved products for a given Merchant Center account using the
+ * Reporting API. Then, it prints the product details for each disapproved
+ * product.
+ * @param {!Object} authClient - The authenticated Google API client.
+ * @param {string} merchantId - The Merchant Center account ID.
+ */
+async function filterDisapprovedProducts(authClient, merchantId) {
+  // Create options object for the client, including authentication.
+  const reportOptions = {authClient: authClient};
+
+  // Create the Report API client.
+  const reportServiceClient = new ReportServiceClient(reportOptions);
+
+  try {
+    // Construct the parent resource name for the report query.
+    const parent = `accounts/${merchantId}`;
+
+    // Define the query to select disapproved products.
+    // aggregated_reporting_context_status can be one of the following values:
+    // NOT_ELIGIBLE_OR_DISAPPROVED, ELIGIBLE, PENDING, ELIGIBLE_LIMITED,
+    // AGGREGATED_REPORTING_CONTEXT_STATUS_UNSPECIFIED
+    const query = `SELECT offer_id, id, title, price
+      FROM product_view
+      WHERE aggregated_reporting_context_status = 'NOT_ELIGIBLE_OR_DISAPPROVED'`;
+
+    // Construct the search request.
+    const searchRequest = {
+      parent: parent,
+      query: query,
+    };
+
+    console.log('Sending search report request for Product View.');
+    // Call the Reports.search API method. This returns an async iterable.
+    const iterable = reportServiceClient.searchAsync(searchRequest);
+    console.log('Received search reports response: ');
+
+    // Iterate over all report rows in the response.
+    for await (const row of iterable) {
+      console.log('Printing data from Product View:');
+      console.log(row.productView);
+
+      // Construct the full product resource name from the report row.
+      // Assumes row.productView and row.productView.id are populated,
+      // which should be the case based on the query.
+      const productName =
+          `accounts/${merchantId}/products/${row.productView.id}`;
+
+      // OPTIONAL: Get and print the full product details using GetProduct.
+      console.log('Getting full product details by calling GetProduct method:');
+      // Get and print the full product details.
+      await getProduct(authClient, productName);
+    }
+  } catch (error) {
+    console.log('Failed to search reports for Product View.');
+    // Log any errors that occur during the report search or processing.
+    console.log(error);
+  }
+}
+
+/**
+ * Main function to execute the sample.
  */
 async function main() {
-  const config = authUtils.getConfig();
-  await filterDisapprovedProducts(config);
+  try {
+    // Retrieve application configuration.
+    const config = authUtils.getConfig();
+
+    // Read merchant ID from the merchant-info.json file.
+    const merchantInfo =
+        JSON.parse(fs.readFileSync(config.merchantInfoFile, 'utf8'));
+    const merchantId = merchantInfo.merchantId;
+
+    // Authenticate and get the OAuth2 client.
+    const authClient = await authUtils.getOrGenerateUserCredentials();
+
+    // Call the function to filter disapproved products and get their details.
+    await filterDisapprovedProducts(authClient, merchantId);
+  } catch (error) {
+    // Log any errors that occur during setup or authentication.
+    console.error(error.message);
+    process.exitCode = 1;
+  }
 }
 
 main();
