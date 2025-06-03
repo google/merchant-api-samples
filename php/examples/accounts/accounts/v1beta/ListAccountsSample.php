@@ -31,7 +31,6 @@ use Google\Shopping\Merchant\Accounts\V1beta\ListAccountsRequest;
  */
 class ListAccounts
 {
-    // [START listAccounts]
     public static function listAccounts(array $config): void
     {
         // Gets the OAuth credentials to make the request.
