@@ -55,7 +55,7 @@ public class ListProductsSample {
       // re-call the service with the `pageToken` until all responses
       // are returned.
       ListProductsRequest request =
-          ListProductsRequest.newBuilder().setParent(parent).setPageSize(250).build();
+          ListProductsRequest.newBuilder().setParent(parent).setPageSize(1000).build();
 
       System.out.println("Sending list products request:");
       ListProductsPagedResponse response = productsServiceClient.listProducts(request);

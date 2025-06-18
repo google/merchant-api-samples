@@ -36,7 +36,7 @@ def list_products():
 
   # Creates the request. Set the page size to the maximum value.
   request = merchant_products_v1beta.ListProductsRequest(
-      parent=_PARENT, page_size=250
+      parent=_PARENT, page_size=1000
   )
 
   # Makes the request and catches and prints any error messages.

@@ -45,7 +45,7 @@ async function main() {
     // Construct request. Set the page size to the maximum value.
     const request = {
       parent: parent,
-      pageSize: 250
+      pageSize: 1000
     };
 
     // Run request

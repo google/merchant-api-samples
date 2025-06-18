@@ -70,7 +70,7 @@ class ListProducts
         // responses than your page size, this code will automatically
         // re-call the service with the `pageToken` until all responses
         // are returned.
-        $request = new ListProductsRequest(['parent' => $parent, 'page_size' => 250]);
+        $request = new ListProductsRequest(['parent' => $parent, 'page_size' => 1000]);
 
         // Calls the API and catches and prints any network failures/errors.
         try {
