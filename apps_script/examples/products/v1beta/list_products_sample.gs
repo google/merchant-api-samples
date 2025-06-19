@@ -31,8 +31,8 @@ function productList() {
   try {
     console.log('Sending list Products request');
     let pageToken;
-    // Set the page size to 250. This is the maximum allowed page size.
-    let pageSize = 250;
+    // Set the page size to 1000. This is the maximum allowed page size.
+    let pageSize = 1000;
 
     console.log('Retrieved products below:');
     // Call the Products.list API method. Use the pageToken to iterate through
