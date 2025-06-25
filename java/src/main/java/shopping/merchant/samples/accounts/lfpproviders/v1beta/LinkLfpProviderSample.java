@@ -12,15 +12,17 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package shopping.merchant.samples.accounts.v1beta;
+package shopping.merchant.samples.accounts.lfpproviders.v1beta;
 
 // [START merchantapi_link_lfp_provider]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
+import com.google.shopping.merchant.accounts.v1beta.LfpProviderName;
 import com.google.shopping.merchant.accounts.v1beta.LfpProvidersServiceClient;
 import com.google.shopping.merchant.accounts.v1beta.LfpProvidersServiceSettings;
 import com.google.shopping.merchant.accounts.v1beta.LinkLfpProviderRequest;
 import shopping.merchant.samples.utils.Authenticator;
+import shopping.merchant.samples.utils.Config;
 
 /** This class demonstrates how to link the Lfp Providers for a given Merchant Center account */
 public class LinkLfpProviderSample {
@@ -57,14 +59,24 @@ public class LinkLfpProviderSample {
   }
 
   public static void main(String[] args) throws Exception {
+    Config config = Config.load();
+
+    // Replace with the actual region code you want to use.
+    String regionCode = "REGION_CODE"; // e.g., "US"
+    String lfpProviderId = "LFP_PROVIDER_ID";
     // The name of the lfp provider you want to link, returned from `lfpProviders.findLfpProviders`.
     // It's of the form
-    // "accounts/{account_id}/omnichannelSettings/{omnichannel_settings}/lfpProviders/{lfp_provider}".
-    String lfpProviderName = "{LFP_PROVIDER_NAME}";
+    // "accounts/{account_id}/omnichannelSettings/{omnichannel_settings}/lfpProviders/{lfp_provider}"
+    LfpProviderName lfpProviderName =
+        LfpProviderName.newBuilder()
+            .setAccount(config.getAccountId().toString())
+            .setOmnichannelSetting(regionCode)
+            .setLfpProvider(lfpProviderId)
+            .build();
     // External account id by which this merchant is known to the LFP provider.
-    String externalAccountId = "{EXTERNAL_ACCOUNT_ID}";
+    String externalAccountId = String.valueOf(config.getAccountId());
 
-    linkLfpProvider(lfpProviderName, externalAccountId);
+    linkLfpProvider(lfpProviderName.toString(), externalAccountId);
   }
 }
 // [END merchantapi_link_lfp_provider]

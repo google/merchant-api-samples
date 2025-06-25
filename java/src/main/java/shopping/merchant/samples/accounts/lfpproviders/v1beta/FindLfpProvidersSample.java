@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package shopping.merchant.samples.accounts.v1beta;
+package shopping.merchant.samples.accounts.lfpproviders.v1beta;
 
 // [START merchantapi_find_lfp_providers]
 import com.google.api.gax.core.FixedCredentialsProvider;
