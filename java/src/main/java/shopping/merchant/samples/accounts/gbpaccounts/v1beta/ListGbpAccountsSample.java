@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package shopping.merchant.samples.accounts.v1beta;
+package shopping.merchant.samples.accounts.gbpaccounts.v1beta;
 
 // [START merchantapi_list_gbp_accounts]
 import com.google.api.gax.core.FixedCredentialsProvider;
