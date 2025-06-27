@@ -8,6 +8,7 @@ google-shopping-merchant-productstudio==0.1.0
 google-shopping-merchant-promotions==0.1.5
 google-shopping-merchant-quota==0.1.6
 google-shopping-merchant-reports==0.1.13
+google-shopping-merchant-reviews==0.1.3
 google-auth-oauthlib
 google-auth
 googleapis-common-protos
