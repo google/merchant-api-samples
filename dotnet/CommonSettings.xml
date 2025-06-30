@@ -1,0 +1,22 @@
+<Project>
+  <!-- Properties common to all projects under this directory -->
+
+  <!-- Packaging information -->
+  <PropertyGroup>
+    <Company>Google LLC</Company>
+    <Copyright>Copyright 2025, Google LLC</Copyright>
+    <Authors>https://github.com/damaz91</Authors>
+    <PackageLicenseUrl>http://www.apache.org/licenses/LICENSE-2.0</PackageLicenseUrl>
+    <PackageProjectUrl>https://developers.google.com/merchant/api</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/google/merchant-api-samples</RepositoryUrl>
+    <PackageReleaseNotes>https://developers.google.com/merchant/api/release-notes/rest/accounts</PackageReleaseNotes>
+    <RepositoryType>git</RepositoryType>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageTags>Google</PackageTags>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+</Project>
