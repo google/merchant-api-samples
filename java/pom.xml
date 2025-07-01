@@ -120,7 +120,7 @@
     <dependency>
       <groupId>com.google.shopping</groupId>
       <artifactId>google-shopping-merchant-issue-resolution</artifactId>
-      <version>0.2.0</version>
+      <version>0.6.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.shopping</groupId>
