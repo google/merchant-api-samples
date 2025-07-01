@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// [START merchantapi_list_products]
+// [START merchantapi_list_accounts]
 using System;
 using static MerchantApi.Authenticator;
 using Google.Api.Gax;
@@ -21,57 +21,53 @@ using Google.Apis.Auth.OAuth2.Flows;
 using Google.Apis.Auth.OAuth2.Responses;
 using Google.Apis.Http;
 using Newtonsoft.Json;
-using Google.Shopping.Merchant.Products.V1Beta;
+using Google.Shopping.Merchant.Accounts.V1Beta;
 
 
 namespace MerchantApi
 {
-    public class ListProductsSample
+    public class ListAccountsSample
     {
-        public void ListProducts(string merchantId)
+        public void ListAccounts()
         {
             Console.WriteLine("=================================================================");
-            Console.WriteLine("Listing all Products");
+            Console.WriteLine("Listing all Accounts the user has access to");
             Console.WriteLine("=================================================================");
 
             // Authenticate using either oAuth or service account
             ICredential auth = Authenticator.Authenticate(
                 MerchantConfig.Load(),
-                ProductsServiceClient.DefaultScopes[0]);
+                // Passing the default scope for Merchant API: https://www.googleapis.com/auth/content
+                AccountsServiceClient.DefaultScopes[0]);
 
             // Create client
-            ProductsServiceSettings productsServiceSettings = ProductsServiceSettings.GetDefault();
+            AccountsServiceSettings accountsServiceSettings = AccountsServiceSettings.GetDefault();
 
-            // Create the ProductsServiceClient with the credentials
-            ProductsServiceClientBuilder productsServiceClientBuilder = new ProductsServiceClientBuilder
+            // Create the AccountsServiceClient with the credentials
+            AccountsServiceClientBuilder accountsServiceClientBuilder = new AccountsServiceClientBuilder
             {
                 Credential = auth
             };
-            ProductsServiceClient client = productsServiceClientBuilder.Build();
-
-            // Initialize the parent
-            // The parent has the format: accounts/{account}
-            AccountName parent = AccountName.FromAccount(merchantId);
-            Console.WriteLine($"Listing products for account: {parent}");
+            AccountsServiceClient client = accountsServiceClientBuilder.Build();
 
             // Initialize request argument(s)
-            ListProductsRequest request = new ListProductsRequest
+            ListAccountsRequest request = new ListAccountsRequest
             {
-                Parent = parent.ToString(),
-                PageSize = 1000 // Optional: specify the maximum number of products to return per page
+                PageSize = 1000, // Optional: specify the maximum number of accounts to return per page
             };
 
-            // List all products in the account
-            // Note: The API may return fewer than 1000 products
-            PagedEnumerable<ListProductsResponse, Product> response = client.ListProducts(request);
+            // List all accounts the user has access to
+            PagedEnumerable<ListAccountsResponse, Account> response = client.ListAccounts(request);
+
             // Print the paginated results. This automatically handles pagination
-            // and retrieves all products in the account.
-            foreach (ListProductsResponse page in response.AsRawResponses())
+            // and retrieves all accounts in the account.
+            foreach (ListAccountsResponse page in response.AsRawResponses())
             {
+
                 Console.WriteLine("A page of results:");
-                foreach (Product item in page)
+                foreach (Account item in page)
                 {
-                    // Pretty print the products
+                    // Pretty print the accounts
                     Console.WriteLine(JsonConvert.SerializeObject(item, Formatting.Indented));
 
                 }
@@ -81,11 +77,9 @@ namespace MerchantApi
 
         internal static void Main(string[] args)
         {
-            var config = MerchantConfig.Load();
-            string merchantId = config.MerchantId.Value.ToString();
-            var sample = new ListProductsSample();
-            sample.ListProducts(merchantId);
+            var sample = new ListAccountsSample();
+            sample.ListAccounts();
         }
     }
 }
-// [END merchantapi_list_products]
+// [END merchantapi_list_accounts]

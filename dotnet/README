@@ -29,6 +29,16 @@ solution. You will need to
 [Restore NuGet Packages](https://docs.nuget.org/ndocs/consume-packages/package-restore)
 as well to pull in the dependencies. (The IDEs listed above all support this.)
 
-1. Build and run any of the included projects.
+Use the following syntax to run the `ListProductsSample` project, for example.
 
-2. Examine your shell output, be inspired and start hacking an amazing new app!
+1. Open a command line and navigate to the samples' root directory (dotnet/)
+
+2. Run
+```
+dotnet run --project examples/Products/v1beta/ListProductsSample.csproj --framework netcoreapp8.0
+```
+
+Examine your shell output, be inspired and start working on an amazing new app!
+
+We hope these samples give you the inspiration needed to create your new
+application!
