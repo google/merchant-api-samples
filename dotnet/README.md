@@ -18,7 +18,7 @@ configuration in these projects.
 ## Setup Authentication and Sample Configuration
 
 If you have not already done so, please read the top-level `README` to discover
-how to set up both authentication and the common sample configuration.  The rest
+how to set up both authentication and the common sample configuration. The rest
 of this document assumes you have performed both tasks.
 
 ## Running the Samples
