@@ -34,14 +34,10 @@ namespace MerchantApi
             Console.WriteLine("Filtering for Disapproved Products");
             Console.WriteLine("=================================================================");
 
-            // Authenticate using OAuth 2.0.
-            // Note: ReportServiceClient and ProductsServiceClient can use the same credentials.
+            // Authenticate using either oAuth or service account
             ICredential auth = Authenticator.Authenticate(
                 MerchantConfig.Load(),
-                // Using a scope that covers both Reports and Products API.
-                // You can also use ProductsServiceClient.DefaultScopes[0] or
-                // ReportServiceClient.DefaultScopes[0] if you only use one service.
-                "https://www.googleapis.com/auth/content");
+                ProductsServiceClient.DefaultScopes[0]);
 
             // Create a client for the Reports API.
             ReportServiceClient reportClient = new ReportServiceClientBuilder
