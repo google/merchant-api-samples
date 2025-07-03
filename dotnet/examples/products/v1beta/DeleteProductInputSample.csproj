@@ -7,7 +7,7 @@
     <RootNamespace>MerchantApi</RootNamespace>
     <AssemblyName>Google.MerchantApi.Samples</AssemblyName>
     <Description>Samples for Google Merchant API</Description>
-    <StartupObject>MerchantApi.FilterDisapprovedProductsSample</StartupObject>
+    <StartupObject>MerchantApi.DeleteProductInputSample</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="..\..\..\source\MerchantConfig.cs" />
@@ -17,9 +17,7 @@
     <PackageReference Include="CommandLineParser" Version="2.9.1" />
     <PackageReference Include="Google.Apis.Core" Version="1.70.0" />
     <PackageReference Include="Google.Shopping.Merchant.Products.V1Beta" Version="1.0.0-beta04" />
-    <PackageReference Include="Google.Shopping.Merchant.Reports.V1Beta" Version="1.0.0-beta03" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.0" PrivateAssets="All" />
   </ItemGroup>
 </Project>
-

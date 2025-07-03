@@ -1,75 +1,23 @@
-// Copyright 2025 Google LLC
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//     https://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
+<Project Sdk="Microsoft.NET.Sdk">
 
-// [START merchantapi_list_accounts]
-using System;
-using static MerchantApi.Authenticator;
-using Google.Api.Gax;
-using Google.Apis.Auth.OAuth2;
-using Google.Apis.Auth.OAuth2.Flows;
-using Google.Apis.Auth.OAuth2.Responses;
-using Google.Apis.Http;
-using Newtonsoft.Json;
-using Google.Shopping.Merchant.Accounts.V1Beta;
-
-
-namespace MerchantApi
-{
-    public class ListAccountsSample
-    {
-        public void ListAccounts()
-        {
-            Console.WriteLine("=================================================================");
-            Console.WriteLine("Listing all Accounts the user has access to");
-            Console.WriteLine("=================================================================");
-            ICredential auth = Authenticator.Authenticate(
-                MerchantConfig.Load(),
-                AccountsServiceClient.DefaultScopes[0]);
-            // Create client
-            AccountsServiceSettings accountsServiceSettings = AccountsServiceSettings.GetDefault();
-            // Create the AccountsServiceClient with the settings
-            AccountsServiceClientBuilder accountsServiceClientBuilder = new AccountsServiceClientBuilder
-            {
-                Credential = auth
-            };
-            AccountsServiceClient client = accountsServiceClientBuilder.Build();
-
-            ListAccountsRequest request = new ListAccountsRequest
-            {
-                PageSize = 1000, // Optional: specify the maximum number of accounts to return per page
-            };
-            PagedEnumerable<ListAccountsResponse, Account> response = client.ListAccounts(request);
-
-            foreach (ListAccountsResponse page in response.AsRawResponses())
-            {
-                // Do something with each page of items
-                Console.WriteLine("A page of results:");
-                foreach (Account item in page)
-                {
-                    // Do something with each item
-                    Console.WriteLine(JsonConvert.SerializeObject(item, Formatting.Indented));
-
-                }
-            }
-        }
-
-
-        internal static void Main(string[] args)
-        {
-            var sample = new ListAccountsSample();
-            sample.ListAccounts();
-        }
-    }
-}
-// [END merchantapi_list_accounts]
+  <Import Project="..\..\..\..\CommonSettings.xml" />
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>netcoreapp8.0</TargetFrameworks>
+    <RootNamespace>MerchantApi</RootNamespace>
+    <AssemblyName>Google.MerchantApi.Samples</AssemblyName>
+    <Description>Samples for Google Merchant API</Description>
+    <StartupObject>MerchantApi.ListAccountsSample</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\..\source\MerchantConfig.cs" />
+    <Compile Include="..\..\..\..\source\Authenticator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="CommandLineParser" Version="2.9.1" />
+    <PackageReference Include="Google.Apis.Core" Version="1.70.0" />
+    <PackageReference Include="Google.Shopping.Merchant.Accounts.V1Beta" Version="1.0.0-beta06" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.0" PrivateAssets="All" />
+  </ItemGroup>
+</Project>
