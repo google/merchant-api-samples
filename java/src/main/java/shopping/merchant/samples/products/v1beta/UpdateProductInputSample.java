@@ -60,7 +60,7 @@ public class UpdateProductInputSample {
             .addPaths("attributes.image_link")
             .addPaths("attributes.availability")
             .addPaths("attributes.condition")
-            .addPaths("attributes.gtin")
+            .addPaths("attributes.gtins")
             .addPaths("custom_attributes.mycustomattribute")
             .build();
 
