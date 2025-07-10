@@ -49,7 +49,7 @@ public class SearchReportSample {
           "SELECT offer_id,"
               + "id,"
               + "price,"
-              + "gtins,"
+              + "gtin,"
               + "item_issues,"
               + "channel,"
               + "language_code,"
