@@ -33,8 +33,8 @@ class DeleteAccount
         return sprintf("accounts/%s", $accountId);
     }
 
-    // This method can delete a standalone, MCA or sub-account. If you delete an MCA,
-    // all sub-accounts will also be deleted.
+    // This method can delete a standalone, advanced account or sub-account.
+    // If you delete an advanced account, all sub-accounts will also be deleted.
     // Admin user access is required to execute this method.
     public static function deleteAccount(array $config): void
     {

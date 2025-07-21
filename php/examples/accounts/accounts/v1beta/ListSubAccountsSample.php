@@ -23,7 +23,7 @@ use Google\Shopping\Merchant\Accounts\V1beta\Client\AccountsServiceClient;
 use Google\Shopping\Merchant\Accounts\V1beta\ListSubAccountsRequest;
 
 /**
- * This class demonstrates how to list all the subaccounts of an MCA.
+ * This class demonstrates how to list all the subaccounts of an advanced account.
  */
 class ListSubAccounts
 {
@@ -44,7 +44,8 @@ class ListSubAccounts
         // Creates a client.
         $accountsServiceClient = new AccountsServiceClient($options);
 
-        // Creates parent/provider to identify the MCA account from which to list all accounts.
+        // Creates parent/provider to identify the advanced account from which
+        //to list all accounts.
         $parent = self::getParent($config['accountId']);
 
         // Calls the API and catches and prints any network failures/errors.

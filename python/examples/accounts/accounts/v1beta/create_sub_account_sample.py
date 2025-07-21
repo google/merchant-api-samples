@@ -12,7 +12,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-"""A module to create and configure a sub-account under an MCA account."""
+"""A module to create and configure a sub-account under an advanced account."""
 
 
 # [START merchantapi_create_sub_account]
@@ -31,7 +31,7 @@ def get_parent(account_id):
 
 
 def create_sub_account():
-  """Creates a sub-account under an MCA account."""
+  """Creates a sub-account under an advanced account."""
 
   # Get OAuth credentials.
   credentials = generate_user_credentials.main()
@@ -39,7 +39,7 @@ def create_sub_account():
   # Create a client.
   client = AccountsServiceClient(credentials=credentials)
 
-  # Get the parent MCA account ID.
+  # Get the parent advanced account ID.
   parent = get_parent(_ACCOUNT)
 
   # Create the request.

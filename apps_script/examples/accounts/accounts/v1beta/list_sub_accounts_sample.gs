@@ -23,7 +23,7 @@ function listSubAccounts() {
   // "MerchantApiAccounts"
 
   // Replace this with the provider Merchant Center ID for which you want to list the sub-accounts
-  // This is usually an MCA
+  // This is usually an advanced account
   const providerId = '<MERCHANT_CENTER_ID>';
 
   const parent = 'accounts/' + providerId;

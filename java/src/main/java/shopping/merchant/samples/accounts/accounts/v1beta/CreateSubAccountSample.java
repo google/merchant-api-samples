@@ -26,7 +26,7 @@ import com.google.type.TimeZone;
 import shopping.merchant.samples.utils.Authenticator;
 import shopping.merchant.samples.utils.Config;
 
-/** This class demonstrates how to create a sub-account under an MCA account. */
+/** This class demonstrates how to create a sub-account under an advanced account. */
 public class CreateSubAccountSample {
 
   private static String getParent(String accountId) {
@@ -44,7 +44,7 @@ public class CreateSubAccountSample {
             .setCredentialsProvider(FixedCredentialsProvider.create(credential))
             .build();
 
-    // Creates parent/provider to identify the MCA account into which to insert the subaccount.
+    // Creates parent/provider to identify the advanced account into which to insert the subaccount.
     String parent = getParent(config.getAccountId().toString());
 
     // Calls the API and catches and prints any network failures/errors.

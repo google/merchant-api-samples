@@ -29,12 +29,11 @@ import shopping.merchant.samples.utils.Config;
 /**
  * This class demonstrates how to list all the account issues of an account.
  *
- * If you want to query the account issues of all the sub-accounts of an MCA, see
- * ListMcaAccountIssuesSampleAsync.
+ * <p>If you want to query the account issues of all the sub-accounts of an advanced account, see
+ * ListAdvancedAccountIssuesSampleAsync.
  */
 public class ListAccountIssuesSample {
 
-  
   public static void listAccountIssues(Config config) throws Exception {
 
     // Obtains OAuth token based on the user's configuration.

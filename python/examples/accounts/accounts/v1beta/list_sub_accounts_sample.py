@@ -12,7 +12,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-"""A module to list all the subaccounts of an MCA."""
+"""A module to list all the subaccounts of an advanced account."""
 
 # [START merchantapi_list_subaccounts]
 from examples.authentication import configuration
@@ -28,7 +28,7 @@ def get_parent(account_id):
 
 
 def list_sub_accounts():
-  """Lists all the subaccounts of an MCA."""
+  """Lists all the subaccounts of an advanced account."""
 
   # Get OAuth credentials.
   credentials = generate_user_credentials.main()
@@ -36,7 +36,7 @@ def list_sub_accounts():
   # Create a client.
   client = AccountsServiceClient(credentials=credentials)
 
-  # Get the parent MCA account ID.
+  # Get the parent advanced account ID.
   parent = get_parent(_ACCOUNT)
 
   # Create the request.

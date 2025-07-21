@@ -26,7 +26,8 @@ import shopping.merchant.samples.utils.Config;
 /** This class demonstrates how to delete a given Merchant Center account. */
 public class DeleteAccountSample {
 
-  // This method can delete a standalone, MCA or sub-account. If you delete an MCA,
+  // This method can delete a standalone, advanced account or sub-account. If you delete an advanced
+  // account,
   // all sub-accounts will also be deleted.
   // Admin user access is required to execute this method.
 

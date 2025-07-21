@@ -43,8 +43,11 @@ import java.util.stream.StreamSupport;
 import shopping.merchant.samples.utils.Authenticator;
 import shopping.merchant.samples.utils.Config;
 
-/** This class demonstrates how to list the account issues of all the sub-accounts of an MCA. */
-public class ListMcaAccountIssuesAsyncSample {
+/**
+ * This class demonstrates how to list the account issues of all the sub-accounts of an advanced
+ * account.
+ */
+public class ListAdvancedAccountIssuesAsyncSample {
 
   /** Returns the list of issues for the given account. */
   private static ApiFuture<ListAccountIssuesResponse> getAccountIssues(
@@ -56,22 +59,24 @@ public class ListMcaAccountIssuesAsyncSample {
 
   /**
    * Returns a map of account issues where key is the sub-account resource name and the value is the
-   * list of issues for each sub-account. Takes the API clients and the name of the MCA as input.
+   * list of issues for each sub-account. Takes the API clients and the name of the advanced account
+   * as input.
    */
   private static ApiFuture<Map<String, ListAccountIssuesResponse>> getSubAccountIssues(
       AccountsServiceClient accountsServiceClient,
       AccountIssueServiceClient accountIssueServiceClient,
-      String mca)
+      String advancedAccount)
       throws IOException {
 
     // Creates a direct executor to run the transform functions.
     Executor executor = MoreExecutors.directExecutor();
 
     // The parent has the format: accounts/{account}
-    ListSubAccountsRequest request = ListSubAccountsRequest.newBuilder().setProvider(mca).build();
+    ListSubAccountsRequest request =
+        ListSubAccountsRequest.newBuilder().setProvider(advancedAccount).build();
     System.out.println("Sending list subaccounts request:");
 
-    // Lists all sub-accounts of the MCA.
+    // Lists all sub-accounts of the advanced account.
     ListSubAccountsPagedResponse listSubAccountsResponse =
         accountsServiceClient.listSubAccounts(request);
 
@@ -112,7 +117,7 @@ public class ListMcaAccountIssuesAsyncSample {
     GoogleCredentials credential = new Authenticator().authenticate();
 
     // Gets the account ID from the config file.
-    // Make sure to use the MCA ID here, otherwise the API will return an error.
+    // Make sure to use the advanced account ID here, otherwise the API will return an error.
     String accountId = config.getAccountId().toString();
 
     // Creates account name to identify account.
