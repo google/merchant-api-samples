@@ -18,7 +18,7 @@
  */
 function getProduct() {
   // IMPORTANT:
-  // Enable the Merchant API Products Bundle Advanced Service and call it
+  // Enable the Merchant API Products sub-API Advanced Service and call it
   // "MerchantApiProducts"
 
   // Replace this with your Merchant Center ID.

@@ -58,7 +58,7 @@ class CreatePrimaryProductDataSourceWildCardSample
         $primaryProductDataSource = (new PrimaryProductDataSource())
             // Channel can be "ONLINE_PRODUCTS" or "LOCAL_PRODUCTS" or "PRODUCTS" .
             // While accepted, datasources with channel "products" representing unified products
-            // currently cannot be used with the Products bundle.
+            // currently cannot be used with the Products sub-API.
             ->setChannel(Channel::ONLINE_PRODUCTS)
             ->setCountries(['GB']);
 

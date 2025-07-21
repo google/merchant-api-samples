@@ -68,7 +68,7 @@ class CreatePrimaryProductDataSourceSample
         $primaryProductDataSource = new PrimaryProductDataSource([
             // Channel can be "ONLINE_PRODUCTS" or "LOCAL_PRODUCTS" or "PRODUCTS".
             // While accepted, datasources with channel "PRODUCTS" representing unified products
-            // currently cannot be used with the Products bundle.
+            // currently cannot be used with the Products sub-API.
             'channel' => PrimaryProductDataSource\Channel::ONLINE_PRODUCTS,
             'countries' => ['GB'],
             'content_language' => 'en',

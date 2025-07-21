@@ -64,7 +64,7 @@ public class CreateFileFetchPrimaryProductDataSourceSample {
         PrimaryProductDataSource.newBuilder()
             // Channel can be "ONLINE_PRODUCTS" or "LOCAL_PRODUCTS" or "PRODUCTS" .
             // While accepted, datasources with channel "products" currently cannot be used
-            // with the Products bundle.
+            // with the Products sub-API.
             .setChannel(PrimaryProductDataSource.Channel.ONLINE_PRODUCTS)
             .addCountries("GB")
             // Wildcard feeds are not possible for file feeds, so `contentLanguage` and `feedLabel`

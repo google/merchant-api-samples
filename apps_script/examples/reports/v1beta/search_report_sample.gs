@@ -19,7 +19,7 @@
  */
 function searchReport() {
   // IMPORTANT:
-  // Enable the Merchant API Reports Bundle Advanced Service and call it
+  // Enable the Merchant API Reports sub-API Advanced Service and call it
   // "MerchantApiReports"
 
   // Replace this with your Merchant Center ID.

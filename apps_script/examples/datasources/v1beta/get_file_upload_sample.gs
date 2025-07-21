@@ -19,7 +19,7 @@
  */
 function getFileUploadDataSource() {
   // IMPORTANT:
-  // Enable the Merchant API DataSources Bundle Advanced Service and call it
+  // Enable the Merchant API DataSources sub-API Advanced Service and call it
   // "MerchantApiDataSources"
 
   // Replace this with your Merchant Center ID.

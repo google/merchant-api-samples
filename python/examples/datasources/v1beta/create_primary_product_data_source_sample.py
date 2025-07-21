@@ -56,7 +56,7 @@ def create_primary_product_data_source(display_name: str) -> None:
   primary_product_data_source = PrimaryProductDataSource()
   # Specifies the channel for the products (e.g., ONLINE_PRODUCTS).
   # Note: While "PRODUCTS" (for unified products) is accepted, it's not
-  # currently usable with the Products API bundle.
+  # currently usable with the Products API sub-API.
   primary_product_data_source.channel = (
       PrimaryProductDataSource.Channel.ONLINE_PRODUCTS
   )

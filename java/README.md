@@ -14,7 +14,7 @@ the included `pom.xml` to install the required dependencies with the
 [Merchant API Client Library for Java](https://developers.google.com/merchant/api/client-libraries).
 
 > **Note**
-> The Merchant API Client Library for Java is separate for each bundle you use
+> The Merchant API Client Library for Java is separate for each sub-API you use
 > (e.g. Datasource is one client library, Products is another, etc.), and you
 > need to install each client library separately.
 

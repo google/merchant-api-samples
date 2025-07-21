@@ -50,7 +50,7 @@ def create_file_with_upload_type_primary_product_data_source():
   primary_datasource.feed_label = "GB"
   # Channel can be "ONLINE_PRODUCTS" or "LOCAL_PRODUCTS" or "PRODUCTS" .
   # While accepted, datasources with channel "products" representing unified
-  # products currently cannot be used with the Products bundle.
+  # products currently cannot be used with the Products sub-API.
   primary_datasource.channel = PrimaryProductDataSource.Channel.ONLINE_PRODUCTS
 
   # Creates a DataSource and populates its attributes.

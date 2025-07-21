@@ -19,7 +19,7 @@
  */
 function listSubAccounts() {
   // IMPORTANT:
-  // Enable the Merchant API Accounts Bundle Advanced Service and call it
+  // Enable the Merchant API Accounts sub-API Advanced Service and call it
   // "MerchantApiAccounts"
 
   // Replace this with the provider Merchant Center ID for which you want to list the sub-accounts

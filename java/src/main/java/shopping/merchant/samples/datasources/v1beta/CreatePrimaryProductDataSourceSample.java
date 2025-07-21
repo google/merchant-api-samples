@@ -50,7 +50,7 @@ public class CreatePrimaryProductDataSourceSample {
         PrimaryProductDataSource.newBuilder()
             // Channel can be "ONLINE_PRODUCTS" or "LOCAL_PRODUCTS" or "PRODUCTS" .
             // While accepted, datasources with channel "products" representing unified products
-            // currently cannot be used with the Products bundle.
+            // currently cannot be used with the Products sub-API.
             .setChannel(PrimaryProductDataSource.Channel.ONLINE_PRODUCTS)
             .addCountries("GB")
             .setContentLanguage("en")

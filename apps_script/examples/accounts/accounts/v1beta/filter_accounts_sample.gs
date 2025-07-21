@@ -19,7 +19,7 @@
  */
 function filterAccounts() {
   // IMPORTANT:
-  // Enable the Merchant API Accounts Bundle Advanced Service and call it
+  // Enable the Merchant API Accounts sub-API Advanced Service and call it
   // "MerchantApiAccounts"
 
   // Create the filter string.
