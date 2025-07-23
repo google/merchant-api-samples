@@ -45,8 +45,8 @@ def create_file_regional_inventory_data_source():
 
   # Creates a SupplementalProductDataSource.
   regional_inventory_datasource = RegionalInventoryDataSource()
-  # As RegionalInventoryDataSources are a type of file feed, wildcards are not
-  # available. RegionalInventoryDataSources can only be created for a specific
+
+  # RegionalInventoryDataSources can only be created for a specific
   # `feedLabel` and `contentLanguage` combination.
   regional_inventory_datasource.content_language = "en"
   regional_inventory_datasource.feed_label = "GB"

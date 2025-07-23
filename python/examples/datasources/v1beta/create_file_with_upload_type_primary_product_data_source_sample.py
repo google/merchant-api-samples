@@ -44,8 +44,7 @@ def create_file_with_upload_type_primary_product_data_source():
   # Creates a PrimaryProductDataSource.
   primary_datasource = PrimaryProductDataSource()
   primary_datasource.countries = ["GB"]
-  # Wildcard feeds are not possible for file feeds, so `content_language` and
-  # `feed_label` must be set.
+  # `content_language` and `feed_label` must be set.
   primary_datasource.content_language = "en"
   primary_datasource.feed_label = "GB"
   # Channel can be "ONLINE_PRODUCTS" or "LOCAL_PRODUCTS" or "PRODUCTS" .

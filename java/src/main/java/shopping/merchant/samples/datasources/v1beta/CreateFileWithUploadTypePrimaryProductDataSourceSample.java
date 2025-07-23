@@ -60,8 +60,7 @@ public class CreateFileWithUploadTypePrimaryProductDataSourceSample {
             // with the Products sub-API.
             .setChannel(PrimaryProductDataSource.Channel.ONLINE_PRODUCTS)
             .addCountries("GB")
-            // Wildcard feeds are not possible for file feeds, so `contentLanguage` and `feedLabel`
-            // must be set.
+            // `contentLanguage` and `feedLabel` must be set.
             .setContentLanguage("en")
             .setFeedLabel("GB")
             .build();

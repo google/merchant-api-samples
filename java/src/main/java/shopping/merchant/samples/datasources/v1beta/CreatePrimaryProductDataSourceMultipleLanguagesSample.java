@@ -13,7 +13,8 @@
 // limitations under the License.
 
 package shopping.merchant.samples.datasources.v1beta;
-// [START merchantapi_create_primary_product_data_source_wildcard]
+
+// [START merchantapi_create_primary_product_data_source_multiple_languages]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.shopping.merchant.datasources.v1beta.CreateDataSourceRequest;
@@ -25,10 +26,10 @@ import shopping.merchant.samples.utils.Authenticator;
 import shopping.merchant.samples.utils.Config;
 
 /**
- * This class demonstrates how to create a primary product datasource for all `feedLabel` and
- * `contentLanguage` combinations. Note that rules functionality is limited for wildcard feeds.
+ * This class demonstrates how to create a primary product data source for all `feedLabel` and
+ * `contentLanguage` combinations.
  */
-public class CreatePrimaryProductDataSourceWildCardSample {
+public class CreatePrimaryProductDataSourceMultipleLanguagesSample {
 
   private static String getParent(String merchantId) {
     return String.format("accounts/%s", merchantId);
@@ -82,10 +83,10 @@ public class CreatePrimaryProductDataSourceWildCardSample {
 
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
-    // The displayed datasource name in the Merchant Center UI.
-    String displayName = "Primary Product Data Wildcard";
+    // The displayed data source name in the Merchant Center UI.
+    String displayName = "Primary Product Data Multiple Languages";
 
     createDataSource(config, displayName);
   }
 }
-// [END merchantapi_create_primary_product_data_source_wildcard]
+// [END merchantapi_create_primary_product_data_source_multiple_languages]

@@ -65,8 +65,7 @@ class CreateFileRegionalInventoryDataSourceSample
         // Format: accounts/{merchantId}
         $parent = sprintf('accounts/%s', $merchantId);
 
-        // As RegionalInventoryDataSources are a type of file feed, therefore wildcards are not
-        // available. RegionalInventoryDataSources can only be created for a specific `feedLabel` and
+        // RegionalInventoryDataSources can only be created for a specific `feedLabel` and
         // `contentLanguage` combination.
         $regionalInventoryDataSource = (new RegionalInventoryDataSource())
             ->setContentLanguage('en')

@@ -35,7 +35,7 @@ def create_promotion_data_source():
   )
 
   # Creates a PromotionDataSource.
-  # Wildcards are not available for PromotionDataSources. PromotionDataSources
+  # PromotionDataSources
   # can only be created for a specific `targetCountry` and `contentLanguage`
   # combination.
   promotion_datasource = merchant_datasources_v1beta.PromotionDataSource()

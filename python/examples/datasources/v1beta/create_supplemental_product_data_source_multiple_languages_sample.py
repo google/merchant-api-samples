@@ -17,7 +17,7 @@
 This works only for API supplemental feeds.
 """
 
-# [START merchantapi_create_supplemental_product_data_source_wildcard]
+# [START merchantapi_create_supplemental_product_data_source_multiple_languages]
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
 from google.shopping import merchant_datasources_v1beta
@@ -26,7 +26,7 @@ _ACCOUNT = configuration.Configuration().read_merchant_info()
 _PARENT = f"accounts/{_ACCOUNT}"
 
 
-def create_supplemental_product_data_source_wildcard():
+def create_supplemental_product_data_source_multiple_languages():
   """Creates a `DataSource` resource."""
 
   # Gets OAuth Credentials.
@@ -44,7 +44,9 @@ def create_supplemental_product_data_source_wildcard():
 
   # Creates a DataSource and populates its attributes.
   data_source = merchant_datasources_v1beta.DataSource()
-  data_source.display_name = "Example Wildcard Supplemental DataSource"
+  data_source.display_name = (
+      "Example Multiple Languages Supplemental DataSource"
+  )
   data_source.supplemental_product_data_source = supplemental_datasource
 
   # Creates the request.
@@ -62,6 +64,6 @@ def create_supplemental_product_data_source_wildcard():
 
 
 if __name__ == "__main__":
-  create_supplemental_product_data_source_wildcard()
+  create_supplemental_product_data_source_multiple_languages()
 
-# [END merchantapi_create_supplemental_product_data_source_wildcard]
+# [END merchantapi_create_supplemental_product_data_source_multiple_languages]

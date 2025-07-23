@@ -18,7 +18,7 @@
 require_once __DIR__ . '/../../../vendor/autoload.php';
 require_once __DIR__ . '/../../Authentication/Authentication.php';
 require_once __DIR__ . '/../../Authentication/Config.php';
-// [START merchantapi_create_primary_product_data_source_wildcard]
+// [START merchantapi_create_primary_product_data_source_multiple_languages]
 use Google\ApiCore\ApiException;
 use Google\Shopping\Merchant\DataSources\V1beta\Client\DataSourcesServiceClient;
 use Google\Shopping\Merchant\DataSources\V1beta\CreateDataSourceRequest;
@@ -28,10 +28,10 @@ use Google\Shopping\Merchant\DataSources\V1beta\PrimaryProductDataSource\Channel
 
 /**
  * This class demonstrates how to create a primary product datasource for all `feedLabel` and
- * `contentLanguage` combinations. Note that rules functionality is limited for wildcard feeds.
+ * `contentLanguage` combinations.
  */
 
-class CreatePrimaryProductDataSourceWildCardSample
+class CreatePrimaryProductDataSourceMultipleLanguagesSample
 {
     /**
      * Creates a primary product data source.
@@ -90,13 +90,13 @@ class CreatePrimaryProductDataSourceWildCardSample
         $merchantId = $config['accountId'];
 
         // The displayed datasource name in the Merchant Center UI.
-        $displayName = 'Primary Product Data Wildcard';
+        $displayName = 'Primary Product Data Multiple Languages';
 
         self::createDataSource($merchantId, $displayName);
     }
 }
 
 
-$sample = new CreatePrimaryProductDataSourceWildCardSample();
+$sample = new CreatePrimaryProductDataSourceMultipleLanguagesSample();
 $sample->callSample();
-// [END merchantapi_create_primary_product_data_source_wildcard]
+// [END merchantapi_create_primary_product_data_source_multiple_languages]

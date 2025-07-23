@@ -18,7 +18,7 @@
 require_once __DIR__ . '/../../../vendor/autoload.php';
 require_once __DIR__ . '/../../Authentication/Authentication.php';
 require_once __DIR__ . '/../../Authentication/Config.php';
-// [START merchantapi_create_supplemental_product_data_source_wildcard]
+// [START merchantapi_create_supplemental_product_data_source_multiple_languages]
 use Google\ApiCore\ApiException;
 use Google\Shopping\Merchant\DataSources\V1beta\Client\DataSourcesServiceClient;
 use Google\Shopping\Merchant\DataSources\V1beta\CreateDataSourceRequest;
@@ -30,7 +30,7 @@ use Google\Shopping\Merchant\DataSources\V1beta\SupplementalProductDataSource;
  * `feedLabel` and `contentLanguage` combinations. This works only for API
  * supplemental feeds.
  */
-class CreateSupplementalProductDataSourceWildCardSample
+class CreateSupplementalProductDataSourceMultipleLanguagesSample
 {
     /**
      * Creates a DataSource.
@@ -84,13 +84,13 @@ class CreateSupplementalProductDataSourceWildCardSample
         $merchantId = $config['accountId'];
 
         // The displayed datasource name in the Merchant Center UI.
-        $displayName = 'Supplemental API Product Data Wildcard';
+        $displayName = 'Supplemental API Product Data Multiple Languages';
 
         self::createDataSource($merchantId, $displayName);
     }
 }
 
 
-$sample = new CreateSupplementalProductDataSourceWildCardSample();
+$sample = new CreateSupplementalProductDataSourceMultipleLanguagesSample();
 $sample->callSample();
-// [END merchantapi_create_supplemental_product_data_source_wildcard]
+// [END merchantapi_create_supplemental_product_data_source_multiple_languages]

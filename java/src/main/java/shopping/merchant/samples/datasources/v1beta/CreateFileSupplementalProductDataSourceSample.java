@@ -28,7 +28,7 @@ import shopping.merchant.samples.utils.Config;
 /**
  * This class demonstrates how to create a File Supplemental product datasource for the "en" and
  * "GB" `feedLabel` and `contentLanguage` combination. This supplemental feed is eligible to be
- * linked to both a wildcard primary feed and/or a primary feed with the same `feedLabel` and
+ * linked to both a multiple-label primary feed and/or a primary feed with the same `feedLabel` and
  * `contentLanguage` combination.
  */
 public class CreateFileSupplementalProductDataSourceSample {

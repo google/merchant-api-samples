@@ -43,8 +43,7 @@ def create_file_local_inventory_data_source():
 
   # Creates a SupplementalProductDataSource.
   local_inventory_datasource = LocalInventoryDataSource()
-  # As LocalInventoryDataSources are a type of file feed, wildcards are not
-  # available. LocalInventoryDataSources can only be created for a specific
+  # LocalInventoryDataSources can only be created for a specific
   # `feedLabel` and `contentLanguage` combination.
   local_inventory_datasource.content_language = "en"
   local_inventory_datasource.feed_label = "GB"

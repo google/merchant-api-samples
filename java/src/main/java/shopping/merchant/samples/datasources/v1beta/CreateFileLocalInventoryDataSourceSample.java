@@ -52,7 +52,6 @@ public class CreateFileLocalInventoryDataSourceSample {
 
     String parent = getParent(config.getAccountId().toString());
 
-    // As LocalInventoryDataSources are a type of file feed, therefore wildcards are not available.
     // LocalInventoryDataSources can only be created for a specific `feedLabel` and
     // `contentLanguage` combination.
     LocalInventoryDataSource localInventoryDataSource =

@@ -55,7 +55,6 @@ class CreateFileLocalInventoryDataSourceSample
 
         $parent = sprintf('accounts/%s', $merchantId);
 
-        // As LocalInventoryDataSources are a type of file feed, therefore wildcards are not available.
         // LocalInventoryDataSources can only be created for a specific `feedLabel` and
         // `contentLanguage` combination.
         $localInventoryDataSource =

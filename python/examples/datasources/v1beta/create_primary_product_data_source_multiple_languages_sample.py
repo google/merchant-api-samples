@@ -17,7 +17,7 @@
 This works only for API primary feeds.
 """
 
-# [START merchantapi_create_primary_product_data_source_wildcard]
+# [START merchantapi_create_primary_product_data_source_multiple_languages]
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
 from google.shopping.merchant_datasources_v1beta import CreateDataSourceRequest
@@ -29,7 +29,7 @@ _ACCOUNT = configuration.Configuration().read_merchant_info()
 _PARENT = f"accounts/{_ACCOUNT}"
 
 
-def create_primary_product_data_source_wildcard():
+def create_primary_product_data_source_multiple_languages():
   """Creates a `DataSource` resource."""
 
   # Gets OAuth Credentials.
@@ -48,7 +48,7 @@ def create_primary_product_data_source_wildcard():
 
   # Creates a DataSource and populates its attributes.
   data_source = DataSource()
-  data_source.display_name = "Example Wildcard Primary DataSource"
+  data_source.display_name = "Example Multiple Languages Primary DataSource"
   data_source.primary_product_data_source = primary_datasource
 
   # Creates the request.
@@ -64,6 +64,6 @@ def create_primary_product_data_source_wildcard():
 
 
 if __name__ == "__main__":
-  create_primary_product_data_source_wildcard()
+  create_primary_product_data_source_multiple_languages()
 
-# [END merchantapi_create_primary_product_data_source_wildcard]
+# [END merchantapi_create_primary_product_data_source_multiple_languages]

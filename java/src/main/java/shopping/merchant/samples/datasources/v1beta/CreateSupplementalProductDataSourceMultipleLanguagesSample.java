@@ -13,7 +13,7 @@
 // limitations under the License.
 
 package shopping.merchant.samples.datasources.v1beta;
-// [START merchantapi_create_supplemental_product_data_source_wildcard]
+// [START merchantapi_create_supplemental_product_data_source_multiple_languages]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.shopping.merchant.datasources.v1beta.CreateDataSourceRequest;
@@ -28,7 +28,7 @@ import shopping.merchant.samples.utils.Config;
  * This class demonstrates how to create a Supplemental product datasource all `feedLabel` and
  * `contentLanguage` combinations. This works only for API supplemental feeds.
  */
-public class CreateSupplementalProductDataSourceWildCardSample {
+public class CreateSupplementalProductDataSourceMultipleLanguagesSample {
 
   private static String getParent(String merchantId) {
     return String.format("accounts/%s", merchantId);
@@ -73,10 +73,10 @@ public class CreateSupplementalProductDataSourceWildCardSample {
 
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
-    // The displayed datasource name in the Merchant Center UI.
-    String displayName = "Supplemental API Product Data Wildcard";
+    // The displayed data source name in the Merchant Center UI.
+    String displayName = "Supplemental API Product Data Multiple Languages";
 
     createDataSource(config, displayName);
   }
 }
-// [END merchantapi_create_supplemental_product_data_source_wildcard]
+// [END merchantapi_create_supplemental_product_data_source_multiple_languages]

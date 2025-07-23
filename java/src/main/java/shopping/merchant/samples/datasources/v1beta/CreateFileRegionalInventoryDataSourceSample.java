@@ -52,8 +52,7 @@ public class CreateFileRegionalInventoryDataSourceSample {
 
     String parent = getParent(config.getAccountId().toString());
 
-    // As RegionalInventoryDataSources are a type of file feed, therefore wildcards are not
-    // available. RegionalInventoryDataSources can only be created for a specific `feedLabel` and
+    // RegionalInventoryDataSources can only be created for a specific `feedLabel` and
     // `contentLanguage` combination.
     RegionalInventoryDataSource regionalInventoryDataSource =
         RegionalInventoryDataSource.newBuilder()

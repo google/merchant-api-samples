@@ -50,7 +50,7 @@ public class CreatePromotionDataSourceSample {
               .setDataSource(
                   DataSource.newBuilder()
                       .setDisplayName(displayName)
-                      // Wildcards are not available for PromotionDataSources. PromotionDataSources
+                      // PromotionDataSources
                       // can only be created for a specific `targetCountry` and `contentLanguage`
                       // combination.
                       .setPromotionDataSource(
