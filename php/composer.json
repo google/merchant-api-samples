@@ -15,6 +15,7 @@
     "google/shopping-merchant-datasources": "^0.5.0",
     "google/shopping-merchant-inventories": "^0.5.1",
     "google/shopping-merchant-notifications": "^0.2.0",
+    "google/shopping-merchant-ordertracking": "^0.1.1",
     "google/shopping-merchant-products": "^0.4.0",
     "google/shopping-merchant-promotions": "^0.1.2",
     "google/shopping-merchant-quota": "^0.2.0",
