@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\..\..\CommonSettings.xml" />
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>netcoreapp8.0</TargetFrameworks>
+    <RootNamespace>MerchantApi</RootNamespace>
+    <AssemblyName>Google.MerchantApi.Samples</AssemblyName>
+    <Description>Samples for Google Merchant API</Description>
+    <StartupObject>MerchantApi.ListAccountsSample</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\..\source\MerchantConfig.cs" />
+    <Compile Include="..\..\..\..\source\Authenticator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="CommandLineParser" Version="2.9.1" />
+    <PackageReference Include="Google.Apis.Core" Version="1.70.0" />
+    <PackageReference Include="Google.Shopping.Merchant.Accounts.V1Beta" Version="1.0.0-beta06" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.0" PrivateAssets="All" />
+  </ItemGroup>
+</Project>
