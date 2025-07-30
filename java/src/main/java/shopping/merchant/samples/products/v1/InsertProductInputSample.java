@@ -17,10 +17,8 @@ package shopping.merchant.samples.products.v1;
 // [START merchantapi_insert_product_input]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.shopping.merchant.products.v1.Availability;
-import com.google.shopping.merchant.products.v1.Condition;
+import com.google.shopping.merchant.products.v1.Attributes;
 import com.google.shopping.merchant.products.v1.InsertProductInputRequest;
-import com.google.shopping.merchant.products.v1.ProductAttributes;
 import com.google.shopping.merchant.products.v1.ProductInput;
 import com.google.shopping.merchant.products.v1.ProductInputsServiceClient;
 import com.google.shopping.merchant.products.v1.ProductInputsServiceSettings;
@@ -72,14 +70,14 @@ public class InsertProductInputSample {
               .setService("1st class post")
               .build();
 
-      ProductAttributes attributes =
-          ProductAttributes.newBuilder()
+      Attributes attributes =
+          Attributes.newBuilder()
               .setTitle("A Tale of Two Cities")
               .setDescription("A classic novel about the French Revolution")
               .setLink("https://exampleWebsite.com/tale-of-two-cities.html")
               .setImageLink("https://exampleWebsite.com/tale-of-two-cities.jpg")
-              .setAvailability(Availability.IN_STOCK)
-              .setCondition(Condition.NEW)
+              .setAvailability("in stock")
+              .setCondition("new")
               .setGoogleProductCategory("Media > Books")
               .addGtins("9780007350896")
               .addShipping(shipping)

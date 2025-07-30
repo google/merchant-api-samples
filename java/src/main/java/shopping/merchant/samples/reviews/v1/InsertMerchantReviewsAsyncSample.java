@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package shopping.merchant.samples.reviews.v1beta;
+package shopping.merchant.samples.reviews.v1;
 
 // [START merchantapi_insert_merchant_reviews_async]
 import com.google.api.core.ApiFuture;
@@ -22,11 +22,11 @@ import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.Timestamp;
-import com.google.shopping.merchant.reviews.v1beta.InsertMerchantReviewRequest;
-import com.google.shopping.merchant.reviews.v1beta.MerchantReview;
-import com.google.shopping.merchant.reviews.v1beta.MerchantReviewAttributes;
-import com.google.shopping.merchant.reviews.v1beta.MerchantReviewsServiceClient;
-import com.google.shopping.merchant.reviews.v1beta.MerchantReviewsServiceSettings;
+import com.google.shopping.merchant.reviews.v1.InsertMerchantReviewRequest;
+import com.google.shopping.merchant.reviews.v1.MerchantReview;
+import com.google.shopping.merchant.reviews.v1.MerchantReviewAttributes;
+import com.google.shopping.merchant.reviews.v1.MerchantReviewsServiceClient;
+import com.google.shopping.merchant.reviews.v1.MerchantReviewsServiceSettings;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;

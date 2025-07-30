@@ -12,17 +12,17 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package shopping.merchant.samples.accounts.emailpreferences.v1beta;
+package shopping.merchant.samples.accounts.emailpreferences.v1;
 // [START merchantapi_update_email_preferences]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.protobuf.FieldMask;
-import com.google.shopping.merchant.accounts.v1beta.EmailPreferences;
-import com.google.shopping.merchant.accounts.v1beta.EmailPreferences.OptInState;
-import com.google.shopping.merchant.accounts.v1beta.EmailPreferencesName;
-import com.google.shopping.merchant.accounts.v1beta.EmailPreferencesServiceClient;
-import com.google.shopping.merchant.accounts.v1beta.EmailPreferencesServiceSettings;
-import com.google.shopping.merchant.accounts.v1beta.UpdateEmailPreferencesRequest;
+import com.google.shopping.merchant.accounts.v1.EmailPreferences;
+import com.google.shopping.merchant.accounts.v1.EmailPreferences.OptInState;
+import com.google.shopping.merchant.accounts.v1.EmailPreferencesName;
+import com.google.shopping.merchant.accounts.v1.EmailPreferencesServiceClient;
+import com.google.shopping.merchant.accounts.v1.EmailPreferencesServiceSettings;
+import com.google.shopping.merchant.accounts.v1.UpdateEmailPreferencesRequest;
 import shopping.merchant.samples.utils.Authenticator;
 import shopping.merchant.samples.utils.Config;
 

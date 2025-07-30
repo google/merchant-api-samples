@@ -11,19 +11,19 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-package shopping.merchant.samples.issueresolution.v1beta;
+package shopping.merchant.samples.issueresolution.v1;
 
 // [START merchantapi_render_product_issues]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.shopping.merchant.issueresolution.v1beta.IssueResolutionServiceClient;
-import com.google.shopping.merchant.issueresolution.v1beta.IssueResolutionServiceSettings;
-import com.google.shopping.merchant.issueresolution.v1beta.ProductName;
-import com.google.shopping.merchant.issueresolution.v1beta.RenderIssuesRequestPayload;
-import com.google.shopping.merchant.issueresolution.v1beta.RenderProductIssuesRequest;
-import com.google.shopping.merchant.issueresolution.v1beta.RenderProductIssuesResponse;
-import com.google.shopping.merchant.issueresolution.v1beta.RenderedIssue;
-import com.google.shopping.merchant.issueresolution.v1beta.UserInputActionRenderingOption;
+import com.google.shopping.merchant.issueresolution.v1.IssueResolutionServiceClient;
+import com.google.shopping.merchant.issueresolution.v1.IssueResolutionServiceSettings;
+import com.google.shopping.merchant.issueresolution.v1.ProductName;
+import com.google.shopping.merchant.issueresolution.v1.RenderIssuesRequestPayload;
+import com.google.shopping.merchant.issueresolution.v1.RenderProductIssuesRequest;
+import com.google.shopping.merchant.issueresolution.v1.RenderProductIssuesResponse;
+import com.google.shopping.merchant.issueresolution.v1.RenderedIssue;
+import com.google.shopping.merchant.issueresolution.v1.UserInputActionRenderingOption;
 import java.io.IOException;
 import shopping.merchant.samples.utils.Authenticator;
 import shopping.merchant.samples.utils.Config;

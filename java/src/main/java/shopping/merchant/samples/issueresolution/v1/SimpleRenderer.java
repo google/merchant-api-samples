@@ -11,14 +11,14 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-package shopping.merchant.samples.issueresolution.v1beta;
+package shopping.merchant.samples.issueresolution.v1;
 
-import com.google.shopping.merchant.issueresolution.v1beta.Action;
-import com.google.shopping.merchant.issueresolution.v1beta.ActionFlow;
-import com.google.shopping.merchant.issueresolution.v1beta.Breakdown;
-import com.google.shopping.merchant.issueresolution.v1beta.Breakdown.Region;
-import com.google.shopping.merchant.issueresolution.v1beta.RenderedIssue;
-import com.google.shopping.merchant.issueresolution.v1beta.Severity;
+import com.google.shopping.merchant.issueresolution.v1.Action;
+import com.google.shopping.merchant.issueresolution.v1.ActionFlow;
+import com.google.shopping.merchant.issueresolution.v1.Breakdown;
+import com.google.shopping.merchant.issueresolution.v1.Breakdown.Region;
+import com.google.shopping.merchant.issueresolution.v1.RenderedIssue;
+import com.google.shopping.merchant.issueresolution.v1.Severity;
 import java.util.stream.Collectors;
 
 /** This is a simple implementation of how to render an issue. */

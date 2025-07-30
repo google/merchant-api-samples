@@ -13,7 +13,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package shopping.merchant.samples.promotions.v1beta;
+package shopping.merchant.samples.promotions.v1;
 // [START merchantapi_insert_promotions_async]
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
@@ -22,15 +22,15 @@ import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.Timestamp;
-import com.google.shopping.merchant.promotions.v1beta.Attributes;
-import com.google.shopping.merchant.promotions.v1beta.CouponValueType;
-import com.google.shopping.merchant.promotions.v1beta.InsertPromotionRequest;
-import com.google.shopping.merchant.promotions.v1beta.OfferType;
-import com.google.shopping.merchant.promotions.v1beta.ProductApplicability;
-import com.google.shopping.merchant.promotions.v1beta.Promotion;
-import com.google.shopping.merchant.promotions.v1beta.PromotionsServiceClient;
-import com.google.shopping.merchant.promotions.v1beta.PromotionsServiceSettings;
-import com.google.shopping.merchant.promotions.v1beta.RedemptionChannel;
+import com.google.shopping.merchant.promotions.v1.Attributes;
+import com.google.shopping.merchant.promotions.v1.CouponValueType;
+import com.google.shopping.merchant.promotions.v1.InsertPromotionRequest;
+import com.google.shopping.merchant.promotions.v1.OfferType;
+import com.google.shopping.merchant.promotions.v1.ProductApplicability;
+import com.google.shopping.merchant.promotions.v1.Promotion;
+import com.google.shopping.merchant.promotions.v1.PromotionsServiceClient;
+import com.google.shopping.merchant.promotions.v1.PromotionsServiceSettings;
+import com.google.shopping.merchant.promotions.v1.RedemptionChannel;
 import com.google.shopping.type.CustomAttribute;
 import com.google.shopping.type.Destination.DestinationEnum;
 import com.google.type.Interval;

@@ -12,17 +12,17 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package shopping.merchant.samples.accounts.lfpproviders.v1beta;
+package shopping.merchant.samples.accounts.lfpproviders.v1;
 
 // [START merchantapi_find_lfp_providers]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.shopping.merchant.accounts.v1beta.FindLfpProvidersRequest;
-import com.google.shopping.merchant.accounts.v1beta.LfpProvider;
-import com.google.shopping.merchant.accounts.v1beta.LfpProvidersServiceClient;
-import com.google.shopping.merchant.accounts.v1beta.LfpProvidersServiceClient.FindLfpProvidersPagedResponse;
-import com.google.shopping.merchant.accounts.v1beta.LfpProvidersServiceSettings;
-import com.google.shopping.merchant.accounts.v1beta.OmnichannelSettingName;
+import com.google.shopping.merchant.accounts.v1.FindLfpProvidersRequest;
+import com.google.shopping.merchant.accounts.v1.LfpProvider;
+import com.google.shopping.merchant.accounts.v1.LfpProvidersServiceClient;
+import com.google.shopping.merchant.accounts.v1.LfpProvidersServiceClient.FindLfpProvidersPagedResponse;
+import com.google.shopping.merchant.accounts.v1.LfpProvidersServiceSettings;
+import com.google.shopping.merchant.accounts.v1.OmnichannelSettingName;
 import shopping.merchant.samples.utils.Authenticator;
 import shopping.merchant.samples.utils.Config;
 

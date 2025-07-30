@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package shopping.merchant.samples.reviews.v1beta;
+package shopping.merchant.samples.reviews.v1;
 
 // [START merchantapi_insert_product_reviews_async]
 import com.google.api.core.ApiFuture;
@@ -22,13 +22,13 @@ import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.Timestamp;
-import com.google.shopping.merchant.reviews.v1beta.InsertProductReviewRequest;
-import com.google.shopping.merchant.reviews.v1beta.ProductReview;
-import com.google.shopping.merchant.reviews.v1beta.ProductReviewAttributes;
-import com.google.shopping.merchant.reviews.v1beta.ProductReviewAttributes.ReviewLink;
-import com.google.shopping.merchant.reviews.v1beta.ProductReviewAttributes.ReviewLink.Type;
-import com.google.shopping.merchant.reviews.v1beta.ProductReviewsServiceClient;
-import com.google.shopping.merchant.reviews.v1beta.ProductReviewsServiceSettings;
+import com.google.shopping.merchant.reviews.v1.InsertProductReviewRequest;
+import com.google.shopping.merchant.reviews.v1.ProductReview;
+import com.google.shopping.merchant.reviews.v1.ProductReviewAttributes;
+import com.google.shopping.merchant.reviews.v1.ProductReviewAttributes.ReviewLink;
+import com.google.shopping.merchant.reviews.v1.ProductReviewAttributes.ReviewLink.Type;
+import com.google.shopping.merchant.reviews.v1.ProductReviewsServiceClient;
+import com.google.shopping.merchant.reviews.v1.ProductReviewsServiceSettings;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;

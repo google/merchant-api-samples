@@ -12,15 +12,15 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package shopping.merchant.samples.accounts.onlinereturnpolicy.v1beta;
+package shopping.merchant.samples.accounts.onlinereturnpolicy.v1;
 
 // [START merchantapi_delete_online_return_policy]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.shopping.merchant.accounts.v1beta.DeleteOnlineReturnPolicyRequest;
-import com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicyName;
-import com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicyServiceClient;
-import com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicyServiceSettings;
+import com.google.shopping.merchant.accounts.v1.DeleteOnlineReturnPolicyRequest;
+import com.google.shopping.merchant.accounts.v1.OnlineReturnPolicyName;
+import com.google.shopping.merchant.accounts.v1.OnlineReturnPolicyServiceClient;
+import com.google.shopping.merchant.accounts.v1.OnlineReturnPolicyServiceSettings;
 import shopping.merchant.samples.utils.Authenticator;
 import shopping.merchant.samples.utils.Config;
 

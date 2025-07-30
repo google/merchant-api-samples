@@ -12,16 +12,16 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package shopping.merchant.samples.reviews.v1beta;
+package shopping.merchant.samples.reviews.v1;
 
 // [START merchantapi_list_product_reviews]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.shopping.merchant.reviews.v1beta.ListProductReviewsRequest;
-import com.google.shopping.merchant.reviews.v1beta.ProductReview;
-import com.google.shopping.merchant.reviews.v1beta.ProductReviewsServiceClient;
-import com.google.shopping.merchant.reviews.v1beta.ProductReviewsServiceClient.ListProductReviewsPagedResponse;
-import com.google.shopping.merchant.reviews.v1beta.ProductReviewsServiceSettings;
+import com.google.shopping.merchant.reviews.v1.ListProductReviewsRequest;
+import com.google.shopping.merchant.reviews.v1.ProductReview;
+import com.google.shopping.merchant.reviews.v1.ProductReviewsServiceClient;
+import com.google.shopping.merchant.reviews.v1.ProductReviewsServiceClient.ListProductReviewsPagedResponse;
+import com.google.shopping.merchant.reviews.v1.ProductReviewsServiceSettings;
 import shopping.merchant.samples.utils.Authenticator;
 import shopping.merchant.samples.utils.Config;
 

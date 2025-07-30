@@ -12,15 +12,15 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package shopping.merchant.samples.inventories.v1beta;
+package shopping.merchant.samples.inventories.v1;
 // [START merchantapi_list_regional_inventories]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.shopping.merchant.inventories.v1beta.ListRegionalInventoriesRequest;
-import com.google.shopping.merchant.inventories.v1beta.RegionalInventory;
-import com.google.shopping.merchant.inventories.v1beta.RegionalInventoryServiceClient;
-import com.google.shopping.merchant.inventories.v1beta.RegionalInventoryServiceClient.ListRegionalInventoriesPagedResponse;
-import com.google.shopping.merchant.inventories.v1beta.RegionalInventoryServiceSettings;
+import com.google.shopping.merchant.inventories.v1.ListRegionalInventoriesRequest;
+import com.google.shopping.merchant.inventories.v1.RegionalInventory;
+import com.google.shopping.merchant.inventories.v1.RegionalInventoryServiceClient;
+import com.google.shopping.merchant.inventories.v1.RegionalInventoryServiceClient.ListRegionalInventoriesPagedResponse;
+import com.google.shopping.merchant.inventories.v1.RegionalInventoryServiceSettings;
 import shopping.merchant.samples.utils.Authenticator;
 import shopping.merchant.samples.utils.Config;
 

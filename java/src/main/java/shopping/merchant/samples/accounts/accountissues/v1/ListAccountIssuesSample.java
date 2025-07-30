@@ -12,17 +12,17 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package shopping.merchant.samples.accounts.accountissues.v1beta;
+package shopping.merchant.samples.accounts.accountissues.v1;
 
 // [START merchantapi_list_account_issues]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.shopping.merchant.accounts.v1beta.AccountIssue;
-import com.google.shopping.merchant.accounts.v1beta.AccountIssueServiceClient;
-import com.google.shopping.merchant.accounts.v1beta.AccountIssueServiceClient.ListAccountIssuesPagedResponse;
-import com.google.shopping.merchant.accounts.v1beta.AccountIssueServiceSettings;
-import com.google.shopping.merchant.accounts.v1beta.AccountName;
-import com.google.shopping.merchant.accounts.v1beta.ListAccountIssuesRequest;
+import com.google.shopping.merchant.accounts.v1.AccountIssue;
+import com.google.shopping.merchant.accounts.v1.AccountIssueServiceClient;
+import com.google.shopping.merchant.accounts.v1.AccountIssueServiceClient.ListAccountIssuesPagedResponse;
+import com.google.shopping.merchant.accounts.v1.AccountIssueServiceSettings;
+import com.google.shopping.merchant.accounts.v1.AccountName;
+import com.google.shopping.merchant.accounts.v1.ListAccountIssuesRequest;
 import shopping.merchant.samples.utils.Authenticator;
 import shopping.merchant.samples.utils.Config;
 

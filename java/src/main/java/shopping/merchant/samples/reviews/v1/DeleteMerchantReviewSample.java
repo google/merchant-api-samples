@@ -12,14 +12,14 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package shopping.merchant.samples.reviews.v1beta;
+package shopping.merchant.samples.reviews.v1;
 
 // [START merchantapi_delete_merchant_review]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.shopping.merchant.reviews.v1beta.DeleteMerchantReviewRequest;
-import com.google.shopping.merchant.reviews.v1beta.MerchantReviewsServiceClient;
-import com.google.shopping.merchant.reviews.v1beta.MerchantReviewsServiceSettings;
+import com.google.shopping.merchant.reviews.v1.DeleteMerchantReviewRequest;
+import com.google.shopping.merchant.reviews.v1.MerchantReviewsServiceClient;
+import com.google.shopping.merchant.reviews.v1.MerchantReviewsServiceSettings;
 import shopping.merchant.samples.utils.Authenticator;
 import shopping.merchant.samples.utils.Config;
 

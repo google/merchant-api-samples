@@ -12,16 +12,16 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package shopping.merchant.samples.lfp.v1beta;
+package shopping.merchant.samples.lfp.v1;
 
 // [START merchantapi_get_lfp_merchant_state]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.shopping.merchant.lfp.v1beta.GetLfpMerchantStateRequest;
-import com.google.shopping.merchant.lfp.v1beta.LfpMerchantState;
-import com.google.shopping.merchant.lfp.v1beta.LfpMerchantStateName;
-import com.google.shopping.merchant.lfp.v1beta.LfpMerchantStateServiceClient;
-import com.google.shopping.merchant.lfp.v1beta.LfpMerchantStateServiceSettings;
+import com.google.shopping.merchant.lfp.v1.GetLfpMerchantStateRequest;
+import com.google.shopping.merchant.lfp.v1.LfpMerchantState;
+import com.google.shopping.merchant.lfp.v1.LfpMerchantStateName;
+import com.google.shopping.merchant.lfp.v1.LfpMerchantStateServiceClient;
+import com.google.shopping.merchant.lfp.v1.LfpMerchantStateServiceSettings;
 import shopping.merchant.samples.utils.Authenticator;
 import shopping.merchant.samples.utils.Config;
 

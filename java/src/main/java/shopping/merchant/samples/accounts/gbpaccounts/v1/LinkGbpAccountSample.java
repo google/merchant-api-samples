@@ -12,15 +12,15 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package shopping.merchant.samples.accounts.gbpaccounts.v1beta;
+package shopping.merchant.samples.accounts.gbpaccounts.v1;
 
 // [START merchantapi_link_gbp_account]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.shopping.merchant.accounts.v1beta.AccountName;
-import com.google.shopping.merchant.accounts.v1beta.GbpAccountsServiceClient;
-import com.google.shopping.merchant.accounts.v1beta.GbpAccountsServiceSettings;
-import com.google.shopping.merchant.accounts.v1beta.LinkGbpAccountRequest;
+import com.google.shopping.merchant.accounts.v1.AccountName;
+import com.google.shopping.merchant.accounts.v1.GbpAccountsServiceClient;
+import com.google.shopping.merchant.accounts.v1.GbpAccountsServiceSettings;
+import com.google.shopping.merchant.accounts.v1.LinkGbpAccountRequest;
 import shopping.merchant.samples.utils.Authenticator;
 import shopping.merchant.samples.utils.Config;
 

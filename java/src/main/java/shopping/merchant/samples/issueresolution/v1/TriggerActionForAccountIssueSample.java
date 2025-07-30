@@ -11,33 +11,33 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-package shopping.merchant.samples.issueresolution.v1beta;
+package shopping.merchant.samples.issueresolution.v1;
 
 // [START merchantapi_trigger_action_for_account_issue]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.shopping.merchant.issueresolution.v1beta.AccountName;
-import com.google.shopping.merchant.issueresolution.v1beta.Action;
-import com.google.shopping.merchant.issueresolution.v1beta.ActionFlow;
-import com.google.shopping.merchant.issueresolution.v1beta.ActionInput;
-import com.google.shopping.merchant.issueresolution.v1beta.BuiltInUserInputAction;
-import com.google.shopping.merchant.issueresolution.v1beta.InputField;
-import com.google.shopping.merchant.issueresolution.v1beta.InputField.ChoiceInput;
-import com.google.shopping.merchant.issueresolution.v1beta.InputField.ChoiceInput.ChoiceInputOption;
-import com.google.shopping.merchant.issueresolution.v1beta.InputValue;
-import com.google.shopping.merchant.issueresolution.v1beta.InputValue.CheckboxInputValue;
-import com.google.shopping.merchant.issueresolution.v1beta.InputValue.ChoiceInputValue;
-import com.google.shopping.merchant.issueresolution.v1beta.InputValue.TextInputValue;
-import com.google.shopping.merchant.issueresolution.v1beta.IssueResolutionServiceClient;
-import com.google.shopping.merchant.issueresolution.v1beta.IssueResolutionServiceSettings;
-import com.google.shopping.merchant.issueresolution.v1beta.RenderAccountIssuesRequest;
-import com.google.shopping.merchant.issueresolution.v1beta.RenderAccountIssuesResponse;
-import com.google.shopping.merchant.issueresolution.v1beta.RenderIssuesRequestPayload;
-import com.google.shopping.merchant.issueresolution.v1beta.RenderedIssue;
-import com.google.shopping.merchant.issueresolution.v1beta.TriggerActionPayload;
-import com.google.shopping.merchant.issueresolution.v1beta.TriggerActionRequest;
-import com.google.shopping.merchant.issueresolution.v1beta.TriggerActionResponse;
-import com.google.shopping.merchant.issueresolution.v1beta.UserInputActionRenderingOption;
+import com.google.shopping.merchant.issueresolution.v1.AccountName;
+import com.google.shopping.merchant.issueresolution.v1.Action;
+import com.google.shopping.merchant.issueresolution.v1.ActionFlow;
+import com.google.shopping.merchant.issueresolution.v1.ActionInput;
+import com.google.shopping.merchant.issueresolution.v1.BuiltInUserInputAction;
+import com.google.shopping.merchant.issueresolution.v1.InputField;
+import com.google.shopping.merchant.issueresolution.v1.InputField.ChoiceInput;
+import com.google.shopping.merchant.issueresolution.v1.InputField.ChoiceInput.ChoiceInputOption;
+import com.google.shopping.merchant.issueresolution.v1.InputValue;
+import com.google.shopping.merchant.issueresolution.v1.InputValue.CheckboxInputValue;
+import com.google.shopping.merchant.issueresolution.v1.InputValue.ChoiceInputValue;
+import com.google.shopping.merchant.issueresolution.v1.InputValue.TextInputValue;
+import com.google.shopping.merchant.issueresolution.v1.IssueResolutionServiceClient;
+import com.google.shopping.merchant.issueresolution.v1.IssueResolutionServiceSettings;
+import com.google.shopping.merchant.issueresolution.v1.RenderAccountIssuesRequest;
+import com.google.shopping.merchant.issueresolution.v1.RenderAccountIssuesResponse;
+import com.google.shopping.merchant.issueresolution.v1.RenderIssuesRequestPayload;
+import com.google.shopping.merchant.issueresolution.v1.RenderedIssue;
+import com.google.shopping.merchant.issueresolution.v1.TriggerActionPayload;
+import com.google.shopping.merchant.issueresolution.v1.TriggerActionRequest;
+import com.google.shopping.merchant.issueresolution.v1.TriggerActionResponse;
+import com.google.shopping.merchant.issueresolution.v1.UserInputActionRenderingOption;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;

@@ -12,15 +12,15 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package shopping.merchant.samples.accounts.autofeedsettings.v1beta;
+package shopping.merchant.samples.accounts.autofeedsettings.v1;
 // [START merchantapi_get_autofeed_settings]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.shopping.merchant.accounts.v1beta.AutofeedSettings;
-import com.google.shopping.merchant.accounts.v1beta.AutofeedSettingsName;
-import com.google.shopping.merchant.accounts.v1beta.AutofeedSettingsServiceClient;
-import com.google.shopping.merchant.accounts.v1beta.AutofeedSettingsServiceSettings;
-import com.google.shopping.merchant.accounts.v1beta.GetAutofeedSettingsRequest;
+import com.google.shopping.merchant.accounts.v1.AutofeedSettings;
+import com.google.shopping.merchant.accounts.v1.AutofeedSettingsName;
+import com.google.shopping.merchant.accounts.v1.AutofeedSettingsServiceClient;
+import com.google.shopping.merchant.accounts.v1.AutofeedSettingsServiceSettings;
+import com.google.shopping.merchant.accounts.v1.GetAutofeedSettingsRequest;
 import shopping.merchant.samples.utils.Authenticator;
 import shopping.merchant.samples.utils.Config;
 

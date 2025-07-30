@@ -12,14 +12,14 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package shopping.merchant.samples.inventories.v1beta;
+package shopping.merchant.samples.inventories.v1;
 // [START merchantapi_delete_local_inventory]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.shopping.merchant.inventories.v1beta.DeleteLocalInventoryRequest;
-import com.google.shopping.merchant.inventories.v1beta.LocalInventoryName;
-import com.google.shopping.merchant.inventories.v1beta.LocalInventoryServiceClient;
-import com.google.shopping.merchant.inventories.v1beta.LocalInventoryServiceSettings;
+import com.google.shopping.merchant.inventories.v1.DeleteLocalInventoryRequest;
+import com.google.shopping.merchant.inventories.v1.LocalInventoryName;
+import com.google.shopping.merchant.inventories.v1.LocalInventoryServiceClient;
+import com.google.shopping.merchant.inventories.v1.LocalInventoryServiceSettings;
 import shopping.merchant.samples.utils.Authenticator;
 import shopping.merchant.samples.utils.Config;
 

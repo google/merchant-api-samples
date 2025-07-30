@@ -12,15 +12,15 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package shopping.merchant.samples.accounts.termsofservices.v1beta;
+package shopping.merchant.samples.accounts.termsofservices.v1;
 // [START merchantapi_get_termsofservice_agreementstate]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.shopping.merchant.accounts.v1beta.GetTermsOfServiceAgreementStateRequest;
-import com.google.shopping.merchant.accounts.v1beta.TermsOfServiceAgreementState;
-import com.google.shopping.merchant.accounts.v1beta.TermsOfServiceAgreementStateName;
-import com.google.shopping.merchant.accounts.v1beta.TermsOfServiceAgreementStateServiceClient;
-import com.google.shopping.merchant.accounts.v1beta.TermsOfServiceAgreementStateServiceSettings;
+import com.google.shopping.merchant.accounts.v1.GetTermsOfServiceAgreementStateRequest;
+import com.google.shopping.merchant.accounts.v1.TermsOfServiceAgreementState;
+import com.google.shopping.merchant.accounts.v1.TermsOfServiceAgreementStateName;
+import com.google.shopping.merchant.accounts.v1.TermsOfServiceAgreementStateServiceClient;
+import com.google.shopping.merchant.accounts.v1.TermsOfServiceAgreementStateServiceSettings;
 import shopping.merchant.samples.utils.Authenticator;
 import shopping.merchant.samples.utils.Config;
 

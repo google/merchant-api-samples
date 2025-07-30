@@ -12,18 +12,18 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package shopping.merchant.samples.accounts.omnichannelsettings.v1beta;
+package shopping.merchant.samples.accounts.omnichannelsettings.v1;
 
 // [START merchantapi_create_omnichannel_setting]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.shopping.merchant.accounts.v1beta.AccountName;
-import com.google.shopping.merchant.accounts.v1beta.CreateOmnichannelSettingRequest;
-import com.google.shopping.merchant.accounts.v1beta.InStock;
-import com.google.shopping.merchant.accounts.v1beta.OmnichannelSetting;
-import com.google.shopping.merchant.accounts.v1beta.OmnichannelSetting.LsfType;
-import com.google.shopping.merchant.accounts.v1beta.OmnichannelSettingsServiceClient;
-import com.google.shopping.merchant.accounts.v1beta.OmnichannelSettingsServiceSettings;
+import com.google.shopping.merchant.accounts.v1.AccountName;
+import com.google.shopping.merchant.accounts.v1.CreateOmnichannelSettingRequest;
+import com.google.shopping.merchant.accounts.v1.InStock;
+import com.google.shopping.merchant.accounts.v1.OmnichannelSetting;
+import com.google.shopping.merchant.accounts.v1.OmnichannelSetting.LsfType;
+import com.google.shopping.merchant.accounts.v1.OmnichannelSettingsServiceClient;
+import com.google.shopping.merchant.accounts.v1.OmnichannelSettingsServiceSettings;
 import shopping.merchant.samples.utils.Authenticator;
 import shopping.merchant.samples.utils.Config;
 

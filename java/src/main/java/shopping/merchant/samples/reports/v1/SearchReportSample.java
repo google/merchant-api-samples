@@ -12,16 +12,16 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package shopping.merchant.samples.reports.v1beta;
+package shopping.merchant.samples.reports.v1;
 
 // [START merchantapi_search_report]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.shopping.merchant.reports.v1beta.ReportRow;
-import com.google.shopping.merchant.reports.v1beta.ReportServiceClient;
-import com.google.shopping.merchant.reports.v1beta.ReportServiceClient.SearchPagedResponse;
-import com.google.shopping.merchant.reports.v1beta.ReportServiceSettings;
-import com.google.shopping.merchant.reports.v1beta.SearchRequest;
+import com.google.shopping.merchant.reports.v1.ReportRow;
+import com.google.shopping.merchant.reports.v1.ReportServiceClient;
+import com.google.shopping.merchant.reports.v1.ReportServiceClient.SearchPagedResponse;
+import com.google.shopping.merchant.reports.v1.ReportServiceSettings;
+import com.google.shopping.merchant.reports.v1.SearchRequest;
 import shopping.merchant.samples.utils.Authenticator;
 import shopping.merchant.samples.utils.Config;
 
@@ -43,7 +43,7 @@ public class SearchReportSample {
       String parent = String.format("accounts/%s", accountId);
 
       // Uncomment the desired query from below. Documentation can be found at
-      // https://developers.google.com/merchant/api/reference/rest/reports_v1beta/accounts.reports#ReportRow
+      // https://developers.google.com/merchant/api/reference/rest/reports_v1/accounts.reports#ReportRow
       // The query below is an example of a query for the product_view.
       String query =
           "SELECT offer_id,"

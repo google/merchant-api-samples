@@ -12,20 +12,20 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package shopping.merchant.samples.products.v1beta;
+package shopping.merchant.samples.products.v1;
 
 // [START merchantapi_filter_disapproved_products]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.shopping.merchant.products.v1beta.GetProductRequest;
-import com.google.shopping.merchant.products.v1beta.Product;
-import com.google.shopping.merchant.products.v1beta.ProductsServiceClient;
-import com.google.shopping.merchant.products.v1beta.ProductsServiceSettings;
-import com.google.shopping.merchant.reports.v1beta.ReportRow;
-import com.google.shopping.merchant.reports.v1beta.ReportServiceClient;
-import com.google.shopping.merchant.reports.v1beta.ReportServiceClient.SearchPagedResponse;
-import com.google.shopping.merchant.reports.v1beta.ReportServiceSettings;
-import com.google.shopping.merchant.reports.v1beta.SearchRequest;
+import com.google.shopping.merchant.products.v1.GetProductRequest;
+import com.google.shopping.merchant.products.v1.Product;
+import com.google.shopping.merchant.products.v1.ProductsServiceClient;
+import com.google.shopping.merchant.products.v1.ProductsServiceSettings;
+import com.google.shopping.merchant.reports.v1.ReportRow;
+import com.google.shopping.merchant.reports.v1.ReportServiceClient;
+import com.google.shopping.merchant.reports.v1.ReportServiceClient.SearchPagedResponse;
+import com.google.shopping.merchant.reports.v1.ReportServiceSettings;
+import com.google.shopping.merchant.reports.v1.SearchRequest;
 import shopping.merchant.samples.utils.Authenticator;
 import shopping.merchant.samples.utils.Config;
 

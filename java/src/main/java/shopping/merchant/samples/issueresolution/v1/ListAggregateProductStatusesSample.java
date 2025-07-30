@@ -12,17 +12,17 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package shopping.merchant.samples.issueresolution.v1beta;
+package shopping.merchant.samples.issueresolution.v1;
 
 // [START merchantapi_list_aggregate_product_statuses]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.shopping.merchant.accounts.v1beta.AccountName;
-import com.google.shopping.merchant.issueresolution.v1beta.AggregateProductStatus;
-import com.google.shopping.merchant.issueresolution.v1beta.AggregateProductStatusesServiceClient;
-import com.google.shopping.merchant.issueresolution.v1beta.AggregateProductStatusesServiceClient.ListAggregateProductStatusesPagedResponse;
-import com.google.shopping.merchant.issueresolution.v1beta.AggregateProductStatusesServiceSettings;
-import com.google.shopping.merchant.issueresolution.v1beta.ListAggregateProductStatusesRequest;
+import com.google.shopping.merchant.accounts.v1.AccountName;
+import com.google.shopping.merchant.issueresolution.v1.AggregateProductStatus;
+import com.google.shopping.merchant.issueresolution.v1.AggregateProductStatusesServiceClient;
+import com.google.shopping.merchant.issueresolution.v1.AggregateProductStatusesServiceClient.ListAggregateProductStatusesPagedResponse;
+import com.google.shopping.merchant.issueresolution.v1.AggregateProductStatusesServiceSettings;
+import com.google.shopping.merchant.issueresolution.v1.ListAggregateProductStatusesRequest;
 import shopping.merchant.samples.utils.Authenticator;
 import shopping.merchant.samples.utils.Config;
 

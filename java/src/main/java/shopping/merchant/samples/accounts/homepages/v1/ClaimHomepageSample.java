@@ -12,15 +12,15 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package shopping.merchant.samples.accounts.homepages.v1beta;
+package shopping.merchant.samples.accounts.homepages.v1;
 // [START merchantapi_claim_homepage]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.shopping.merchant.accounts.v1beta.ClaimHomepageRequest;
-import com.google.shopping.merchant.accounts.v1beta.Homepage;
-import com.google.shopping.merchant.accounts.v1beta.HomepageName;
-import com.google.shopping.merchant.accounts.v1beta.HomepageServiceClient;
-import com.google.shopping.merchant.accounts.v1beta.HomepageServiceSettings;
+import com.google.shopping.merchant.accounts.v1.ClaimHomepageRequest;
+import com.google.shopping.merchant.accounts.v1.Homepage;
+import com.google.shopping.merchant.accounts.v1.HomepageName;
+import com.google.shopping.merchant.accounts.v1.HomepageServiceClient;
+import com.google.shopping.merchant.accounts.v1.HomepageServiceSettings;
 import shopping.merchant.samples.utils.Authenticator;
 import shopping.merchant.samples.utils.Config;
 

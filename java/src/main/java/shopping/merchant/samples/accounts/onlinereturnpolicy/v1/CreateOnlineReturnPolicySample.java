@@ -12,19 +12,19 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package shopping.merchant.samples.accounts.onlinereturnpolicy.v1beta;
+package shopping.merchant.samples.accounts.onlinereturnpolicy.v1;
 
 // [START merchantapi_create_online_return_policy]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.shopping.merchant.accounts.v1beta.CreateOnlineReturnPolicyRequest;
-import com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy;
-import com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ItemCondition;
-import com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.Policy;
-import com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.Policy.Type;
-import com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnMethod;
-import com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicyServiceClient;
-import com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicyServiceSettings;
+import com.google.shopping.merchant.accounts.v1.CreateOnlineReturnPolicyRequest;
+import com.google.shopping.merchant.accounts.v1.OnlineReturnPolicy;
+import com.google.shopping.merchant.accounts.v1.OnlineReturnPolicy.ItemCondition;
+import com.google.shopping.merchant.accounts.v1.OnlineReturnPolicy.Policy;
+import com.google.shopping.merchant.accounts.v1.OnlineReturnPolicy.Policy.Type;
+import com.google.shopping.merchant.accounts.v1.OnlineReturnPolicy.ReturnMethod;
+import com.google.shopping.merchant.accounts.v1.OnlineReturnPolicyServiceClient;
+import com.google.shopping.merchant.accounts.v1.OnlineReturnPolicyServiceSettings;
 import shopping.merchant.samples.utils.Authenticator;
 import shopping.merchant.samples.utils.Config;
 

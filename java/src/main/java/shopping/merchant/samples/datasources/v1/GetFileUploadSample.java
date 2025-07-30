@@ -12,15 +12,15 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package shopping.merchant.samples.datasources.v1beta;
+package shopping.merchant.samples.datasources.v1;
 // [START merchantapi_get_file_upload]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.shopping.merchant.datasources.v1beta.FileUpload;
-import com.google.shopping.merchant.datasources.v1beta.FileUploadName;
-import com.google.shopping.merchant.datasources.v1beta.FileUploadsServiceClient;
-import com.google.shopping.merchant.datasources.v1beta.FileUploadsServiceSettings;
-import com.google.shopping.merchant.datasources.v1beta.GetFileUploadRequest;
+import com.google.shopping.merchant.datasources.v1.FileUpload;
+import com.google.shopping.merchant.datasources.v1.FileUploadName;
+import com.google.shopping.merchant.datasources.v1.FileUploadsServiceClient;
+import com.google.shopping.merchant.datasources.v1.FileUploadsServiceSettings;
+import com.google.shopping.merchant.datasources.v1.GetFileUploadRequest;
 import shopping.merchant.samples.utils.Authenticator;
 import shopping.merchant.samples.utils.Config;
 

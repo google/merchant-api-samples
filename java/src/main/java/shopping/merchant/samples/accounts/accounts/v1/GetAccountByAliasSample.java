@@ -12,16 +12,16 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package shopping.merchant.samples.accounts.accounts.v1beta;
+package shopping.merchant.samples.accounts.accounts.v1;
 
 // [START merchantapi_get_account_by_alias]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.shopping.merchant.accounts.v1beta.Account;
-import com.google.shopping.merchant.accounts.v1beta.AccountName;
-import com.google.shopping.merchant.accounts.v1beta.AccountsServiceClient;
-import com.google.shopping.merchant.accounts.v1beta.AccountsServiceSettings;
-import com.google.shopping.merchant.accounts.v1beta.GetAccountRequest;
+import com.google.shopping.merchant.accounts.v1.Account;
+import com.google.shopping.merchant.accounts.v1.AccountName;
+import com.google.shopping.merchant.accounts.v1.AccountsServiceClient;
+import com.google.shopping.merchant.accounts.v1.AccountsServiceSettings;
+import com.google.shopping.merchant.accounts.v1.GetAccountRequest;
 import shopping.merchant.samples.utils.Authenticator;
 
 /** This class demonstrates how to get a single Merchant Center account by its alias. */

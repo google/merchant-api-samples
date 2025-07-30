@@ -12,14 +12,14 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package shopping.merchant.samples.products.v1beta;
+package shopping.merchant.samples.products.v1;
 // [START merchantapi_delete_product_input]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.shopping.merchant.products.v1beta.DeleteProductInputRequest;
-import com.google.shopping.merchant.products.v1beta.ProductInputName;
-import com.google.shopping.merchant.products.v1beta.ProductInputsServiceClient;
-import com.google.shopping.merchant.products.v1beta.ProductInputsServiceSettings;
+import com.google.shopping.merchant.products.v1.DeleteProductInputRequest;
+import com.google.shopping.merchant.products.v1.ProductInputName;
+import com.google.shopping.merchant.products.v1.ProductInputsServiceClient;
+import com.google.shopping.merchant.products.v1.ProductInputsServiceSettings;
 import shopping.merchant.samples.utils.Authenticator;
 import shopping.merchant.samples.utils.Config;
 

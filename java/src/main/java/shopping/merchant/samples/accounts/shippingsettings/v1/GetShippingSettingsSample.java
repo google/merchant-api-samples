@@ -12,15 +12,15 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package shopping.merchant.samples.accounts.shippingsettings.v1beta;
+package shopping.merchant.samples.accounts.shippingsettings.v1;
 // [START merchantapi_get_shippingsettings]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.shopping.merchant.accounts.v1beta.GetShippingSettingsRequest;
-import com.google.shopping.merchant.accounts.v1beta.ShippingSettings;
-import com.google.shopping.merchant.accounts.v1beta.ShippingSettingsName;
-import com.google.shopping.merchant.accounts.v1beta.ShippingSettingsServiceClient;
-import com.google.shopping.merchant.accounts.v1beta.ShippingSettingsServiceSettings;
+import com.google.shopping.merchant.accounts.v1.GetShippingSettingsRequest;
+import com.google.shopping.merchant.accounts.v1.ShippingSettings;
+import com.google.shopping.merchant.accounts.v1.ShippingSettingsName;
+import com.google.shopping.merchant.accounts.v1.ShippingSettingsServiceClient;
+import com.google.shopping.merchant.accounts.v1.ShippingSettingsServiceSettings;
 import shopping.merchant.samples.utils.Authenticator;
 import shopping.merchant.samples.utils.Config;
 

@@ -12,16 +12,16 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package shopping.merchant.samples.quota.v1beta;
+package shopping.merchant.samples.quota.v1;
 
 // [START merchantapi_list_quota]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.shopping.merchant.quota.v1beta.ListQuotaGroupsRequest;
-import com.google.shopping.merchant.quota.v1beta.QuotaGroup;
-import com.google.shopping.merchant.quota.v1beta.QuotaServiceClient;
-import com.google.shopping.merchant.quota.v1beta.QuotaServiceClient.ListQuotaGroupsPagedResponse;
-import com.google.shopping.merchant.quota.v1beta.QuotaServiceSettings;
+import com.google.shopping.merchant.quota.v1.ListQuotaGroupsRequest;
+import com.google.shopping.merchant.quota.v1.QuotaGroup;
+import com.google.shopping.merchant.quota.v1.QuotaServiceClient;
+import com.google.shopping.merchant.quota.v1.QuotaServiceClient.ListQuotaGroupsPagedResponse;
+import com.google.shopping.merchant.quota.v1.QuotaServiceSettings;
 import shopping.merchant.samples.utils.Authenticator;
 import shopping.merchant.samples.utils.Config;
 

@@ -12,16 +12,16 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package shopping.merchant.samples.accounts.businessinfos.v1beta;
+package shopping.merchant.samples.accounts.businessinfos.v1;
 // [START merchantapi_update_businessinfo]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.protobuf.FieldMask;
-import com.google.shopping.merchant.accounts.v1beta.BusinessInfo;
-import com.google.shopping.merchant.accounts.v1beta.BusinessInfoName;
-import com.google.shopping.merchant.accounts.v1beta.BusinessInfoServiceClient;
-import com.google.shopping.merchant.accounts.v1beta.BusinessInfoServiceSettings;
-import com.google.shopping.merchant.accounts.v1beta.UpdateBusinessInfoRequest;
+import com.google.shopping.merchant.accounts.v1.BusinessInfo;
+import com.google.shopping.merchant.accounts.v1.BusinessInfoName;
+import com.google.shopping.merchant.accounts.v1.BusinessInfoServiceClient;
+import com.google.shopping.merchant.accounts.v1.BusinessInfoServiceSettings;
+import com.google.shopping.merchant.accounts.v1.UpdateBusinessInfoRequest;
 import com.google.type.PostalAddress;
 import shopping.merchant.samples.utils.Authenticator;
 import shopping.merchant.samples.utils.Config;

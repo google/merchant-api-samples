@@ -12,19 +12,19 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package shopping.merchant.samples.ordertracking.v1beta;
+package shopping.merchant.samples.ordertracking.v1;
 
 // [START merchantapi_create_order_tracking_signal]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.shopping.merchant.ordertracking.v1beta.CreateOrderTrackingSignalRequest;
-import com.google.shopping.merchant.ordertracking.v1beta.OrderTrackingSignal;
-import com.google.shopping.merchant.ordertracking.v1beta.OrderTrackingSignal.LineItemDetails;
-import com.google.shopping.merchant.ordertracking.v1beta.OrderTrackingSignal.ShipmentLineItemMapping;
-import com.google.shopping.merchant.ordertracking.v1beta.OrderTrackingSignal.ShippingInfo;
-import com.google.shopping.merchant.ordertracking.v1beta.OrderTrackingSignal.ShippingInfo.ShippingState;
-import com.google.shopping.merchant.ordertracking.v1beta.OrderTrackingSignalsServiceClient;
-import com.google.shopping.merchant.ordertracking.v1beta.OrderTrackingSignalsServiceSettings;
+import com.google.shopping.merchant.ordertracking.v1.CreateOrderTrackingSignalRequest;
+import com.google.shopping.merchant.ordertracking.v1.OrderTrackingSignal;
+import com.google.shopping.merchant.ordertracking.v1.OrderTrackingSignal.LineItemDetails;
+import com.google.shopping.merchant.ordertracking.v1.OrderTrackingSignal.ShipmentLineItemMapping;
+import com.google.shopping.merchant.ordertracking.v1.OrderTrackingSignal.ShippingInfo;
+import com.google.shopping.merchant.ordertracking.v1.OrderTrackingSignal.ShippingInfo.ShippingState;
+import com.google.shopping.merchant.ordertracking.v1.OrderTrackingSignalsServiceClient;
+import com.google.shopping.merchant.ordertracking.v1.OrderTrackingSignalsServiceSettings;
 import com.google.shopping.type.Price;
 import com.google.type.DateTime;
 import com.google.type.TimeZone;

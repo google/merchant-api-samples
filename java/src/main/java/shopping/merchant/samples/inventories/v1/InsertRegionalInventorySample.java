@@ -13,14 +13,11 @@
 // limitations under the License.
 
 package shopping.merchant.samples.inventories.v1;
-
 // [START merchantapi_insert_regional_inventory]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.shopping.merchant.inventories.v1.InsertRegionalInventoryRequest;
 import com.google.shopping.merchant.inventories.v1.RegionalInventory;
-import com.google.shopping.merchant.inventories.v1.RegionalInventoryAttributes;
-import com.google.shopping.merchant.inventories.v1.RegionalInventoryAttributes.Availability;
 import com.google.shopping.merchant.inventories.v1.RegionalInventoryServiceClient;
 import com.google.shopping.merchant.inventories.v1.RegionalInventoryServiceSettings;
 import com.google.shopping.type.Price;
@@ -55,12 +52,9 @@ public class InsertRegionalInventorySample {
               .setParent(parent)
               .setRegionalInventory(
                   RegionalInventory.newBuilder()
+                      .setAvailability("out of stock")
                       .setRegion(regionId)
-                      .setRegionalInventoryAttributes(
-                          RegionalInventoryAttributes.newBuilder()
-                              .setAvailability(Availability.OUT_OF_STOCK)
-                              .setPrice(price)
-                              .build())
+                      .setPrice(price)
                       .build())
               .build();
 

@@ -12,15 +12,15 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package shopping.merchant.samples.accounts.users.v1beta;
+package shopping.merchant.samples.accounts.users.v1;
 // [START merchantapi_list_users]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.shopping.merchant.accounts.v1beta.ListUsersRequest;
-import com.google.shopping.merchant.accounts.v1beta.User;
-import com.google.shopping.merchant.accounts.v1beta.UserServiceClient;
-import com.google.shopping.merchant.accounts.v1beta.UserServiceClient.ListUsersPagedResponse;
-import com.google.shopping.merchant.accounts.v1beta.UserServiceSettings;
+import com.google.shopping.merchant.accounts.v1.ListUsersRequest;
+import com.google.shopping.merchant.accounts.v1.User;
+import com.google.shopping.merchant.accounts.v1.UserServiceClient;
+import com.google.shopping.merchant.accounts.v1.UserServiceClient.ListUsersPagedResponse;
+import com.google.shopping.merchant.accounts.v1.UserServiceSettings;
 import shopping.merchant.samples.utils.Authenticator;
 import shopping.merchant.samples.utils.Config;
 

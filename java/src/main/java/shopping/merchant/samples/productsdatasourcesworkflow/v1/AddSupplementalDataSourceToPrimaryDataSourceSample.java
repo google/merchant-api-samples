@@ -12,9 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package shopping.merchant.samples.productsdatasourcesworkflow.v1beta;
+package shopping.merchant.samples.productsdatasourcesworkflow.v1;
 // [START merchantapi_add_supplemental_datasource_to_primary_datasource]
-import shopping.merchant.samples.datasources.v1beta.UpdateDataSourceSample;
+import shopping.merchant.samples.datasources.v1.UpdateDataSourceSample;
 import shopping.merchant.samples.utils.Config;
 
 /**

@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package shopping.merchant.samples.accounts.accountissues.v1beta;
+package shopping.merchant.samples.accounts.accountissues.v1;
 
 // [START merchantapi_list_account_issues_async]
 import static com.google.api.core.ApiFutures.transform;
@@ -23,15 +23,15 @@ import com.google.api.core.ApiFutures;
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.common.util.concurrent.MoreExecutors;
-import com.google.shopping.merchant.accounts.v1beta.AccountIssueServiceClient;
-import com.google.shopping.merchant.accounts.v1beta.AccountIssueServiceSettings;
-import com.google.shopping.merchant.accounts.v1beta.AccountName;
-import com.google.shopping.merchant.accounts.v1beta.AccountsServiceClient;
-import com.google.shopping.merchant.accounts.v1beta.AccountsServiceClient.ListSubAccountsPagedResponse;
-import com.google.shopping.merchant.accounts.v1beta.AccountsServiceSettings;
-import com.google.shopping.merchant.accounts.v1beta.ListAccountIssuesRequest;
-import com.google.shopping.merchant.accounts.v1beta.ListAccountIssuesResponse;
-import com.google.shopping.merchant.accounts.v1beta.ListSubAccountsRequest;
+import com.google.shopping.merchant.accounts.v1.AccountIssueServiceClient;
+import com.google.shopping.merchant.accounts.v1.AccountIssueServiceSettings;
+import com.google.shopping.merchant.accounts.v1.AccountName;
+import com.google.shopping.merchant.accounts.v1.AccountsServiceClient;
+import com.google.shopping.merchant.accounts.v1.AccountsServiceClient.ListSubAccountsPagedResponse;
+import com.google.shopping.merchant.accounts.v1.AccountsServiceSettings;
+import com.google.shopping.merchant.accounts.v1.ListAccountIssuesRequest;
+import com.google.shopping.merchant.accounts.v1.ListAccountIssuesResponse;
+import com.google.shopping.merchant.accounts.v1.ListSubAccountsRequest;
 import java.io.IOException;
 import java.util.AbstractMap;
 import java.util.List;

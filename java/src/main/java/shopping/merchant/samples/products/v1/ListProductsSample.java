@@ -12,15 +12,15 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package shopping.merchant.samples.products.v1beta;
+package shopping.merchant.samples.products.v1;
 // [START merchantapi_list_products]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.shopping.merchant.products.v1beta.ListProductsRequest;
-import com.google.shopping.merchant.products.v1beta.Product;
-import com.google.shopping.merchant.products.v1beta.ProductsServiceClient;
-import com.google.shopping.merchant.products.v1beta.ProductsServiceClient.ListProductsPagedResponse;
-import com.google.shopping.merchant.products.v1beta.ProductsServiceSettings;
+import com.google.shopping.merchant.products.v1.ListProductsRequest;
+import com.google.shopping.merchant.products.v1.Product;
+import com.google.shopping.merchant.products.v1.ProductsServiceClient;
+import com.google.shopping.merchant.products.v1.ProductsServiceClient.ListProductsPagedResponse;
+import com.google.shopping.merchant.products.v1.ProductsServiceSettings;
 import shopping.merchant.samples.utils.Authenticator;
 import shopping.merchant.samples.utils.Config;
 

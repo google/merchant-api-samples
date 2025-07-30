@@ -12,11 +12,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package shopping.merchant.samples.productsdatasourcesworkflow.v1beta;
+package shopping.merchant.samples.productsdatasourcesworkflow.v1;
 
 // [START merchantapi_create_datasource_and_insert_first_product]
-import shopping.merchant.samples.datasources.v1beta.CreatePrimaryProductDataSourceMultipleLanguagesSample;
-import shopping.merchant.samples.products.v1beta.InsertProductInputSample;
+import shopping.merchant.samples.datasources.v1.CreatePrimaryProductDataSourceMultipleLanguagesSample;
+import shopping.merchant.samples.products.v1.InsertProductInputSample;
 import shopping.merchant.samples.utils.Config;
 
 /** This class demonstrates how to create a datasource and insert a product in the datasource. */

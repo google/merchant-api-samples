@@ -12,21 +12,21 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package shopping.merchant.samples.accounts.automaticimprovements.v1beta;
+package shopping.merchant.samples.accounts.automaticimprovements.v1;
 // [START merchantapi_update_automaticimprovements]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.protobuf.FieldMask;
-import com.google.shopping.merchant.accounts.v1beta.AutomaticImageImprovements;
-import com.google.shopping.merchant.accounts.v1beta.AutomaticImageImprovements.ImageImprovementsAccountLevelSettings;
-import com.google.shopping.merchant.accounts.v1beta.AutomaticImprovements;
-import com.google.shopping.merchant.accounts.v1beta.AutomaticImprovementsName;
-import com.google.shopping.merchant.accounts.v1beta.AutomaticImprovementsServiceClient;
-import com.google.shopping.merchant.accounts.v1beta.AutomaticImprovementsServiceSettings;
-import com.google.shopping.merchant.accounts.v1beta.AutomaticItemUpdates;
-import com.google.shopping.merchant.accounts.v1beta.AutomaticItemUpdates.ItemUpdatesAccountLevelSettings;
-import com.google.shopping.merchant.accounts.v1beta.AutomaticShippingImprovements;
-import com.google.shopping.merchant.accounts.v1beta.UpdateAutomaticImprovementsRequest;
+import com.google.shopping.merchant.accounts.v1.AutomaticImageImprovements;
+import com.google.shopping.merchant.accounts.v1.AutomaticImageImprovements.ImageImprovementsAccountLevelSettings;
+import com.google.shopping.merchant.accounts.v1.AutomaticImprovements;
+import com.google.shopping.merchant.accounts.v1.AutomaticImprovementsName;
+import com.google.shopping.merchant.accounts.v1.AutomaticImprovementsServiceClient;
+import com.google.shopping.merchant.accounts.v1.AutomaticImprovementsServiceSettings;
+import com.google.shopping.merchant.accounts.v1.AutomaticItemUpdates;
+import com.google.shopping.merchant.accounts.v1.AutomaticItemUpdates.ItemUpdatesAccountLevelSettings;
+import com.google.shopping.merchant.accounts.v1.AutomaticShippingImprovements;
+import com.google.shopping.merchant.accounts.v1.UpdateAutomaticImprovementsRequest;
 import shopping.merchant.samples.utils.Authenticator;
 import shopping.merchant.samples.utils.Config;
 

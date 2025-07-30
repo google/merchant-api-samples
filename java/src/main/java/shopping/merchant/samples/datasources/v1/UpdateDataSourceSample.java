@@ -12,19 +12,19 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package shopping.merchant.samples.datasources.v1beta;
+package shopping.merchant.samples.datasources.v1;
 // [START merchantapi_update_data_source]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.protobuf.FieldMask;
-import com.google.shopping.merchant.datasources.v1beta.DataSource;
-import com.google.shopping.merchant.datasources.v1beta.DataSourceName;
-import com.google.shopping.merchant.datasources.v1beta.DataSourceReference;
-import com.google.shopping.merchant.datasources.v1beta.DataSourcesServiceClient;
-import com.google.shopping.merchant.datasources.v1beta.DataSourcesServiceSettings;
-import com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource;
-import com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.DefaultRule;
-import com.google.shopping.merchant.datasources.v1beta.UpdateDataSourceRequest;
+import com.google.shopping.merchant.datasources.v1.DataSource;
+import com.google.shopping.merchant.datasources.v1.DataSourceName;
+import com.google.shopping.merchant.datasources.v1.DataSourceReference;
+import com.google.shopping.merchant.datasources.v1.DataSourcesServiceClient;
+import com.google.shopping.merchant.datasources.v1.DataSourcesServiceSettings;
+import com.google.shopping.merchant.datasources.v1.PrimaryProductDataSource;
+import com.google.shopping.merchant.datasources.v1.PrimaryProductDataSource.DefaultRule;
+import com.google.shopping.merchant.datasources.v1.UpdateDataSourceRequest;
 import shopping.merchant.samples.utils.Authenticator;
 import shopping.merchant.samples.utils.Config;
 

@@ -13,15 +13,15 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package shopping.merchant.samples.promotions.v1beta;
+package shopping.merchant.samples.promotions.v1;
 // [START merchantapi_list_promotions]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.shopping.merchant.promotions.v1beta.ListPromotionsRequest;
-import com.google.shopping.merchant.promotions.v1beta.Promotion;
-import com.google.shopping.merchant.promotions.v1beta.PromotionsServiceClient;
-import com.google.shopping.merchant.promotions.v1beta.PromotionsServiceClient.ListPromotionsPagedResponse;
-import com.google.shopping.merchant.promotions.v1beta.PromotionsServiceSettings;
+import com.google.shopping.merchant.promotions.v1.ListPromotionsRequest;
+import com.google.shopping.merchant.promotions.v1.Promotion;
+import com.google.shopping.merchant.promotions.v1.PromotionsServiceClient;
+import com.google.shopping.merchant.promotions.v1.PromotionsServiceClient.ListPromotionsPagedResponse;
+import com.google.shopping.merchant.promotions.v1.PromotionsServiceSettings;
 import shopping.merchant.samples.utils.Authenticator;
 import shopping.merchant.samples.utils.Config;
 

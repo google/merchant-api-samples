@@ -12,15 +12,15 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package shopping.merchant.samples.accounts.regions.v1beta;
+package shopping.merchant.samples.accounts.regions.v1;
 // [START merchantapi_list_regions]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.shopping.merchant.accounts.v1beta.ListRegionsRequest;
-import com.google.shopping.merchant.accounts.v1beta.Region;
-import com.google.shopping.merchant.accounts.v1beta.RegionsServiceClient;
-import com.google.shopping.merchant.accounts.v1beta.RegionsServiceClient.ListRegionsPagedResponse;
-import com.google.shopping.merchant.accounts.v1beta.RegionsServiceSettings;
+import com.google.shopping.merchant.accounts.v1.ListRegionsRequest;
+import com.google.shopping.merchant.accounts.v1.Region;
+import com.google.shopping.merchant.accounts.v1.RegionsServiceClient;
+import com.google.shopping.merchant.accounts.v1.RegionsServiceClient.ListRegionsPagedResponse;
+import com.google.shopping.merchant.accounts.v1.RegionsServiceSettings;
 import shopping.merchant.samples.utils.Authenticator;
 import shopping.merchant.samples.utils.Config;
 

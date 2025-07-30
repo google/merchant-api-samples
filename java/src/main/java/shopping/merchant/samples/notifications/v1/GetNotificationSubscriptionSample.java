@@ -12,16 +12,16 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package shopping.merchant.samples.notifications.v1beta;
+package shopping.merchant.samples.notifications.v1;
 
 // [START merchantapi_get_notification_subscription]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.shopping.merchant.notifications.v1beta.GetNotificationSubscriptionRequest;
-import com.google.shopping.merchant.notifications.v1beta.NotificationSubscription;
-import com.google.shopping.merchant.notifications.v1beta.NotificationSubscriptionName;
-import com.google.shopping.merchant.notifications.v1beta.NotificationsApiServiceClient;
-import com.google.shopping.merchant.notifications.v1beta.NotificationsApiServiceSettings;
+import com.google.shopping.merchant.notifications.v1.GetNotificationSubscriptionRequest;
+import com.google.shopping.merchant.notifications.v1.NotificationSubscription;
+import com.google.shopping.merchant.notifications.v1.NotificationSubscriptionName;
+import com.google.shopping.merchant.notifications.v1.NotificationsApiServiceClient;
+import com.google.shopping.merchant.notifications.v1.NotificationsApiServiceSettings;
 import shopping.merchant.samples.utils.Authenticator;
 import shopping.merchant.samples.utils.Config;
 
