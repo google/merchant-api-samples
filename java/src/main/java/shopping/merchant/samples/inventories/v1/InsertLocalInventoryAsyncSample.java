@@ -12,7 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package shopping.merchant.samples.inventories.v1beta;
+package shopping.merchant.samples.inventories.v1;
+
 // [START merchantapi_insert_local_inventory_async]
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
@@ -20,15 +21,17 @@ import com.google.api.core.ApiFutures;
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.common.util.concurrent.MoreExecutors;
-import com.google.shopping.merchant.inventories.v1beta.InsertLocalInventoryRequest;
-import com.google.shopping.merchant.inventories.v1beta.LocalInventory;
-import com.google.shopping.merchant.inventories.v1beta.LocalInventoryServiceClient;
-import com.google.shopping.merchant.inventories.v1beta.LocalInventoryServiceSettings;
-import com.google.shopping.merchant.products.v1beta.ListProductsRequest;
-import com.google.shopping.merchant.products.v1beta.Product;
-import com.google.shopping.merchant.products.v1beta.ProductsServiceClient;
-import com.google.shopping.merchant.products.v1beta.ProductsServiceClient.ListProductsPagedResponse;
-import com.google.shopping.merchant.products.v1beta.ProductsServiceSettings;
+import com.google.shopping.merchant.inventories.v1.InsertLocalInventoryRequest;
+import com.google.shopping.merchant.inventories.v1.LocalInventory;
+import com.google.shopping.merchant.inventories.v1.LocalInventoryAttributes;
+import com.google.shopping.merchant.inventories.v1.LocalInventoryAttributes.Availability;
+import com.google.shopping.merchant.inventories.v1.LocalInventoryServiceClient;
+import com.google.shopping.merchant.inventories.v1.LocalInventoryServiceSettings;
+import com.google.shopping.merchant.products.v1.ListProductsRequest;
+import com.google.shopping.merchant.products.v1.Product;
+import com.google.shopping.merchant.products.v1.ProductsServiceClient;
+import com.google.shopping.merchant.products.v1.ProductsServiceClient.ListProductsPagedResponse;
+import com.google.shopping.merchant.products.v1.ProductsServiceSettings;
 import com.google.shopping.type.Channel.ChannelEnum;
 import com.google.shopping.type.Price;
 import java.io.IOException;
@@ -117,9 +120,12 @@ public class InsertLocalInventoryAsyncSample {
                         .setParent(name)
                         .setLocalInventory(
                             LocalInventory.newBuilder()
-                                .setAvailability("out of stock")
                                 .setStoreCode(storeCode)
-                                .setPrice(price)
+                                .setLocalInventoryAttributes(
+                                    LocalInventoryAttributes.newBuilder()
+                                        .setAvailability(Availability.OUT_OF_STOCK)
+                                        .setPrice(price)
+                                        .build())
                                 .build())
                         .build();
                   })

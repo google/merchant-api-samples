@@ -17,12 +17,14 @@ package shopping.merchant.samples.products.v1;
 // [START merchantapi_insert_product_input]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.shopping.merchant.products.v1beta.Attributes;
-import com.google.shopping.merchant.products.v1beta.InsertProductInputRequest;
-import com.google.shopping.merchant.products.v1beta.ProductInput;
-import com.google.shopping.merchant.products.v1beta.ProductInputsServiceClient;
-import com.google.shopping.merchant.products.v1beta.ProductInputsServiceSettings;
-import com.google.shopping.merchant.products.v1beta.Shipping;
+import com.google.shopping.merchant.products.v1.Availability;
+import com.google.shopping.merchant.products.v1.Condition;
+import com.google.shopping.merchant.products.v1.InsertProductInputRequest;
+import com.google.shopping.merchant.products.v1.ProductAttributes;
+import com.google.shopping.merchant.products.v1.ProductInput;
+import com.google.shopping.merchant.products.v1.ProductInputsServiceClient;
+import com.google.shopping.merchant.products.v1.ProductInputsServiceSettings;
+import com.google.shopping.merchant.products.v1.Shipping;
 import com.google.shopping.type.Channel.ChannelEnum;
 import com.google.shopping.type.Price;
 import shopping.merchant.samples.utils.Authenticator;
@@ -70,14 +72,14 @@ public class InsertProductInputSample {
               .setService("1st class post")
               .build();
 
-      Attributes attributes =
-          Attributes.newBuilder()
+      ProductAttributes attributes =
+          ProductAttributes.newBuilder()
               .setTitle("A Tale of Two Cities")
               .setDescription("A classic novel about the French Revolution")
               .setLink("https://exampleWebsite.com/tale-of-two-cities.html")
               .setImageLink("https://exampleWebsite.com/tale-of-two-cities.jpg")
-              .setAvailability("in stock")
-              .setCondition("new")
+              .setAvailability(Availability.IN_STOCK)
+              .setCondition(Condition.NEW)
               .setGoogleProductCategory("Media > Books")
               .addGtins("9780007350896")
               .addShipping(shipping)

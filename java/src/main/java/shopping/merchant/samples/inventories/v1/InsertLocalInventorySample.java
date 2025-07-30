@@ -12,14 +12,17 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package shopping.merchant.samples.inventories.v1beta;
+package shopping.merchant.samples.inventories.v1;
+
 // [START merchantapi_insert_local_inventory]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.shopping.merchant.inventories.v1beta.InsertLocalInventoryRequest;
-import com.google.shopping.merchant.inventories.v1beta.LocalInventory;
-import com.google.shopping.merchant.inventories.v1beta.LocalInventoryServiceClient;
-import com.google.shopping.merchant.inventories.v1beta.LocalInventoryServiceSettings;
+import com.google.shopping.merchant.inventories.v1.InsertLocalInventoryRequest;
+import com.google.shopping.merchant.inventories.v1.LocalInventory;
+import com.google.shopping.merchant.inventories.v1.LocalInventoryAttributes;
+import com.google.shopping.merchant.inventories.v1.LocalInventoryAttributes.Availability;
+import com.google.shopping.merchant.inventories.v1.LocalInventoryServiceClient;
+import com.google.shopping.merchant.inventories.v1.LocalInventoryServiceSettings;
 import com.google.shopping.type.Price;
 import shopping.merchant.samples.utils.Authenticator;
 import shopping.merchant.samples.utils.Config;
@@ -52,9 +55,12 @@ public class InsertLocalInventorySample {
               .setParent(parent)
               .setLocalInventory(
                   LocalInventory.newBuilder()
-                      .setAvailability("out of stock")
                       .setStoreCode(storeCode)
-                      .setPrice(price)
+                      .setLocalInventoryAttributes(
+                          LocalInventoryAttributes.newBuilder()
+                              .setAvailability(Availability.OUT_OF_STOCK)
+                              .setPrice(price)
+                              .build())
                       .build())
               .build();
 

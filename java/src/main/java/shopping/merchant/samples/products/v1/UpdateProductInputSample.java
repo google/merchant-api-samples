@@ -18,13 +18,13 @@ package shopping.merchant.samples.products.v1;
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.protobuf.FieldMask;
-import com.google.shopping.merchant.datasources.v1beta.DataSourceName;
-import com.google.shopping.merchant.products.v1beta.Attributes;
-import com.google.shopping.merchant.products.v1beta.ProductInput;
-import com.google.shopping.merchant.products.v1beta.ProductInputName;
-import com.google.shopping.merchant.products.v1beta.ProductInputsServiceClient;
-import com.google.shopping.merchant.products.v1beta.ProductInputsServiceSettings;
-import com.google.shopping.merchant.products.v1beta.UpdateProductInputRequest;
+import com.google.shopping.merchant.datasources.v1.DataSourceName;
+import com.google.shopping.merchant.products.v1.Attributes;
+import com.google.shopping.merchant.products.v1.ProductInput;
+import com.google.shopping.merchant.products.v1.ProductInputName;
+import com.google.shopping.merchant.products.v1.ProductInputsServiceClient;
+import com.google.shopping.merchant.products.v1.ProductInputsServiceSettings;
+import com.google.shopping.merchant.products.v1.UpdateProductInputRequest;
 import com.google.shopping.type.CustomAttribute;
 import shopping.merchant.samples.utils.Authenticator;
 import shopping.merchant.samples.utils.Config;
@@ -75,8 +75,8 @@ public class UpdateProductInputSample {
               .setDescription("A classic novel about the French Revolution")
               .setLink("https://exampleWebsite.com/tale-of-two-cities.html")
               .setImageLink("https://exampleWebsite.com/tale-of-two-cities.jpg")
-              .setAvailability("in stock")
-              .setCondition("new")
+              .setAvailability(Availability.IN_STOCK)
+              .setCondition(Condition.NEW)
               .addGtins("9780007350896")
               .build();
 
