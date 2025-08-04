@@ -19,11 +19,11 @@ require_once __DIR__ . '/../../../Authentication/Authentication.php';
 require_once __DIR__ . '/../../../Authentication/Config.php';
 // [START merchantapi_create_region]
 use Google\ApiCore\ApiException;
-use Google\Shopping\Merchant\Accounts\V1beta\Client\RegionsServiceClient;
-use Google\Shopping\Merchant\Accounts\V1beta\CreateRegionRequest;
-use Google\Shopping\Merchant\Accounts\V1beta\Region;
-use Google\Shopping\Merchant\Accounts\V1beta\Region\PostalCodeArea;
-use Google\Shopping\Merchant\Accounts\V1beta\Region\PostalCodeArea\PostalCodeRange;
+use Google\Shopping\Merchant\Accounts\V1\Client\RegionsServiceClient;
+use Google\Shopping\Merchant\Accounts\V1\CreateRegionRequest;
+use Google\Shopping\Merchant\Accounts\V1\Region;
+use Google\Shopping\Merchant\Accounts\V1\Region\PostalCodeArea;
+use Google\Shopping\Merchant\Accounts\V1\Region\PostalCodeArea\PostalCodeRange;
 
 
 /**

@@ -20,9 +20,9 @@ require_once __DIR__ . '/../../Authentication/Authentication.php';
 require_once __DIR__ . '/../../Authentication/Config.php';
 // [START merchantapi_get_datasource]
 use Google\ApiCore\ApiException;
-use Google\Shopping\Merchant\DataSources\V1beta\Client\DataSourcesServiceClient;
-use Google\Shopping\Merchant\DataSources\V1beta\DataSource;
-use Google\Shopping\Merchant\DataSources\V1beta\GetDataSourceRequest;
+use Google\Shopping\Merchant\DataSources\V1\Client\DataSourcesServiceClient;
+use Google\Shopping\Merchant\DataSources\V1\DataSource;
+use Google\Shopping\Merchant\DataSources\V1\GetDataSourceRequest;
 
 /**
  * Class to demonstrate getting a specific datasource for a given Merchant

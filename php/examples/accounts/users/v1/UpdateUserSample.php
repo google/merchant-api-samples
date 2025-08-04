@@ -25,10 +25,10 @@ require_once __DIR__ . '/../../../Authentication/Config.php';
 // [START merchantapi_update_user]
 use Google\ApiCore\ApiException;
 use Google\Protobuf\FieldMask;
-use Google\Shopping\Merchant\Accounts\V1beta\AccessRight;
-use Google\Shopping\Merchant\Accounts\V1beta\UpdateUserRequest;
-use Google\Shopping\Merchant\Accounts\V1beta\User;
-use Google\Shopping\Merchant\Accounts\V1beta\Client\UserServiceClient;
+use Google\Shopping\Merchant\Accounts\V1\AccessRight;
+use Google\Shopping\Merchant\Accounts\V1\UpdateUserRequest;
+use Google\Shopping\Merchant\Accounts\V1\User;
+use Google\Shopping\Merchant\Accounts\V1\Client\UserServiceClient;
 
 
 /**

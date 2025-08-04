@@ -18,9 +18,9 @@
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
 from google.protobuf import field_mask_pb2
-from google.shopping.merchant_accounts_v1beta import Homepage
-from google.shopping.merchant_accounts_v1beta import HomepageServiceClient
-from google.shopping.merchant_accounts_v1beta import UpdateHomepageRequest
+from google.shopping.merchant_accounts_v1 import Homepage
+from google.shopping.merchant_accounts_v1 import HomepageServiceClient
+from google.shopping.merchant_accounts_v1 import UpdateHomepageRequest
 
 _ACCOUNT = configuration.Configuration().read_merchant_info()
 

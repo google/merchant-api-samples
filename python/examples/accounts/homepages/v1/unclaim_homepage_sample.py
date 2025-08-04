@@ -17,8 +17,8 @@
 # [START merchantapi_unclaim_homepage]
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
-from google.shopping.merchant_accounts_v1beta import HomepageServiceClient
-from google.shopping.merchant_accounts_v1beta import UnclaimHomepageRequest
+from google.shopping.merchant_accounts_v1 import HomepageServiceClient
+from google.shopping.merchant_accounts_v1 import UnclaimHomepageRequest
 
 _ACCOUNT = configuration.Configuration().read_merchant_info()
 

@@ -19,8 +19,8 @@ require_once __DIR__ . '/../../../Authentication/Authentication.php';
 require_once __DIR__ . '/../../../Authentication/Config.php';
 // [START merchantapi_get_email_preferences]
 use Google\ApiCore\ApiException;
-use Google\Shopping\Merchant\Accounts\V1beta\Client\EmailPreferencesServiceClient;
-use Google\Shopping\Merchant\Accounts\V1beta\GetEmailPreferencesRequest;
+use Google\Shopping\Merchant\Accounts\V1\Client\EmailPreferencesServiceClient;
+use Google\Shopping\Merchant\Accounts\V1\GetEmailPreferencesRequest;
 
 /**
  * This class demonstrates how to get the email preferences of a Merchant Center account.

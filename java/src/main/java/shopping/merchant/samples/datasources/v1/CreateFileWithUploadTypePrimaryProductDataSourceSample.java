@@ -55,10 +55,6 @@ public class CreateFileWithUploadTypePrimaryProductDataSourceSample {
     // The type of data that this datasource will receive.
     PrimaryProductDataSource primaryProductDataSource =
         PrimaryProductDataSource.newBuilder()
-            // Channel can be "ONLINE_PRODUCTS" or "LOCAL_PRODUCTS" or "PRODUCTS" .
-            // While accepted, datasources with channel "products" currently cannot be used
-            // with the Products sub-API.
-            .setChannel(PrimaryProductDataSource.Channel.ONLINE_PRODUCTS)
             .addCountries("GB")
             // `contentLanguage` and `feedLabel` must be set.
             .setContentLanguage("en")

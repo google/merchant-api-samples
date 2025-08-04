@@ -19,10 +19,10 @@
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
 from google.protobuf import field_mask_pb2
-from google.shopping.merchant_accounts_v1beta import AccessRight
-from google.shopping.merchant_accounts_v1beta import UpdateUserRequest
-from google.shopping.merchant_accounts_v1beta import User
-from google.shopping.merchant_accounts_v1beta import UserServiceClient
+from google.shopping.merchant_accounts_v1 import AccessRight
+from google.shopping.merchant_accounts_v1 import UpdateUserRequest
+from google.shopping.merchant_accounts_v1 import User
+from google.shopping.merchant_accounts_v1 import UserServiceClient
 
 FieldMask = field_mask_pb2.FieldMask
 

@@ -21,9 +21,9 @@ require_once __DIR__ . '/../../Authentication/Config.php';
 // [START merchantapi_update_data_source]
 use Google\ApiCore\ApiException;
 use Google\Protobuf\FieldMask;
-use Google\Shopping\Merchant\DataSources\V1beta\Client\DataSourcesServiceClient;
-use Google\Shopping\Merchant\DataSources\V1beta\DataSource;
-use Google\Shopping\Merchant\DataSources\V1beta\UpdateDataSourceRequest;
+use Google\Shopping\Merchant\DataSources\V1\Client\DataSourcesServiceClient;
+use Google\Shopping\Merchant\DataSources\V1\DataSource;
+use Google\Shopping\Merchant\DataSources\V1\UpdateDataSourceRequest;
 
 /**
  * Class to demonstrate updating a datasource to change its name in the MC UI.

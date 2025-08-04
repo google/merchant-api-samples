@@ -20,10 +20,10 @@ require_once __DIR__ . '/../../../Authentication/Config.php';
 // [START merchantapi_update_email_preferences]
 use Google\ApiCore\ApiException;
 use Google\Protobuf\FieldMask;
-use Google\Shopping\Merchant\Accounts\V1beta\Client\EmailPreferencesServiceClient;
-use Google\Shopping\Merchant\Accounts\V1beta\EmailPreferences;
-use Google\Shopping\Merchant\Accounts\V1beta\EmailPreferences\OptInState;
-use Google\Shopping\Merchant\Accounts\V1beta\UpdateEmailPreferencesRequest;
+use Google\Shopping\Merchant\Accounts\V1\Client\EmailPreferencesServiceClient;
+use Google\Shopping\Merchant\Accounts\V1\EmailPreferences;
+use Google\Shopping\Merchant\Accounts\V1\EmailPreferences\OptInState;
+use Google\Shopping\Merchant\Accounts\V1\UpdateEmailPreferencesRequest;
 
 /**
  * This class demonstrates how to update a EmailPreferences to OPT_IN to News and Tips. This service

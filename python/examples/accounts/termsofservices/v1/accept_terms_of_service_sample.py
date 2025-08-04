@@ -17,8 +17,8 @@
 # [START merchantapi_accept_termsofservice]
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
-from google.shopping.merchant_accounts_v1beta import AcceptTermsOfServiceRequest
-from google.shopping.merchant_accounts_v1beta import TermsOfServiceServiceClient
+from google.shopping.merchant_accounts_v1 import AcceptTermsOfServiceRequest
+from google.shopping.merchant_accounts_v1 import TermsOfServiceServiceClient
 
 # Replace with your actual values.
 _ACCOUNT_ID = configuration.Configuration().read_merchant_info()

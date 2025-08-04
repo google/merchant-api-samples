@@ -17,8 +17,8 @@
 # [START merchantapi_disable_program]
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
-from google.shopping.merchant_accounts_v1beta import DisableProgramRequest
-from google.shopping.merchant_accounts_v1beta import ProgramsServiceClient
+from google.shopping.merchant_accounts_v1 import DisableProgramRequest
+from google.shopping.merchant_accounts_v1 import ProgramsServiceClient
 
 _ACCOUNT = configuration.Configuration().read_merchant_info()
 

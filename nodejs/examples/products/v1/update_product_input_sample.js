@@ -47,9 +47,9 @@ async function callUpdateProductInput(
   // be updated this way.
   const fieldMask = {
     paths: [
-      'attributes.title', 'attributes.description', 'attributes.link',
-      'attributes.image_link', 'attributes.availability',
-      'attributes.condition', 'attributes.gtin',
+      'product_attributes.title', 'product_attributes.description', 'product_attributes.link',
+      'product_attributes.image_link', 'product_attributes.availability',
+      'product_attributes.condition', 'product_attributes.gtins',
       'custom_attributes.mycustomattribute',  // This path targets a custom
                                               // attribute by its name.
     ],
@@ -76,7 +76,7 @@ async function callUpdateProductInput(
   // Prepare the ProductInput object with the new data.
   const productInput = {
     name: name,  // The resource name of the product input being updated.
-    attributes: attributes,
+    productAttributes: attributes,
     customAttributes: [
       {
         name: 'mycustomattribute',
@@ -102,7 +102,7 @@ async function callUpdateProductInput(
   console.log('Updated ProductInput Name below');
   // The response contains the updated ProductInput. Its 'name' field is the
   // full resource name, which includes the Google-assigned product ID (format:
-  // channel~contentLanguage~feedLabel~offerId).
+  // contentLanguage~feedLabel~offerId).
   console.log(response.name);
   console.log('Updated Product below');
   console.log(response);  // Log the full response object.
@@ -115,9 +115,9 @@ async function callUpdateProductInput(
 async function main() {
   // These are the IDs for the product and data source to be used in the update.
   // The productId is an ID assigned by Google, typically in the format:
-  // channel~contentLanguage~feedLabel~offerId. Replace 'online~en~label~sku123'
+  // contentLanguage~feedLabel~offerId. Replace 'online~en~label~sku123'
   // with your specific product ID.
-  const productId = 'online~en~label~sku123';
+  const productId = 'en~label~sku123';
   // The dataSourceId identifies the data source that will own the product
   // input. Replace '{INSERT_DATASOURCE_ID}' with your actual data source ID.
   const dataSourceId = '{INSERT_DATASOURCE_ID}';

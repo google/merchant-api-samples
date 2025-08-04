@@ -17,14 +17,14 @@
 # [START merchantapi_get_product]
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
-from google.shopping import merchant_products_v1beta
+from google.shopping import merchant_products_v1
 
 
 _ACCOUNT = configuration.Configuration().read_merchant_info()
 
 # ENSURE you fill in the product ID for the sample to
 # work.
-# In the format of `channel~contentLanguage~feedLabel~offerId`
+# In the format of `contentLanguage~feedLabel~offerId`
 _PRODUCT = "[INSERT_PRODUCT_HERE]"
 _NAME = f"accounts/{_ACCOUNT}/products/{_PRODUCT}"
 
@@ -36,12 +36,12 @@ def get_product():
   credentials = generate_user_credentials.main()
 
   # Creates a client.
-  client = merchant_products_v1beta.ProductsServiceClient(
+  client = merchant_products_v1.ProductsServiceClient(
       credentials=credentials
   )
 
   # Creates the request.
-  request = merchant_products_v1beta.GetProductRequest(name=_NAME)
+  request = merchant_products_v1.GetProductRequest(name=_NAME)
 
   # Makes the request and catches and prints any error messages.
   try:

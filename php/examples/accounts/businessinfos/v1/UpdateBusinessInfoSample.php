@@ -20,9 +20,9 @@ require_once __DIR__ . '/../../../Authentication/Config.php';
 // [START merchantapi_update_businessinfo]
 use Google\ApiCore\ApiException;
 use Google\Protobuf\FieldMask;
-use Google\Shopping\Merchant\Accounts\V1beta\BusinessInfo;
-use Google\Shopping\Merchant\Accounts\V1beta\Client\BusinessInfoServiceClient;
-use Google\Shopping\Merchant\Accounts\V1beta\UpdateBusinessInfoRequest;
+use Google\Shopping\Merchant\Accounts\V1\BusinessInfo;
+use Google\Shopping\Merchant\Accounts\V1\Client\BusinessInfoServiceClient;
+use Google\Shopping\Merchant\Accounts\V1\UpdateBusinessInfoRequest;
 use Google\Type\PostalAddress;
 
 /**

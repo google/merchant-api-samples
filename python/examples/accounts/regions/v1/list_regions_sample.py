@@ -17,8 +17,8 @@
 # [START merchantapi_list_regions]
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
-from google.shopping.merchant_accounts_v1beta import ListRegionsRequest
-from google.shopping.merchant_accounts_v1beta import RegionsServiceClient
+from google.shopping.merchant_accounts_v1 import ListRegionsRequest
+from google.shopping.merchant_accounts_v1 import RegionsServiceClient
 
 _ACCOUNT = configuration.Configuration().read_merchant_info()
 

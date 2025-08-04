@@ -20,10 +20,10 @@ require_once __DIR__ . '/../../Authentication/Authentication.php';
 require_once __DIR__ . '/../../Authentication/Config.php';
 // [START merchantapi_create_promotion_data_source]
 use Google\ApiCore\ApiException;
-use Google\Shopping\Merchant\DataSources\V1beta\Client\DataSourcesServiceClient;
-use Google\Shopping\Merchant\DataSources\V1beta\CreateDataSourceRequest;
-use Google\Shopping\Merchant\DataSources\V1beta\DataSource;
-use Google\Shopping\Merchant\DataSources\V1beta\PromotionDataSource;
+use Google\Shopping\Merchant\DataSources\V1\Client\DataSourcesServiceClient;
+use Google\Shopping\Merchant\DataSources\V1\CreateDataSourceRequest;
+use Google\Shopping\Merchant\DataSources\V1\DataSource;
+use Google\Shopping\Merchant\DataSources\V1\PromotionDataSource;
 
 /**
  * This class demonstrates how to create a promotion datasource.

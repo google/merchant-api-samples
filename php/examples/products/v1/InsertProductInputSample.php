@@ -20,12 +20,11 @@ require_once __DIR__ . '/../../Authentication/Authentication.php';
 require_once __DIR__ . '/../../Authentication/Config.php';
 // [START merchantapi_insert_product_input]
 use Google\ApiCore\ApiException;
-use Google\Shopping\Merchant\Products\V1beta\Attributes;
-use Google\Shopping\Merchant\Products\V1beta\InsertProductInputRequest;
-use Google\Shopping\Merchant\Products\V1beta\ProductInput;
-use Google\Shopping\Merchant\Products\V1beta\Client\ProductInputsServiceClient;
-use Google\Shopping\Merchant\Products\V1beta\Shipping;
-use Google\Shopping\Type\Channel\ChannelEnum;
+use Google\Shopping\Merchant\Products\V1\ProductAttributes;
+use Google\Shopping\Merchant\Products\V1\InsertProductInputRequest;
+use Google\Shopping\Merchant\Products\V1\ProductInput;
+use Google\Shopping\Merchant\Products\V1\Client\ProductInputsServiceClient;
+use Google\Shopping\Merchant\Products\V1\Shipping;
 use Google\Shopping\Type\Price;
 
 
@@ -53,7 +52,7 @@ class InsertProductInput
 
     /**
      * Uploads a product input to your Merchant Center account. If an input
-     * with the same channel, feedLabel, contentLanguage, offerId, and dataSource
+     * with the same feedLabel, contentLanguage, offerId, and dataSource
      * already exists, this method replaces that entry.
      *
      * After inserting, updating, or deleting a product input, it may take several
@@ -114,7 +113,7 @@ class InsertProductInput
             );
 
             // Creates the attributes of the product.
-            $attributes = new Attributes(
+            $attributes = new ProductAttributes(
                 [
                     'title' => 'A Tale of Two Cities',
                     'description' => 'A classic novel about the French Revolution',
@@ -124,7 +123,7 @@ class InsertProductInput
                     'availability' => 'in stock',
                     'condition' => 'new',
                     'google_product_category' => 'Media > Books',
-                    'gtin' => ['9780007350896'],
+                    'gtins' => ['9780007350896'],
                     'shipping' => [$shipping, $shipping2]
                 ]
             );
@@ -132,11 +131,10 @@ class InsertProductInput
             // Creates the productInput with the fundamental identifiers.
             $productInput = new ProductInput(
                 [
-                    'channel' => ChannelEnum::ONLINE,
                     'content_language' => 'en',
                     'feed_label' => 'label',
                     'offer_id' => 'sku123ABCD',
-                    'attributes' => $attributes
+                    'product_attributes' => $attributes
                 ]
             );
 

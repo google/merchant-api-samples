@@ -19,8 +19,8 @@ require_once __DIR__ . '/../../../vendor/autoload.php';
 require_once __DIR__ . '/../../Authentication/Authentication.php';
 require_once __DIR__ . '/../../Authentication/Config.php';
 // [START merchantapi_search_report]
-use Google\Shopping\Merchant\Reports\V1beta\Client\ReportServiceClient;
-use Google\Shopping\Merchant\Reports\V1beta\SearchRequest;
+use Google\Shopping\Merchant\Reports\V1\Client\ReportServiceClient;
+use Google\Shopping\Merchant\Reports\V1\SearchRequest;
 
 /**
  * This class demonstrates how to search reports for a given Merchant Center account.

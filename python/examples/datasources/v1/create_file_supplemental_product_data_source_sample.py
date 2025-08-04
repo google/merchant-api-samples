@@ -22,11 +22,11 @@ primary feed and/or a primary feed with the same `feedLabel` and
 # [START merchantapi_create_file_supplemental_product_data_source]
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
-from google.shopping.merchant_datasources_v1beta import CreateDataSourceRequest
-from google.shopping.merchant_datasources_v1beta import DataSource
-from google.shopping.merchant_datasources_v1beta import DataSourcesServiceClient
-from google.shopping.merchant_datasources_v1beta import FileInput
-from google.shopping.merchant_datasources_v1beta import SupplementalProductDataSource
+from google.shopping.merchant_datasources_v1 import CreateDataSourceRequest
+from google.shopping.merchant_datasources_v1 import DataSource
+from google.shopping.merchant_datasources_v1 import DataSourcesServiceClient
+from google.shopping.merchant_datasources_v1 import FileInput
+from google.shopping.merchant_datasources_v1 import SupplementalProductDataSource
 
 _ACCOUNT = configuration.Configuration().read_merchant_info()
 _PARENT = f"accounts/{_ACCOUNT}"

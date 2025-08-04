@@ -19,8 +19,8 @@ require_once __DIR__ . '/../../../Authentication/Authentication.php';
 require_once __DIR__ . '/../../../Authentication/Config.php';
 // [START merchantapi_disable_program]
 use Google\ApiCore\ApiException;
-use Google\Shopping\Merchant\Accounts\V1beta\Client\ProgramsServiceClient;
-use Google\Shopping\Merchant\Accounts\V1beta\DisableProgramRequest;
+use Google\Shopping\Merchant\Accounts\V1\Client\ProgramsServiceClient;
+use Google\Shopping\Merchant\Accounts\V1\DisableProgramRequest;
 
 /**
  * This class demonstrates how to disable a shopping program for a Merchant Center account.

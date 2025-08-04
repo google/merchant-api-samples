@@ -17,9 +17,9 @@
 # [START merchantapi_create_notification_subscription]
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
-from google.shopping.merchant_notifications_v1beta import CreateNotificationSubscriptionRequest
-from google.shopping.merchant_notifications_v1beta import NotificationsApiServiceClient
-from google.shopping.merchant_notifications_v1beta import NotificationSubscription
+from google.shopping.merchant_notifications_v1 import CreateNotificationSubscriptionRequest
+from google.shopping.merchant_notifications_v1 import NotificationsApiServiceClient
+from google.shopping.merchant_notifications_v1 import NotificationSubscription
 
 _ACCOUNT = configuration.Configuration().read_merchant_info()
 _PARENT = f"accounts/{_ACCOUNT}"

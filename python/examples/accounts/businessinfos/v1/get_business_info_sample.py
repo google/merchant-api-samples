@@ -18,8 +18,8 @@
 # [START merchantapi_get_business_info]
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
-from google.shopping.merchant_accounts_v1beta import BusinessInfoServiceClient
-from google.shopping.merchant_accounts_v1beta import GetBusinessInfoRequest
+from google.shopping.merchant_accounts_v1 import BusinessInfoServiceClient
+from google.shopping.merchant_accounts_v1 import GetBusinessInfoRequest
 
 _ACCOUNT = configuration.Configuration().read_merchant_info()
 

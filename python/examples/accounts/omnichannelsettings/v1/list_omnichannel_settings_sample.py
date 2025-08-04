@@ -17,8 +17,8 @@
 # [START merchantapi_list_omnichannel_settings]
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
-from google.shopping.merchant_accounts_v1beta import ListOmnichannelSettingsRequest
-from google.shopping.merchant_accounts_v1beta import OmnichannelSettingsServiceClient
+from google.shopping.merchant_accounts_v1 import ListOmnichannelSettingsRequest
+from google.shopping.merchant_accounts_v1 import OmnichannelSettingsServiceClient
 
 
 def list_omnichannel_settings(account_id: str) -> None:

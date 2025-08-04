@@ -17,7 +17,7 @@
 # [START merchantapi_insert_regional_inventory]
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
-from google.shopping import merchant_inventories_v1beta
+from google.shopping import merchant_inventories_v1
 
 # ENSURE you fill in the product ID and region ID for the sample to
 # work.
@@ -42,11 +42,11 @@ def insert_regional_inventory():
   credentials = generate_user_credentials.main()
 
   # Creates a client.
-  client = merchant_inventories_v1beta.RegionalInventoryServiceClient(
+  client = merchant_inventories_v1.RegionalInventoryServiceClient(
       credentials=credentials)
 
   # Creates a regional inventory and populate its attributes.
-  regional_inventory = merchant_inventories_v1beta.RegionalInventory()
+  regional_inventory = merchant_inventories_v1.RegionalInventory()
   regional_inventory.region = _REGION
   regional_inventory.availability = "in stock"
   regional_inventory.price = {
@@ -55,7 +55,7 @@ def insert_regional_inventory():
   }
 
   # Creates the request.
-  request = merchant_inventories_v1beta.InsertRegionalInventoryRequest(
+  request = merchant_inventories_v1.InsertRegionalInventoryRequest(
       parent=_PARENT,
       regional_inventory=regional_inventory,
   )

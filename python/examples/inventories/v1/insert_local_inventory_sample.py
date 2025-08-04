@@ -17,7 +17,7 @@
 # [START merchantapi_insert_local_inventory]
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
-from google.shopping import merchant_inventories_v1beta
+from google.shopping import merchant_inventories_v1
 
 # ENSURE you fill in product ID and store code for the sample to
 # work.
@@ -42,11 +42,11 @@ def insert_local_inventory():
   credentials = generate_user_credentials.main()
 
   # Creates a client.
-  client = merchant_inventories_v1beta.LocalInventoryServiceClient(
+  client = merchant_inventories_v1.LocalInventoryServiceClient(
       credentials=credentials)
 
   # Creates a Local inventory and populate its attributes.
-  local_inventory = merchant_inventories_v1beta.LocalInventory()
+  local_inventory = merchant_inventories_v1.LocalInventory()
   local_inventory.store_code = _STORE_CODE
   local_inventory.availability = "in stock"
   local_inventory.price = {
@@ -55,7 +55,7 @@ def insert_local_inventory():
   }
 
   # Creates the request.
-  request = merchant_inventories_v1beta.InsertLocalInventoryRequest(
+  request = merchant_inventories_v1.InsertLocalInventoryRequest(
       parent=_PARENT,
       local_inventory=local_inventory,
   )

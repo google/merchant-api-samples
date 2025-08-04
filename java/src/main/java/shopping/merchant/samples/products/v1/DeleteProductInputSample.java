@@ -66,7 +66,7 @@ public class DeleteProductInputSample {
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
     // An ID assigned to a product by Google. In the format
-    // channel~contentLanguage~feedLabel~offerId
+    // contentLanguage~feedLabel~offerId
     String productId = "online~en~label~sku123";
 
     // The name of the dataSource from which to delete the product. If it is a primary feed, this

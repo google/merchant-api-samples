@@ -20,10 +20,10 @@ require_once __DIR__ . '/../../Authentication/Config.php';
 // [START merchantapi_update_product_input]
 use Google\ApiCore\ApiException;
 use Google\Protobuf\FieldMask;
-use Google\Shopping\Merchant\Products\V1beta\Attributes;
-use Google\Shopping\Merchant\Products\V1beta\Client\ProductInputsServiceClient;
-use Google\Shopping\Merchant\Products\V1beta\ProductInput;
-use Google\Shopping\Merchant\Products\V1beta\UpdateProductInputRequest;
+use Google\Shopping\Merchant\Products\V1\ProductAttributes;
+use Google\Shopping\Merchant\Products\V1\Client\ProductInputsServiceClient;
+use Google\Shopping\Merchant\Products\V1\ProductInput;
+use Google\Shopping\Merchant\Products\V1\UpdateProductInputRequest;
 use Google\Shopping\Type\CustomAttribute;
 
 /**
@@ -32,7 +32,7 @@ use Google\Shopping\Type\CustomAttribute;
 class UpdateProductInputSample
 {
     // An ID assigned to a product by Google. In the format
-    // channel~contentLanguage~feedLabel~offerId
+    // contentLanguage~feedLabel~offerId
     // Please ensure this product ID exists for the update to succeed.
     private const PRODUCT_ID = "online~en~label~sku123";
 
@@ -93,13 +93,13 @@ class UpdateProductInputSample
         // FieldMask for product input updates.
         $fieldMask = new FieldMask([
             'paths' => [
-                "attributes.title",
-                "attributes.description",
-                "attributes.link",
-                "attributes.image_link",
-                "attributes.availability",
-                "attributes.condition",
-                "attributes.gtin",
+                "product_attributes.title",
+                "product_attributes.description",
+                "product_attributes.link",
+                "product_attributes.image_link",
+                "product_attributes.availability",
+                "product_attributes.condition",
+                "product_attributes.gtin",
                 "custom_attributes.mycustomattribute" // Path for a specific custom attribute
             ]
         ]);
@@ -107,7 +107,7 @@ class UpdateProductInputSample
         // Calls the API and handles any network failures or errors.
         try {
             // Define the new attributes for the product.
-            $attributes = new Attributes([
+            $attributes = new ProductAttributes([
                 'title' => 'A Tale of Two Cities 3',
                 'description' => 'A classic novel about the French Revolution',
                 'link' => 'https://exampleWebsite.com/tale-of-two-cities.html',
@@ -125,7 +125,7 @@ class UpdateProductInputSample
             // The 'name' field must match the product input being updated.
             $productInput = new ProductInput([
                 'name' => $name,
-                'attributes' => $attributes,
+                'product_attributes' => $attributes,
                 'custom_attributes' => [ // Provide the list of custom attributes.
                     new CustomAttribute([
                         'name' => 'mycustomattribute',
@@ -147,7 +147,7 @@ class UpdateProductInputSample
 
             print "Updated ProductInput Name below\n";
             // The name of the updated product input.
-            // The last part of the product name is the product ID (e.g., channel~contentLanguage~feedLabel~offerId).
+            // The last part of the product name is the product ID (e.g., contentLanguage~feedLabel~offerId).
             print $response->getName() . "\n";
             print "Updated Product below\n";
             // Print the full updated product input object.

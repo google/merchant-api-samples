@@ -20,12 +20,11 @@ require_once __DIR__ . '/../../Authentication/Authentication.php';
 require_once __DIR__ . '/../../Authentication/Config.php';
 // [START merchantapi_insert_product_input_async]
 use Google\ApiCore\ApiException;
-use Google\Shopping\Merchant\Products\V1beta\Attributes;
-use Google\Shopping\Merchant\Products\V1beta\InsertProductInputRequest;
-use Google\Shopping\Merchant\Products\V1beta\ProductInput;
-use Google\Shopping\Merchant\Products\V1beta\Client\ProductInputsServiceClient;
-use Google\Shopping\Merchant\Products\V1beta\Shipping;
-use Google\Shopping\Type\Channel\ChannelEnum;
+use Google\Shopping\Merchant\Products\V1\ProductAttributes;
+use Google\Shopping\Merchant\Products\V1\InsertProductInputRequest;
+use Google\Shopping\Merchant\Products\V1\ProductInput;
+use Google\Shopping\Merchant\Products\V1\Client\ProductInputsServiceClient;
+use Google\Shopping\Merchant\Products\V1\Shipping;
 use Google\Shopping\Type\Price;
 use React\EventLoop\Loop;
 use React\Promise\Promise;
@@ -91,7 +90,7 @@ class InsertProductInputAsyncSample
         ]);
 
         // Create product attributes.
-        $attributes = new Attributes([
+        $attributes = new ProductAttributes([
             'title' => 'A Tale of Two Cities',
             'description' => 'A classic novel about the French Revolution',
             'link' => 'https://exampleWebsite.com/tale-of-two-cities.html',
@@ -99,17 +98,16 @@ class InsertProductInputAsyncSample
             'availability' => 'in stock',
             'condition' => 'new',
             'google_product_category' => 'Media > Books',
-            'gtin' => ['9780007350896'],
+            'gtins' => ['9780007350896'],
             'shipping' => [$shipping, $shipping2]
         ]);
 
         // Create the product input object.
         return new ProductInput([
-            'channel' => ChannelEnum::ONLINE,
             'content_language' => 'en',
             'feed_label' => 'LABEL',
             'offer_id' => self::generateRandomString(), // Random offer ID for uniqueness
-            'attributes' => $attributes
+            'product_attributes' => $attributes
         ]);
     }
 

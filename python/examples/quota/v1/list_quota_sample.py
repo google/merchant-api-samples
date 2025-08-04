@@ -17,7 +17,7 @@
 # [START merchantapi_list_quota]
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
-from google.shopping import merchant_quota_v1beta
+from google.shopping import merchant_quota_v1
 
 _ACCOUNT = configuration.Configuration().read_merchant_info()
 _PARENT = f"accounts/{_ACCOUNT}"
@@ -30,10 +30,10 @@ def list_quotas():
   credentials = generate_user_credentials.main()
 
   # Creates a client.
-  client = merchant_quota_v1beta.QuotaServiceClient(credentials=credentials)
+  client = merchant_quota_v1.QuotaServiceClient(credentials=credentials)
 
   # Creates the request.
-  request = merchant_quota_v1beta.ListQuotaGroupsRequest(parent=_PARENT)
+  request = merchant_quota_v1.ListQuotaGroupsRequest(parent=_PARENT)
 
   print("Sending list quotas request:")
   # Makes the request.

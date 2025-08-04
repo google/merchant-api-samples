@@ -69,7 +69,7 @@ function createRandomProduct() {
     availability: 'in stock',
     condition: 'new',
     google_product_category: 'Media > Books',
-    gtin: ['9780007350896'],
+    gtins: ['9780007350896'],
     shipping: [shipping, shipping2],
     // Price is nested within attributes in the ProductInput message
     price: price,
@@ -77,11 +77,10 @@ function createRandomProduct() {
 
   // Construct the ProductInput object
   const productInput = {
-    channel: 'ONLINE', // Use the string representation for ChannelEnum
     contentLanguage: 'en',
     feedLabel: 'CH',
     offerId: generateRandomString(),
-    attributes: attributes,
+    productAttributes: attributes,
   };
 
   return productInput;

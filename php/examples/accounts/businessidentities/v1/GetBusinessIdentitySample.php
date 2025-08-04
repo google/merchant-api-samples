@@ -19,8 +19,8 @@ require_once __DIR__ . '/../../../Authentication/Authentication.php';
 require_once __DIR__ . '/../../../Authentication/Config.php';
 // [START merchantapi_get_business_identity]
 use Google\ApiCore\ApiException;
-use Google\Shopping\Merchant\Accounts\V1beta\Client\BusinessIdentityServiceClient;
-use Google\Shopping\Merchant\Accounts\V1beta\GetBusinessIdentityRequest;
+use Google\Shopping\Merchant\Accounts\V1\Client\BusinessIdentityServiceClient;
+use Google\Shopping\Merchant\Accounts\V1\GetBusinessIdentityRequest;
 
 /**
  * This class demonstrates how to get the business identity of a Merchant Center account.

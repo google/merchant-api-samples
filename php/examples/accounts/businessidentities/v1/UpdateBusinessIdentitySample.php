@@ -20,9 +20,9 @@ require_once __DIR__ . '/../../../Authentication/Config.php';
 // [START merchantapi_update_business_identity]
 use Google\ApiCore\ApiException;
 use Google\Protobuf\FieldMask;
-use Google\Shopping\Merchant\Accounts\V1beta\BusinessIdentity;
-use Google\Shopping\Merchant\Accounts\V1beta\Client\BusinessIdentityServiceClient;
-use Google\Shopping\Merchant\Accounts\V1beta\UpdateBusinessIdentityRequest;
+use Google\Shopping\Merchant\Accounts\V1\BusinessIdentity;
+use Google\Shopping\Merchant\Accounts\V1\Client\BusinessIdentityServiceClient;
+use Google\Shopping\Merchant\Accounts\V1\UpdateBusinessIdentityRequest;
 
 /**
  * This class demonstrates how to update a business identity.

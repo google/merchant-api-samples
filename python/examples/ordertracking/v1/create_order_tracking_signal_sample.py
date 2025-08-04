@@ -17,9 +17,9 @@
 # [START merchantapi_create_order_tracking_signal]
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
-from google.shopping.merchant_ordertracking_v1beta import CreateOrderTrackingSignalRequest
-from google.shopping.merchant_ordertracking_v1beta import OrderTrackingSignalsServiceClient
-from google.shopping.merchant_ordertracking_v1beta.types import OrderTrackingSignal
+from google.shopping.merchant_ordertracking_v1 import CreateOrderTrackingSignalRequest
+from google.shopping.merchant_ordertracking_v1 import OrderTrackingSignalsServiceClient
+from google.shopping.merchant_ordertracking_v1.types import OrderTrackingSignal
 from google.shopping.type import Price
 from google.type import datetime_pb2
 
@@ -143,8 +143,8 @@ def create_order_tracking_signal(product_ids: list[str]):
               mpn="00638HAY",
               product_title="Tshirt-small-blue",
               brand="Brand1",
-              # Any GTIN associated with the product.
-              gtin="001234567890",
+              # Any GTINs associated with the product.
+              gtins=["001234567890"],
           ),
       ],
       # Mapping of line items to shipments.

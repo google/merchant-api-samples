@@ -17,8 +17,8 @@
 # [START merchantapi_list_subaccounts]
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
-from google.shopping.merchant_accounts_v1beta import AccountsServiceClient
-from google.shopping.merchant_accounts_v1beta import ListSubAccountsRequest
+from google.shopping.merchant_accounts_v1 import AccountsServiceClient
+from google.shopping.merchant_accounts_v1 import ListSubAccountsRequest
 
 _ACCOUNT = configuration.Configuration().read_merchant_info()
 

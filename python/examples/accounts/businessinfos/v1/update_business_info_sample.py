@@ -19,9 +19,9 @@
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
 from google.protobuf import field_mask_pb2
-from google.shopping.merchant_accounts_v1beta import BusinessInfo
-from google.shopping.merchant_accounts_v1beta import BusinessInfoServiceClient
-from google.shopping.merchant_accounts_v1beta import UpdateBusinessInfoRequest
+from google.shopping.merchant_accounts_v1 import BusinessInfo
+from google.shopping.merchant_accounts_v1 import BusinessInfoServiceClient
+from google.shopping.merchant_accounts_v1 import UpdateBusinessInfoRequest
 from google.type import postal_address_pb2
 
 FieldMask = field_mask_pb2.FieldMask

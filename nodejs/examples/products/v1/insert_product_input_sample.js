@@ -73,17 +73,16 @@ async function insertProductInput(config, dataSource) {
     availability: 'in stock',
     condition: 'new',
     googleProductCategory: 'Media > Books',
-    gtin: ['9780007350896'], // GTIN is a repeated field
+    gtins: ['9780007350896'], // GTIN is a repeated field
     shipping: [shipping1, shipping2], // Shipping is a repeated field
   };
 
   // Define the product input object.
   const productInput = {
-    channel: 'ONLINE', // Use the string representation of the enum
     contentLanguage: 'en',
     feedLabel: 'label',
     offerId: 'sku123',
-    attributes: attributes,
+    productAttributes: attributes,
   };
 
   // Construct the request object.
@@ -105,7 +104,7 @@ async function insertProductInput(config, dataSource) {
 
     console.log('Inserted ProductInput Name below');
     // The last part of the product name will be the product ID assigned by Google.
-    // Product ID has the format `channel~contentLanguage~feedLabel~offerId`
+    // Product ID has the format `contentLanguage~feedLabel~offerId`
     console.log(response.name);
     console.log('Inserted Product Name below');
     console.log(response.product);

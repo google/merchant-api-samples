@@ -17,8 +17,8 @@
 # [START merchantapi_fetch_file_data_source]
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
-from google.shopping.merchant_datasources_v1beta import DataSourcesServiceClient
-from google.shopping.merchant_datasources_v1beta import FetchDataSourceRequest
+from google.shopping.merchant_datasources_v1 import DataSourcesServiceClient
+from google.shopping.merchant_datasources_v1 import FetchDataSourceRequest
 
 # Read the Merchant Center account ID from the configuration file.
 # This ID is used to identify the account under which the data source operation

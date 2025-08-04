@@ -20,8 +20,8 @@ require_once __DIR__ . '/../../Authentication/Authentication.php';
 require_once __DIR__ . '/../../Authentication/Config.php';
 // [START merchantapi_get_file_upload]
 use Google\ApiCore\ApiException;
-use Google\Shopping\Merchant\DataSources\V1beta\Client\FileUploadsServiceClient;
-use Google\Shopping\Merchant\DataSources\V1beta\GetFileUploadRequest;
+use Google\Shopping\Merchant\DataSources\V1\Client\FileUploadsServiceClient;
+use Google\Shopping\Merchant\DataSources\V1\GetFileUploadRequest;
 
 /**
  * This class demonstrates how to get the latest data source file upload.

@@ -18,10 +18,10 @@
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
 from google.protobuf import field_mask_pb2
-from google.shopping.merchant_accounts_v1beta import InventoryVerification
-from google.shopping.merchant_accounts_v1beta import OmnichannelSetting
-from google.shopping.merchant_accounts_v1beta import OmnichannelSettingsServiceClient
-from google.shopping.merchant_accounts_v1beta import (
+from google.shopping.merchant_accounts_v1 import InventoryVerification
+from google.shopping.merchant_accounts_v1 import OmnichannelSetting
+from google.shopping.merchant_accounts_v1 import OmnichannelSettingsServiceClient
+from google.shopping.merchant_accounts_v1 import (
     UpdateOmnichannelSettingRequest,
 )
 

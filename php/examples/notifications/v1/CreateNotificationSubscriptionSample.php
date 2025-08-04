@@ -20,10 +20,10 @@ require_once __DIR__ . '/../../Authentication/Authentication.php';
 require_once __DIR__ . '/../../Authentication/Config.php';
 // [START merchantapi_create_notification_subscription]
 use Google\ApiCore\ApiException;
-use Google\Shopping\Merchant\Notifications\V1beta\Client\NotificationsApiServiceClient;
-use Google\Shopping\Merchant\Notifications\V1beta\CreateNotificationSubscriptionRequest;
-use Google\Shopping\Merchant\Notifications\V1beta\NotificationSubscription;
-use Google\Shopping\Merchant\Notifications\V1beta\NotificationSubscription\NotificationEventType;
+use Google\Shopping\Merchant\Notifications\V1\Client\NotificationsApiServiceClient;
+use Google\Shopping\Merchant\Notifications\V1\CreateNotificationSubscriptionRequest;
+use Google\Shopping\Merchant\Notifications\V1\NotificationSubscription;
+use Google\Shopping\Merchant\Notifications\V1\NotificationSubscription\NotificationEventType;
 
 /**
  * Creates a Notification Subscription.

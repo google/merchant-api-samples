@@ -17,7 +17,7 @@
 # [START merchantapi_get_datasource]
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
-from google.shopping import merchant_datasources_v1beta
+from google.shopping import merchant_datasources_v1
 
 # ENSURE you fill in the datasource ID for the sample to
 # work.
@@ -33,12 +33,12 @@ def get_data_source():
   credentials = generate_user_credentials.main()
 
   # Creates a client.
-  client = merchant_datasources_v1beta.DataSourcesServiceClient(
+  client = merchant_datasources_v1.DataSourcesServiceClient(
       credentials=credentials
   )
 
   # Creates the request.
-  request = merchant_datasources_v1beta.GetDataSourceRequest(name=_NAME)
+  request = merchant_datasources_v1.GetDataSourceRequest(name=_NAME)
 
   # Makes the request and catch and print any error messages.
   try:

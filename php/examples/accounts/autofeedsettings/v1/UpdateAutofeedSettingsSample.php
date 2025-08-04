@@ -20,9 +20,9 @@ require_once __DIR__ . '/../../../Authentication/Config.php';
 // [START merchantapi_update_autofeedsettings]
 use Google\ApiCore\ApiException;
 use Google\Protobuf\FieldMask;
-use Google\Shopping\Merchant\Accounts\V1beta\AutofeedSettings;
-use Google\Shopping\Merchant\Accounts\V1beta\Client\AutofeedSettingsServiceClient;
-use Google\Shopping\Merchant\Accounts\V1beta\UpdateAutofeedSettingsRequest;
+use Google\Shopping\Merchant\Accounts\V1\AutofeedSettings;
+use Google\Shopping\Merchant\Accounts\V1\Client\AutofeedSettingsServiceClient;
+use Google\Shopping\Merchant\Accounts\V1\UpdateAutofeedSettingsRequest;
 
 /**
  * This class demonstrates how to update AutofeedSettings to be enabled.

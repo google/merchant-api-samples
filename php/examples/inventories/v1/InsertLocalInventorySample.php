@@ -20,9 +20,9 @@ require_once __DIR__ . '/../../../vendor/autoload.php';
 require_once __DIR__ . '/../../Authentication/Authentication.php';
 // [START merchantapi_insert_local_inventory]
 use Google\ApiCore\ApiException;
-use Google\Shopping\Merchant\Inventories\V1beta\LocalInventory;
-use Google\Shopping\Merchant\Inventories\V1beta\Client\LocalInventoryServiceClient;
-use Google\Shopping\Merchant\Inventories\V1beta\InsertLocalInventoryRequest;
+use Google\Shopping\Merchant\Inventories\V1\LocalInventory;
+use Google\Shopping\Merchant\Inventories\V1\Client\LocalInventoryServiceClient;
+use Google\Shopping\Merchant\Inventories\V1\InsertLocalInventoryRequest;
 use Google\Shopping\Type\Price;
 
 /**

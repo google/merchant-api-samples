@@ -17,8 +17,8 @@
 # [START merchantapi_search_report]
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
-from google.shopping.merchant_reports_v1beta import ReportServiceClient
-from google.shopping.merchant_reports_v1beta import SearchRequest
+from google.shopping.merchant_reports_v1 import ReportServiceClient
+from google.shopping.merchant_reports_v1 import SearchRequest
 
 _ACCOUNT = configuration.Configuration().read_merchant_info()
 

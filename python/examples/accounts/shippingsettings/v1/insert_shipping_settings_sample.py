@@ -17,13 +17,13 @@
 # [START merchantapi_insert_shippingsettings]
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
-from google.shopping.merchant_accounts_v1beta import DeliveryTime
-from google.shopping.merchant_accounts_v1beta import InsertShippingSettingsRequest
-from google.shopping.merchant_accounts_v1beta import RateGroup
-from google.shopping.merchant_accounts_v1beta import Service
-from google.shopping.merchant_accounts_v1beta import ShippingSettings
-from google.shopping.merchant_accounts_v1beta import ShippingSettingsServiceClient
-from google.shopping.merchant_accounts_v1beta import Value
+from google.shopping.merchant_accounts_v1 import DeliveryTime
+from google.shopping.merchant_accounts_v1 import InsertShippingSettingsRequest
+from google.shopping.merchant_accounts_v1 import RateGroup
+from google.shopping.merchant_accounts_v1 import Service
+from google.shopping.merchant_accounts_v1 import ShippingSettings
+from google.shopping.merchant_accounts_v1 import ShippingSettingsServiceClient
+from google.shopping.merchant_accounts_v1 import Value
 
 _ACCOUNT = configuration.Configuration().read_merchant_info()
 _PARENT = f"accounts/{_ACCOUNT}"

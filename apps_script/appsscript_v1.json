@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "enabledAdvancedServices": [
+      {
+        "userSymbol": "MerchantApiAccounts",
+        "version": "accounts_v1",
+        "serviceId": "merchantapi"
+      },
+      {
+        "userSymbol": "MerchantApiDataSources",
+        "version": "datasources_v1",
+        "serviceId": "merchantapi"
+      },
+      {
+        "userSymbol": "MerchantApiProducts",
+        "version": "products_v1",
+        "serviceId": "merchantapi"
+      },
+      {
+        "userSymbol": "MerchantApiReports",
+        "version": "reports_v1",
+        "serviceId": "merchantapi"
+      }
+    ]
+  },
+  "exceptionLogging": "STACKDRIVER",
+  "runtimeVersion": "V8"
+}

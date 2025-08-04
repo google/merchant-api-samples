@@ -21,9 +21,9 @@ require_once __DIR__ . '/../../Authentication/Config.php';
 // [START merchantapi_delete_product_input]
 use Google\ApiCore\ApiException;
 use Google\Auth\CredentialsLoader;
-use Google\Shopping\Merchant\Products\V1beta\Client\ProductInputsServiceClient;
-use Google\Shopping\Merchant\Products\V1beta\DeleteProductInputRequest;
-use Google\Shopping\Merchant\Products\V1beta\ProductInputName;
+use Google\Shopping\Merchant\Products\V1\Client\ProductInputsServiceClient;
+use Google\Shopping\Merchant\Products\V1\DeleteProductInputRequest;
+use Google\Shopping\Merchant\Products\V1\ProductInputName;
 
 /**
  * This class demonstrates how to delete a productinput for a given Merchant Center
@@ -35,7 +35,7 @@ class DeleteProductInput
 
     // ENSURE you fill in the product and datasource ID for the sample to work.
     // An ID assigned to a product by Google:
-    // In the format `channel~contentLanguage~feedLabel~offerId`
+    // In the format `contentLanguage~feedLabel~offerId`
     private const PRODUCT = 'INSERT_PRODUCT_ID_HERE';
     private const DATASOURCE = 'INSERT_DATASOURCE_ID_HERE';
 

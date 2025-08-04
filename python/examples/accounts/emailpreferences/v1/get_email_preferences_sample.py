@@ -17,8 +17,8 @@
 # [START merchantapi_get_email_preferences]
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
-from google.shopping.merchant_accounts_v1beta import EmailPreferencesServiceClient
-from google.shopping.merchant_accounts_v1beta import GetEmailPreferencesRequest
+from google.shopping.merchant_accounts_v1 import EmailPreferencesServiceClient
+from google.shopping.merchant_accounts_v1 import GetEmailPreferencesRequest
 
 _ACCOUNT = configuration.Configuration().read_merchant_info()
 

@@ -17,10 +17,10 @@
 """Sample for creating a primary product data source."""
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
-from google.shopping.merchant_datasources_v1beta import CreateDataSourceRequest
-from google.shopping.merchant_datasources_v1beta import DataSource
-from google.shopping.merchant_datasources_v1beta import DataSourcesServiceClient
-from google.shopping.merchant_datasources_v1beta import PrimaryProductDataSource
+from google.shopping.merchant_datasources_v1 import CreateDataSourceRequest
+from google.shopping.merchant_datasources_v1 import DataSource
+from google.shopping.merchant_datasources_v1 import DataSourcesServiceClient
+from google.shopping.merchant_datasources_v1 import PrimaryProductDataSource
 # Used for setting the destination type, e.g., SHOPPING_ADS.
 from google.shopping.type import types as merchant_api_types
 
@@ -54,12 +54,7 @@ def create_primary_product_data_source(display_name: str) -> None:
   # Configures the PrimaryProductDataSource.
   # This section defines the core properties of the product data feed.
   primary_product_data_source = PrimaryProductDataSource()
-  # Specifies the channel for the products (e.g., ONLINE_PRODUCTS).
-  # Note: While "PRODUCTS" (for unified products) is accepted, it's not
-  # currently usable with the Products API sub-API.
-  primary_product_data_source.channel = (
-      PrimaryProductDataSource.Channel.ONLINE_PRODUCTS
-  )
+
   # Sets the target countries for this data source.
   primary_product_data_source.countries = ["GB"]
   # Sets the content language for the products.

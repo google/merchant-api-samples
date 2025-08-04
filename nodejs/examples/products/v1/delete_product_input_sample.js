@@ -74,8 +74,8 @@ async function deleteProductInput(config, productId, dataSource) {
 async function main() {
   const config = authUtils.getConfig();
   // An ID assigned to a product input by Google. In the format
-  // channel~contentLanguage~feedLabel~offerId
-  const productId = 'online~en~label~sku123';
+  // contentLanguage~feedLabel~offerId
+  const productId = 'en~label~sku123';
 
   const merchantInfo = JSON.parse(
     fs.readFileSync(config.merchantInfoFile, 'utf8')

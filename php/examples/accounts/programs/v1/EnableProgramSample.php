@@ -19,8 +19,8 @@ require_once __DIR__ . '/../../../Authentication/Authentication.php';
 require_once __DIR__ . '/../../../Authentication/Config.php';
 // [START merchantapi_enable_program]
 use Google\ApiCore\ApiException;
-use Google\Shopping\Merchant\Accounts\V1beta\Client\ProgramsServiceClient;
-use Google\Shopping\Merchant\Accounts\V1beta\EnableProgramRequest;
+use Google\Shopping\Merchant\Accounts\V1\Client\ProgramsServiceClient;
+use Google\Shopping\Merchant\Accounts\V1\EnableProgramRequest;
 
 /**
  * This class demonstrates how to enable a shopping program for a Merchant Center account.

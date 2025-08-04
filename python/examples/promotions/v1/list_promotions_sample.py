@@ -17,8 +17,8 @@
 # [START merchantapi_list_promotions]
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
-from google.shopping.merchant_promotions_v1beta import ListPromotionsRequest
-from google.shopping.merchant_promotions_v1beta import PromotionsServiceClient
+from google.shopping.merchant_promotions_v1 import ListPromotionsRequest
+from google.shopping.merchant_promotions_v1 import PromotionsServiceClient
 
 _ACCOUNT = configuration.Configuration().read_merchant_info()
 _PARENT = f"accounts/{_ACCOUNT}"

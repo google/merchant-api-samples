@@ -18,9 +18,9 @@
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
 from google.protobuf import field_mask_pb2
-from google.shopping.merchant_notifications_v1beta import NotificationsApiServiceClient
-from google.shopping.merchant_notifications_v1beta import NotificationSubscription
-from google.shopping.merchant_notifications_v1beta import UpdateNotificationSubscriptionRequest
+from google.shopping.merchant_notifications_v1 import NotificationsApiServiceClient
+from google.shopping.merchant_notifications_v1 import NotificationSubscription
+from google.shopping.merchant_notifications_v1 import UpdateNotificationSubscriptionRequest
 
 _ACCOUNT = configuration.Configuration().read_merchant_info()
 

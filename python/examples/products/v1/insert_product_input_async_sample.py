@@ -22,12 +22,11 @@ import string
 
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
-from google.shopping.merchant_products_v1beta import Attributes
-from google.shopping.merchant_products_v1beta import InsertProductInputRequest
-from google.shopping.merchant_products_v1beta import ProductInput
-from google.shopping.merchant_products_v1beta import ProductInputsServiceAsyncClient
-from google.shopping.merchant_products_v1beta import Shipping
-from google.shopping.type import Channel
+from google.shopping.merchant_products_v1 import InsertProductInputRequest
+from google.shopping.merchant_products_v1 import ProductAttributes
+from google.shopping.merchant_products_v1 import ProductInput
+from google.shopping.merchant_products_v1 import ProductInputsServiceAsyncClient
+from google.shopping.merchant_products_v1 import Shipping
 from google.shopping.type import Price
 
 # Read merchant account information from the configuration file.
@@ -50,7 +49,7 @@ def _create_random_product() -> ProductInput:
   shipping1 = Shipping(price=price, country="GB", service="1st class post")
   shipping2 = Shipping(price=price, country="FR", service="1st class post")
 
-  attributes = Attributes(
+  attributes = ProductAttributes(
       title="Async - A Tale of Two Cities",
       description="A classic novel about the French Revolution",
       link="https://exampleWebsite.com/tale-of-two-cities.html",
@@ -58,16 +57,15 @@ def _create_random_product() -> ProductInput:
       availability="in stock",
       condition="new",
       google_product_category="Media > Books",
-      gtin=["9780007350896"],
+      gtins=["9780007350896"],
       shipping=[shipping1, shipping2],
   )
 
   return ProductInput(
-      channel=Channel.ChannelEnum.ONLINE,
       content_language="en",
       feed_label="US",
       offer_id=_generate_random_string(),
-      attributes=attributes,
+      product_attributes=attributes,
   )
 
 

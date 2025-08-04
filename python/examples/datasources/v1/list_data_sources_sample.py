@@ -17,7 +17,7 @@
 # [START merchantapi_list_data_sources]
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
-from google.shopping import merchant_datasources_v1beta
+from google.shopping import merchant_datasources_v1
 
 _ACCOUNT = configuration.Configuration().read_merchant_info()
 _PARENT = f"accounts/{_ACCOUNT}"
@@ -30,12 +30,12 @@ def list_data_sources():
   credentials = generate_user_credentials.main()
 
   # Creates a client.
-  client = merchant_datasources_v1beta.DataSourcesServiceClient(
+  client = merchant_datasources_v1.DataSourcesServiceClient(
       credentials=credentials
   )
 
   # Creates the request.
-  request = merchant_datasources_v1beta.ListDataSourcesRequest(parent=_PARENT)
+  request = merchant_datasources_v1.ListDataSourcesRequest(parent=_PARENT)
 
   # Makes the request and catch and print any error messages.
   try:

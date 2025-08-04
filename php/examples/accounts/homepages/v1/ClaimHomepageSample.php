@@ -19,8 +19,8 @@ require_once __DIR__ . '/../../../Authentication/Authentication.php';
 require_once __DIR__ . '/../../../Authentication/Config.php';
 // [START merchantapi_claim_homepage]
 use Google\ApiCore\ApiException;
-use Google\Shopping\Merchant\Accounts\V1beta\ClaimHomepageRequest;
-use Google\Shopping\Merchant\Accounts\V1beta\Client\HomepageServiceClient;
+use Google\Shopping\Merchant\Accounts\V1\ClaimHomepageRequest;
+use Google\Shopping\Merchant\Accounts\V1\Client\HomepageServiceClient;
 
 /**
  * This class demonstrates how to claim the homepage for a given Merchant Center account.

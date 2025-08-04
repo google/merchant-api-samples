@@ -20,13 +20,13 @@ require_once __DIR__ . '/../../Authentication/Authentication.php';
 require_once __DIR__ . '/../../Authentication/Config.php';
 // [START merchantapi_create_order_tracking_signal]
 use Google\ApiCore\ApiException;
-use Google\Shopping\Merchant\OrderTracking\V1beta\Client\OrderTrackingSignalsServiceClient;
-use Google\Shopping\Merchant\OrderTracking\V1beta\CreateOrderTrackingSignalRequest;
-use Google\Shopping\Merchant\OrderTracking\V1beta\OrderTrackingSignal;
-use Google\Shopping\Merchant\OrderTracking\V1beta\OrderTrackingSignal\LineItemDetails;
-use Google\Shopping\Merchant\OrderTracking\V1beta\OrderTrackingSignal\ShipmentLineItemMapping;
-use Google\Shopping\Merchant\OrderTracking\V1beta\OrderTrackingSignal\ShippingInfo;
-use Google\Shopping\Merchant\OrderTracking\V1beta\OrderTrackingSignal\ShippingInfo\ShippingState;
+use Google\Shopping\Merchant\OrderTracking\V1\Client\OrderTrackingSignalsServiceClient;
+use Google\Shopping\Merchant\OrderTracking\V1\CreateOrderTrackingSignalRequest;
+use Google\Shopping\Merchant\OrderTracking\V1\OrderTrackingSignal;
+use Google\Shopping\Merchant\OrderTracking\V1\OrderTrackingSignal\LineItemDetails;
+use Google\Shopping\Merchant\OrderTracking\V1\OrderTrackingSignal\ShipmentLineItemMapping;
+use Google\Shopping\Merchant\OrderTracking\V1\OrderTrackingSignal\ShippingInfo;
+use Google\Shopping\Merchant\OrderTracking\V1\OrderTrackingSignal\ShippingInfo\ShippingState;
 use Google\Shopping\Type\Price;
 use Google\Type\DateTime;
 use Google\Type\TimeZone;
@@ -209,8 +209,8 @@ class CreateOrderTrackingSignalSample
                         'mpn' => '00638HAY',
                         'product_title' => 'Tshirt-small-blue',
                         'brand' => 'Brand1',
-                        // Any GTIN associated with the product.
-                        'gtin' => '001234567890'
+                        // Any GTINs associated with the product.
+                        'gtins' => ['001234567890']
                     ]
                 )
             ];

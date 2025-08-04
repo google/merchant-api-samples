@@ -20,11 +20,11 @@ require_once __DIR__ . '/../../Authentication/Authentication.php';
 require_once __DIR__ . '/../../Authentication/Config.php';
 // [START merchantapi_create_file_supplemental_product_data_source]
 use Google\ApiCore\ApiException;
-use Google\Shopping\Merchant\DataSources\V1beta\Client\DataSourcesServiceClient;
-use Google\Shopping\Merchant\DataSources\V1beta\CreateDataSourceRequest;
-use Google\Shopping\Merchant\DataSources\V1beta\DataSource;
-use Google\Shopping\Merchant\DataSources\V1beta\FileInput;
-use Google\Shopping\Merchant\DataSources\V1beta\SupplementalProductDataSource;
+use Google\Shopping\Merchant\DataSources\V1\Client\DataSourcesServiceClient;
+use Google\Shopping\Merchant\DataSources\V1\CreateDataSourceRequest;
+use Google\Shopping\Merchant\DataSources\V1\DataSource;
+use Google\Shopping\Merchant\DataSources\V1\FileInput;
+use Google\Shopping\Merchant\DataSources\V1\SupplementalProductDataSource;
 
 /**
  * This class demonstrates how to create a File Supplemental product datasource for the "en" and

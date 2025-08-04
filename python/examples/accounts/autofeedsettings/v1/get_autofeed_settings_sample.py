@@ -17,8 +17,8 @@
 # [START merchantapi_get_autofeed_settings]
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
-from google.shopping.merchant_accounts_v1beta import AutofeedSettingsServiceClient
-from google.shopping.merchant_accounts_v1beta import GetAutofeedSettingsRequest
+from google.shopping.merchant_accounts_v1 import AutofeedSettingsServiceClient
+from google.shopping.merchant_accounts_v1 import GetAutofeedSettingsRequest
 
 _ACCOUNT = configuration.Configuration().read_merchant_info()
 

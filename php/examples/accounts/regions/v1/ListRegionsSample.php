@@ -19,8 +19,8 @@ require_once __DIR__ . '/../../../Authentication/Authentication.php';
 require_once __DIR__ . '/../../../Authentication/Config.php';
 // [START merchantapi_list_regions]
 use Google\ApiCore\ApiException;
-use Google\Shopping\Merchant\Accounts\V1beta\Client\RegionsServiceClient;
-use Google\Shopping\Merchant\Accounts\V1beta\ListRegionsRequest;
+use Google\Shopping\Merchant\Accounts\V1\Client\RegionsServiceClient;
+use Google\Shopping\Merchant\Accounts\V1\ListRegionsRequest;
 
 /**
  * This class demonstrates how to list all the regions for a given Merchant Center account.

@@ -18,10 +18,10 @@
 # [START merchantapi_create_sub_account]
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
-from google.shopping.merchant_accounts_v1beta import Account
-from google.shopping.merchant_accounts_v1beta import AccountAggregation
-from google.shopping.merchant_accounts_v1beta import AccountsServiceClient
-from google.shopping.merchant_accounts_v1beta import CreateAndConfigureAccountRequest
+from google.shopping.merchant_accounts_v1 import Account
+from google.shopping.merchant_accounts_v1 import AccountAggregation
+from google.shopping.merchant_accounts_v1 import AccountsServiceClient
+from google.shopping.merchant_accounts_v1 import CreateAndConfigureAccountRequest
 
 _ACCOUNT = configuration.Configuration().read_merchant_info()
 

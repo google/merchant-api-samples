@@ -18,7 +18,7 @@
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
 from google.protobuf import field_mask_pb2
-from google.shopping import merchant_datasources_v1beta
+from google.shopping import merchant_datasources_v1
 
 # ENSURE you fill in the datasource ID for the sample to
 # work.
@@ -35,12 +35,12 @@ def update_data_source():
   credentials = generate_user_credentials.main()
 
   # Creates a client.
-  client = merchant_datasources_v1beta.DataSourcesServiceClient(
+  client = merchant_datasources_v1.DataSourcesServiceClient(
       credentials=credentials
   )
 
   # Creates a DataSource and populates its attributes.
-  data_source = merchant_datasources_v1beta.DataSource()
+  data_source = merchant_datasources_v1.DataSource()
   data_source.name = _NAME  # To identify the data source to update.
   data_source.display_name = "Example DataSource 2"
 
@@ -48,7 +48,7 @@ def update_data_source():
   field_mask = field_mask_pb2.FieldMask(paths=["display_name"])
 
   # Creates the request.
-  request = merchant_datasources_v1beta.UpdateDataSourceRequest(
+  request = merchant_datasources_v1.UpdateDataSourceRequest(
       data_source=data_source, update_mask=field_mask
   )
 

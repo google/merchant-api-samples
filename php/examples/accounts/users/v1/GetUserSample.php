@@ -24,8 +24,8 @@ require_once __DIR__ . '/../../../Authentication/Authentication.php';
 require_once __DIR__ . '/../../../Authentication/Config.php';
 // [START merchantapi_get_user]
 use Google\ApiCore\ApiException;
-use Google\Shopping\Merchant\Accounts\V1beta\GetUserRequest;
-use Google\Shopping\Merchant\Accounts\V1beta\Client\UserServiceClient;
+use Google\Shopping\Merchant\Accounts\V1\GetUserRequest;
+use Google\Shopping\Merchant\Accounts\V1\Client\UserServiceClient;
 
 /**
  * Retrieves a user.

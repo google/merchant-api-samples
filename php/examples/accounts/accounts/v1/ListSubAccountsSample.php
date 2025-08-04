@@ -19,8 +19,8 @@ require_once __DIR__ . '/../../../Authentication/Authentication.php';
 require_once __DIR__ . '/../../../Authentication/Config.php';
 // [START merchantapi_list_subaccounts]
 use Google\ApiCore\ApiException;
-use Google\Shopping\Merchant\Accounts\V1beta\Client\AccountsServiceClient;
-use Google\Shopping\Merchant\Accounts\V1beta\ListSubAccountsRequest;
+use Google\Shopping\Merchant\Accounts\V1\Client\AccountsServiceClient;
+use Google\Shopping\Merchant\Accounts\V1\ListSubAccountsRequest;
 
 /**
  * This class demonstrates how to list all the subaccounts of an advanced account.

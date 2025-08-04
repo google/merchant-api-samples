@@ -20,8 +20,8 @@ require_once __DIR__ . '/../../Authentication/Authentication.php';
 require_once __DIR__ . '/../../Authentication/Config.php';
 // [START merchantapi_list_quota]
 use Google\ApiCore\ApiException;
-use Google\Shopping\Merchant\Quota\V1beta\Client\QuotaServiceClient;
-use Google\Shopping\Merchant\Quota\V1beta\ListQuotaGroupsRequest;
+use Google\Shopping\Merchant\Quota\V1\Client\QuotaServiceClient;
+use Google\Shopping\Merchant\Quota\V1\ListQuotaGroupsRequest;
 
 /**
  * This class demonstrates how to list quota for a given Merchant Center account.

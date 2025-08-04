@@ -17,8 +17,8 @@
 # [START merchantapi_get_file_upload]
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
-from google.shopping.merchant_datasources_v1beta import FileUploadsServiceClient
-from google.shopping.merchant_datasources_v1beta import GetFileUploadRequest
+from google.shopping.merchant_datasources_v1 import FileUploadsServiceClient
+from google.shopping.merchant_datasources_v1 import GetFileUploadRequest
 
 # Fetches the Merchant Center account ID from the local configuration file.
 # Ensure you have a valid configuration file for this to work.

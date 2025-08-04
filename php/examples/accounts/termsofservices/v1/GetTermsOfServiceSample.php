@@ -19,8 +19,8 @@ require_once __DIR__ . '/../../../Authentication/Authentication.php';
 require_once __DIR__ . '/../../../Authentication/Config.php';
 // [START merchantapi_get_termsofservice]
 use Google\ApiCore\ApiException;
-use Google\Shopping\Merchant\Accounts\V1beta\Client\TermsOfServiceServiceClient;
-use Google\Shopping\Merchant\Accounts\V1beta\GetTermsOfServiceRequest;
+use Google\Shopping\Merchant\Accounts\V1\Client\TermsOfServiceServiceClient;
+use Google\Shopping\Merchant\Accounts\V1\GetTermsOfServiceRequest;
 
 /**
  * Demonstrates how to get a TermsOfService for a specific version.

@@ -20,10 +20,10 @@ require_once __DIR__ . '/../../Authentication/Authentication.php';
 require_once __DIR__ . '/../../Authentication/Config.php';
 // [START merchantapi_filter_disapproved_products]
 use Google\ApiCore\ApiException;
-use Google\Shopping\Merchant\Products\V1beta\Client\ProductsServiceClient;
-use Google\Shopping\Merchant\Products\V1beta\GetProductRequest;
-use Google\Shopping\Merchant\Reports\V1beta\Client\ReportServiceClient;
-use Google\Shopping\Merchant\Reports\V1beta\SearchRequest;
+use Google\Shopping\Merchant\Products\V1\Client\ProductsServiceClient;
+use Google\Shopping\Merchant\Products\V1\GetProductRequest;
+use Google\Shopping\Merchant\Reports\V1\Client\ReportServiceClient;
+use Google\Shopping\Merchant\Reports\V1\SearchRequest;
 
 /**
  * This class demonstrates how to get the list of all the disapproved products for a given merchant

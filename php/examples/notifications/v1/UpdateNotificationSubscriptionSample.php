@@ -21,10 +21,10 @@ require_once __DIR__ . '/../../Authentication/Config.php';
 // [START merchantapi_update_notification_subscription]
 use Google\ApiCore\ApiException;
 use Google\Protobuf\FieldMask;
-use Google\Shopping\Merchant\Notifications\V1beta\Client\NotificationsApiServiceClient;
-use Google\Shopping\Merchant\Notifications\V1beta\NotificationSubscription;
-use Google\Shopping\Merchant\Notifications\V1beta\NotificationSubscription\NotificationEventType;
-use Google\Shopping\Merchant\Notifications\V1beta\UpdateNotificationSubscriptionRequest;
+use Google\Shopping\Merchant\Notifications\V1\Client\NotificationsApiServiceClient;
+use Google\Shopping\Merchant\Notifications\V1\NotificationSubscription;
+use Google\Shopping\Merchant\Notifications\V1\NotificationSubscription\NotificationEventType;
+use Google\Shopping\Merchant\Notifications\V1\UpdateNotificationSubscriptionRequest;
 
 /**
  * Updates a Notification Subscription.

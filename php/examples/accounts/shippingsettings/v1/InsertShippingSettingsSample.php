@@ -19,14 +19,14 @@ require_once __DIR__ . '/../../../Authentication/Authentication.php';
 require_once __DIR__ . '/../../../Authentication/Config.php';
 // [START merchantapi_insert_shippingsettings]
 use Google\ApiCore\ApiException;
-use Google\Shopping\Merchant\Accounts\V1beta\Client\ShippingSettingsServiceClient;
-use Google\Shopping\Merchant\Accounts\V1beta\DeliveryTime;
-use Google\Shopping\Merchant\Accounts\V1beta\InsertShippingSettingsRequest;
-use Google\Shopping\Merchant\Accounts\V1beta\RateGroup;
-use Google\Shopping\Merchant\Accounts\V1beta\Service;
-use Google\Shopping\Merchant\Accounts\V1beta\Service\ShipmentType;
-use Google\Shopping\Merchant\Accounts\V1beta\ShippingSettings;
-use Google\Shopping\Merchant\Accounts\V1beta\Value;
+use Google\Shopping\Merchant\Accounts\V1\Client\ShippingSettingsServiceClient;
+use Google\Shopping\Merchant\Accounts\V1\DeliveryTime;
+use Google\Shopping\Merchant\Accounts\V1\InsertShippingSettingsRequest;
+use Google\Shopping\Merchant\Accounts\V1\RateGroup;
+use Google\Shopping\Merchant\Accounts\V1\Service;
+use Google\Shopping\Merchant\Accounts\V1\Service\ShipmentType;
+use Google\Shopping\Merchant\Accounts\V1\ShippingSettings;
+use Google\Shopping\Merchant\Accounts\V1\Value;
 use Google\Shopping\Type\Price;
 
 /**

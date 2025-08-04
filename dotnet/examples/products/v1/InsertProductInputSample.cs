@@ -14,11 +14,10 @@
 
 // [START merchantapi_insert_product_input]
 using Google.Apis.Auth.OAuth2;
-using Google.Shopping.Merchant.Products.V1Beta;
+using Google.Shopping.Merchant.Products.V1;
 using Google.Shopping.Type;
 using System;
 using static MerchantApi.Authenticator;
-using Channel = Google.Shopping.Type.Channel;
 using Price = Google.Shopping.Type.Price;
 
 namespace MerchantApi
@@ -67,7 +66,7 @@ namespace MerchantApi
             };
 
             // The attributes of the product.
-            Attributes attributes = new Attributes
+            Attributes attributes = new ProductAttributes
             {
                 Title = "A Tale of Two Cities",
                 Description = "A classic novel about the French Revolution",
@@ -83,11 +82,10 @@ namespace MerchantApi
             // The product input to insert.
             ProductInput productInput = new ProductInput
             {
-                Channel = Channel.Types.ChannelEnum.Online,
                 ContentLanguage = "en",
                 FeedLabel = "US",
                 OfferId = "sku123",
-                Attributes = attributes
+                ProductAttributes = attributes
             };
 
             // Creates the request to insert the product input.
@@ -107,7 +105,7 @@ namespace MerchantApi
 
                 Console.WriteLine("Inserted ProductInput Name below:");
                 // The last part of the product input name is the product ID assigned by Google.
-                // Format: `channel~contentLanguage~feedLabel~offerId`
+                // Format: `contentLanguage~feedLabel~offerId`
                 Console.WriteLine(response.Name);
 
                 Console.WriteLine("Inserted Product Name below:");

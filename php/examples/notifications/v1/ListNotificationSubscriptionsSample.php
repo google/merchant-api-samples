@@ -20,8 +20,8 @@ require_once __DIR__ . '/../../Authentication/Authentication.php';
 require_once __DIR__ . '/../../Authentication/Config.php';
 // [START merchantapi_list_notification_subscriptions]
 use Google\ApiCore\ApiException;
-use Google\Shopping\Merchant\Notifications\V1beta\Client\NotificationsApiServiceClient;
-use Google\Shopping\Merchant\Notifications\V1beta\ListNotificationSubscriptionsRequest;
+use Google\Shopping\Merchant\Notifications\V1\Client\NotificationsApiServiceClient;
+use Google\Shopping\Merchant\Notifications\V1\ListNotificationSubscriptionsRequest;
 
 /**
  * Lists Notification Subscriptions.

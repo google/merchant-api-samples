@@ -18,8 +18,8 @@
 # [START merchantapi_get_homepage]
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
-from google.shopping.merchant_accounts_v1beta import GetHomepageRequest
-from google.shopping.merchant_accounts_v1beta import HomepageServiceClient
+from google.shopping.merchant_accounts_v1 import GetHomepageRequest
+from google.shopping.merchant_accounts_v1 import HomepageServiceClient
 
 _ACCOUNT = configuration.Configuration().read_merchant_info()
 

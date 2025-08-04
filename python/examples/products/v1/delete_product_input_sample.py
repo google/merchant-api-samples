@@ -17,14 +17,14 @@
 # [START merchantapi_delete_product_input]
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
-from google.shopping import merchant_products_v1beta
+from google.shopping import merchant_products_v1
 
 
 _ACCOUNT = configuration.Configuration().read_merchant_info()
 
 # ENSURE you fill in the product ID and data source for the
 # sample to work.
-# In the format of `channel~contentLanguage~feedLabel~offerId`
+# In the format of `contentLanguage~feedLabel~offerId`
 _PRODUCT = "[INSERT_PRODUCT_HERE]"
 _DATA_SOURCE = "[INSERT_DATA_SOURCE_HERE]"
 _NAME = f"accounts/{_ACCOUNT}/productInputs/{_PRODUCT}"
@@ -38,12 +38,12 @@ def delete_product_input():
   credentials = generate_user_credentials.main()
 
   # Creates a client.
-  client = merchant_products_v1beta.ProductInputsServiceClient(
+  client = merchant_products_v1.ProductInputsServiceClient(
       credentials=credentials
   )
 
   # Creates the request.
-  request = merchant_products_v1beta.DeleteProductInputRequest(
+  request = merchant_products_v1.DeleteProductInputRequest(
       name=_NAME, data_source=_DATA_SOURCE_NAME
   )
 

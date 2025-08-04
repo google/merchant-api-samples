@@ -20,9 +20,9 @@ require_once __DIR__ . '/../../../vendor/autoload.php';
 require_once __DIR__ . '/../../Authentication/Authentication.php';
 // [START merchantapi_insert_regional_inventory]
 use Google\ApiCore\ApiException;
-use Google\Shopping\Merchant\Inventories\V1beta\RegionalInventory;
-use Google\Shopping\Merchant\Inventories\V1beta\Client\RegionalInventoryServiceClient;
-use Google\Shopping\Merchant\Inventories\V1beta\InsertRegionalInventoryRequest;
+use Google\Shopping\Merchant\Inventories\V1\RegionalInventory;
+use Google\Shopping\Merchant\Inventories\V1\Client\RegionalInventoryServiceClient;
+use Google\Shopping\Merchant\Inventories\V1\InsertRegionalInventoryRequest;
 use Google\Shopping\Type\Price;
 
 /**

@@ -17,7 +17,7 @@
 # [START merchantapi_list_regional_inventories]
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
-from google.shopping import merchant_inventories_v1beta
+from google.shopping import merchant_inventories_v1
 
 # ENSURE you fill in the product ID for the sample to
 # work.
@@ -40,12 +40,12 @@ def list_regional_inventories():
   credentials = generate_user_credentials.main()
 
   # Creates a client.
-  client = merchant_inventories_v1beta.RegionalInventoryServiceClient(
+  client = merchant_inventories_v1.RegionalInventoryServiceClient(
       credentials=credentials)
 
   # Creates the request.
   # Page size is set to the default value.
-  request = merchant_inventories_v1beta.ListRegionalInventoriesRequest(
+  request = merchant_inventories_v1.ListRegionalInventoriesRequest(
       parent=_PARENT,
       page_size=25000
   )

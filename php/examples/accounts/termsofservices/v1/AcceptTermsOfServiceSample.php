@@ -19,8 +19,8 @@ require_once __DIR__ . '/../../../Authentication/Authentication.php';
 require_once __DIR__ . '/../../../Authentication/Config.php';
 // [START merchantapi_accept_termsofservice]
 use Google\ApiCore\ApiException;
-use Google\Shopping\Merchant\Accounts\V1beta\AcceptTermsOfServiceRequest;
-use Google\Shopping\Merchant\Accounts\V1beta\Client\TermsOfServiceServiceClient;
+use Google\Shopping\Merchant\Accounts\V1\AcceptTermsOfServiceRequest;
+use Google\Shopping\Merchant\Accounts\V1\Client\TermsOfServiceServiceClient;
 
 /**
  * Demonstrates how to accept the TermsOfService agreement in a given account.

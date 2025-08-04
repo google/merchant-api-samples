@@ -17,13 +17,12 @@ package shopping.merchant.samples.products.v1;
 // [START merchantapi_insert_product_input]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.shopping.merchant.products.v1.Attributes;
 import com.google.shopping.merchant.products.v1.InsertProductInputRequest;
+import com.google.shopping.merchant.products.v1.ProductAttributes;
 import com.google.shopping.merchant.products.v1.ProductInput;
 import com.google.shopping.merchant.products.v1.ProductInputsServiceClient;
 import com.google.shopping.merchant.products.v1.ProductInputsServiceSettings;
 import com.google.shopping.merchant.products.v1.Shipping;
-import com.google.shopping.type.Channel.ChannelEnum;
 import com.google.shopping.type.Price;
 import shopping.merchant.samples.utils.Authenticator;
 import shopping.merchant.samples.utils.Config;
@@ -70,8 +69,8 @@ public class InsertProductInputSample {
               .setService("1st class post")
               .build();
 
-      Attributes attributes =
-          Attributes.newBuilder()
+      ProductAttributes attributes =
+          ProductAttributes.newBuilder()
               .setTitle("A Tale of Two Cities")
               .setDescription("A classic novel about the French Revolution")
               .setLink("https://exampleWebsite.com/tale-of-two-cities.html")
@@ -96,11 +95,10 @@ public class InsertProductInputSample {
               // new datasource will take ownership of the product.
               .setProductInput(
                   ProductInput.newBuilder()
-                      .setChannel(ChannelEnum.ONLINE)
                       .setContentLanguage("en")
                       .setFeedLabel("label")
                       .setOfferId("sku123")
-                      .setAttributes(attributes)
+                      .setProductAttributes(attributes)
                       .build())
               .build();
 
@@ -108,7 +106,7 @@ public class InsertProductInputSample {
       ProductInput response = productInputsServiceClient.insertProductInput(request);
       System.out.println("Inserted ProductInput Name below");
       // The last part of the product name will be the product ID assigned to a product by Google.
-      // Product ID has the format `channel~contentLanguage~feedLabel~offerId`
+      // Product ID has the format `contentLanguage~feedLabel~offerId`
       System.out.println(response.getName());
       System.out.println("Inserted Product Name below");
       System.out.println(response.getProduct());

@@ -20,8 +20,8 @@ require_once __DIR__ . '/../../../vendor/autoload.php';
 require_once __DIR__ . '/../../Authentication/Authentication.php';
 // [START merchantapi_delete_regional_inventory]
 use Google\ApiCore\ApiException;
-use Google\Shopping\Merchant\Inventories\V1beta\Client\RegionalInventoryServiceClient;
-use Google\Shopping\Merchant\Inventories\V1beta\DeleteRegionalInventoryRequest;
+use Google\Shopping\Merchant\Inventories\V1\Client\RegionalInventoryServiceClient;
+use Google\Shopping\Merchant\Inventories\V1\DeleteRegionalInventoryRequest;
 
 /**
  * Deletes the specified `RegionalInventory` resource from the given product

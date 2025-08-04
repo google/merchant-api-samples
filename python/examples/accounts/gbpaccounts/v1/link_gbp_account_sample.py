@@ -17,8 +17,8 @@
 # [START merchantapi_link_gbp_account]
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
-from google.shopping.merchant_accounts_v1beta import GbpAccountsServiceClient
-from google.shopping.merchant_accounts_v1beta import LinkGbpAccountRequest
+from google.shopping.merchant_accounts_v1 import GbpAccountsServiceClient
+from google.shopping.merchant_accounts_v1 import LinkGbpAccountRequest
 
 # Gets the merchant account ID from the configuration file.
 _ACCOUNT = configuration.Configuration().read_merchant_info()

@@ -20,7 +20,7 @@ This works only for API supplemental feeds.
 # [START merchantapi_create_supplemental_product_data_source_multiple_languages]
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
-from google.shopping import merchant_datasources_v1beta
+from google.shopping import merchant_datasources_v1
 
 _ACCOUNT = configuration.Configuration().read_merchant_info()
 _PARENT = f"accounts/{_ACCOUNT}"
@@ -33,24 +33,24 @@ def create_supplemental_product_data_source_multiple_languages():
   credentials = generate_user_credentials.main()
 
   # Creates a client.
-  client = merchant_datasources_v1beta.DataSourcesServiceClient(
+  client = merchant_datasources_v1.DataSourcesServiceClient(
       credentials=credentials
   )
 
   # Creates a SupplementalProductDataSource.
   supplemental_datasource = (
-      merchant_datasources_v1beta.SupplementalProductDataSource()
+      merchant_datasources_v1.SupplementalProductDataSource()
   )
 
   # Creates a DataSource and populates its attributes.
-  data_source = merchant_datasources_v1beta.DataSource()
+  data_source = merchant_datasources_v1.DataSource()
   data_source.display_name = (
       "Example Multiple Languages Supplemental DataSource"
   )
   data_source.supplemental_product_data_source = supplemental_datasource
 
   # Creates the request.
-  request = merchant_datasources_v1beta.CreateDataSourceRequest(
+  request = merchant_datasources_v1.CreateDataSourceRequest(
       parent=_PARENT, data_source=data_source
   )
 

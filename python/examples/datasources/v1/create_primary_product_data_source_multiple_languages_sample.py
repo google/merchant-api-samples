@@ -20,10 +20,10 @@ This works only for API primary feeds.
 # [START merchantapi_create_primary_product_data_source_multiple_languages]
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
-from google.shopping.merchant_datasources_v1beta import CreateDataSourceRequest
-from google.shopping.merchant_datasources_v1beta import DataSource
-from google.shopping.merchant_datasources_v1beta import DataSourcesServiceClient
-from google.shopping.merchant_datasources_v1beta import PrimaryProductDataSource
+from google.shopping.merchant_datasources_v1 import CreateDataSourceRequest
+from google.shopping.merchant_datasources_v1 import DataSource
+from google.shopping.merchant_datasources_v1 import DataSourcesServiceClient
+from google.shopping.merchant_datasources_v1 import PrimaryProductDataSource
 
 _ACCOUNT = configuration.Configuration().read_merchant_info()
 _PARENT = f"accounts/{_ACCOUNT}"
@@ -41,10 +41,6 @@ def create_primary_product_data_source_multiple_languages():
   # Creates a PrimaryProductDataSource.
   primary_datasource = PrimaryProductDataSource()
   primary_datasource.countries = ["GB"]
-  # Channel can be "ONLINE_PRODUCTS" or "LOCAL_PRODUCTS" or "PRODUCTS" .
-  # While accepted, datasources with channel "products" representing unified
-  # products currently cannot be used with the Products sub-API.
-  primary_datasource.channel = PrimaryProductDataSource.Channel.ONLINE_PRODUCTS
 
   # Creates a DataSource and populates its attributes.
   data_source = DataSource()

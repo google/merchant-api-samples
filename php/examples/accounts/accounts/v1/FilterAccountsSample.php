@@ -19,8 +19,8 @@ require_once __DIR__ . '/../../../Authentication/Authentication.php';
 require_once __DIR__ . '/../../../Authentication/Config.php';
 // [START merchantapi_filter_accounts]
 use Google\ApiCore\ApiException;
-use Google\Shopping\Merchant\Accounts\V1beta\Client\AccountsServiceClient;
-use Google\Shopping\Merchant\Accounts\V1beta\ListAccountsRequest;
+use Google\Shopping\Merchant\Accounts\V1\Client\AccountsServiceClient;
+use Google\Shopping\Merchant\Accounts\V1\ListAccountsRequest;
 
 /**
  * This class demonstrates how to filter the accounts the user making the request has access to.

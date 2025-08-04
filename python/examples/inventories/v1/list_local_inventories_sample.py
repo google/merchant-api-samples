@@ -17,7 +17,7 @@
 # [START merchantapi_list_local_inventories]
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
-from google.shopping import merchant_inventories_v1beta
+from google.shopping import merchant_inventories_v1
 
 # ENSURE you fill in the product ID for the sample to
 # work.
@@ -40,12 +40,12 @@ def list_local_inventories():
   credentials = generate_user_credentials.main()
 
   # Creates a client.
-  client = merchant_inventories_v1beta.LocalInventoryServiceClient(
+  client = merchant_inventories_v1.LocalInventoryServiceClient(
       credentials=credentials)
 
   # Creates the request.
   # Page size is set to the default value.
-  request = merchant_inventories_v1beta.ListLocalInventoriesRequest(
+  request = merchant_inventories_v1.ListLocalInventoriesRequest(
       parent=_PARENT,
       page_size=25000
   )

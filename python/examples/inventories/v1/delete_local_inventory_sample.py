@@ -17,7 +17,7 @@
 # [START merchantapi_delete_local_inventory]
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
-from google.shopping import merchant_inventories_v1beta
+from google.shopping import merchant_inventories_v1
 
 # ENSURE you fill in the product ID and store code
 # for the sample to work.
@@ -40,11 +40,11 @@ def delete_local_inventory():
   credentials = generate_user_credentials.main()
 
   # Creates a client.
-  client = merchant_inventories_v1beta.LocalInventoryServiceClient(
+  client = merchant_inventories_v1.LocalInventoryServiceClient(
       credentials=credentials)
 
   # Creates the request.
-  request = merchant_inventories_v1beta.DeleteLocalInventoryRequest(name=_NAME)
+  request = merchant_inventories_v1.DeleteLocalInventoryRequest(name=_NAME)
 
   # Makes the request and catch and print any error messages.
   try:

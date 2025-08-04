@@ -21,8 +21,8 @@ require_once __DIR__ . '/../../../Authentication/Config.php';
 
 // [START merchantapi_get_automatic_improvements]
 use Google\ApiCore\ApiException;
-use Google\Shopping\Merchant\Accounts\V1beta\Client\AutomaticImprovementsServiceClient;
-use Google\Shopping\Merchant\Accounts\V1beta\GetAutomaticImprovementsRequest;
+use Google\Shopping\Merchant\Accounts\V1\Client\AutomaticImprovementsServiceClient;
+use Google\Shopping\Merchant\Accounts\V1\GetAutomaticImprovementsRequest;
 
 /**
  * This class demonstrates how to get the automatic improvements of a Merchant Center account.

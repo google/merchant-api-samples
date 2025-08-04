@@ -18,8 +18,8 @@
 # [START merchantapi_get_shippingsettings]
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
-from google.shopping.merchant_accounts_v1beta import GetShippingSettingsRequest
-from google.shopping.merchant_accounts_v1beta import ShippingSettingsServiceClient
+from google.shopping.merchant_accounts_v1 import GetShippingSettingsRequest
+from google.shopping.merchant_accounts_v1 import ShippingSettingsServiceClient
 
 _ACCOUNT = configuration.Configuration().read_merchant_info()
 _PARENT = f"accounts/{_ACCOUNT}"

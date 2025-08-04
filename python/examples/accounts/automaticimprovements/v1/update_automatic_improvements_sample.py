@@ -18,12 +18,12 @@
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
 from google.protobuf import field_mask_pb2
-from google.shopping.merchant_accounts_v1beta import AutomaticImageImprovements
-from google.shopping.merchant_accounts_v1beta import AutomaticImprovements
-from google.shopping.merchant_accounts_v1beta import AutomaticImprovementsServiceClient
-from google.shopping.merchant_accounts_v1beta import AutomaticItemUpdates
-from google.shopping.merchant_accounts_v1beta import AutomaticShippingImprovements
-from google.shopping.merchant_accounts_v1beta import UpdateAutomaticImprovementsRequest
+from google.shopping.merchant_accounts_v1 import AutomaticImageImprovements
+from google.shopping.merchant_accounts_v1 import AutomaticImprovements
+from google.shopping.merchant_accounts_v1 import AutomaticImprovementsServiceClient
+from google.shopping.merchant_accounts_v1 import AutomaticItemUpdates
+from google.shopping.merchant_accounts_v1 import AutomaticShippingImprovements
+from google.shopping.merchant_accounts_v1 import UpdateAutomaticImprovementsRequest
 
 
 # Fetches the Merchant Center account ID from the configuration.

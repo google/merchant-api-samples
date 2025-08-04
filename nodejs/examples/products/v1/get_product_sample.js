@@ -63,7 +63,7 @@ async function main() {
   // The name of the `product`. Replace {product} with the actual ID.
   // Format: accounts/{account}/products/{product}
   // {product} is usually in the format:
-  // channel~contentLanguage~feedLabel~offerId
+  // contentLanguage~feedLabel~offerId
   const productName = `accounts/${merchantId}/products/{productId}`;
 
   await getProduct(config, productName);

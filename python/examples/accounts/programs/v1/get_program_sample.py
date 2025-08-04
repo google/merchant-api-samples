@@ -17,8 +17,8 @@
 # [START merchantapi_get_program]
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
-from google.shopping.merchant_accounts_v1beta import GetProgramRequest
-from google.shopping.merchant_accounts_v1beta import ProgramsServiceClient
+from google.shopping.merchant_accounts_v1 import GetProgramRequest
+from google.shopping.merchant_accounts_v1 import ProgramsServiceClient
 
 _ACCOUNT = configuration.Configuration().read_merchant_info()
 

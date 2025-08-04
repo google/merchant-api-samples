@@ -19,8 +19,8 @@ require_once __DIR__ . '/../../../Authentication/Authentication.php';
 require_once __DIR__ . '/../../../Authentication/Config.php';
 // [START merchantapi_delete_account]
 use Google\ApiCore\ApiException;
-use Google\Shopping\Merchant\Accounts\V1beta\Client\AccountsServiceClient;
-use Google\Shopping\Merchant\Accounts\V1beta\DeleteAccountRequest;
+use Google\Shopping\Merchant\Accounts\V1\Client\AccountsServiceClient;
+use Google\Shopping\Merchant\Accounts\V1\DeleteAccountRequest;
 
 
 /**

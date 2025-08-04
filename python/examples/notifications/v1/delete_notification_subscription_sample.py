@@ -17,8 +17,8 @@
 # [START merchantapi_delete_notification_subscription]
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
-from google.shopping.merchant_notifications_v1beta import DeleteNotificationSubscriptionRequest
-from google.shopping.merchant_notifications_v1beta import NotificationsApiServiceClient
+from google.shopping.merchant_notifications_v1 import DeleteNotificationSubscriptionRequest
+from google.shopping.merchant_notifications_v1 import NotificationsApiServiceClient
 
 
 _ACCOUNT = configuration.Configuration().read_merchant_info()

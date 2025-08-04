@@ -20,10 +20,10 @@ require_once __DIR__ . '/../../Authentication/Authentication.php';
 require_once __DIR__ . '/../../Authentication/Config.php';
 // [START merchantapi_create_primary_product_data_source]
 use Google\ApiCore\ApiException;
-use Google\Shopping\Merchant\DataSources\V1beta\Client\DataSourcesServiceClient;
-use Google\Shopping\Merchant\DataSources\V1beta\CreateDataSourceRequest;
-use Google\Shopping\Merchant\DataSources\V1beta\DataSource;
-use Google\Shopping\Merchant\DataSources\V1beta\PrimaryProductDataSource;
+use Google\Shopping\Merchant\DataSources\V1\Client\DataSourcesServiceClient;
+use Google\Shopping\Merchant\DataSources\V1\CreateDataSourceRequest;
+use Google\Shopping\Merchant\DataSources\V1\DataSource;
+use Google\Shopping\Merchant\DataSources\V1\PrimaryProductDataSource;
 use Google\Shopping\Type\Destination\DestinationEnum;
 
 /**
@@ -66,10 +66,6 @@ class CreatePrimaryProductDataSourceSample
 
         // Defines the primary product data source specific settings.
         $primaryProductDataSource = new PrimaryProductDataSource([
-            // Channel can be "ONLINE_PRODUCTS" or "LOCAL_PRODUCTS" or "PRODUCTS".
-            // While accepted, datasources with channel "PRODUCTS" representing unified products
-            // currently cannot be used with the Products sub-API.
-            'channel' => PrimaryProductDataSource\Channel::ONLINE_PRODUCTS,
             'countries' => ['GB'],
             'content_language' => 'en',
             'feed_label' => 'GB',

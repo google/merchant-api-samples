@@ -1,0 +1,21 @@
+{
+  "name": "google/merchant-api-samples",
+  "private": true,
+  "license": "Apache-2.0",
+  "author": "Google LLC",
+  "engines": {
+      "node": ">=18"
+  },
+  "files": [
+      "*.js"
+  ],
+  "dependencies": {
+    "@google-shopping/accounts": "^2.1.0",
+    "@google-shopping/datasources": "^0.5.0",
+    "@google-shopping/products": "^0.3.0",
+    "@google-shopping/reports": "^0.8.1",
+    "google-auth-library": "*",
+    "open": ">=6.0.0",
+    "server-destroy": "^1.0.1"
+}
+}

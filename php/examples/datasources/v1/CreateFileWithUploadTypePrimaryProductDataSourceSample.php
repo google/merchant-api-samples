@@ -20,11 +20,11 @@ require_once __DIR__ . '/../../Authentication/Authentication.php';
 require_once __DIR__ . '/../../Authentication/Config.php';
 // [START merchantapi_create_file_with_upload_type_primary_product_data_source]
 use Google\ApiCore\ApiException;
-use Google\Shopping\Merchant\DataSources\V1beta\Client\DataSourcesServiceClient;
-use Google\Shopping\Merchant\DataSources\V1beta\CreateDataSourceRequest;
-use Google\Shopping\Merchant\DataSources\V1beta\DataSource;
-use Google\Shopping\Merchant\DataSources\V1beta\FileInput;
-use Google\Shopping\Merchant\DataSources\V1beta\PrimaryProductDataSource;
+use Google\Shopping\Merchant\DataSources\V1\Client\DataSourcesServiceClient;
+use Google\Shopping\Merchant\DataSources\V1\CreateDataSourceRequest;
+use Google\Shopping\Merchant\DataSources\V1\DataSource;
+use Google\Shopping\Merchant\DataSources\V1\FileInput;
+use Google\Shopping\Merchant\DataSources\V1\PrimaryProductDataSource;
 
 /**
  * This class demonstrates how to insert a primary product datasource with a 
@@ -59,10 +59,6 @@ class CreateFileWithUploadTypePrimaryProductDataSourceSample
 
         // The type of data that this datasource will receive.
         $primaryProductDataSource = (new PrimaryProductDataSource())
-            // Channel can be "ONLINE_PRODUCTS" or "LOCAL_PRODUCTS" or "PRODUCTS" .
-            // While accepted, datasources with channel "products" currently cannot be used
-            // with the Products sub-API.
-            ->setChannel(PrimaryProductDataSource\Channel::ONLINE_PRODUCTS)
             ->setCountries(['GB'])
             // `contentLanguage` and `feedLabel` must be set.
             ->setContentLanguage('en')

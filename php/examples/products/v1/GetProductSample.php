@@ -20,9 +20,9 @@ require_once __DIR__ . '/../../Authentication/Authentication.php';
 require_once __DIR__ . '/../../Authentication/Config.php';
 // [START merchantapi_get_product]
 use Google\ApiCore\ApiException;
-use Google\Shopping\Merchant\Products\V1beta\GetProductRequest;
-use Google\Shopping\Merchant\Products\V1beta\Product;
-use Google\Shopping\Merchant\Products\V1beta\Client\ProductsServiceClient;
+use Google\Shopping\Merchant\Products\V1\GetProductRequest;
+use Google\Shopping\Merchant\Products\V1\Product;
+use Google\Shopping\Merchant\Products\V1\Client\ProductsServiceClient;
 
 
 /**

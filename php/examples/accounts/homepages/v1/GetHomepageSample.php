@@ -19,8 +19,8 @@ require_once __DIR__ . '/../../../Authentication/Authentication.php';
 require_once __DIR__ . '/../../../Authentication/Config.php';
 // [START merchantapi_get_homepage]
 use Google\ApiCore\ApiException;
-use Google\Shopping\Merchant\Accounts\V1beta\GetHomepageRequest;
-use Google\Shopping\Merchant\Accounts\V1beta\Client\HomepageServiceClient;
+use Google\Shopping\Merchant\Accounts\V1\GetHomepageRequest;
+use Google\Shopping\Merchant\Accounts\V1\Client\HomepageServiceClient;
 
 
 /**

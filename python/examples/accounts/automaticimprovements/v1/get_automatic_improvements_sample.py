@@ -17,8 +17,8 @@
 """Gets the automatic improvements settings for a Merchant Center account."""
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
-from google.shopping.merchant_accounts_v1beta import AutomaticImprovementsServiceClient
-from google.shopping.merchant_accounts_v1beta import GetAutomaticImprovementsRequest
+from google.shopping.merchant_accounts_v1 import AutomaticImprovementsServiceClient
+from google.shopping.merchant_accounts_v1 import GetAutomaticImprovementsRequest
 
 
 # Fetches the account ID from the config file.

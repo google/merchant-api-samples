@@ -17,11 +17,11 @@
 # [START merchantapi_create_file_regional_inventory_data_source]
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
-from google.shopping.merchant_datasources_v1beta import CreateDataSourceRequest
-from google.shopping.merchant_datasources_v1beta import DataSource
-from google.shopping.merchant_datasources_v1beta import DataSourcesServiceClient
-from google.shopping.merchant_datasources_v1beta import FileInput
-from google.shopping.merchant_datasources_v1beta import RegionalInventoryDataSource
+from google.shopping.merchant_datasources_v1 import CreateDataSourceRequest
+from google.shopping.merchant_datasources_v1 import DataSource
+from google.shopping.merchant_datasources_v1 import DataSourcesServiceClient
+from google.shopping.merchant_datasources_v1 import FileInput
+from google.shopping.merchant_datasources_v1 import RegionalInventoryDataSource
 
 _ACCOUNT = configuration.Configuration().read_merchant_info()
 _PARENT = f"accounts/{_ACCOUNT}"

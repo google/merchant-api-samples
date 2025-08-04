@@ -21,9 +21,9 @@ require_once __DIR__ . '/../../Authentication/Authentication.php';
 require_once __DIR__ . '/../../Authentication/Config.php';
 // [START merchantapi_list_promotions]
 use Google\ApiCore\ApiException;
-use Google\Shopping\Merchant\Promotions\V1beta\ListPromotionsRequest;
-use Google\Shopping\Merchant\Promotions\V1beta\Promotion;
-use Google\Shopping\Merchant\Promotions\V1beta\Client\PromotionsServiceClient;
+use Google\Shopping\Merchant\Promotions\V1\ListPromotionsRequest;
+use Google\Shopping\Merchant\Promotions\V1\Promotion;
+use Google\Shopping\Merchant\Promotions\V1\Client\PromotionsServiceClient;
 
 /**
  * This class demonstrates how to list promotions.

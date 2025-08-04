@@ -20,8 +20,8 @@ require_once __DIR__ . '/../../Authentication/Authentication.php';
 require_once __DIR__ . '/../../Authentication/Config.php';
 // [START merchantapi_delete_notification_subscription]
 use Google\ApiCore\ApiException;
-use Google\Shopping\Merchant\Notifications\V1beta\Client\NotificationsApiServiceClient;
-use Google\Shopping\Merchant\Notifications\V1beta\DeleteNotificationSubscriptionRequest;
+use Google\Shopping\Merchant\Notifications\V1\Client\NotificationsApiServiceClient;
+use Google\Shopping\Merchant\Notifications\V1\DeleteNotificationSubscriptionRequest;
 
 /**
  * Deletes a Notification Subscription.

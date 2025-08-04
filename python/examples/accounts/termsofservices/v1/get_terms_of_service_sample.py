@@ -16,8 +16,8 @@
 
 # [START merchantapi_get_termsofservice]
 from examples.authentication import generate_user_credentials
-from google.shopping.merchant_accounts_v1beta import GetTermsOfServiceRequest
-from google.shopping.merchant_accounts_v1beta import TermsOfServiceServiceClient
+from google.shopping.merchant_accounts_v1 import GetTermsOfServiceRequest
+from google.shopping.merchant_accounts_v1 import TermsOfServiceServiceClient
 
 # Replace with your actual value.
 _VERSION = "132"  # Replace with the version you want to retrieve

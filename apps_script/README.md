@@ -23,7 +23,7 @@ credentials to authorize the Merchant API requests
 
 1.  Go into "Project Settings" and select the "Show the appsscript.json manifest file in editor"
 
-1.  Go back to the "Editor" and copy/paste the content of this repository's appsscript.json into the default one.
+1.  Go back to the "Editor" and copy/paste the content of this repository's appsscript.json into the default one. Select the one for the desired API version (for example appscript_v1.json).
     *   If you are using a new project, you can overwrite everything.
     *   If you are using an existing project, you should merge the content of this file with your existing one.
 

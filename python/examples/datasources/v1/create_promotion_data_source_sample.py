@@ -17,7 +17,7 @@
 # [START merchantapi_create_promotion_data_source]
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
-from google.shopping import merchant_datasources_v1beta
+from google.shopping import merchant_datasources_v1
 
 _ACCOUNT = configuration.Configuration().read_merchant_info()
 _PARENT = f"accounts/{_ACCOUNT}"
@@ -30,7 +30,7 @@ def create_promotion_data_source():
   credentials = generate_user_credentials.main()
 
   # Creates a client.
-  client = merchant_datasources_v1beta.DataSourcesServiceClient(
+  client = merchant_datasources_v1.DataSourcesServiceClient(
       credentials=credentials
   )
 
@@ -38,17 +38,17 @@ def create_promotion_data_source():
   # PromotionDataSources
   # can only be created for a specific `targetCountry` and `contentLanguage`
   # combination.
-  promotion_datasource = merchant_datasources_v1beta.PromotionDataSource()
+  promotion_datasource = merchant_datasources_v1.PromotionDataSource()
   promotion_datasource.target_country = "CH"
   promotion_datasource.content_language = "fr"
 
   # Creates a DataSource and populates its attributes.
-  data_source = merchant_datasources_v1beta.DataSource()
+  data_source = merchant_datasources_v1.DataSource()
   data_source.display_name = "Example DataSource"
   data_source.promotion_data_source = promotion_datasource
 
   # Creates the request.
-  request = merchant_datasources_v1beta.CreateDataSourceRequest(
+  request = merchant_datasources_v1.CreateDataSourceRequest(
       parent=_PARENT, data_source=data_source
   )
 

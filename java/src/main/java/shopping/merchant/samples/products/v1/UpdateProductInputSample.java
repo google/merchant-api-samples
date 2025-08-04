@@ -19,7 +19,7 @@ import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.protobuf.FieldMask;
 import com.google.shopping.merchant.datasources.v1.DataSourceName;
-import com.google.shopping.merchant.products.v1.Attributes;
+import com.google.shopping.merchant.products.v1.ProductAttributes;
 import com.google.shopping.merchant.products.v1.ProductInput;
 import com.google.shopping.merchant.products.v1.ProductInputName;
 import com.google.shopping.merchant.products.v1.ProductInputsServiceClient;
@@ -52,16 +52,16 @@ public class UpdateProductInputSample {
             .build()
             .toString();
 
-    // Just attributes and customAttributes can be updated
+    // Just productAttributes and customAttributes can be updated
     FieldMask fieldMask =
         FieldMask.newBuilder()
-            .addPaths("attributes.title")
-            .addPaths("attributes.description")
-            .addPaths("attributes.link")
-            .addPaths("attributes.image_link")
-            .addPaths("attributes.availability")
-            .addPaths("attributes.condition")
-            .addPaths("attributes.gtins")
+            .addPaths("product_attributes.title")
+            .addPaths("product_attributes.description")
+            .addPaths("product_attributes.link")
+            .addPaths("product_attributes.image_link")
+            .addPaths("product_attributes.availability")
+            .addPaths("product_attributes.condition")
+            .addPaths("product_attributes.gtins")
             .addPaths("custom_attributes.mycustomattribute")
             .build();
 
@@ -69,8 +69,8 @@ public class UpdateProductInputSample {
     try (ProductInputsServiceClient productInputsServiceClient =
         ProductInputsServiceClient.create(productInputsServiceSettings)) {
 
-      Attributes attributes =
-          Attributes.newBuilder()
+      ProductAttributes attributes =
+          ProductAttributes.newBuilder()
               .setTitle("A Tale of Two Cities")
               .setDescription("A classic novel about the French Revolution")
               .setLink("https://exampleWebsite.com/tale-of-two-cities.html")
@@ -96,7 +96,7 @@ public class UpdateProductInputSample {
               .setProductInput(
                   ProductInput.newBuilder()
                       .setName(name)
-                      .setAttributes(attributes)
+                      .setProductAttributes(attributes)
                       .addCustomAttributes(
                           CustomAttribute.newBuilder()
                               .setName("mycustomattribute")
@@ -109,7 +109,7 @@ public class UpdateProductInputSample {
       ProductInput response = productInputsServiceClient.updateProductInput(request);
       System.out.println("Updated ProductInput Name below");
       // The last part of the product name will be the product ID assigned to a product by Google.
-      // Product ID has the format `channel~contentLanguage~feedLabel~offerId`
+      // Product ID has the format `contentLanguage~feedLabel~offerId`
       System.out.println(response.getName());
       System.out.println("Updated Product below");
       System.out.println(response);
@@ -121,8 +121,8 @@ public class UpdateProductInputSample {
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
     // An ID assigned to a product by Google. In the format
-    // channel~contentLanguage~feedLabel~offerId
-    String productId = "online~en~label~sku123"; // Replace with your product ID.
+    // contentLanguage~feedLabel~offerId
+    String productId = "en~label~sku123"; // Replace with your product ID.
 
     // Identifies the data source that will own the product input.
     String dataSourceId = "{INSERT_DATASOURCE_ID}"; // Replace with your datasource ID.

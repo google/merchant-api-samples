@@ -19,8 +19,8 @@ require_once __DIR__ . '/../../../Authentication/Authentication.php';
 require_once __DIR__ . '/../../../Authentication/Config.php';
 // [START merchantapi_get_shippingsettings]
 use Google\ApiCore\ApiException;
-use Google\Shopping\Merchant\Accounts\V1beta\Client\ShippingSettingsServiceClient;
-use Google\Shopping\Merchant\Accounts\V1beta\GetShippingSettingsRequest;
+use Google\Shopping\Merchant\Accounts\V1\Client\ShippingSettingsServiceClient;
+use Google\Shopping\Merchant\Accounts\V1\GetShippingSettingsRequest;
 
 /**
  * This class demonstrates how to get the ShippingSettings for a given Merchant Center account.

@@ -19,9 +19,9 @@ require_once __DIR__ . '/../../../Authentication/Authentication.php';
 require_once __DIR__ . '/../../../Authentication/Config.php';
 // [START merchantapi_retrieve_latest_termsofservice]
 use Google\ApiCore\ApiException;
-use Google\Shopping\Merchant\Accounts\V1beta\Client\TermsOfServiceServiceClient;
-use Google\Shopping\Merchant\Accounts\V1beta\RetrieveLatestTermsOfServiceRequest;
-use Google\Shopping\Merchant\Accounts\V1beta\TermsOfServiceKind;
+use Google\Shopping\Merchant\Accounts\V1\Client\TermsOfServiceServiceClient;
+use Google\Shopping\Merchant\Accounts\V1\RetrieveLatestTermsOfServiceRequest;
+use Google\Shopping\Merchant\Accounts\V1\TermsOfServiceKind;
 
 /**
  * Demonstrates how to retrieve the latest TermsOfService.

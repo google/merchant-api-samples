@@ -21,9 +21,9 @@ require_once __DIR__ . '/../../Authentication/Authentication.php';
 // [START merchantapi_list_regional_inventories]
 use Google\ApiCore\ApiException;
 use Google\ApiCore\PagedListResponse;
-use Google\Shopping\Merchant\Inventories\V1beta\RegionalInventory;
-use Google\Shopping\Merchant\Inventories\V1beta\Client\RegionalInventoryServiceClient;
-use Google\Shopping\Merchant\Inventories\V1beta\ListRegionalInventoriesRequest;
+use Google\Shopping\Merchant\Inventories\V1\RegionalInventory;
+use Google\Shopping\Merchant\Inventories\V1\Client\RegionalInventoryServiceClient;
+use Google\Shopping\Merchant\Inventories\V1\ListRegionalInventoriesRequest;
 
 /**
  * Class to list the `RegionalInventory` resources for the given product in your

@@ -24,10 +24,10 @@ require_once __DIR__ . '/../../../Authentication/Authentication.php';
 require_once __DIR__ . '/../../../Authentication/Config.php';
 // [START merchantapi_create_user]
 use Google\ApiCore\ApiException;
-use Google\Shopping\Merchant\Accounts\V1beta\AccessRight;
-use Google\Shopping\Merchant\Accounts\V1beta\CreateUserRequest;
-use Google\Shopping\Merchant\Accounts\V1beta\User;
-use Google\Shopping\Merchant\Accounts\V1beta\Client\UserServiceClient;
+use Google\Shopping\Merchant\Accounts\V1\AccessRight;
+use Google\Shopping\Merchant\Accounts\V1\CreateUserRequest;
+use Google\Shopping\Merchant\Accounts\V1\User;
+use Google\Shopping\Merchant\Accounts\V1\Client\UserServiceClient;
 
 
 /**

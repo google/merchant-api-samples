@@ -19,11 +19,11 @@ require_once __DIR__ . '/../../../Authentication/Authentication.php';
 require_once __DIR__ . '/../../../Authentication/Config.php';
 // [START merchantapi_create_sub_account]
 use Google\ApiCore\ApiException;
-use Google\Shopping\Merchant\Accounts\V1beta\Account;
-use Google\Shopping\Merchant\Accounts\V1beta\AccountAggregation;
-use Google\Shopping\Merchant\Accounts\V1beta\Client\AccountsServiceClient;
-use Google\Shopping\Merchant\Accounts\V1beta\CreateAndConfigureAccountRequest;
-use Google\Shopping\Merchant\Accounts\V1beta\CreateAndConfigureAccountRequest\AddAccountService;
+use Google\Shopping\Merchant\Accounts\V1\Account;
+use Google\Shopping\Merchant\Accounts\V1\AccountAggregation;
+use Google\Shopping\Merchant\Accounts\V1\Client\AccountsServiceClient;
+use Google\Shopping\Merchant\Accounts\V1\CreateAndConfigureAccountRequest;
+use Google\Shopping\Merchant\Accounts\V1\CreateAndConfigureAccountRequest\AddAccountService;
 use Google\Type\TimeZone;
 
 /**

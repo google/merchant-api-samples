@@ -19,8 +19,8 @@ require_once __DIR__ . '/../../../Authentication/Authentication.php';
 require_once __DIR__ . '/../../../Authentication/Config.php';
 // [START merchantapi_delete_region]
 use Google\ApiCore\ApiException;
-use Google\Shopping\Merchant\Accounts\V1beta\Client\RegionsServiceClient;
-use Google\Shopping\Merchant\Accounts\V1beta\DeleteRegionRequest;
+use Google\Shopping\Merchant\Accounts\V1\Client\RegionsServiceClient;
+use Google\Shopping\Merchant\Accounts\V1\DeleteRegionRequest;
 
 /**
  * This class demonstrates how to delete a given region from a Merchant Center account.

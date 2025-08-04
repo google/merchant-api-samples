@@ -17,9 +17,9 @@
 
 # [START merchantapi_retrieve_latest_termsofservice]
 from examples.authentication import generate_user_credentials
-from google.shopping.merchant_accounts_v1beta import RetrieveLatestTermsOfServiceRequest
-from google.shopping.merchant_accounts_v1beta import TermsOfServiceKind
-from google.shopping.merchant_accounts_v1beta import TermsOfServiceServiceClient
+from google.shopping.merchant_accounts_v1 import RetrieveLatestTermsOfServiceRequest
+from google.shopping.merchant_accounts_v1 import TermsOfServiceKind
+from google.shopping.merchant_accounts_v1 import TermsOfServiceServiceClient
 
 # Replace with your actual values.
 _REGION_CODE = "US"  # Replace with your region code

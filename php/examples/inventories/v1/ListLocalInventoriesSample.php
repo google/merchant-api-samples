@@ -21,9 +21,9 @@ require_once __DIR__ . '/../../Authentication/Authentication.php';
 // [START merchantapi_list_local_inventories]
 use Google\ApiCore\ApiException;
 use Google\ApiCore\PagedListResponse;
-use Google\Shopping\Merchant\Inventories\V1beta\LocalInventory;
-use Google\Shopping\Merchant\Inventories\V1beta\Client\LocalInventoryServiceClient;
-use Google\Shopping\Merchant\Inventories\V1beta\ListLocalInventoriesRequest;
+use Google\Shopping\Merchant\Inventories\V1\LocalInventory;
+use Google\Shopping\Merchant\Inventories\V1\Client\LocalInventoryServiceClient;
+use Google\Shopping\Merchant\Inventories\V1\ListLocalInventoriesRequest;
 
 /**
  * Class to list the `LocalInventory` resources for the given product in your

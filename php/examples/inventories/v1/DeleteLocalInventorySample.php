@@ -20,8 +20,8 @@ require_once __DIR__ . '/../../../vendor/autoload.php';
 require_once __DIR__ . '/../../Authentication/Authentication.php';
 // [START merchantapi_delete_local_inventory]
 use Google\ApiCore\ApiException;
-use Google\Shopping\Merchant\Inventories\V1beta\Client\LocalInventoryServiceClient;
-use Google\Shopping\Merchant\Inventories\V1beta\DeleteLocalInventoryRequest;
+use Google\Shopping\Merchant\Inventories\V1\Client\LocalInventoryServiceClient;
+use Google\Shopping\Merchant\Inventories\V1\DeleteLocalInventoryRequest;
 
 /**
  * Deletes the specified `LocalInventory` resource from the given product

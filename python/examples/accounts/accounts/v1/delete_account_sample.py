@@ -18,8 +18,8 @@
 # [START merchantapi_delete_account]
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
-from google.shopping.merchant_accounts_v1beta import AccountsServiceClient
-from google.shopping.merchant_accounts_v1beta import DeleteAccountRequest
+from google.shopping.merchant_accounts_v1 import AccountsServiceClient
+from google.shopping.merchant_accounts_v1 import DeleteAccountRequest
 
 _ACCOUNT = configuration.Configuration().read_merchant_info()
 

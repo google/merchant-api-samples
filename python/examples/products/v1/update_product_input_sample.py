@@ -19,10 +19,10 @@
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
 from google.protobuf import field_mask_pb2
-from google.shopping.merchant_products_v1beta import Attributes
-from google.shopping.merchant_products_v1beta import ProductInput
-from google.shopping.merchant_products_v1beta import ProductInputsServiceClient
-from google.shopping.merchant_products_v1beta import UpdateProductInputRequest
+from google.shopping.merchant_products_v1 import ProductAttributes
+from google.shopping.merchant_products_v1 import ProductInput
+from google.shopping.merchant_products_v1 import ProductInputsServiceClient
+from google.shopping.merchant_products_v1 import UpdateProductInputRequest
 from google.shopping.type import CustomAttribute
 
 
@@ -37,7 +37,7 @@ def update_product_input(account_id: str, product_id: str, data_source_id: str):
   Args:
     account_id: The Merchant Center account ID.
     product_id: The ID of the product input to update. This ID is assigned by
-      Google and has the format `channel~contentLanguage~feedLabel~offerId`.
+      Google and has the format `contentLanguage~feedLabel~offerId`.
     data_source_id: The ID of the data source that owns the product input.
   """
 
@@ -55,19 +55,19 @@ def update_product_input(account_id: str, product_id: str, data_source_id: str):
   # are being updated. Only 'attributes' and 'custom_attributes' can be updated.
   field_mask = field_mask_pb2.FieldMask(
       paths=[
-          "attributes.title",
-          "attributes.description",
-          "attributes.link",
-          "attributes.image_link",
-          "attributes.availability",
-          "attributes.condition",
-          "attributes.gtin",
+          "product_attributes.title",
+          "product_attributes.description",
+          "product_attributes.link",
+          "product_attributes.image_link",
+          "product_attributes.availability",
+          "product_attributes.condition",
+          "product_attributes.gtins",
           "custom_attributes.mycustomattribute",
       ]
   )
 
   # Prepares the new attribute values for the product.
-  attributes = Attributes(
+  attributes = ProductAttributes(
       title="A Tale of Two Cities updated",
       description="A classic novel about the French Revolution",
       link="https://exampleWebsite.com/tale-of-two-cities.html",
@@ -85,7 +85,7 @@ def update_product_input(account_id: str, product_id: str, data_source_id: str):
   # Prepares the ProductInput object with the updated information.
   product_input_data = ProductInput(
       name=name,
-      attributes=attributes,
+      product_attributes=attributes,
       custom_attributes=[
           CustomAttribute(
               name="mycustomattribute", value="Example value"
@@ -118,7 +118,7 @@ def update_product_input(account_id: str, product_id: str, data_source_id: str):
 if __name__ == "__main__":
   # The ID of the product to be updated.
   # This ID is assigned by Google and typically follows the format:
-  # channel~contentLanguage~feedLabel~offerId
+  # contentLanguage~feedLabel~offerId
   # Replace with an actual product ID from your Merchant Center account.
   product_id_to_update = "online~en~label~sku123"
 

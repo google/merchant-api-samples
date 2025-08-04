@@ -18,8 +18,8 @@
 # [START merchantapi_list_account_issues]
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
-from google.shopping.merchant_accounts_v1beta import AccountIssueServiceClient
-from google.shopping.merchant_accounts_v1beta import ListAccountIssuesRequest
+from google.shopping.merchant_accounts_v1 import AccountIssueServiceClient
+from google.shopping.merchant_accounts_v1 import ListAccountIssuesRequest
 
 _ACCOUNT = configuration.Configuration().read_merchant_info()
 _PARENT = f"accounts/{_ACCOUNT}"

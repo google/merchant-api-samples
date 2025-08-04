@@ -17,7 +17,7 @@
 # [START merchantapi_list_products]
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
-from google.shopping import merchant_products_v1beta
+from google.shopping import merchant_products_v1
 
 _ACCOUNT = configuration.Configuration().read_merchant_info()
 _PARENT = f"accounts/{_ACCOUNT}"
@@ -30,12 +30,12 @@ def list_products():
   credentials = generate_user_credentials.main()
 
   # Creates a client.
-  client = merchant_products_v1beta.ProductsServiceClient(
+  client = merchant_products_v1.ProductsServiceClient(
       credentials=credentials
   )
 
   # Creates the request. Set the page size to the maximum value.
-  request = merchant_products_v1beta.ListProductsRequest(
+  request = merchant_products_v1.ListProductsRequest(
       parent=_PARENT, page_size=1000
   )
 

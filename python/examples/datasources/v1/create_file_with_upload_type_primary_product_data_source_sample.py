@@ -17,11 +17,11 @@
 # [START merchantapi_create_file_with_upload_type_primary_product_data_source]
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
-from google.shopping.merchant_datasources_v1beta import CreateDataSourceRequest
-from google.shopping.merchant_datasources_v1beta import DataSource
-from google.shopping.merchant_datasources_v1beta import DataSourcesServiceClient
-from google.shopping.merchant_datasources_v1beta import FileInput
-from google.shopping.merchant_datasources_v1beta import PrimaryProductDataSource
+from google.shopping.merchant_datasources_v1 import CreateDataSourceRequest
+from google.shopping.merchant_datasources_v1 import DataSource
+from google.shopping.merchant_datasources_v1 import DataSourcesServiceClient
+from google.shopping.merchant_datasources_v1 import FileInput
+from google.shopping.merchant_datasources_v1 import PrimaryProductDataSource
 
 _ACCOUNT = configuration.Configuration().read_merchant_info()
 _PARENT = f"accounts/{_ACCOUNT}"
@@ -47,10 +47,6 @@ def create_file_with_upload_type_primary_product_data_source():
   # `content_language` and `feed_label` must be set.
   primary_datasource.content_language = "en"
   primary_datasource.feed_label = "GB"
-  # Channel can be "ONLINE_PRODUCTS" or "LOCAL_PRODUCTS" or "PRODUCTS" .
-  # While accepted, datasources with channel "products" representing unified
-  # products currently cannot be used with the Products sub-API.
-  primary_datasource.channel = PrimaryProductDataSource.Channel.ONLINE_PRODUCTS
 
   # Creates a DataSource and populates its attributes.
   data_source = DataSource()

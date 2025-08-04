@@ -39,8 +39,7 @@ function productInsert() {
     'offerId': 'fromAppsScript',
     'contentLanguage': 'en',
     'feedLabel': 'US',
-    'channel': 'online',
-    'attributes': {
+    'productAttributes': {
       'title': 'A Tale of Two Cities',
       'description': 'A classic novel about the French Revolution',
       'link': 'http://my-book-shop.com/tale-of-two-cities.html',

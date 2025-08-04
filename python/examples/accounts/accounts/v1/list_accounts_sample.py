@@ -16,8 +16,8 @@
 
 # [START merchantapi_list_accounts]
 from examples.authentication import generate_user_credentials
-from google.shopping.merchant_accounts_v1beta import AccountsServiceClient
-from google.shopping.merchant_accounts_v1beta import ListAccountsRequest
+from google.shopping.merchant_accounts_v1 import AccountsServiceClient
+from google.shopping.merchant_accounts_v1 import ListAccountsRequest
 
 
 def list_accounts():

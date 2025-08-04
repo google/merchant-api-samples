@@ -20,8 +20,8 @@ require_once __DIR__ . '/../../../Authentication/Authentication.php';
 require_once __DIR__ . '/../../../Authentication/Config.php';
 // [START merchantapi_list_account_issues]
 use Google\ApiCore\ApiException;
-use Google\Shopping\Merchant\Accounts\V1beta\Client\AccountIssueServiceClient;
-use Google\Shopping\Merchant\Accounts\V1beta\ListAccountIssuesRequest;
+use Google\Shopping\Merchant\Accounts\V1\Client\AccountIssueServiceClient;
+use Google\Shopping\Merchant\Accounts\V1\ListAccountIssuesRequest;
 
 /**
  * Lists all the account issues of an account.

@@ -21,13 +21,12 @@ import com.google.api.core.ApiFutures;
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.common.util.concurrent.MoreExecutors;
-import com.google.shopping.merchant.products.v1.Attributes;
 import com.google.shopping.merchant.products.v1.InsertProductInputRequest;
+import com.google.shopping.merchant.products.v1.ProductAttributes;
 import com.google.shopping.merchant.products.v1.ProductInput;
 import com.google.shopping.merchant.products.v1.ProductInputsServiceClient;
 import com.google.shopping.merchant.products.v1.ProductInputsServiceSettings;
 import com.google.shopping.merchant.products.v1.Shipping;
-import com.google.shopping.type.Channel.ChannelEnum;
 import com.google.shopping.type.Price;
 import java.util.ArrayList;
 import java.util.List;
@@ -62,8 +61,8 @@ public class InsertProductInputAsyncSample {
     Shipping shipping2 =
         Shipping.newBuilder().setPrice(price).setCountry("FR").setService("1st class post").build();
 
-    Attributes attributes =
-        Attributes.newBuilder()
+    ProductAttributes attributes =
+        ProductAttributes.newBuilder()
             .setTitle("A Tale of Two Cities")
             .setDescription("A classic novel about the French Revolution")
             .setLink("https://exampleWebsite.com/tale-of-two-cities.html")
@@ -81,7 +80,7 @@ public class InsertProductInputAsyncSample {
         .setContentLanguage("en")
         .setFeedLabel("CH")
         .setOfferId(generateRandomString())
-        .setAttributes(attributes)
+        .setProductAttributes(attributes)
         .build();
   }
 

@@ -17,10 +17,10 @@
 # [START merchantapi_filter_disapproved_products]
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
-from google.shopping.merchant_products_v1beta import GetProductRequest
-from google.shopping.merchant_products_v1beta import ProductsServiceClient
-from google.shopping.merchant_reports_v1beta import ReportServiceClient
-from google.shopping.merchant_reports_v1beta import SearchRequest
+from google.shopping.merchant_products_v1 import GetProductRequest
+from google.shopping.merchant_products_v1 import ProductsServiceClient
+from google.shopping.merchant_reports_v1 import ReportServiceClient
+from google.shopping.merchant_reports_v1 import SearchRequest
 
 # Read the merchant account ID from the configuration file.
 # This is a global variable used by the functions below.
