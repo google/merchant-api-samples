@@ -21,7 +21,7 @@ using Google.Apis.Auth.OAuth2.Flows;
 using Google.Apis.Auth.OAuth2.Responses;
 using Google.Apis.Http;
 using Newtonsoft.Json;
-using Google.Shopping.Merchant.Products.V1Beta;
+using Google.Shopping.Merchant.Products.V1;
 
 
 namespace MerchantApi

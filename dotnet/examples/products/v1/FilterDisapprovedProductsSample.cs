@@ -17,8 +17,8 @@
 using System;
 using Google.Api.Gax;
 using Google.Apis.Auth.OAuth2;
-using Google.Shopping.Merchant.Products.V1Beta;
-using Google.Shopping.Merchant.Reports.V1Beta;
+using Google.Shopping.Merchant.Products.V1;
+using Google.Shopping.Merchant.Reports.V1;
 using Newtonsoft.Json;
 using static MerchantApi.Authenticator;
 

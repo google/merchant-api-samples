@@ -14,7 +14,7 @@
 
 // [START merchantapi_delete_product_input]
 using Google.Apis.Auth.OAuth2;
-using Google.Shopping.Merchant.Products.V1Beta;
+using Google.Shopping.Merchant.Products.V1;
 using System;
 using static MerchantApi.Authenticator;
 

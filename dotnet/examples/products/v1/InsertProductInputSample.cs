@@ -66,16 +66,16 @@ namespace MerchantApi
             };
 
             // The attributes of the product.
-            Attributes attributes = new ProductAttributes
+            ProductAttributes attributes = new ProductAttributes
             {
                 Title = "A Tale of Two Cities",
                 Description = "A classic novel about the French Revolution",
                 Link = "https://exampleWebsite.com/tale-of-two-cities.html",
                 ImageLink = "https://exampleWebsite.com/tale-of-two-cities.jpg",
-                Availability = "in stock",
-                Condition = "new",
+                Availability = Availability.InStock,
+                Condition = Condition.New,
                 GoogleProductCategory = "Media > Books",
-                Gtin = { "9780007350896" },
+                Gtins = { "9780007350896" },
                 Shipping = { shipping, shipping2 }
             };
 

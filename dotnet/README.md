@@ -35,7 +35,7 @@ Use the following syntax to run the `ListProductsSample` project, for example.
 
 2. Run
 ```
-dotnet run --project examples/Products/v1beta/ListProductsSample.csproj --framework netcoreapp8.0
+dotnet run --project examples/products/v1beta/ListProductsSample.csproj --framework netcoreapp8.0
 ```
 
 Examine your shell output, be inspired and start working on an amazing new app!
