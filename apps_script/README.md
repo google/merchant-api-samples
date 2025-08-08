@@ -21,13 +21,7 @@ credentials to authorize the Merchant API requests
 
 1.  Create the Apps Script project [here](https://script.google.com/u/1/home) or re-use an existing one.
 
-1.  Go into "Project Settings" and select the "Show the appsscript.json manifest file in editor"
-
-1.  Go back to the "Editor" and copy/paste the content of this repository's appsscript.json into the default one. Select the one for the desired API version (for example appscript_v1.json).
-    *   If you are using a new project, you can overwrite everything.
-    *   If you are using an existing project, you should merge the content of this file with your existing one.
-
-1.  Copy/paste the selected sample code into your Apps Script project (in the "code.gs" file).
+1.  Follow [these steps](https://developers.google.com/apps-script/advanced/merchant-api) to enable the Merchant API in the Apps Script project.
 
 1.  Click "Run" to execute the script. You will be prompted to authorize the script using your own credentials
 
