@@ -50,7 +50,7 @@ public class Config {
     File configPath = new File(BASE_PATH, CONTENT_DIR);
     if (!configPath.exists()) {
       throw new FileNotFoundException(
-          "Content API for Shopping configuration directory '"
+          "Merchant API configuration directory '"
               + configPath.getCanonicalPath()
               + "' does not exist");
     }

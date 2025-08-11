@@ -34,7 +34,9 @@ class Configuration(object):
         return str(merchant_id)
     else:
       print(
-          "Default config file can't be found! Please add the merchantId"
+          "Default config file can't be found at "
+          + self._MERCHANT_INFO_PATH
+          + ". Please add the merchantId"
           " in merchant-info.json as explained in the README"
       )
       exit(1)
