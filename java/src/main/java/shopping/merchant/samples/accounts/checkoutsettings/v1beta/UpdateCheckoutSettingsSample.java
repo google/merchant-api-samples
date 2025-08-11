@@ -11,15 +11,19 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
+package shopping.merchant.samples.accounts.checkoutsettings.v1beta;
 
 // [START merchantapi_update_checkout_settings]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
+import com.google.protobuf.FieldMask;
 import com.google.shopping.merchant.accounts.v1beta.CheckoutSettings;
 import com.google.shopping.merchant.accounts.v1beta.CheckoutSettingsName;
 import com.google.shopping.merchant.accounts.v1beta.CheckoutSettingsServiceClient;
 import com.google.shopping.merchant.accounts.v1beta.CheckoutSettingsServiceSettings;
 import com.google.shopping.merchant.accounts.v1beta.UpdateCheckoutSettingsRequest;
+import com.google.shopping.merchant.accounts.v1beta.UriSettings;
+import com.google.shopping.type.Destination.DestinationEnum;
 import shopping.merchant.samples.utils.Authenticator;
 import shopping.merchant.samples.utils.Config;
 
@@ -40,15 +44,13 @@ public class UpdateCheckoutSettingsSample {
         CheckoutSettingsServiceClient.create(checkoutSettingsServiceSettings)) {
       String accountId = config.getAccountId().toString();
       String name = CheckoutSettingsName.newBuilder().setAccount(accountId).build().toString();
-
+      // Replace this with your checkout URL.
+      String checkoutUrl = "https://myshopify.com/cart/1234:1";
       CheckoutSettings checkoutSettings =
           CheckoutSettings.newBuilder()
               .setName(name)
-              .setCheckoutSettings(
-                  CheckoutSettings.newBuilder()
-                      .setName(name)
-                      .setUriSettings(UriSettings.newBuilder().setCheckoutUriTemplate(checkoutUrl))
-                      .addEligibleDestinations(DestinationEnum.SHOPPING_ADS))
+              .setUriSettings(UriSettings.newBuilder().setCheckoutUriTemplate(checkoutUrl))
+              .addEligibleDestinations(DestinationEnum.SHOPPING_ADS)
               .build();
       FieldMask fieldMask =
           FieldMask.newBuilder().addPaths("uri_settings").addPaths("eligible_destinations").build();
