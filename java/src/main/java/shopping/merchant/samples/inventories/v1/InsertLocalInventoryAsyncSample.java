@@ -1,4 +1,4 @@
-// Copyright 2023 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -13,6 +13,7 @@
 // limitations under the License.
 
 package shopping.merchant.samples.inventories.v1;
+
 // [START merchantapi_insert_local_inventory_async]
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
@@ -22,6 +23,8 @@ import com.google.auth.oauth2.GoogleCredentials;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.shopping.merchant.inventories.v1.InsertLocalInventoryRequest;
 import com.google.shopping.merchant.inventories.v1.LocalInventory;
+import com.google.shopping.merchant.inventories.v1.LocalInventoryAttributes;
+import com.google.shopping.merchant.inventories.v1.LocalInventoryAttributes.Availability;
 import com.google.shopping.merchant.inventories.v1.LocalInventoryServiceClient;
 import com.google.shopping.merchant.inventories.v1.LocalInventoryServiceSettings;
 import com.google.shopping.merchant.products.v1.ListProductsRequest;
@@ -29,7 +32,6 @@ import com.google.shopping.merchant.products.v1.Product;
 import com.google.shopping.merchant.products.v1.ProductsServiceClient;
 import com.google.shopping.merchant.products.v1.ProductsServiceClient.ListProductsPagedResponse;
 import com.google.shopping.merchant.products.v1.ProductsServiceSettings;
-import com.google.shopping.type.Channel.ChannelEnum;
 import com.google.shopping.type.Price;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -72,10 +74,8 @@ public class InsertLocalInventoryAsyncSample {
       List<String> localProductNames = new ArrayList<String>();
       for (Product product : response.iterateAll()) {
 
-        // Filters for only local products, since only products with their channel set to "LOCAL"
-        // can be used for local inventory.
-        // The data feed must also have its channel set to "LOCAL_PRODUCTS".
-        if (product.getChannel() == ChannelEnum.LOCAL) {
+        // Filters for only local products using the legacyLocal field.
+        if (product.getLegacyLocal()) {
 
           // The name is returned in the format:
           // accounts/{account}/products/{channel}~{contentLanguage}~{feedLabel}~{offerId}
@@ -117,9 +117,12 @@ public class InsertLocalInventoryAsyncSample {
                         .setParent(name)
                         .setLocalInventory(
                             LocalInventory.newBuilder()
-                                .setAvailability("out of stock")
+                                .setLocalInventoryAttributes(
+                                    LocalInventoryAttributes.newBuilder()
+                                        .setAvailability(Availability.OUT_OF_STOCK)
+                                        .setPrice(price)
+                                        .build())
                                 .setStoreCode(storeCode)
-                                .setPrice(price)
                                 .build())
                         .build();
                   })

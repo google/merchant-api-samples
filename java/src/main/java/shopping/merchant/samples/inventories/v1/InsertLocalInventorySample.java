@@ -1,4 +1,4 @@
-// Copyright 2023 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -13,11 +13,14 @@
 // limitations under the License.
 
 package shopping.merchant.samples.inventories.v1;
+
 // [START merchantapi_insert_local_inventory]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.shopping.merchant.inventories.v1.InsertLocalInventoryRequest;
 import com.google.shopping.merchant.inventories.v1.LocalInventory;
+import com.google.shopping.merchant.inventories.v1.LocalInventoryAttributes;
+import com.google.shopping.merchant.inventories.v1.LocalInventoryAttributes.Availability;
 import com.google.shopping.merchant.inventories.v1.LocalInventoryServiceClient;
 import com.google.shopping.merchant.inventories.v1.LocalInventoryServiceSettings;
 import com.google.shopping.type.Price;
@@ -52,9 +55,12 @@ public class InsertLocalInventorySample {
               .setParent(parent)
               .setLocalInventory(
                   LocalInventory.newBuilder()
-                      .setAvailability("out of stock")
                       .setStoreCode(storeCode)
-                      .setPrice(price)
+                      .setLocalInventoryAttributes(
+                          LocalInventoryAttributes.newBuilder()
+                              .setAvailability(Availability.OUT_OF_STOCK)
+                              .setPrice(price)
+                              .build())
                       .build())
               .build();
 

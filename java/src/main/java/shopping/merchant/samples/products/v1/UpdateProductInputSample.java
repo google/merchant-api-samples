@@ -19,6 +19,8 @@ import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.protobuf.FieldMask;
 import com.google.shopping.merchant.datasources.v1.DataSourceName;
+import com.google.shopping.merchant.products.v1.Availability;
+import com.google.shopping.merchant.products.v1.Condition;
 import com.google.shopping.merchant.products.v1.ProductAttributes;
 import com.google.shopping.merchant.products.v1.ProductInput;
 import com.google.shopping.merchant.products.v1.ProductInputName;

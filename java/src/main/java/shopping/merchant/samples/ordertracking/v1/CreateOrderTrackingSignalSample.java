@@ -163,7 +163,7 @@ public class CreateOrderTrackingSignalSample {
                               .setProductTitle("Tshirt-small-blue")
                               .setBrand("Brand1")
                               // Any GTIN associated with the product.
-                              .setGtin("001234567890"))
+                              .addGtins("001234567890"))
                       // Mapping of line items to shipments.
                       .addShipmentLineItemMapping(
                           ShipmentLineItemMapping.newBuilder()
