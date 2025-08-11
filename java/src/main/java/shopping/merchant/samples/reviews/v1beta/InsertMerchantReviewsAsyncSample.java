@@ -64,7 +64,7 @@ public class InsertMerchantReviewsAsyncSample {
 
     return MerchantReview.newBuilder()
         .setMerchantReviewId(merchantReviewId)
-        .setAttributes(attributes)
+        .setMerchantReviewAttributes(attributes)
         .build();
   }
 

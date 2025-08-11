@@ -75,7 +75,7 @@ public class InsertProductReviewsAsyncSample {
 
     return ProductReview.newBuilder()
         .setProductReviewId(productReviewId)
-        .setAttributes(attributes)
+        .setProductReviewAttributes(attributes)
         .build();
   }
 
