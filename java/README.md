@@ -21,7 +21,7 @@ the included `pom.xml` to install the required dependencies with the
 ## Setup Authentication and Sample Configuration
 
 If you have not already done so, please read the top-level `README` to discover
-how to set up both authentication and the common sample configuration.  The rest
+how to set up both authentication and the common sample configuration. The rest
 of this document assumes you have performed both tasks.
 
 Note that for the non-service account OAuth2 flow, the application will read
@@ -40,8 +40,8 @@ directory. If not, check out the code to a local directory and set up the
 project appropriately for access to the Google APIs Client Library for Java.
 
 This section assumes you've already cloned the code and are reading from a local
-directory. If not, clone the code to a local directory,  and set up the project
-appropriately for access to the Google APIs Client Library for Java 
+directory. If not, clone the code to a local directory, and set up the project
+appropriately for access to the Google APIs Client Library for Java
 (see the prerequisites section above).
 
 Build and run any of the included samples in your preferred IDE.
@@ -54,6 +54,11 @@ the sample you wish to execute. The specific syntax is shown in the examples
 below.
 
 ### Merchant API
+Before calling any `v1` Merchant API method, you will need to register the GCP
+project used to call the APIs. You can do that by running the code sample
+`shopping.merchant.samples.accounts.developerregistration.v1.RegisterGcpSample`.
+More informations can be found [here](https://developers.google.com/merchant/api/guides/quickstart#register_as_a_developer).
+
 Use the following syntax
 to run the `InsertRegionalInventorySample` class, for example.
 
