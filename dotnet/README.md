@@ -29,13 +29,18 @@ solution. You will need to
 [Restore NuGet Packages](https://docs.nuget.org/ndocs/consume-packages/package-restore)
 as well to pull in the dependencies. (The IDEs listed above all support this.)
 
+Before calling any `v1` Merchant API method, you will need to register the GCP
+project used to call the APIs. You can do that by running the code sample
+`examples/accounts/developerRegistration/v1/RegisterGcpSample.csproj`.
+More informations can be found [here](https://developers.google.com/merchant/api/guides/quickstart#register_as_a_developer).
+
 Use the following syntax to run the `ListProductsSample` project, for example.
 
 1. Open a command line and navigate to the samples' root directory (dotnet/)
 
 2. Run
 ```
-dotnet run --project examples/products/v1beta/ListProductsSample.csproj --framework netcoreapp8.0
+dotnet run --project examples/products/v1/ListProductsSample.csproj --framework netcoreapp8.0
 ```
 
 Examine your shell output, be inspired and start working on an amazing new app!

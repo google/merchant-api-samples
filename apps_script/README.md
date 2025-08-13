@@ -19,6 +19,11 @@ credentials to authorize the Merchant API requests
 
 ## Running the Samples
 
+Before calling any `v1` Merchant API method, you will need to register the GCP
+project used to call the APIs. You can do that by running the code sample
+`examples/accounts/developerRegistration/v1/register_gcp_sample.gs`.
+More informations can be found [here](https://developers.google.com/merchant/api/guides/quickstart#register_as_a_developer).
+
 1.  Create the Apps Script project [here](https://script.google.com/u/1/home) or re-use an existing one.
 
 1.  Follow [these steps](https://developers.google.com/apps-script/advanced/merchant-api) to enable the Merchant API in the Apps Script project.

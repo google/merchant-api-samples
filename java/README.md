@@ -60,10 +60,10 @@ project used to call the APIs. You can do that by running the code sample
 More informations can be found [here](https://developers.google.com/merchant/api/guides/quickstart#register_as_a_developer).
 
 Use the following syntax
-to run the `InsertRegionalInventorySample` class, for example.
+to run the `ListProductsSample` class, for example.
 
 ```
-mvn exec:java -Dexec.mainClass="shopping.merchant.samples.products.v1beta.ListProductsSample"
+mvn exec:java -Dexec.mainClass="shopping.merchant.samples.products.v1.ListProductsSample"
 ```
 
 Examine your shell output, be inspired and start working on an amazing new app!

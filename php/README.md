@@ -54,7 +54,7 @@ Below is an example of how to run the `ListProductsSample.php` code
 sample file.
 
 ```
-php examples/products/v1beta/ListProductsSample.php
+php examples/products/v1/ListProductsSample.php
 ```
 
 1. Examine your shell output, be inspired and start hacking an amazing new app!
