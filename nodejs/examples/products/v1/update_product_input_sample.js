@@ -21,7 +21,14 @@ const fs = require('fs');
 const authUtils = require('../../authentication/authenticate.js');
 const {
   ProductInputsServiceClient,
-} = require('@google-shopping/products').v1beta;
+} = require('@google-shopping/products').v1;
+
+const {
+  protos,
+} = require('@google-shopping/products');
+
+const Availability = protos.google.shopping.merchant.products.v1.Availability;
+const Condition = protos.google.shopping.merchant.products.v1.Condition;
 
 /**
  * Performs the actual API call to update the product input.
@@ -61,8 +68,8 @@ async function callUpdateProductInput(
     description: 'A classic novel about the French Revolution',
     link: 'https://exampleWebsite.com/tale-of-two-cities.html',
     imageLink: 'https://exampleWebsite.com/tale-of-two-cities.jpg',
-    availability: 'in stock',
-    condition: 'new',
+    availability: Availability.IN_STOCK,
+    condition: Condition.NEW,
     gtin: [
       '9780007350896'
     ],  // GTIN is a repeated field, so it's provided as an array.

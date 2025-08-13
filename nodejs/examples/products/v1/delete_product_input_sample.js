@@ -18,7 +18,7 @@ const fs = require('fs');
 const authUtils = require('../../authentication/authenticate.js');
 const {
   ProductInputsServiceClient,
-} = require('@google-shopping/products').v1beta;
+} = require('@google-shopping/products').v1;
 
 /**
  * This class demonstrates how to delete a product input for a given

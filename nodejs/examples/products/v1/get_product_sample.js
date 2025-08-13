@@ -16,7 +16,7 @@
 'use strict';
 const fs = require('fs');
 const authUtils = require('../../authentication/authenticate.js');
-const {ProductsServiceClient} = require('@google-shopping/products').v1beta;
+const {ProductsServiceClient} = require('@google-shopping/products').v1;
 
 /**
  * Retrieves a single product for a given Merchant Center account.

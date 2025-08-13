@@ -16,7 +16,7 @@
 'use strict';
 const fs = require('fs');
 const authUtils = require('../../authentication/authenticate.js'); // Assuming auth utils are in this relative path
-const {DataSourcesServiceClient} = require('@google-shopping/datasources').v1beta; // Use the correct client and version
+const {DataSourcesServiceClient} = require('@google-shopping/datasources').v1; // Use the correct client and version
 
 /**
  * This function lists all data sources for a given Merchant Center account.

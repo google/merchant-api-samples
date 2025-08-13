@@ -16,8 +16,8 @@
 'use strict';
 const fs = require('fs');
 const authUtils = require('../../authentication/authenticate.js');
-const {ProductsServiceClient} = require('@google-shopping/products').v1beta;
-const {ReportServiceClient} = require('@google-shopping/reports').v1beta;
+const {ProductsServiceClient} = require('@google-shopping/products').v1;
+const {ReportServiceClient} = require('@google-shopping/reports').v1;
 
 /**
  * Gets the product details for a given product using the GetProduct method.

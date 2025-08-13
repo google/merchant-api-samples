@@ -18,7 +18,14 @@ const fs = require('fs');
 const authUtils = require('../../authentication/authenticate.js');
 const {
   ProductInputsServiceClient,
-} = require('@google-shopping/products').v1beta;
+} = require('@google-shopping/products').v1;
+
+const {
+  protos,
+} = require('@google-shopping/products');
+
+const Availability = protos.google.shopping.merchant.products.v1.Availability;
+const Condition = protos.google.shopping.merchant.products.v1.Condition;
 
 /**
  * Inserts a product input for a given Merchant Center account and data source.
@@ -45,21 +52,26 @@ async function insertProductInput(config, dataSource) {
   // Create the ProductInputsServiceClient.
   const productInputsClient = new ProductInputsServiceClient(options);
 
-  // Define the price object.
-  const price = {
-    amountMicros: 33450000, // $33.45
+  // Define the price objects.
+  const shippingPrice = {
+    amountMicros: 3000000, // 3 USD
     currencyCode: 'USD',
+  };
+
+  const price = {
+    amountMicros: 33450000, // 33.45 USD
+    currency_code: 'USD',
   };
 
   // Define shipping details.
   const shipping1 = {
-    price: price,
+    price: shippingPrice,
     country: 'GB',
     service: '1st class post',
   };
 
   const shipping2 = {
-    price: price,
+    price: shippingPrice,
     country: 'FR',
     service: '1st class post',
   };
@@ -70,11 +82,12 @@ async function insertProductInput(config, dataSource) {
     description: 'A classic novel about the French Revolution',
     link: 'https://exampleWebsite.com/tale-of-two-cities.html',
     imageLink: 'https://exampleWebsite.com/tale-of-two-cities.jpg',
-    availability: 'in stock',
-    condition: 'new',
+    availability: Availability.IN_STOCK,
+    condition: Condition.NEW,
     googleProductCategory: 'Media > Books',
     gtins: ['9780007350896'], // GTIN is a repeated field
     shipping: [shipping1, shipping2], // Shipping is a repeated field
+    price: price,
   };
 
   // Define the product input object.

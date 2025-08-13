@@ -15,7 +15,7 @@
 // [START merchantapi_list_accounts]
 'use strict';
 const authUtils = require('../../../authentication/authenticate.js');
-const {AccountsServiceClient} = require('@google-shopping/accounts').v1beta;
+const {AccountsServiceClient} = require('@google-shopping/accounts').v1;
 
 /**
  * Lists all Merchant Center accounts accessible by the authenticated user.

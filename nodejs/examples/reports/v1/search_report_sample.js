@@ -16,7 +16,7 @@
 'use strict';
 const fs = require('fs');
 const authUtils = require('../../authentication/authenticate.js');
-const {ReportServiceClient} = require('@google-shopping/reports').v1beta;
+const {ReportServiceClient} = require('@google-shopping/reports').v1;
 
 /**
  * Searches reports for a given Merchant Center account and prints them.

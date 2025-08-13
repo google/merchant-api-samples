@@ -18,7 +18,14 @@ const fs = require('fs');
 const authUtils = require('../../authentication/authenticate.js');
 const {
   ProductInputsServiceClient,
-} = require('@google-shopping/products').v1beta;
+} = require('@google-shopping/products').v1;
+
+const {
+  protos,
+} = require('@google-shopping/products');
+
+const Availability = protos.google.shopping.merchant.products.v1.Availability;
+const Condition = protos.google.shopping.merchant.products.v1.Condition;
 
 /**
  * This class demonstrates how to insert a product input asynchronously.
@@ -44,19 +51,24 @@ function generateRandomString() {
  * @returns {!object} A sample ProductInput object.
  */
 function createRandomProduct() {
+  const shippingPrice = {
+    amountMicros: 3000000, // 3 USD
+    currencyCode: 'USD',
+  };
+
   const price = {
-    amount_micros: 33450000, // 33.45 USD
+    amountMicros: 33450000, // 33.45 USD
     currency_code: 'USD',
   };
 
   const shipping = {
-    price: price,
+    price: shippingPrice,
     country: 'GB',
     service: '1st class post',
   };
 
   const shipping2 = {
-    price: price,
+    price: shippingPrice,
     country: 'FR',
     service: '1st class post',
   };
@@ -66,12 +78,11 @@ function createRandomProduct() {
     description: 'A classic novel about the French Revolution',
     link: 'https://exampleWebsite.com/tale-of-two-cities.html',
     image_link: 'https://exampleWebsite.com/tale-of-two-cities.jpg',
-    availability: 'in stock',
-    condition: 'new',
+    availability: Availability.IN_STOCK,
+    condition: Condition.NEW,
     google_product_category: 'Media > Books',
     gtins: ['9780007350896'],
     shipping: [shipping, shipping2],
-    // Price is nested within attributes in the ProductInput message
     price: price,
   };
 
