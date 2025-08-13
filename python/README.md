@@ -35,6 +35,11 @@ of this document assumes you have performed both tasks.
 We are assuming you've checked out the code and are reading this from a local
 directory. If not, check out the code to a local directory.
 
+Before calling any `v1` Merchant API method, you will need to register the GCP
+project used to call the APIs. You can do that by running the code sample
+`examples.accounts.developerregistration.v1.register_gcp_sample`.
+More informations can be found [here](https://developers.google.com/merchant/api/guides/quickstart#register_as_a_developer).
+
 1.  Start up a sample:
 
         python -m examples.products.v1beta.list_products_sample

@@ -22,6 +22,8 @@ import string
 
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
+from google.shopping.merchant_products_v1 import Availability
+from google.shopping.merchant_products_v1 import Condition
 from google.shopping.merchant_products_v1 import InsertProductInputRequest
 from google.shopping.merchant_products_v1 import ProductAttributes
 from google.shopping.merchant_products_v1 import ProductInput
@@ -54,8 +56,8 @@ def _create_random_product() -> ProductInput:
       description="A classic novel about the French Revolution",
       link="https://exampleWebsite.com/tale-of-two-cities.html",
       image_link="https://exampleWebsite.com/tale-of-two-cities.jpg",
-      availability="in stock",
-      condition="new",
+      availability=Availability.IN_STOCK,
+      condition=Condition.NEW,
       google_product_category="Media > Books",
       gtins=["9780007350896"],
       shipping=[shipping1, shipping2],

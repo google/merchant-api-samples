@@ -18,10 +18,13 @@
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
 from google.shopping import merchant_inventories_v1
+from google.shopping.merchant_inventories_v1.types import LocalInventoryAttributes
+
 
 # ENSURE you fill in product ID and store code for the sample to
 # work.
 _ACCOUNT = configuration.Configuration().read_merchant_info()
+# ENSURE you fill in product ID for the sample to work.
 _PRODUCT = "INSERT_PRODUCT_HERE"
 _PARENT = f"accounts/{_ACCOUNT}/products/{_PRODUCT}"
 # ENSURE you fill in store code for the sample to work.
@@ -43,13 +46,16 @@ def insert_local_inventory():
 
   # Creates a client.
   client = merchant_inventories_v1.LocalInventoryServiceClient(
-      credentials=credentials)
+      credentials=credentials
+  )
 
   # Creates a Local inventory and populate its attributes.
   local_inventory = merchant_inventories_v1.LocalInventory()
   local_inventory.store_code = _STORE_CODE
-  local_inventory.availability = "in stock"
-  local_inventory.price = {
+  local_inventory.local_inventory_attributes.availability = (
+      LocalInventoryAttributes.Availability.IN_STOCK
+  )
+  local_inventory.local_inventory_attributes.price = {
       "currency_code": "USD",
       "amount_micros": 33450000,
   }

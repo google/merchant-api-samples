@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright 2024 Google LLC
+# Copyright 2025 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -18,14 +18,16 @@
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
 from google.shopping import merchant_inventories_v1
+from google.shopping.merchant_inventories_v1.types import RegionalInventoryAttributes
 
 # ENSURE you fill in the product ID and region ID for the sample to
 # work.
 _ACCOUNT = configuration.Configuration().read_merchant_info()
-_PRODUCT = "INSERT_PRODUCT_HERE"
+# ENSURE you fill in the product ID for the sample to work.
+_PRODUCT = "PRODUCT_ID"
 _PARENT = f"accounts/{_ACCOUNT}/products/{_PRODUCT}"
 # ENSURE you fill in region ID for the sample to work.
-_REGION = "INSERT_REGION_HERE"
+_REGION = "REGION_ID"
 
 
 def insert_regional_inventory():
@@ -43,13 +45,16 @@ def insert_regional_inventory():
 
   # Creates a client.
   client = merchant_inventories_v1.RegionalInventoryServiceClient(
-      credentials=credentials)
+      credentials=credentials
+  )
 
   # Creates a regional inventory and populate its attributes.
   regional_inventory = merchant_inventories_v1.RegionalInventory()
   regional_inventory.region = _REGION
-  regional_inventory.availability = "in stock"
-  regional_inventory.price = {
+  regional_inventory.regional_inventory_attributes.availability = (
+      RegionalInventoryAttributes.Availability.IN_STOCK
+  )
+  regional_inventory.regional_inventory_attributes.price = {
       "currency_code": "USD",
       "amount_micros": 33450000,
   }

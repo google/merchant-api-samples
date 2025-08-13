@@ -18,8 +18,9 @@
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
 from google.shopping import merchant_products_v1
+from google.shopping.merchant_products_v1 import Availability
+from google.shopping.merchant_products_v1 import Condition
 from google.shopping.type import Price
-
 
 _ACCOUNT = configuration.Configuration().read_merchant_info()
 _PARENT = f"accounts/{_ACCOUNT}"
@@ -59,8 +60,8 @@ def create_product_input():
   attributes.link = "https://exampleWebsite.com/tale-of-two-cities.html"
   attributes.image_link = "https://exampleWebsite.com/tale-of-two-cities.jpg"
   attributes.price = price
-  attributes.availability = "in stock"
-  attributes.condition = "new"
+  attributes.availability = Availability.IN_STOCK
+  attributes.condition = Condition.NEW
   attributes.google_product_category = "Media > Books"
   attributes.gtins = ["9780007350896"]
   attributes.shipping = [shipping_option_1, shipping_option_2]

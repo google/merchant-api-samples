@@ -227,7 +227,10 @@ def parse_raw_query_params(data):
   # Decodes the request into a utf-8 encoded string.
   decoded = data.decode("utf-8")
   # Uses a regular expression to extract the URL query parameters string.
-  params = re.search(r"GET\s\/\?(.*) ", decoded).group(1)
+  match = re.search(r"GET\s\/\?(.*) ", decoded)
+  if not match:
+    return {}
+  params = match.group(1)
 
   # Splits the parameters to isolate the key/value pairs.
   pairs = [pair.split("=") for pair in params.split("&")]

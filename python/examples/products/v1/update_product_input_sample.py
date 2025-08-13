@@ -19,6 +19,8 @@
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
 from google.protobuf import field_mask_pb2
+from google.shopping.merchant_products_v1 import Availability
+from google.shopping.merchant_products_v1 import Condition
 from google.shopping.merchant_products_v1 import ProductAttributes
 from google.shopping.merchant_products_v1 import ProductInput
 from google.shopping.merchant_products_v1 import ProductInputsServiceClient
@@ -72,9 +74,9 @@ def update_product_input(account_id: str, product_id: str, data_source_id: str):
       description="A classic novel about the French Revolution",
       link="https://exampleWebsite.com/tale-of-two-cities.html",
       image_link="https://exampleWebsite.com/tale-of-two-cities.jpg",
-      availability="in stock",
-      condition="new",
-      gtin=["9780007350896"],  # GTIN is a repeated field.
+      availability=Availability.IN_STOCK,
+      condition=Condition.NEW,
+      gtins=["9780007350896"],  # GTIN is a repeated field.
   )
 
   # Constructs the full resource name for the data source.
