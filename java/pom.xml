@@ -100,67 +100,67 @@
     <dependency>
       <groupId>com.google.shopping</groupId>
       <artifactId>google-shopping-merchant-inventories</artifactId>
-      <version>0.47.0</version>
+      <version>1.0.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.shopping</groupId>
       <artifactId>google-shopping-merchant-products</artifactId>
-      <version>0.27.0</version>
+      <version>1.0.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.shopping</groupId>
       <artifactId>google-shopping-merchant-datasources</artifactId>
-      <version>0.27.0</version>
+      <version>1.0.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.shopping</groupId>
       <artifactId>google-shopping-merchant-accounts</artifactId>
-      <version>0.27.0</version>
+      <version>1.0.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.shopping</groupId>
       <artifactId>google-shopping-merchant-issue-resolution</artifactId>
-      <version>0.11.0</version>
+      <version>1.0.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.shopping</groupId>
       <artifactId>google-shopping-merchant-lfp</artifactId>
-      <version>0.30.0</version>
+      <version>1.0.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.shopping</groupId>
       <artifactId>google-shopping-merchant-notifications</artifactId>
-      <version>0.30.0</version>
+      <version>1.0.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.shopping</groupId>
       <artifactId>google-shopping-merchant-order-tracking</artifactId>
-      <version>0.11.0</version>
+      <version>1.0.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.shopping</groupId>
       <artifactId>google-shopping-merchant-productstudio</artifactId>
-      <version>0.8.0</version>
+      <version>0.12.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.shopping</groupId>
       <artifactId>google-shopping-merchant-promotions</artifactId>
-      <version>0.27.0</version>
+      <version>1.0.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.shopping</groupId>
       <artifactId>google-shopping-merchant-quota</artifactId>
-      <version>0.34.0</version>
+      <version>1.0.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.shopping</groupId>
       <artifactId>google-shopping-merchant-reports</artifactId>
-      <version>0.47.0</version>
+      <version>1.0.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.shopping</groupId>
       <artifactId>google-shopping-merchant-reviews</artifactId>
-      <version>0.17.0</version>
+      <version>0.18.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.protobuf</groupId>
