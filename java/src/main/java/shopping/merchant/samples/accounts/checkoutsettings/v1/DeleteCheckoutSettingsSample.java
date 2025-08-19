@@ -40,9 +40,11 @@ public class DeleteCheckoutSettingsSample {
 
     // Gets the account ID from the config file.
     String accountId = config.getAccountId().toString();
-
+    // The only valid programId for checkout settings is "checkout"
+    String programId = "checkout";
     // Creates account name to identify the account.
-    String name = CheckoutSettingsName.newBuilder().setAccount(accountId).build().toString();
+    String name =
+        CheckoutSettingsName.newBuilder().setAccount(accountId).setProgram(programId).build().toString();
 
     // Calls the API and catches and prints any network failures/errors.
     try (CheckoutSettingsServiceClient checkoutSettingsServiceClient =

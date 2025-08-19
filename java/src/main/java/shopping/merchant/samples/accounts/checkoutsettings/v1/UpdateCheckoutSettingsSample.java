@@ -43,7 +43,14 @@ public class UpdateCheckoutSettingsSample {
     try (CheckoutSettingsServiceClient checkoutSettingsServiceClient =
         CheckoutSettingsServiceClient.create(checkoutSettingsServiceSettings)) {
       String accountId = config.getAccountId().toString();
-      String name = CheckoutSettingsName.newBuilder().setAccount(accountId).build().toString();
+      // The only valid programId for checkout settings is "checkout"
+      String programId = "checkout";
+      String name =
+          CheckoutSettingsName.newBuilder()
+              .setAccount(accountId)
+              .setProgram(programId)
+              .build()
+              .toString();
       // Replace this with your checkout URL.
       String checkoutUrl = "https://myshopify.com/cart/1234:1";
       CheckoutSettings checkoutSettings =
