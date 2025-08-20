@@ -20,6 +20,8 @@ require_once __DIR__ . '/../../Authentication/Authentication.php';
 require_once __DIR__ . '/../../Authentication/Config.php';
 // [START merchantapi_insert_product_input_async]
 use Google\ApiCore\ApiException;
+use Google\Shopping\Merchant\Products\V1\Availability;
+use Google\Shopping\Merchant\Products\V1\Condition;
 use Google\Shopping\Merchant\Products\V1\ProductAttributes;
 use Google\Shopping\Merchant\Products\V1\InsertProductInputRequest;
 use Google\Shopping\Merchant\Products\V1\ProductInput;
@@ -95,8 +97,8 @@ class InsertProductInputAsyncSample
             'description' => 'A classic novel about the French Revolution',
             'link' => 'https://exampleWebsite.com/tale-of-two-cities.html',
             'image_link' => 'https://exampleWebsite.com/tale-of-two-cities.jpg',
-            'availability' => 'in stock',
-            'condition' => 'new',
+            'availability' => Availability::IN_STOCK,
+            'condition' => Condition::PBNEW,
             'google_product_category' => 'Media > Books',
             'gtins' => ['9780007350896'],
             'shipping' => [$shipping, $shipping2]

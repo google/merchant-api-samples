@@ -23,6 +23,8 @@ use Google\ApiCore\ApiException;
 use Google\Shopping\Merchant\Inventories\V1\LocalInventory;
 use Google\Shopping\Merchant\Inventories\V1\Client\LocalInventoryServiceClient;
 use Google\Shopping\Merchant\Inventories\V1\InsertLocalInventoryRequest;
+use Google\Shopping\Merchant\Inventories\V1\LocalInventoryAttributes;
+use Google\Shopping\Merchant\Inventories\V1\LocalInventoryAttributes\Availability;
 use Google\Shopping\Type\Price;
 
 /**
@@ -80,8 +82,9 @@ class InsertLocalInventory
         // Creates a new local inventory object.
         $localInventory = (new LocalInventory())
             ->setStoreCode($localInventoryStoreCode)
-            ->setAvailability("in stock")
-            ->setPrice($price);
+            ->setLocalInventoryAttributes((new LocalInventoryAttributes())
+                ->setAvailability(Availability::IN_STOCK)
+                ->setPrice($price));
 
         $request = (new InsertLocalInventoryRequest())
             ->setParent($parent)

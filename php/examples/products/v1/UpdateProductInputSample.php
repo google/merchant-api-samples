@@ -20,6 +20,8 @@ require_once __DIR__ . '/../../Authentication/Config.php';
 // [START merchantapi_update_product_input]
 use Google\ApiCore\ApiException;
 use Google\Protobuf\FieldMask;
+use Google\Shopping\Merchant\Products\V1\Availability;
+use Google\Shopping\Merchant\Products\V1\Condition;
 use Google\Shopping\Merchant\Products\V1\ProductAttributes;
 use Google\Shopping\Merchant\Products\V1\Client\ProductInputsServiceClient;
 use Google\Shopping\Merchant\Products\V1\ProductInput;
@@ -112,9 +114,9 @@ class UpdateProductInputSample
                 'description' => 'A classic novel about the French Revolution',
                 'link' => 'https://exampleWebsite.com/tale-of-two-cities.html',
                 'image_link' => 'https://exampleWebsite.com/tale-of-two-cities.jpg',
-                'availability' => 'in stock',
-                'condition' => 'new',
-                'gtin' => ['9780007350896'] // GTIN is a repeated field.
+                'availability' => Availability::IN_STOCK,
+                'condition' => Condition::PBNEW,
+                'gtins' => ['9780007350896'] // GTIN is a repeated field.
             ]);
 
             // Construct the full data source name.
@@ -151,7 +153,7 @@ class UpdateProductInputSample
             print $response->getName() . "\n";
             print "Updated Product below\n";
             // Print the full updated product input object.
-            print $response->serializeToJsonString(['prettyPrint' => true]) . "\n";
+            print_r($response);
 
         } catch (ApiException $e) {
             printf("ApiException caught: %s\n", $e->getMessage());

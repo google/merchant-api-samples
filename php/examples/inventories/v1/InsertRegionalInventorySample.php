@@ -23,6 +23,8 @@ use Google\ApiCore\ApiException;
 use Google\Shopping\Merchant\Inventories\V1\RegionalInventory;
 use Google\Shopping\Merchant\Inventories\V1\Client\RegionalInventoryServiceClient;
 use Google\Shopping\Merchant\Inventories\V1\InsertRegionalInventoryRequest;
+use Google\Shopping\Merchant\Inventories\V1\RegionalInventoryAttributes;
+use Google\Shopping\Merchant\Inventories\V1\RegionalInventoryAttributes\Availability;
 use Google\Shopping\Type\Price;
 
 /**
@@ -78,8 +80,9 @@ class InsertRegionalInventory
         // Creates a new regional inventory object.
         $regionalInventory = (new RegionalInventory())
             ->setRegion($regionalInventoryRegion)
-            ->setAvailability("in stock")
-            ->setPrice($price);
+            ->setRegionalInventoryAttributes((new RegionalInventoryAttributes())
+                ->setAvailability(Availability::IN_STOCK)
+                ->setPrice($price));
 
         $request = (new InsertRegionalInventoryRequest())
             ->setParent($parent)
