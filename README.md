@@ -53,6 +53,8 @@ Just make sure to enable the Merchant API in the API Console.
         in JSON format.
     1.  Rename the JSON file you downloaded to `service-account.json` and move
         it to the configuration subdirectory.
+    1.  Add the service account as a user of your Merchant Center account using
+        the "People and access" page
 
     If you want to use an OAuth2 client ID:
 
