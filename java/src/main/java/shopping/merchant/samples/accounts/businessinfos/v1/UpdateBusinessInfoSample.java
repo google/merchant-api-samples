@@ -52,6 +52,7 @@ public class UpdateBusinessInfoSample {
             .setName(name)
             .setAddress(
                 PostalAddress.newBuilder()
+                    .setRegionCode("AR")
                     .setLanguageCode("en")
                     .setPostalCode("C1107")
                     .addAddressLines(

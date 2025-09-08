@@ -59,6 +59,7 @@ class UpdateBusinessInfoSample
         $businessInfo = new BusinessInfo([
             'name' => $name,
             'address' => new PostalAddress([
+                'region_code' => 'AR',
                 'language_code' => 'en',
                 'postal_code' => 'C1107',
                 'address_lines' => [

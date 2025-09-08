@@ -44,6 +44,7 @@ def update_business_info():
 
   # Create a PostalAddress
   address = postal_address_pb2.PostalAddress(
+      region_code="AR",
       language_code="en",
       postal_code="C1107",
       address_lines=[
