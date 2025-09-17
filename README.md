@@ -66,22 +66,22 @@ specific use case:
             to the file `client-secrets.json` in the configuration
             subdirectory `$(HOME)/shopping-samples/content`.
 
-        > [!IMPORTANT]
-        > The samples assume that you are using an OAuth2 client ID that can
-        > use a loopback IP address to retrieve tokens. For web app clients
-        > types, you must add "http://127.0.0.1:8080" to the "Authorized
-        > redirect URIs" list in your Google Cloud Console project before
-        > running samples. Please visit the
-        > [OAuth2 for Web Apps](https://developers.google.com/identity/protocols/oauth2/web-server)
-        > page and follow the instructions there to create a new OAuth2 client
-        > ID to use with the samples.
+> [!IMPORTANT]
+> The samples assume that you are using an OAuth2 client ID that can
+> use a loopback IP address to retrieve tokens. For web app clients
+> types, you must add "http://127.0.0.1:8080" to the "Authorized
+> redirect URIs" list in your Google Cloud Console project before
+> running samples. Please visit the
+> [OAuth2 for Web Apps](https://developers.google.com/identity/protocols/oauth2/web-server)
+> page and follow the instructions there to create a new OAuth2 client
+> ID to use with the samples.
 
-        > [!NOTE]
-        > If using OAuth2 client credentials, once you have authorized access,
-        > your token details will be stored in the `token.json` file in the
-        > samples configuration directory. If you have any issues
-        > authenticating, remove this file and you will be asked to
-        > re-authorize access.
+> [!NOTE]
+> If using OAuth2 client credentials, once you have authorized access,
+> your token details will be stored in the `token.json` file in the
+> samples configuration directory. If you have any issues
+> authenticating, remove this file and you will be asked to
+> re-authorize access.
 
 3.  Take the example `merchant-info.json` from this repository root and copy
     it into `$(HOME)/shopping-samples/content`. Next, change its contents
