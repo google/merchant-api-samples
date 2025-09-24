@@ -33,6 +33,6 @@ More informations can be found [here](https://developers.google.com/merchant/api
 
 1.  Start up a sample:
 
-        node examples/products/v1beta/list_products_sample.js
+        node examples/products/v1/list_products_sample.js
 
 1.  Examine your shell output, be inspired and start hacking an amazing new app!
