@@ -1,5 +1,0 @@
-send_cls_to('mapi-code-sample-reviewers');
-
-define Main {
-  reassign_to_list(google_group('mapi-code-sample-reviewers'));
-}
