@@ -21,4 +21,5 @@ package all
 import (
 	// This package imports samples to trigger their init() functions for registration.
 	_ "github.com/google/merchant-api-samples/go/examples/accounts/accounts/v1"
+	_ "github.com/google/merchant-api-samples/go/examples/accounts/developerregistration/v1"
 )
