@@ -105,3 +105,15 @@ instructions in the `README`s located in each language subdirectory.
 > See
 > [Register as a developer](https://developers.google.com/merchant/api/guides/quickstart#register_as_a_developer).
 
+## Code Assist Toolkit using MCP
+
+Get assistance with migrating from Content API for Shopping to Merchant API or
+developing new integrations from the Model Context Protocol (MCP) service. It
+provides authoritative context from official Merchant API documentation and code
+samples. You can easily integrate MCP into coding assistant of your choice. For
+more information, see [MAPI Integration and Code
+Assist Toolkit using
+MCP](https://developers.google.com/merchant/api/guides/devdocs-mcp).
+
+We also provide [MCP instructions](devdocs_mcp_instructions.md) you can use to
+instruct your coding assistant on how to migrate and use MCP.
