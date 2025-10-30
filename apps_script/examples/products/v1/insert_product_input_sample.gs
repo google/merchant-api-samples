@@ -44,10 +44,10 @@ function productInsert() {
       'description': 'A classic novel about the French Revolution',
       'link': 'http://my-book-shop.com/tale-of-two-cities.html',
       'imageLink': 'http://my-book-shop.com/tale-of-two-cities.jpg',
-      'availability': 'in stock',
+      'availability': 'IN_STOCK',
       'condition': 'new',
       'googleProductCategory': 'Media > Books',
-      'gtin': '[9780007350896]',
+      'gtins': '[9780007350896]',
       'price': {'amountMicros': '2500000', 'currencyCode': 'USD'},
     }
   };
