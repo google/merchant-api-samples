@@ -1,4 +1,4 @@
-// Copyright 2024 Google LLC
+// Copyright 2025 Google LLC
 
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -13,7 +13,11 @@
 // limitations under the License.
 
 package shopping.merchant.samples.products.v1;
+
 // [START merchantapi_get_product]
+
+// import com.google.common.io.BaseEncoding; //Needed for base64url encoding
+// import java.nio.charset.StandardCharsets; //Needed for base64url encoding
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.shopping.merchant.products.v1.GetProductRequest;
@@ -26,7 +30,20 @@ import shopping.merchant.samples.utils.Config;
 /** This class demonstrates how to get a single product for a given Merchant Center account */
 public class GetProductSample {
 
-  public static void getProduct(Config config, String product) throws Exception {
+  // Uncomment this part for sending encoded product names (needed if they contain special
+  // characters such as forward slashes)
+  /*
+  // Base64Url encoder/decoder without padding
+  private static final BaseEncoding BASE64URL_NOPADDING = BaseEncoding.base64Url().omitPadding();
+
+  // Encodes a string to base64url without padding
+  public static String encodeProductId(String productId) {
+    return BASE64URL_NOPADDING.encode(productId.getBytes(StandardCharsets.UTF_8));
+  }
+  */
+
+  public static void getProduct(Config config, String accountId, String productId)
+      throws Exception {
 
     // Obtains OAuth token based on the user's configuration.
     GoogleCredentials credential = new Authenticator().authenticate();
@@ -42,7 +59,10 @@ public class GetProductSample {
         ProductsServiceClient.create(productsServiceSettings)) {
 
       // The name has the format: accounts/{account}/products/{productId}
-      GetProductRequest request = GetProductRequest.newBuilder().setName(product).build();
+      String name = "accounts/" + accountId + "/products/" + productId;
+
+      // The name has the format: accounts/{account}/products/{productId}
+      GetProductRequest request = GetProductRequest.newBuilder().setName(name).build();
 
       System.out.println("Sending get product request:");
       Product response = productsServiceClient.getProduct(request);
@@ -56,11 +76,17 @@ public class GetProductSample {
 
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
+    String accountId = config.getAccountId().toString();
+
     // The name of the `product`, returned after a `Product.insert` request. We recommend
     // having stored this value in your database to use for all future requests.
-    String product = "accounts/{datasource}/products/{productId}";
+    String productId = "en~US~sku123"; // Replace with your actual product ID
 
-    getProduct(config, product);
+    // Uncomment the following line if the product name contains special characters (such as forward
+    // slashes) and needs base64url encoding.
+    // productId = encodeProductId(productId);
+
+    getProduct(config, accountId, productId);
   }
 }
 // [END merchantapi_get_product]
