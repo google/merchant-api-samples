@@ -16,23 +16,20 @@ package shopping.merchant.samples.products.v1beta;
 
 // [START merchantapi_get_product]
 
-// import com.google.common.io.BaseEncoding; //Needed for base64url encoding
-// import java.nio.charset.StandardCharsets; //Needed for base64url encoding
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
+import com.google.common.io.BaseEncoding;
 import com.google.shopping.merchant.products.v1beta.GetProductRequest;
 import com.google.shopping.merchant.products.v1beta.Product;
 import com.google.shopping.merchant.products.v1beta.ProductsServiceClient;
 import com.google.shopping.merchant.products.v1beta.ProductsServiceSettings;
+import java.nio.charset.StandardCharsets;
 import shopping.merchant.samples.utils.Authenticator;
 import shopping.merchant.samples.utils.Config;
 
 /** This class demonstrates how to get a single product for a given Merchant Center account */
 public class GetProductSample {
 
-  // Uncomment this part for sending encoded product names (needed if they contain special
-  // characters such as forward slashes)
-  /*
   // Base64Url encoder/decoder without padding
   private static final BaseEncoding BASE64URL_NOPADDING = BaseEncoding.base64Url().omitPadding();
 
@@ -40,7 +37,6 @@ public class GetProductSample {
   public static String encodeProductId(String productId) {
     return BASE64URL_NOPADDING.encode(productId.getBytes(StandardCharsets.UTF_8));
   }
-  */
 
   public static void getProduct(Config config, String accountId, String productId)
       throws Exception {
