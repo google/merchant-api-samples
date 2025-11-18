@@ -129,4 +129,3 @@ class GetProductSample
 $sample = new GetProductSample();
 $sample->callSample();
 // [END merchantapi_get_product]
-```
