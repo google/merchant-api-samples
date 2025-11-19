@@ -52,13 +52,13 @@ func (s *registerGcpSample) Execute() error {
 	ctx := context.Background()
 
 	// Authenticates with Google using the golang authentication library.
-	client, err := googleauth.AuthWithGoogle(ctx)
+	tokenSource, err := googleauth.AuthWithGoogle(ctx)
 	if err != nil {
 		return fmt.Errorf("failed to authenticate: %w", err)
 	}
 
 	// Creates a new Merchant API service.
-	merchantapiService, err := merchantapi.NewService(ctx, option.WithHTTPClient(client))
+	merchantapiService, err := merchantapi.NewService(ctx, option.WithTokenSource(tokenSource))
 	if err != nil {
 		return fmt.Errorf("unable to create Merchant API service: %w", err)
 	}

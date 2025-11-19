@@ -48,13 +48,13 @@ func (s *getAccount) Description() string {
 func (s *getAccount) Execute() error {
 	ctx := context.Background()
 
-	client, err := googleauth.AuthWithGoogle(ctx)
+	tokenSource, err := googleauth.AuthWithGoogle(ctx)
 	if err != nil {
 		return fmt.Errorf("Failed to authenticate: %w", err)
 	}
 
 	// Create a new Merchant API service using the service account credentials.
-	merchantapiService, err := merchantapi.NewService(ctx, option.WithHTTPClient(client))
+	merchantapiService, err := merchantapi.NewService(ctx, option.WithTokenSource(tokenSource))
 	if err != nil {
 		return fmt.Errorf("Unable to create Merchant API service with credentials file: %w", err)
 	}
