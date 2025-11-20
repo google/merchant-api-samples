@@ -94,9 +94,8 @@ public class RenderProductIssuesSample {
     // the Merchant Center. e.g. send the merchant to MC to request an appeal.
     UserInputActionRenderingOption inputActionOption =
         UserInputActionRenderingOption.REDIRECT_TO_MERCHANT_CENTER;
-    // An ID assigned to a product by Google. In the format
-    // channel~contentLanguage~feedLabel~offerId
-    String productId = "online~en~label~sku123";
+    // An ID assigned to a product by Google. In the format: `contentLanguage~feedLabel~offerId`
+    String productId = "en~label~sku123"; // Replace with your product ID
 
     renderProductIssuesSample(config, productId, languageCode, timeZone, inputActionOption);
   }

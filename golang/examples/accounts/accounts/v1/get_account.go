@@ -22,7 +22,7 @@ import (
 	"fmt"
 	"log"
 
-	"google.golang.org/api/merchantapi/accounts/v1"
+	"google3/third_party/golang/google_api/merchantapi/accounts/v1beta/merchantapi"
 	"google.golang.org/api/option"
 	"github.com/google/merchant-api-samples/go/collection"
 	"github.com/google/merchant-api-samples/go/examples/googleauth"

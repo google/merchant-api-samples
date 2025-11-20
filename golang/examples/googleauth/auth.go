@@ -28,7 +28,7 @@ import (
 	"path"
 	"time"
 
-	"google.golang.org/api/merchantapi/accounts/v1"
+	"google3/third_party/golang/google_api/merchantapi/accounts/v1beta/merchantapi"
 	"golang.org/x/oauth2"
 	"golang.org/x/oauth2/google"
 	"github.com/pkg/browser"
