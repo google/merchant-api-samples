@@ -28,7 +28,7 @@ import (
 	"path"
 	"time"
 
-	"google3/third_party/golang/google_api/merchantapi/accounts/v1beta/merchantapi"
+	accounts "cloud.google.com/go/shopping/merchant/accounts/apiv1"
 	"golang.org/x/oauth2"
 	"golang.org/x/oauth2/google"
 	"github.com/pkg/browser"
@@ -44,11 +44,11 @@ const (
 // - Application Default Credentials
 // - Service Account credentials
 // - OAuth2 credentials
-func AuthWithGoogle(ctx context.Context) (*http.Client, error) {
-	// // First, check for the Application Default Credentials.
-	if client, err := google.DefaultClient(ctx, merchantapi.ContentScope); err == nil {
+func AuthWithGoogle(ctx context.Context) (oauth2.TokenSource, error) {
+	// // // First, check for the Application Default Credentials.
+	if ts, err := google.DefaultTokenSource(ctx, accounts.DefaultAuthScopes()[0]); err == nil {
 		fmt.Println("Using Application Default Credentials.")
-		return client, nil
+		return ts, nil
 	}
 
 	// Second, check for service account info, since it's the easier auth flow.
@@ -66,13 +66,14 @@ func AuthWithGoogle(ctx context.Context) (*http.Client, error) {
 		if err != nil {
 			return nil, fmt.Errorf("failed to read service account file: %v", err)
 		}
-		config, err := google.JWTConfigFromJSON(data, merchantapi.ContentScope)
+		config, err := google.JWTConfigFromJSON(data, accounts.DefaultAuthScopes()[0])
 		if err != nil {
 			return nil, fmt.Errorf("failed to parse service account credentials: %v", err)
 		}
 		fmt.Printf("Service account credentials for user %s found.\n", config.Email)
 
-		return config.Client(ctx), nil
+		// Return TokenSource
+		return config.TokenSource(ctx), nil
 	}
 	// Last chance for authentication, check for OAuth2 client secrets.
 	oauth2ClientPath := path.Join(defaultPath, oauth2ClientFile)
@@ -82,7 +83,7 @@ func AuthWithGoogle(ctx context.Context) (*http.Client, error) {
 		if err != nil {
 			return nil, fmt.Errorf("failed to read OAuth2 client file: %v", err)
 		}
-		config, err := google.ConfigFromJSON(data, merchantapi.ContentScope)
+		config, err := google.ConfigFromJSON(data, accounts.DefaultAuthScopes()[0])
 		if err != nil {
 			return nil, fmt.Errorf("failed to parse OAuth2 client credentials: %v", err)
 		}
@@ -114,7 +115,7 @@ func storeToken(tokenPath string, token *oauth2.Token) error {
 	return ioutil.WriteFile(tokenPath, jsonBlob, 0660)
 }
 
-func newOAuthClient(ctx context.Context, config *oauth2.Config, defaultPath string) (*http.Client, error) {
+func newOAuthClient(ctx context.Context, config *oauth2.Config, defaultPath string) (oauth2.TokenSource, error) {
 	tokenPath := path.Join(defaultPath, storedTokenFile)
 	token, err := loadToken(tokenPath)
 	if err != nil {
@@ -129,7 +130,7 @@ func newOAuthClient(ctx context.Context, config *oauth2.Config, defaultPath stri
 	} else {
 		fmt.Printf("Using token stored in %v for authentication.\n", tokenPath)
 	}
-	return config.Client(ctx, token), nil
+	return config.TokenSource(ctx, token), nil
 }
 
 func tokenFromWeb(ctx context.Context, config *oauth2.Config) (*oauth2.Token, error) {

@@ -21,15 +21,17 @@ import (
 	"fmt"
 	"log"
 
-	"google3/third_party/golang/google_api/merchantapi/accounts/v1beta/merchantapi"
+	"cloud.google.com/go/shopping/merchant/accounts/apiv1/accountspb"
+
+	accounts "cloud.google.com/go/shopping/merchant/accounts/apiv1"
 	"google.golang.org/api/option"
 	"github.com/google/merchant-api-samples/go/collection"
 	"github.com/google/merchant-api-samples/go/examples/googleauth"
 )
 
 // The Merchant Center account ID.
-// Replace "1234567890" with your account ID.
-const accountIDForRegisterGcp = "1234567890"
+// Replace "accounts/1234567890" with your account ID.
+const accountNameForRegisterGcp = "accounts/1234567890/developerRegistration"
 
 // The email of the developer to register.
 // Replace with your email.
@@ -52,29 +54,26 @@ func (s *registerGcpSample) Execute() error {
 	ctx := context.Background()
 
 	// Authenticates with Google using the golang authentication library.
-	client, err := googleauth.AuthWithGoogle(ctx)
+	tokenSource, err := googleauth.AuthWithGoogle(ctx)
 	if err != nil {
 		return fmt.Errorf("failed to authenticate: %w", err)
 	}
 
 	// Creates a new Merchant API service.
-	merchantapiService, err := merchantapi.NewService(ctx, option.WithHTTPClient(client))
+	accountsService, err := accounts.NewDeveloperRegistrationClient(ctx, option.WithTokenSource(tokenSource))
 	if err != nil {
 		return fmt.Errorf("unable to create Merchant API service: %w", err)
 	}
 
-	// Constructs the name of the developer registration resource.
-	// Format: accounts/{account}/developerRegistration
-	name := fmt.Sprintf("accounts/%s/developerRegistration", accountIDForRegisterGcp)
-
 	// Creates the request to register the GCP project with the developer email.
-	req := &merchantapi.RegisterGcpRequest{
+	req := &accountspb.RegisterGcpRequest{
 		DeveloperEmail: developerEmailForRegisterGcp,
+		Name:           accountNameForRegisterGcp,
 	}
 
 	fmt.Println("Sending RegisterGcp request:")
 	// Calls the RegisterGcp method of the DeveloperRegistration service.
-	response, err := merchantapiService.Accounts.DeveloperRegistration.RegisterGcp(name, req).Do()
+	response, err := accountsService.RegisterGcp(ctx, req)
 	if err != nil {
 		return fmt.Errorf("unable to register GCP project: %w", err)
 	}

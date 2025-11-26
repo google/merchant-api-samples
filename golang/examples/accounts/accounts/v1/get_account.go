@@ -22,7 +22,9 @@ import (
 	"fmt"
 	"log"
 
-	"google3/third_party/golang/google_api/merchantapi/accounts/v1beta/merchantapi"
+	"cloud.google.com/go/shopping/merchant/accounts/apiv1/accountspb"
+
+	accounts "cloud.google.com/go/shopping/merchant/accounts/apiv1"
 	"google.golang.org/api/option"
 	"github.com/google/merchant-api-samples/go/collection"
 	"github.com/google/merchant-api-samples/go/examples/googleauth"
@@ -48,19 +50,23 @@ func (s *getAccount) Description() string {
 func (s *getAccount) Execute() error {
 	ctx := context.Background()
 
-	client, err := googleauth.AuthWithGoogle(ctx)
+	tokenSource, err := googleauth.AuthWithGoogle(ctx)
 	if err != nil {
 		return fmt.Errorf("Failed to authenticate: %w", err)
 	}
 
 	// Create a new Merchant API service using the service account credentials.
-	merchantapiService, err := merchantapi.NewService(ctx, option.WithHTTPClient(client))
+	accountsService, err := accounts.NewClient(ctx, option.WithTokenSource(tokenSource))
 	if err != nil {
 		return fmt.Errorf("Unable to create Merchant API service with credentials file: %w", err)
 	}
 
+	req := &accountspb.GetAccountRequest{
+		Name: name,
+	}
+
 	// Call the Get method of the Accounts service.
-	account, err := merchantapiService.Accounts.Get(name).Do()
+	account, err := accountsService.GetAccount(ctx, req)
 	if err != nil {
 		return fmt.Errorf("Unable to retrieve account: %w", err)
 	}
