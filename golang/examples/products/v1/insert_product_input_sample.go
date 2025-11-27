@@ -48,10 +48,6 @@ func (s *insertProductInputSample) Description() string {
 	return "This sample demonstrates how to insert a product input"
 }
 
-func ptr[T any](v T) *T {
-	return &v
-}
-
 func (s *insertProductInputSample) Execute() error {
 	ctx := context.Background()
 
@@ -70,8 +66,8 @@ func (s *insertProductInputSample) Execute() error {
 
 	// Define Price using inline pointers
 	price := &typepb.Price{
-		AmountMicros: ptr(int64(33450000)),
-		CurrencyCode: ptr("USD"),
+		AmountMicros: collection.Ptr(int64(33450000)),
+		CurrencyCode: collection.Ptr("USD"),
 	}
 
 	// Shipping fields (Country/Service) are raw strings, so no ptr() needed here.
@@ -89,13 +85,13 @@ func (s *insertProductInputSample) Execute() error {
 
 	// Define Attributes using inline pointers for strings and enums
 	attributes := &productspb.ProductAttributes{
-		Title:                 ptr("A Tale of Two Cities"),
-		Description:           ptr("A classic novel about the French Revolution"),
-		Link:                  ptr("https://exampleWebsite.com/tale-of-two-cities.html"),
-		ImageLink:             ptr("https://exampleWebsite.com/tale-of-two-cities.jpg"),
-		Availability:          ptr(productspb.Availability_IN_STOCK),
-		Condition:             ptr(productspb.Condition_NEW),
-		GoogleProductCategory: ptr("Media > Books"),
+		Title:                 collection.Ptr("A Tale of Two Cities"),
+		Description:           collection.Ptr("A classic novel about the French Revolution"),
+		Link:                  collection.Ptr("https://exampleWebsite.com/tale-of-two-cities.html"),
+		ImageLink:             collection.Ptr("https://exampleWebsite.com/tale-of-two-cities.jpg"),
+		Availability:          collection.Ptr(productspb.Availability_IN_STOCK),
+		Condition:             collection.Ptr(productspb.Condition_NEW),
+		GoogleProductCategory: collection.Ptr("Media > Books"),
 		Gtins:                 []string{"9780007350896"},
 		Shipping:              []*productspb.Shipping{shipping1, shipping2},
 	}
