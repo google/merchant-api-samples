@@ -19,6 +19,7 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.core.FixedCredentialsProvider;
+import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.Timestamp;
@@ -96,9 +97,23 @@ public class InsertPromotionsAsyncSample {
   public static void asyncInsertPromotions(String accountId, String dataSourceId) throws Exception {
     GoogleCredentials credential = new Authenticator().authenticate();
 
+    // Creates a channel provider. This provider manages a pool of gRPC channels
+    // to enhance throughput for bulk operations. Each individual channel in the pool
+    // can handle up to approximately 100 concurrent requests.
+    //
+    // Channel: A single connection pathway to the service.
+    // Pool: A collection of multiple channels managed by this provider.
+    //   Requests are distributed across the channels in the pool.
+    //
+    // We recommend estimating the number of concurrent requests you'll make, divide by 50 (50%
+    // utilization of channel capacity), and set the pool size to that number.
+    InstantiatingGrpcChannelProvider channelProvider =
+        InstantiatingGrpcChannelProvider.newBuilder().setPoolSize(30).build();
+
     PromotionsServiceSettings merchantPromotionsServiceSettings =
         PromotionsServiceSettings.newBuilder()
             .setCredentialsProvider(FixedCredentialsProvider.create(credential))
+            .setTransportChannelProvider(channelProvider)
             .build();
 
     try (PromotionsServiceClient merchantPromotionsServiceClient =
