@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright 2025 Google LLC
+# Copyright 2026 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,11 +12,11 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+
 """A module to insert product inputs asynchronously."""
 
 # [START merchantapi_insert_product_input_async]
 import asyncio
-import functools
 import random
 import string
 
@@ -52,7 +52,7 @@ def _create_random_product() -> ProductInput:
   shipping2 = Shipping(price=price, country="FR", service="1st class post")
 
   attributes = ProductAttributes(
-      title="Async - A Tale of Two Cities",
+      title="A Tale of Two Cities",
       description="A classic novel about the French Revolution",
       link="https://exampleWebsite.com/tale-of-two-cities.html",
       image_link="https://exampleWebsite.com/tale-of-two-cities.jpg",
@@ -65,16 +65,32 @@ def _create_random_product() -> ProductInput:
 
   return ProductInput(
       content_language="en",
-      feed_label="US",
+      feed_label="CH",
       offer_id=_generate_random_string(),
       product_attributes=attributes,
   )
 
 
-def print_product_input(i, task):
-  print("Inserted ProductInput number: ", i)
-  # task.result() contains the response from async_insert_product_input
-  print(task.result())
+class ClientPool:
+  """A simple client pool to distribute requests across multiple clients.
+
+  This implements the Client Pool pattern to enhance throughput for bulk
+  operations, mimicking channel pooling.
+  """
+
+  def __init__(self, size: int, credentials):
+    self._pool = [
+        ProductInputsServiceAsyncClient(credentials=credentials)
+        for _ in range(size)
+    ]
+    self._size = size
+    self._index = 0
+
+  def get_client(self) -> ProductInputsServiceAsyncClient:
+    """Returns the next client in the pool using round-robin."""
+    client = self._pool[self._index]
+    self._index = (self._index + 1) % self._size
+    return client
 
 
 async def async_insert_product_input(
@@ -87,18 +103,9 @@ async def async_insert_product_input(
     request: The InsertProductInputRequest to send.
 
   Returns:
-    The response from the insert_produc_input request.
+    The response from the insert_product_input request.
   """
-
-  print("Sending insert product input requests")
-
-  try:
-    response = await client.insert_product_input(request=request)
-    # The response is an async corouting inserting the ProductInput.
-    return response
-  except RuntimeError as e:
-    # Catch and print any exceptions that occur during the API calls.
-    print(e)
+  return await client.insert_product_input(request=request)
 
 
 async def main():
@@ -110,29 +117,38 @@ async def main():
   # Gets OAuth Credentials.
   credentials = generate_user_credentials.main()
 
-  # Creates a ProductInputsServiceClient.
-  client = ProductInputsServiceAsyncClient(credentials=credentials)
+  # Creates a client pool with 30 clients to handle concurrent requests.
+  # We recommend estimating the number of concurrent requests you'll make,
+  # divide by 50 (50% utilization of channel capacity), and set the pool size to
+  # that number.
+  client_pool = ClientPool(size=30, credentials=credentials)
+
   tasks = []
-  for i in range(5):
+  for _ in range(5):
     product_input = _create_random_product()
     request = InsertProductInputRequest(
         parent=_PARENT,
         data_source=data_source_name,
         product_input=product_input,
     )
-    # Create the async task
+
+    # Get a client from the pool and create the async task
+    client = client_pool.get_client()
     insert_product_task = asyncio.create_task(
         async_insert_product_input(client, request)
     )
-    # Add the callback
-    callback_function = functools.partial(print_product_input, i)
-    insert_product_task.add_done_callback(callback_function)
-    # Add the task to our list
     tasks.append(insert_product_task)
 
-  # Await all tasks to complete concurrently
-  # The print_product_input callback will be called for each as it finishes
-  await asyncio.gather(*tasks)
+  print("Sending insert product input requests")
+
+  try:
+    # Await all tasks to complete concurrently and gather their results
+    results = await asyncio.gather(*tasks)
+    print("Inserted products below")
+    print(results)
+  except RuntimeError as e:
+    # Catch and print any exceptions that occur during the API calls.
+    print(e)
 
 
 if __name__ == "__main__":
