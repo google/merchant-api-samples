@@ -1,4 +1,4 @@
-// Copyright 2025 Google LLC
+// Copyright 2026 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -53,11 +53,11 @@ function generateRandomString() {
 function createRandomProduct() {
   const shippingPrice = {
     amountMicros: 3000000, // 3 USD
-    currencyCode: 'USD',
+    currency_code: 'USD',
   };
 
   const price = {
-    amountMicros: 33450000, // 33.45 USD
+    amountMicros: 33450000,  // 33.45 USD
     currency_code: 'USD',
   };
 
@@ -77,10 +77,10 @@ function createRandomProduct() {
     title: 'A Tale of Two Cities',
     description: 'A classic novel about the French Revolution',
     link: 'https://exampleWebsite.com/tale-of-two-cities.html',
-    image_link: 'https://exampleWebsite.com/tale-of-two-cities.jpg',
+    imageLink: 'https://exampleWebsite.com/tale-of-two-cities.jpg',
     availability: Availability.IN_STOCK,
     condition: Condition.NEW,
-    google_product_category: 'Media > Books',
+    googleProductCategory: 'Media > Books',
     gtins: ['9780007350896'],
     shipping: [shipping, shipping2],
     price: price,
@@ -118,32 +118,43 @@ async function asyncInsertProductInput(config, dataSource) {
   // Create client options with authentication.
   const options = {authClient: authClient};
 
-  // Create the ProductInputsServiceClient.
-  const productInputsServiceClient = new ProductInputsServiceClient(options);
+  // Creates a pool of clients to enhance throughput for bulk operations.
+  // Each individual client in the pool manages its own gRPC channel.
+  // We recommend estimating the number of concurrent requests you'll make,
+  // divide by 50 (50% utilization of channel capacity), and set the pool size
+  // to that number.
+  const poolSize = 30;
+  const clientPool = [];
+  for (let i = 0; i < poolSize; i++) {
+    clientPool.push(new ProductInputsServiceClient(options));
+  }
 
   // Create five insert product input requests with random product details.
   const requests = [];
   for (let i = 0; i < 5; i++) {
     const request = {
       parent: parent,
-      // You can only insert products into datasource types of Input "API" and "FILE", and
+      // You can only insert products into datasource types of Input "API", and
       // of Type "Primary" or "Supplemental."
       // This field takes the `name` field of the datasource, e.g.,
       // accounts/123/dataSources/456
       dataSource: dataSource,
-      // If this product is already owned by another datasource, when re-inserting, the
-      // new datasource will take ownership of the product.
+      // If this product is already owned by another datasource, when
+      // re-inserting, the new datasource will take ownership of the product.
       productInput: createRandomProduct(),
     };
     requests.push(request);
   }
 
-  console.log('Sending insert product input requests...');
+  console.log('Sending insert product input requests');
 
-  // Create an array of promises by calling the insertProductInput method for each request.
-  const insertPromises = requests.map(request =>
-    productInputsServiceClient.insertProductInput(request)
-  );
+  // Create an array of promises by calling the insertProductInput method for
+  // each request. Distribute the requests across the client pool to utilize
+  // multiple channels.
+  const insertPromises = requests.map((request, index) => {
+    const client = clientPool[index % poolSize];
+    return client.insertProductInput(request);
+  });
 
   // Wait for all insert operations to complete.
   // Promise.all returns an array of results, where each result is the response
@@ -152,8 +163,8 @@ async function asyncInsertProductInput(config, dataSource) {
   const results = await Promise.all(insertPromises);
   const insertedProducts = results.map(result => result[0]); // Extract ProductInput from each response array
 
-  console.log('Inserted products below:');
-  console.log(JSON.stringify(insertedProducts, null, 2));
+  console.log('Inserted products below');
+  console.log(insertedProducts);
 }
 
 /**
@@ -173,11 +184,7 @@ async function main() {
   try {
     await asyncInsertProductInput(config, dataSource);
   } catch (error) {
-    console.error(`An error occurred: ${error.message || error}`);
-    // Log details if available (e.g., for gRPC errors)
-    if (error.details) {
-      console.error(`Details: ${error.details}`);
-    }
+    console.log(error);
   }
 }
 
