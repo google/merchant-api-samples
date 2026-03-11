@@ -121,7 +121,18 @@ func (s *insertProductInputAsyncSample) Execute() error {
 	}
 
 	// Creates a new product inputs client.
-	productInputsClient, err := products.NewProductInputsClient(ctx, option.WithTokenSource(tokenSource))
+	//
+	// This sample demonstrates how to configure the gRPC client to use a connection
+	// pool. A connection pool manages multiple gRPC connections, which can
+	// enhance throughput for bulk operations.
+	//
+	// We recommend estimating the number of concurrent requests you'll make, divide by 50 (a
+	// conservative estimate of 50% utilization of a connection's capacity), and set the
+	// pool size to that number.
+	productInputsClient, err := products.NewProductInputsClient(ctx,
+		option.WithTokenSource(tokenSource),
+		option.WithGRPCConnectionPool(30),
+	)
 	if err != nil {
 		return fmt.Errorf("could not create product inputs client: %w", err)
 	}
@@ -145,8 +156,10 @@ func (s *insertProductInputAsyncSample) Execute() error {
 			defer wg.Done()
 
 			req := &productspb.InsertProductInputRequest{
-				Parent:       parent,
-				DataSource:   dataSourceForInsertAsync,
+				Parent:     parent,
+				DataSource: dataSourceForInsertAsync,
+				// If this product is already owned by another datasource, when re-inserting, the
+				// new datasource will take ownership of the product.
 				ProductInput: createRandomProductInput(),
 			}
 
