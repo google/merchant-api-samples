@@ -117,3 +117,29 @@ MCP](https://developers.google.com/merchant/api/guides/devdocs-mcp).
 
 We also provide [MCP instructions](devdocs_mcp_instructions.md) you can use to
 instruct your coding assistant on how to migrate and use MCP.
+
+For an easier and more efficient development experience, consider using Agent
+Skills (described below). It allows AI agents to tap into specialized
+Merchant API knowledge on-demand without overloading their context window,
+leading to more capable and focused assistance.
+
+## Agent Skills for AI-Assisted Development
+
+Accelerate your Merchant API development with the **mapi-developer-assistant**
+Agent Skill. Use it with AI-powered CLI tools like
+[Gemini CLI](https://geminicli.com) or
+[Claude Code](https://code.claude.com) to get interactive expert guidance
+directly in your development environment. These tools load the
+mapi-developer-assistant skill, which then interacts with the MCP server to
+provide real-time, accurate information and code samples.
+
+For installation instructions and usage examples, see the
+[Agent Skills README](agent-skills/README.md). For
+more information, see [Merchant API Agent Skills](https://developers.google.com/merchant/api/guides/agentic-tools/integration-and-code-assist#agent-skills).
+
+The skill provides:
+
+- Expert guidance on Merchant API concepts, features, and best practices
+- Sample codes for common integration patterns
+- Troubleshooting support for API errors and implementation issues
+- Direct access to the MCP server
