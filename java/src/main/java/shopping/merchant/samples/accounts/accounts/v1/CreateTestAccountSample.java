@@ -14,6 +14,7 @@
 
 package shopping.merchant.samples.accounts.accounts.v1;
 
+// [START merchantapi_create_test_account]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.shopping.merchant.accounts.v1.Account;
@@ -84,3 +85,4 @@ public class CreateTestAccountSample {
     createTestAccount(config, newAccountName);
   }
 }
+// [END merchantapi_create_test_account]

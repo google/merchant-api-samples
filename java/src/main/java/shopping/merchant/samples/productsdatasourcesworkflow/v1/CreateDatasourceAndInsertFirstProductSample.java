@@ -41,4 +41,4 @@ public class CreateDatasourceAndInsertFirstProductSample {
     createDatasourceAndInsertFirstProduct(config, displayName);
   }
 }
-// [END create_datasource_and_insert_first_product]
+// [END merchantapi_create_datasource_and_insert_first_product]
