@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\CommonSettings.xml" />
+  <PropertyGroup>
+    <TargetFrameworks>netcoreapp8.0</TargetFrameworks>
+    <RootNamespace>MerchantApi</RootNamespace>
+    <AssemblyName>MerchantApi.source</AssemblyName>
+    <Description>Shared library for Merchant API samples</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.Apis.Auth" Version="1.68.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+</Project>

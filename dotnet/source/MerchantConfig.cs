@@ -9,7 +9,7 @@ namespace MerchantApi
     /// <summary>
     /// A data class for storing the contents of merchant-info.json.
     /// </summary>
-    internal class MerchantConfig
+    public class MerchantConfig
     {
         public string ConfigDir { get; set; }
         internal string ConfigFile { get; set; }

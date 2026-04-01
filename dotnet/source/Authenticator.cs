@@ -10,7 +10,7 @@ using Newtonsoft.Json.Linq;
 
 namespace MerchantApi
 {
-    internal class Authenticator
+    public class Authenticator
     {
         private Authenticator() { }
 

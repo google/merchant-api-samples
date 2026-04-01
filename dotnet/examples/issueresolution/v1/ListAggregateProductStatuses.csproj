@@ -9,14 +9,12 @@
     <StartupObject>MerchantApi.ListAggregateProductStatusesSample</StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="..\..\..\source\MerchantConfig.cs" />
-    <Compile Include="..\..\..\source\Authenticator.cs" />
+    <ProjectReference Include="..\..\..\source\MerchantApi.source.csproj" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="CommandLineParser" Version="2.9.1" />
     <PackageReference Include="Google.Apis.Core" Version="1.70.0" />
     <PackageReference Include="Google.Shopping.Merchant.IssueResolution.V1" Version="1.0.0" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.0" PrivateAssets="All" />
   </ItemGroup>
 </Project>
