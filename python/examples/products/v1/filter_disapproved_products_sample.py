@@ -91,7 +91,7 @@ def filter_disapproved_products():
       print(row)
 
       # Construct the full product resource name using the product_view.id
-      # (which is the REST ID like "online~en~GB~123") from the report.
+      # (which is the REST ID like "en~GB~123") from the report.
       # The product_view.id from the report is the {product_id} part.
       product_name = (
           f"accounts/{_ACCOUNT_ID}/products/{row.product_view.id}"

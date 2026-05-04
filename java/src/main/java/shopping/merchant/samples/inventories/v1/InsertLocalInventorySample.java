@@ -76,8 +76,8 @@ public class InsertLocalInventorySample {
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
     // An ID assigned to a product by Google. In the format
-    // channel:contentLanguage:feedLabel:offerId
-    String productId = "local:en:label:1111111111";
+    // contentLanguage~feedLabel~offerId
+    String productId = "en~label~1111111111";
     // The code uniquely identifying each store.
     String storeCode = "Example1";
     insertLocalInventory(config, productId, storeCode);

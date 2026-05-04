@@ -74,8 +74,8 @@ namespace MerchantApi
             MerchantConfig config = MerchantConfig.Load();
             string merchantId = config.MerchantId.Value.ToString();
             // An ID assigned to a product by Google. In the format:
-            // channel~contentLanguage~feedLabel~offerId
-            string productId = "online~en~US~sku123";
+            // contentLanguage~feedLabel~offerId
+            string productId = "en~US~sku123";
 
             // The name of the dataSource from which to delete the product.
             // If it is a primary feed, this will delete the product completely.

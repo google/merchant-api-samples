@@ -26,7 +26,7 @@ function getProduct() {
 
   // The ID of the product to retrieve.
   // This ID is assigned by Google and typically follows the format:
-  // channel~contentLanguage~feedLabel~offerId
+  // contentLanguage~feedLabel~offerId
   // Replace with an actual product ID from your Merchant Center account.
   const productId = '<PRODUCT_ID>';
 

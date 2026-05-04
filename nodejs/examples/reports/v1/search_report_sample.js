@@ -43,7 +43,7 @@ async function searchAndPrintReports(accountId) {
   //
   // This is an example query for the product_view report.
   let query =
-      'SELECT offer_id, id, price, gtin, item_issues, channel, language_code, ' +
+      'SELECT offer_id, id, price, gtin, item_issues, language_code, ' +
       'feed_label, title, brand, category_l1, product_type_l1, availability, ' +
       'shipping_label, thumbnail_link, click_potential ' +
       'FROM product_view';

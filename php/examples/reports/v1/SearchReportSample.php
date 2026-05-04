@@ -70,7 +70,6 @@ class SearchReportSample
                 . "price,"
                 . "gtin,"
                 . "item_issues,"
-                . "channel,"
                 . "language_code,"
                 . "feed_label,"
                 . "title,"

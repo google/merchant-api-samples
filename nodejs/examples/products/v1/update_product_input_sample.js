@@ -122,7 +122,7 @@ async function callUpdateProductInput(
 async function main() {
   // These are the IDs for the product and data source to be used in the update.
   // The productId is an ID assigned by Google, typically in the format:
-  // contentLanguage~feedLabel~offerId. Replace 'online~en~label~sku123'
+  // contentLanguage~feedLabel~offerId. Replace 'en~label~sku123'
   // with your specific product ID.
   const productId = 'en~label~sku123';
   // The dataSourceId identifies the data source that will own the product

@@ -188,8 +188,8 @@ def create_order_tracking_signal(product_ids: list[str]):
 if __name__ == "__main__":
   # All products in the order. Replace with actual products in the order.
   # Be sure to include all products in the order.
-  product_id1 = "online~en~US~sku123"
-  product_id2 = "online~en~US~sku1234"
+  product_id1 = "en~US~sku123"
+  product_id2 = "en~US~sku1234"
   product_ids_list = [product_id1, product_id2]
   create_order_tracking_signal(product_ids_list)
 

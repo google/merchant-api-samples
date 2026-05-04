@@ -79,7 +79,7 @@ public class InsertLocalInventoryAsyncSample {
         if (product.getLegacyLocal()) {
 
           // The name is returned in the format:
-          // accounts/{account}/products/{channel}~{contentLanguage}~{feedLabel}~{offerId}
+          // accounts/{account}/products/{contentLanguage}~{feedLabel}~{offerId}
           // These will be used to insert local inventory for each product.
           localProductNames.add(product.getName());
         }

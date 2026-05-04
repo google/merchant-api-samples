@@ -205,8 +205,8 @@ public class CreateOrderTrackingSignalSample {
     Config config = Config.load();
     // All products in the order. Replace with actual products in the order. Be sure to include all
     // products in the order.
-    String productId1 = "online~en~us~sku123";
-    String productId2 = "online~en~us~skuabc";
+    String productId1 = "en~us~sku123";
+    String productId2 = "en~us~skuabc";
     List<String> productIds = Arrays.asList(productId1, productId2);
     createOrderTrackingSignal(config, productIds);
   }

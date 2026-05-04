@@ -122,7 +122,7 @@ if __name__ == "__main__":
   # This ID is assigned by Google and typically follows the format:
   # contentLanguage~feedLabel~offerId
   # Replace with an actual product ID from your Merchant Center account.
-  product_id_to_update = "online~en~label~sku123"
+  product_id_to_update = "en~label~sku123"
 
   # The ID of the data source that will own the updated product input.
   # Replace with an actual data source ID from your Merchant Center account.

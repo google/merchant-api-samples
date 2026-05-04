@@ -36,7 +36,7 @@ class UpdateProductInputSample
     // An ID assigned to a product by Google. In the format
     // contentLanguage~feedLabel~offerId
     // Please ensure this product ID exists for the update to succeed.
-    private const PRODUCT_ID = "online~en~label~sku123";
+    private const PRODUCT_ID = "en~label~sku123";
 
     // Identifies the data source that will own the product input.
     // Please ensure this data source ID exists.
@@ -46,7 +46,7 @@ class UpdateProductInputSample
      * Helper function to construct the full product input resource name.
      *
      * @param string $accountId The merchant account ID.
-     * @param string $productInputId The product input ID (e.g., "online~en~label~sku123").
+     * @param string $productInputId The product input ID (e.g., "en~label~sku123").
      * @return string The full product input resource name.
      */
     private static function getProductInputName(string $accountId, string $productInputId): string

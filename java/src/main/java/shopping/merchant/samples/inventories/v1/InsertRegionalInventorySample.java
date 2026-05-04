@@ -76,8 +76,8 @@ public class InsertRegionalInventorySample {
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
     // An ID assigned to a product by Google. In the format
-    // channel:contentLanguage:feedLabel:offerId
-    String productId = "online:en:label:1111111111";
+    // contentLanguage~feedLabel~offerId
+    String productId = "en~label~1111111111";
     // The ID uniquely identifying each region.
     String regionId = "1111111";
     insertRegionalInventory(config, productId, regionId);

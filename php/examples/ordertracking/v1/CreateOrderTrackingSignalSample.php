@@ -287,8 +287,8 @@ class CreateOrderTrackingSignalSample
         $config = Config::generateConfig();
         // All products in the order. Replace with actual products in the order. Be sure to include all
         // products in the order.
-        $productId1 = 'online~en~us~sku123';
-        $productId2 = 'online~en~us~skuabc';
+        $productId1 = 'en~us~sku123';
+        $productId2 = 'en~us~skuabc';
         $productIds = [$productId1, $productId2];
         self::createOrderTrackingSignalSample($config, $productIds);
     }

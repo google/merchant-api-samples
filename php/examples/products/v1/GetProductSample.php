@@ -68,7 +68,7 @@ class GetProductSample
      *      account ID.
      * @param string $productId
      *      The ID of the product, in the form of
-     *      `contentLanguage:feedLabel:offerId`.
+     *      `contentLanguage~feedLabel~offerId`.
      *
      * @return void
      */
