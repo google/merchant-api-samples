@@ -15,6 +15,8 @@
 // [START merchantapi_insert_product_input_async]
 'use strict';
 const fs = require('fs');
+const grpc = require('@grpc/grpc-js');
+const grpcGcp = require('grpc-gcp')(grpc);
 const authUtils = require('../../authentication/authenticate.js');
 const {
   ProductInputsServiceClient,
@@ -115,19 +117,26 @@ async function asyncInsertProductInput(config, dataSource) {
   // Get OAuth2 credentials.
   const authClient = await authUtils.getOrGenerateUserCredentials();
 
-  // Create client options with authentication.
-  const options = {authClient: authClient};
-
-  // Creates a pool of clients to enhance throughput for bulk operations.
-  // Each individual client in the pool manages its own gRPC channel.
+  // Create GCP API configuration for channel pooling.
   // We recommend estimating the number of concurrent requests you'll make,
   // divide by 50 (50% utilization of channel capacity), and set the pool size
   // to that number.
-  const poolSize = 30;
-  const clientPool = [];
-  for (let i = 0; i < poolSize; i++) {
-    clientPool.push(new ProductInputsServiceClient(options));
-  }
+  const apiConfig = grpcGcp.createGcpApiConfig({
+    channelPool: {
+      maxSize: 30,
+    },
+  });
+
+  // Create client options with authentication and channel pooling.
+  const options = {
+    authClient: authClient,
+    'grpc.callInvocationTransformer': grpcGcp.gcpCallInvocationTransformer,
+    'grpc.channelFactoryOverride': grpcGcp.gcpChannelFactoryOverride,
+    'grpc.gcpApiConfig': apiConfig,
+  };
+
+  // Create the ProductInputsServiceClient with the channel pooling configuration.
+  const productInputsServiceClient = new ProductInputsServiceClient(options);
 
   // Create five insert product input requests with random product details.
   const requests = [];
@@ -149,11 +158,10 @@ async function asyncInsertProductInput(config, dataSource) {
   console.log('Sending insert product input requests');
 
   // Create an array of promises by calling the insertProductInput method for
-  // each request. Distribute the requests across the client pool to utilize
-  // multiple channels.
-  const insertPromises = requests.map((request, index) => {
-    const client = clientPool[index % poolSize];
-    return client.insertProductInput(request);
+  // each request. The grpc-gcp package automatically distributes these requests
+  // across the channel pool.
+  const insertPromises = requests.map(request => {
+    return productInputsServiceClient.insertProductInput(request);
   });
 
   // Wait for all insert operations to complete.

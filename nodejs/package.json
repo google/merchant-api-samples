@@ -15,6 +15,7 @@
     "@google-shopping/products": "^0.6.0",
     "@google-shopping/reports": "^0.14.0",
     "google-auth-library": "*",
+    "grpc-gcp": "^0.3.0",
     "open": ">=6.0.0",
     "server-destroy": "^1.0.1"
   }

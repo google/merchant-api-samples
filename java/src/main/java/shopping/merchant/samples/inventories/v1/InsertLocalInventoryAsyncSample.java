@@ -19,6 +19,7 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.core.FixedCredentialsProvider;
+import com.google.api.gax.grpc.ChannelPoolSettings;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.common.util.concurrent.MoreExecutors;
@@ -102,7 +103,9 @@ public class InsertLocalInventoryAsyncSample {
     // We recommend estimating the number of concurrent requests you'll make, divide by 50 (50%
     // utilization of channel capacity), and set the pool size to that number.
     InstantiatingGrpcChannelProvider channelProvider =
-        InstantiatingGrpcChannelProvider.newBuilder().setPoolSize(30).build();
+        InstantiatingGrpcChannelProvider.newBuilder()
+            .setChannelPoolSettings(ChannelPoolSettings.staticallySized(30))
+            .build();
 
     LocalInventoryServiceSettings localInventoryServiceSettings =
         LocalInventoryServiceSettings.newBuilder()
