@@ -1,3 +1,4 @@
+<?xml version='1.0' encoding='utf-8'?>
 <Project Sdk="Microsoft.NET.Sdk">
 
   <Import Project="..\..\..\CommonSettings.xml" />
@@ -14,9 +15,8 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="CommandLineParser" Version="2.9.1" />
-    <PackageReference Include="Google.Apis.Core" Version="1.70.0" />
-    <PackageReference Include="Google.Shopping.Merchant.Products.V1Beta" Version="1.0.0-beta05" />
+    <PackageReference Include="Google.Apis.Core" Version="1.73.0" />
+    <PackageReference Include="Google.Shopping.Merchant.Products.V1Beta" Version="1.0.0-beta07" />
     <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.0" PrivateAssets="All" />
   </ItemGroup>
 </Project>
-

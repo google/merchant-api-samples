@@ -11,17 +11,17 @@
     "react/http": "^1.2.0",
     "react/event-loop" : "*",
     "react/promise": "*",
-    "google/shopping-merchant-accounts": "^1.0.0",
-    "google/shopping-merchant-datasources": "^1.0.0",
-    "google/shopping-merchant-inventories": "^1.0.0",
-    "google/shopping-merchant-issueresolution": "^1.0.0",
-    "google/shopping-merchant-notifications": "^1.0.0",
-    "google/shopping-merchant-ordertracking": "^1.0.0",
-    "google/shopping-merchant-products": "^1.0.0",
-    "google/shopping-merchant-promotions": "^1.0.0",
-    "google/shopping-merchant-quota": "^1.0.0",
-    "google/shopping-merchant-reports": "^1.0.0",
-    "google/shopping-merchant-reviews": "^0.4.0"
+    "google/shopping-merchant-accounts": "^1.4.1",
+    "google/shopping-merchant-datasources": "^1.3.1",
+    "google/shopping-merchant-inventories": "^1.3.1",
+    "google/shopping-merchant-issueresolution": "^1.3.0",
+    "google/shopping-merchant-notifications": "^1.2.0",
+    "google/shopping-merchant-ordertracking": "^1.2.0",
+    "google/shopping-merchant-products": "^1.6.0",
+    "google/shopping-merchant-promotions": "^1.2.0",
+    "google/shopping-merchant-quota": "^1.2.1",
+    "google/shopping-merchant-reports": "^1.2.1",
+    "google/shopping-merchant-reviews": "^0.6.0"
   },
   "authors": [
     {

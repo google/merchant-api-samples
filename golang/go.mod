@@ -3,7 +3,7 @@ module github.com/google/merchant-api-samples/go
 go 1.24.4
 
 require (
-  cloud.google.com/go/shopping v1.3.0
+  cloud.google.com/go/shopping v1.11.0
   github.com/pkg/browser v0.0.0-20240102092130-5ac0b6a4141c
   golang.org/x/oauth2 v0.31.0
   google.golang.org/api v0.250.0

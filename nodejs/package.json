@@ -10,12 +10,12 @@
       "*.js"
   ],
   "dependencies": {
-    "@google-shopping/accounts": "^2.4.0",
-    "@google-shopping/datasources": "^0.8.0",
+    "@google-shopping/accounts": "^3.2.0",
+    "@google-shopping/datasources": "^0.11.0",
     "@google-shopping/products": "^0.6.0",
-    "@google-shopping/reports": "^0.12.0",
+    "@google-shopping/reports": "^0.14.0",
     "google-auth-library": "*",
     "open": ">=6.0.0",
     "server-destroy": "^1.0.1"
-}
+  }
 }
