@@ -16,9 +16,8 @@
 'use strict';
 const fs = require('fs');
 const authUtils = require('../../authentication/authenticate.js');
-const {
-  ProductInputsServiceClient,
-} = require('@google-shopping/products').v1beta;
+const {ProductInputsServiceClient} =
+  require('@google-shopping/products').v1beta;
 
 /**
  * Inserts a product input for a given Merchant Center account and data source.
@@ -28,7 +27,7 @@ const {
 async function insertProductInput(config, dataSource) {
   // Read merchant_id from merchant-info.json.
   const merchantInfo = JSON.parse(
-    fs.readFileSync(config.merchantInfoFile, 'utf8')
+    fs.readFileSync(config.merchantInfoFile, 'utf8'),
   );
   const merchantId = merchantInfo.merchantId;
 
@@ -101,7 +100,7 @@ async function insertProductInput(config, dataSource) {
   try {
     console.log('Sending insert ProductInput request');
     // Call the API to insert the product input.
-    const [response, options, rawResponse] = await productInputsClient.insertProductInput(request);
+    const [response] = await productInputsClient.insertProductInput(request);
 
     console.log('Inserted ProductInput Name below');
     // The last part of the product name will be the product ID assigned by Google.
@@ -123,7 +122,7 @@ async function main() {
   const config = authUtils.getConfig();
   // Read merchant_id from merchant-info.json.
   const merchantInfo = JSON.parse(
-    fs.readFileSync(config.merchantInfoFile, 'utf8')
+    fs.readFileSync(config.merchantInfoFile, 'utf8'),
   );
   const merchantId = merchantInfo.merchantId;
 

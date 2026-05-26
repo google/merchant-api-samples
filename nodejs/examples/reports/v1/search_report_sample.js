@@ -42,11 +42,11 @@ async function searchAndPrintReports(accountId) {
   // https://developers.google.com/merchant/api/reference/rest/reports_v1beta/accounts.reports#ReportRow
   //
   // This is an example query for the product_view report.
-  let query =
-      'SELECT offer_id, id, price, gtin, item_issues, language_code, ' +
-      'feed_label, title, brand, category_l1, product_type_l1, availability, ' +
-      'shipping_label, thumbnail_link, click_potential ' +
-      'FROM product_view';
+  const query =
+    'SELECT offer_id, id, price, gtin, item_issues, language_code, ' +
+    'feed_label, title, brand, category_l1, product_type_l1, availability, ' +
+    'shipping_label, thumbnail_link, click_potential ' +
+    'FROM product_view';
 
   /*
   // An example query for the price_competitiveness_product_view report.
@@ -93,7 +93,7 @@ async function searchAndPrintReports(accountId) {
   // results.
   for await (const row of response) {
     // Each 'row' is a ReportRow protobuf message object.
-    console.log(row);  // Prints the object, typically in a compact format.
+    console.log(row); // Prints the object, typically in a compact format.
   }
 }
 
@@ -108,13 +108,13 @@ async function main() {
 
     // Read the merchant ID (referred to as accountId in this API context)
     // from the JSON configuration file specified in the config.
-    const merchantInfo =
-        JSON.parse(fs.readFileSync(config.merchantInfoFile, 'utf8'));
+    const merchantInfo = JSON.parse(
+      fs.readFileSync(config.merchantInfoFile, 'utf8'),
+    );
     const accountId = merchantInfo.merchantId;
 
     // Execute the core logic to search and print reports.
     await searchAndPrintReports(accountId.toString());
-
   } catch (error) {
     console.log('Failed to search reports.');
     console.log(error);

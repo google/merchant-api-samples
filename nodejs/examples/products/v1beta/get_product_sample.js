@@ -56,8 +56,9 @@ async function getProduct(config, productName) {
 async function main() {
   const config = authUtils.getConfig();
   // Read merchant_id from merchant-info.json.
-  const merchantInfo =
-      JSON.parse(fs.readFileSync(config.merchantInfoFile, 'utf8'));
+  const merchantInfo = JSON.parse(
+    fs.readFileSync(config.merchantInfoFile, 'utf8'),
+  );
   const merchantId = merchantInfo.merchantId;
 
   // The name of the `product`. Replace {product} with the actual ID.

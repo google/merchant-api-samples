@@ -26,8 +26,9 @@ async function main() {
     const config = authUtils.getConfig();
 
     // Read merchant_id from merchant-info.json
-    const merchant_info =
-        JSON.parse(fs.readFileSync(config.merchantInfoFile, 'utf8'));
+    const merchant_info = JSON.parse(
+      fs.readFileSync(config.merchantInfoFile, 'utf8'),
+    );
     const merchant_id = merchant_info.merchantId;
 
     // Construct parent. Parent is in the format of accounts/{merchant_id}
@@ -37,7 +38,7 @@ async function main() {
     const authClient = await authUtils.getOrGenerateUserCredentials();
 
     // Create options object for the client
-    const options = {'authClient' : authClient};
+    const options = {authClient: authClient};
 
     // Create client
     const productsClient = new ProductsServiceClient(options);
@@ -45,7 +46,7 @@ async function main() {
     // Construct request. Set the page size to the maximum value.
     const request = {
       parent: parent,
-      pageSize: 1000
+      pageSize: 1000,
     };
 
     // Run request

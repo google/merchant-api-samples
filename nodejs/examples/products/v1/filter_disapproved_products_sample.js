@@ -91,8 +91,7 @@ async function filterDisapprovedProducts(authClient, merchantId) {
       // Construct the full product resource name from the report row.
       // Assumes row.productView and row.productView.id are populated,
       // which should be the case based on the query.
-      const productName =
-          `accounts/${merchantId}/products/${row.productView.id}`;
+      const productName = `accounts/${merchantId}/products/${row.productView.id}`;
 
       // OPTIONAL: Get and print the full product details using GetProduct.
       console.log('Getting full product details by calling GetProduct method:');
@@ -115,8 +114,9 @@ async function main() {
     const config = authUtils.getConfig();
 
     // Read merchant ID from the merchant-info.json file.
-    const merchantInfo =
-        JSON.parse(fs.readFileSync(config.merchantInfoFile, 'utf8'));
+    const merchantInfo = JSON.parse(
+      fs.readFileSync(config.merchantInfoFile, 'utf8'),
+    );
     const merchantId = merchantInfo.merchantId;
 
     // Authenticate and get the OAuth2 client.

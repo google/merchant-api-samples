@@ -16,9 +16,8 @@
 'use strict';
 const fs = require('fs');
 const authUtils = require('../../authentication/authenticate.js');
-const {
-  ProductInputsServiceClient,
-} = require('@google-shopping/products').v1beta;
+const {ProductInputsServiceClient} =
+  require('@google-shopping/products').v1beta;
 
 /**
  * This class demonstrates how to insert a product input asynchronously.
@@ -95,7 +94,7 @@ function createRandomProduct() {
 async function asyncInsertProductInput(config, dataSource) {
   // Read merchant_id from the configuration file.
   const merchantInfo = JSON.parse(
-    fs.readFileSync(config.merchantInfoFile, 'utf8')
+    fs.readFileSync(config.merchantInfoFile, 'utf8'),
   );
   const merchantId = merchantInfo.merchantId;
 
@@ -132,7 +131,7 @@ async function asyncInsertProductInput(config, dataSource) {
 
   // Create an array of promises by calling the insertProductInput method for each request.
   const insertPromises = requests.map(request =>
-    productInputsServiceClient.insertProductInput(request)
+    productInputsServiceClient.insertProductInput(request),
   );
 
   // Wait for all insert operations to complete.
@@ -155,7 +154,7 @@ async function main() {
   // Define the data source ID. Replace {datasourceId} with your actual data source ID.
   // The format is accounts/{account_id}/dataSources/{datasource_id}.
   const merchantInfo = JSON.parse(
-    fs.readFileSync(config.merchantInfoFile, 'utf8')
+    fs.readFileSync(config.merchantInfoFile, 'utf8'),
   );
   const merchantId = merchantInfo.merchantId;
   const dataSource = `accounts/${merchantId}/dataSources/{datasourceId}`; // Replace {datasourceId}

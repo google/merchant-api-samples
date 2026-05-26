@@ -16,7 +16,8 @@
 'use strict';
 const fs = require('fs');
 const authUtils = require('../../../authentication/authenticate.js');
-const {DeveloperRegistrationServiceClient} = require('@google-shopping/accounts').v1;
+const {DeveloperRegistrationServiceClient} =
+  require('@google-shopping/accounts').v1;
 
 /**
  * Registers the GCP project used to call the Merchant API with a developer email.
@@ -29,29 +30,32 @@ async function main() {
     const config = authUtils.getConfig();
 
     // Read merchant_id from merchant-info.json
-    const merchant_info =
-        JSON.parse(fs.readFileSync(config.merchantInfoFile, 'utf8'));
+    const merchant_info = JSON.parse(
+      fs.readFileSync(config.merchantInfoFile, 'utf8'),
+    );
     const merchant_id = merchant_info.merchantId;
 
     // Construct parent. Parent is in the format of accounts/{merchant_id}
     const parent = 'accounts/' + merchant_id;
 
     // Construct name. Name is in the format of accounts/{merchant_id}/developerRegistration
-    const name = parent + "/developerRegistration";
+    const name = parent + '/developerRegistration';
 
     // Get credentials
     const authClient = await authUtils.getOrGenerateUserCredentials();
 
     // Create options object for the client
-    const options = {'authClient' : authClient};
+    const options = {authClient: authClient};
 
     // Create client
-    const developerRegistrationClient = new DeveloperRegistrationServiceClient(options);
+    const developerRegistrationClient = new DeveloperRegistrationServiceClient(
+      options,
+    );
 
     // Construct request.
     const request = {
       name: name,
-      developerEmail: developerEmail
+      developerEmail: developerEmail,
     };
 
     // Run request

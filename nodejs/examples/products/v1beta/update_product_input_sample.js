@@ -19,9 +19,8 @@
 
 const fs = require('fs');
 const authUtils = require('../../authentication/authenticate.js');
-const {
-  ProductInputsServiceClient,
-} = require('@google-shopping/products').v1beta;
+const {ProductInputsServiceClient} =
+  require('@google-shopping/products').v1beta;
 
 /**
  * Performs the actual API call to update the product input.
@@ -32,7 +31,11 @@ const {
  * @param {string} dataSourceId - The ID of the data source.
  */
 async function callUpdateProductInput(
-    authClient, accountId, productId, dataSourceId) {
+  authClient,
+  accountId,
+  productId,
+  dataSourceId,
+) {
   // Create a new ProductInputsServiceClient with the authenticated client.
   const productInputsServiceClient = new ProductInputsServiceClient({
     authClient: authClient,
@@ -47,11 +50,15 @@ async function callUpdateProductInput(
   // be updated this way.
   const fieldMask = {
     paths: [
-      'attributes.title', 'attributes.description', 'attributes.link',
-      'attributes.image_link', 'attributes.availability',
-      'attributes.condition', 'attributes.gtin',
-      'custom_attributes.mycustomattribute',  // This path targets a custom
-                                              // attribute by its name.
+      'attributes.title',
+      'attributes.description',
+      'attributes.link',
+      'attributes.image_link',
+      'attributes.availability',
+      'attributes.condition',
+      'attributes.gtin',
+      'custom_attributes.mycustomattribute', // This path targets a custom
+      // attribute by its name.
     ],
   };
 
@@ -63,9 +70,7 @@ async function callUpdateProductInput(
     imageLink: 'https://exampleWebsite.com/tale-of-two-cities.jpg',
     availability: 'in stock',
     condition: 'new',
-    gtin: [
-      '9780007350896'
-    ],  // GTIN is a repeated field, so it's provided as an array.
+    gtin: ['9780007350896'], // GTIN is a repeated field, so it's provided as an array.
   };
 
   // Construct the full name of the data source resource.
@@ -75,7 +80,7 @@ async function callUpdateProductInput(
 
   // Prepare the ProductInput object with the new data.
   const productInput = {
-    name: name,  // The resource name of the product input being updated.
+    name: name, // The resource name of the product input being updated.
     attributes: attributes,
     customAttributes: [
       {
@@ -97,7 +102,7 @@ async function callUpdateProductInput(
   // The response is an array, with the first element being the updated
   // ProductInput object.
   const [response] =
-      await productInputsServiceClient.updateProductInput(request);
+    await productInputsServiceClient.updateProductInput(request);
 
   console.log('Updated ProductInput Name below');
   // The response contains the updated ProductInput. Its 'name' field is the
@@ -105,7 +110,7 @@ async function callUpdateProductInput(
   // channel~contentLanguage~feedLabel~offerId).
   console.log(response.name);
   console.log('Updated Product below');
-  console.log(response);  // Log the full response object.
+  console.log(response); // Log the full response object.
 }
 
 /**
@@ -128,8 +133,9 @@ async function main() {
     const config = authUtils.getConfig();
 
     // Read the Merchant Center account ID from the merchant-info.json file.
-    const merchantInfo =
-        JSON.parse(fs.readFileSync(config.merchantInfoFile, 'utf8'));
+    const merchantInfo = JSON.parse(
+      fs.readFileSync(config.merchantInfoFile, 'utf8'),
+    );
     const accountId = merchantInfo.merchantId;
 
     // Authenticate and get an OAuth2 client.
@@ -138,7 +144,11 @@ async function main() {
     // Call the helper function to perform the product input update.
     // Ensure accountId is a string as it's part of a resource name.
     await callUpdateProductInput(
-        authClient, accountId.toString(), productId, dataSourceId);
+      authClient,
+      accountId.toString(),
+      productId,
+      dataSourceId,
+    );
   } catch (error) {
     console.error(error);
     process.exitCode = 1;

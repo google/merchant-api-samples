@@ -26,7 +26,9 @@ async function listDataSourcesWrapper() {
   const config = authUtils.getConfig();
 
   // Read the merchant ID from the specified JSON file.
-  const merchantInfo = JSON.parse(fs.readFileSync(config.merchantInfoFile, 'utf8'));
+  const merchantInfo = JSON.parse(
+    fs.readFileSync(config.merchantInfoFile, 'utf8'),
+  );
   const merchantId = merchantInfo.merchantId;
 
   // Obtain authenticated credentials for the API call.
@@ -86,7 +88,6 @@ async function callListDataSources(dataSourceClient, merchantId) {
     console.log(`The following count of elements were returned: ${count}`);
     // You can optionally log the filtered primary data sources
     // console.log('Primary Product Data Sources:', primaryDataSources);
-
   } catch (error) {
     console.error(`Failed to list data sources: ${error.message}`);
   }
@@ -95,7 +96,7 @@ async function callListDataSources(dataSourceClient, merchantId) {
 // Execute the main wrapper function and handle potential promise rejection.
 listDataSourcesWrapper().catch(error => {
   console.error(error.message);
-  process.exitCode = 1; 
+  process.exitCode = 1;
 });
 
 // [END merchantapi_list_data_sources]

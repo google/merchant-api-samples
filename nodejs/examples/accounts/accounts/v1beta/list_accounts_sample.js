@@ -19,7 +19,7 @@ const {AccountsServiceClient} = require('@google-shopping/accounts').v1beta;
 
 /**
  * Lists all Merchant Center accounts accessible by the authenticated user.
- * Please note that "listAccounts" method charge API quota on behalf of each 
+ * Please note that "listAccounts" method charge API quota on behalf of each
  * specific user running the request. "listSubAccounts" method is more suitable
  * to list large number of sub-accounts.
  */

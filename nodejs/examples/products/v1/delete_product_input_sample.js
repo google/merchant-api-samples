@@ -16,9 +16,7 @@
 'use strict';
 const fs = require('fs');
 const authUtils = require('../../authentication/authenticate.js');
-const {
-  ProductInputsServiceClient,
-} = require('@google-shopping/products').v1;
+const {ProductInputsServiceClient} = require('@google-shopping/products').v1;
 
 /**
  * This class demonstrates how to delete a product input for a given
@@ -30,7 +28,7 @@ const {
 async function deleteProductInput(config, productId, dataSource) {
   // Read merchant_id from merchant-info.json.
   const merchantInfo = JSON.parse(
-    fs.readFileSync(config.merchantInfoFile, 'utf8')
+    fs.readFileSync(config.merchantInfoFile, 'utf8'),
   );
   const merchantId = merchantInfo.merchantId;
 
@@ -61,7 +59,7 @@ async function deleteProductInput(config, productId, dataSource) {
     console.log(
       'Delete successful, note that it may take a few minutes for the delete to update in' +
         ' the system. If you make a products.get or products.list request before a few' +
-        ' minutes have passed, the old product data may be returned.'
+        ' minutes have passed, the old product data may be returned.',
     );
   } catch (error) {
     console.error(error.message);
@@ -78,7 +76,7 @@ async function main() {
   const productId = 'en~label~sku123';
 
   const merchantInfo = JSON.parse(
-    fs.readFileSync(config.merchantInfoFile, 'utf8')
+    fs.readFileSync(config.merchantInfoFile, 'utf8'),
   );
   const merchantId = merchantInfo.merchantId;
 

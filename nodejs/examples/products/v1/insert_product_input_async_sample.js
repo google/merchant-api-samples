@@ -18,13 +18,9 @@ const fs = require('fs');
 const grpc = require('@grpc/grpc-js');
 const grpcGcp = require('grpc-gcp')(grpc);
 const authUtils = require('../../authentication/authenticate.js');
-const {
-  ProductInputsServiceClient,
-} = require('@google-shopping/products').v1;
+const {ProductInputsServiceClient} = require('@google-shopping/products').v1;
 
-const {
-  protos,
-} = require('@google-shopping/products');
+const {protos} = require('@google-shopping/products');
 
 const Availability = protos.google.shopping.merchant.products.v1.Availability;
 const Condition = protos.google.shopping.merchant.products.v1.Condition;
@@ -59,7 +55,7 @@ function createRandomProduct() {
   };
 
   const price = {
-    amountMicros: 33450000,  // 33.45 USD
+    amountMicros: 33450000, // 33.45 USD
     currency_code: 'USD',
   };
 
@@ -107,7 +103,7 @@ function createRandomProduct() {
 async function asyncInsertProductInput(config, dataSource) {
   // Read merchant_id from the configuration file.
   const merchantInfo = JSON.parse(
-    fs.readFileSync(config.merchantInfoFile, 'utf8')
+    fs.readFileSync(config.merchantInfoFile, 'utf8'),
   );
   const merchantId = merchantInfo.merchantId;
 
@@ -184,7 +180,7 @@ async function main() {
   // Define the data source ID. Replace {datasourceId} with your actual data source ID.
   // The format is accounts/{account_id}/dataSources/{datasource_id}.
   const merchantInfo = JSON.parse(
-    fs.readFileSync(config.merchantInfoFile, 'utf8')
+    fs.readFileSync(config.merchantInfoFile, 'utf8'),
   );
   const merchantId = merchantInfo.merchantId;
   const dataSource = `accounts/${merchantId}/dataSources/{datasourceId}`; // Replace {datasourceId}
