@@ -33,11 +33,11 @@ function filterDisapprovedProducts() {
   try {
     console.log('Sending search Report request');
     // Set pageSize to the maximum value (default: 1000)
-    let pageSize = 1000;
+    const pageSize = 1000;
     let pageToken;
     // The query below is an example of a query for the productView that gets product informations
     // for all disapproved products.
-    let query = 'SELECT offer_id,' +
+    const query = 'SELECT offer_id,' +
         'id,' +
         'price,' +
         'title' +
@@ -48,20 +48,19 @@ function filterDisapprovedProducts() {
     // Call the Reports.search API method. Use the pageToken to iterate through
     // all pages of results.
     do {
-      response =
+      const response =
           MerchantApiReports.Accounts.Reports.search({query, pageSize, pageToken}, parent);
       for (const reportRow of response.results) {
-        console.log("Printing data from Product View:");
+        console.log('Printing data from Product View:');
         console.log(reportRow);
 
         // OPTIONALLY, you can get the full product details by calling the GetProduct method.
-        let productName = parent + "/products/" + reportRow.getProductView().getId();
-        product = MerchantApiProducts.Accounts.Products.get(productName);
+        const productName = parent + '/products/' + reportRow.getProductView().getId();
+        const product = MerchantApiProducts.Accounts.Products.get(productName);
         console.log(product);
       }
       pageToken = response.nextPageToken;
-    } while (pageToken);  // Exits when there is no next page token.
-
+    } while (pageToken); // Exits when there is no next page token.
   } catch (e) {
     console.log('ERROR!');
     console.log('Error message:' + e.message);

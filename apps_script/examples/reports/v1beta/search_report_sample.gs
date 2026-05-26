@@ -31,12 +31,12 @@ function searchReport() {
   try {
     console.log('Sending search Report request');
     // Set pageSize to the maximum value (default: 1000)
-    let pageSize = 1000;
+    const pageSize = 1000;
     let pageToken;
     // Uncomment the desired query from below. Documentation can be found at
     // https://developers.google.com/merchant/api/reference/rest/reports_v1beta/accounts.reports#ReportRow
     // The query below is an example of a query for the product_view.
-    let query = 'SELECT offer_id,' +
+    const query = 'SELECT offer_id,' +
         'id,' +
         'price,' +
         'gtin,' +
@@ -105,14 +105,13 @@ function searchReport() {
     // Call the Reports.search API method. Use the pageToken to iterate through
     // all pages of results.
     do {
-      response =
+      const response =
           MerchantApiReports.Accounts.Reports.search({query, pageSize, pageToken}, parent);
       for (const reportRow of response.results) {
         console.log(reportRow);
       }
       pageToken = response.nextPageToken;
-    } while (pageToken);  // Exits when there is no next page token.
-
+    } while (pageToken); // Exits when there is no next page token.
   } catch (e) {
     console.log('ERROR!');
     console.log(e);

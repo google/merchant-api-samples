@@ -22,7 +22,7 @@ function listAccountIssues() {
   // "MerchantApiAccounts"
 
   // Replace this with your Merchant Center ID.
-  const accountId = "<MERCHANT_CENTER_ID>";
+  const accountId = '<MERCHANT_CENTER_ID>';
 
   // Construct the parent name
   const parent = 'accounts/' + accountId;
@@ -30,19 +30,19 @@ function listAccountIssues() {
   try {
     console.log('Sending list Account Issues request');
     // Set pageSize to the maximum value (default: 50)
-    let pageSize = 100;
+    const pageSize = 100;
     let pageToken;
     let count = 0;
     // Call the Account.Issues.list API method. Use the pageToken to iterate
     // through all pages of results.
     do {
-      response = MerchantApiAccounts.Accounts.Issues.list(parent, {pageSize, pageToken});
+      const response = MerchantApiAccounts.Accounts.Issues.list(parent, {pageSize, pageToken});
       for (const issue of response.accountIssues) {
         console.log(issue);
         count++;
       }
       pageToken = response.nextPageToken;
-    } while (pageToken);  // Exits when there is no next page token.
+    } while (pageToken); // Exits when there is no next page token.
     console.log('The following count of Account Issues were returned: ', count);
   } catch (e) {
     console.log('ERROR!');

@@ -25,18 +25,17 @@ function listAccounts() {
   try {
     console.log('Sending list Accounts request');
     let pageToken;
-    let pageSize = 500;
+    const pageSize = 500;
     // Call the Accounts.list API method. Use the pageToken to iterate through
     // all pages of results.
     do {
-      response =
+      const response =
           MerchantApiAccounts.Accounts.list({pageSize, pageToken});
       for (const account of response.accounts) {
         console.log(account);
       }
       pageToken = response.nextPageToken;
-    } while (pageToken);  // Exits when there is no next page token.
-
+    } while (pageToken); // Exits when there is no next page token.
   } catch (e) {
     console.log('ERROR!');
     console.log(e);

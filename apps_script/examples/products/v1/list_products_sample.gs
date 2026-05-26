@@ -32,13 +32,13 @@ function productList() {
     console.log('Sending list Products request');
     let pageToken;
     // Set the page size to 1000. This is the maximum allowed page size.
-    let pageSize = 1000;
+    const pageSize = 1000;
 
     console.log('Retrieved products below:');
     // Call the Products.list API method. Use the pageToken to iterate through
     // all pages of results.
     do {
-      response = MerchantApiProducts.Accounts.Products.list(parent, {pageToken, pageSize});
+      const response = MerchantApiProducts.Accounts.Products.list(parent, {pageToken, pageSize});
       console.log(response);
       pageToken = response.nextPageToken;
     } while (pageToken); // Exits when there is no next page token.

@@ -34,12 +34,12 @@ function getProduct() {
   const parent = 'accounts/' + accountId;
 
   // Construct the product resource name
-  const name = parent + "/products/" + productId;
+  const name = parent + '/products/' + productId;
 
   try {
     console.log('Sending get Product request');
     // Call the Products.get API method.
-    product = MerchantApiProducts.Accounts.Products.get(name);
+    const product = MerchantApiProducts.Accounts.Products.get(name);
     console.log(product);
   } catch (e) {
     console.log('ERROR!');

@@ -27,12 +27,14 @@ function getFileUploadDataSource() {
   // Replace this with the ID of a File Upload Data Source.
   const dataSourceId = '<FILE_UPLOAD_DATA_SOURCE_ID>';
   // Construct the name. Use 'latest' alias to get the latest version of the File Upload
-  const fileUploadName = 'accounts/' + accountId + '/dataSources/' + dataSourceId + "/fileUploads/latest";
+  const fileUploadName =
+      'accounts/' + accountId + '/dataSources/' + dataSourceId +
+      '/fileUploads/latest';
 
   try {
     console.log('Sending get File Uploads request');
     // Call the DataSources.fileUploads.get API method.
-    fileUpload =
+    const fileUpload =
         MerchantApiDataSources.Accounts.DataSources.FileUploads.get(fileUploadName);
     console.log(fileUpload);
   } catch (e) {

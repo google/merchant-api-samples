@@ -50,13 +50,13 @@ function productInsert() {
       'googleProductCategory': 'Media > Books',
       'gtin': '[9780007350896]',
       'price': {'amountMicros': '2500000', 'currencyCode': 'USD'},
-    }
+    },
   };
 
   try {
     console.log('Sending insert ProductInput request');
     // Call the ProductInputs.insert API method.
-    response = MerchantApiProducts.Accounts.ProductInputs.insert(
+    const response = MerchantApiProducts.Accounts.ProductInputs.insert(
         productResource, parent, {dataSource});
     // RESTful insert returns the JSON object as a response.
     console.log('Inserted ProductInput below');

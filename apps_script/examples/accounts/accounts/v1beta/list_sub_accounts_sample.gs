@@ -28,22 +28,20 @@ function listSubAccounts() {
 
   const parent = 'accounts/' + providerId;
 
-  let accounts = [];
   try {
     console.log('Sending list Sub-Accounts request');
     let pageToken;
-    let pageSize = 500;
+    const pageSize = 500;
     // Call the Accounts.listSubAccounts API method. Use the pageToken to iterate through
     // all pages of results.
     do {
-      response =
+      const response =
           MerchantApiAccounts.Accounts.listSubaccounts(parent, {pageSize, pageToken});
       for (const account of response.accounts) {
         console.log(account);
       }
       pageToken = response.nextPageToken;
-    } while (pageToken);  // Exits when there is no next page token.
-
+    } while (pageToken); // Exits when there is no next page token.
   } catch (e) {
     console.log('ERROR!');
     console.log(e);

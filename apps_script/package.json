@@ -1,0 +1,14 @@
+{
+  "name": "google/merchant-api-apps-script-samples",
+  "private": true,
+  "license": "Apache-2.0",
+  "author": "Google LLC",
+  "scripts": {
+    "lint": "eslint . --ext .gs",
+    "fix": "eslint . --ext .gs --fix"
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "eslint-config-google": "^0.14.0"
+  }
+}

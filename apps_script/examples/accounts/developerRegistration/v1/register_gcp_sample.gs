@@ -15,7 +15,7 @@
 // [START merchantapi_register_gcp]
 /**
  * Registers a specific developer's email address on the current GCP project
- * Note: every Apps Script project might be associated with a different default 
+ * Note: every Apps Script project might be associated with a different default
  * GCP project.
  * Check https://developers.google.com/apps-script/guides/cloud-platform-projects
  * for more details.
@@ -33,14 +33,16 @@ function registerDeveloper() {
   const developerEmail = '<YOUR_EMAIL>';
 
   // Construct the parent resource name.
-  const parent = 'accounts/' + accountId + "/developerRegistration";
+  const parent = 'accounts/' + accountId + '/developerRegistration';
 
   const requestBody = {
-    "developerEmail": developerEmail
+    'developerEmail': developerEmail,
   };
   try {
     console.log('Sending register GCP request');
-    const response = MerchantApiAccounts.Accounts.DeveloperRegistration.registerGcp(requestBody, parent);
+    const response =
+        MerchantApiAccounts.Accounts.DeveloperRegistration.registerGcp(
+            requestBody, parent);
     console.log(response);
   } catch (e) {
     console.log('ERROR!');

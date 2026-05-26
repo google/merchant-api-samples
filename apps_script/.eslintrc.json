@@ -1,0 +1,22 @@
+{
+  "extends": "google",
+  "parserOptions": {
+    "ecmaVersion": 2022,
+    "sourceType": "script"
+  },
+  "env": {
+    "es2022": true
+  },
+  "globals": {
+    "console": "readonly",
+    "MerchantApiReports": "readonly",
+    "MerchantApiProducts": "readonly",
+    "MerchantApiDataSources": "readonly",
+    "MerchantApiAccounts": "readonly"
+  },
+  "rules": {
+    "max-len": ["error", {"code": 100, "ignoreUrls": true}],
+    "no-undef": "error",
+    "no-unused-vars": ["error", { "vars": "local", "args": "none" }]
+  }
+}

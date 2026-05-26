@@ -27,16 +27,16 @@ function listDataSources() {
 
   // Construct the parent name
   const parent = 'accounts/' + accountId;
-  let dataSources = [];
-  let primaryDataSources = [];
+  const dataSources = [];
+  const primaryDataSources = [];
   try {
     console.log('Sending list DataSources request');
     let pageToken;
-    let pageSize = 10;
+    const pageSize = 10;
     // Call the DataSources.list API method. Use the pageToken to iterate through
     // all pages of results.
     do {
-      response =
+      const response =
           MerchantApiDataSources.Accounts.DataSources.list(parent, {pageSize, pageToken});
       for (const datasource of response.dataSources) {
         dataSources.push(datasource);
@@ -45,7 +45,7 @@ function listDataSources() {
         }
       }
       pageToken = response.nextPageToken;
-    } while (pageToken);  // Exits when there is no next page token.
+    } while (pageToken); // Exits when there is no next page token.
     console.log('Retrieved ' + dataSources.length + ' data sources.');
     console.log(
         'There were ' + primaryDataSources.length +
