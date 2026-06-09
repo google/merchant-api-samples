@@ -1,9 +1,13 @@
 # Merchant API Agent Skills
 
-**Merchant API Agent Skills** is an Agent Skill that provide
+**Merchant API Agent Skills** is an Agent Skill that provides
 specialized capabilities for Merchant API developers.
 
-This Agent Skill encapsulates domain expertise, best practices, and migration workflows to help developers integrate, debug, and migrate their Shopping integrations more efficiently using AI-powered CLI tools like [Gemini CLI](https://geminicli.com) or [Claude Code](https://code.claude.com).
+This Agent Skill encapsulates domain expertise, best practices, and migration
+workflows to help developers integrate, debug, and migrate their Shopping
+integrations more efficiently using AI-powered CLI tools like
+[Antigravity CLI](https://antigravity.google) or
+[Claude Code](https://code.claude.com).
 
 ## Available Skills
 
@@ -23,65 +27,85 @@ troubleshooting.
 
 ## Installation & Setup
 
-### For Gemini CLI Users
+### For Antigravity CLI Users
 
 **Prerequisites:**
 
-Agent Skills support is available in Gemini CLI v0.24.0 or higher.
-Recommend v0.33.1+ for stable Agentic Workflows.
+Antigravity CLI must be installed. You can install it by running the scripts
+below, or by downloading the package from the
+[official download page](https://antigravity.google/download#antigravity-cli).
 
-1. **Install or Update Gemini CLI:**
+```bash
+# macOS or Linux
+curl -fsSL https://antigravity.google/cli/install.sh -o install.sh
+bash install.sh
+rm install.sh
 
-   ```bash
-   # Install/Update to latest version
-   npm install -g @google/gemini-cli@latest
+# Windows PowerShell
+irm https://antigravity.google/cli/install.ps1 -OutFile install.ps1
+.\install.ps1
+Remove-Item install.ps1
+```
 
-   # Verify version
-   gemini --version
-   
-   # Should show v0.24.0 or higher
-   ```
-   
+Verify the installation:
 
-2. **Enable Agent Skills:**
-   
-   Open Gemini CLI settings:
-
-   ```bash
-   gemini
-   # In the prompt, type:
-   /settings
-   ```
-
-   Search for "Skills" and enable `experimental.skills`
-   
-   Or configure it directly:
-
-   ```bash
-   gemini config set experimental.skills true
-   ```
-
-3. **Restart Gemini CLI** for the change to take effect
-
-Note: If you are on v0.30.0+, skills are enabled by default for most accounts. For more details, see the [Agent Skills documentation](https://geminicli.com/docs/cli/skills/).
+```bash
+agy --version
+```
 
 **Install Merchant API Agent Skill:**
 
+1. **Clone the Repository:**
+
+   ```bash
+   git clone https://github.com/google/merchant-api-samples.git
+   cd merchant-api-samples
+   ```
+
+2. **Install the Skill:**
+
+   You can install the skill either globally or for a specific project.
+
+   **Option 1: Global Installation (Recommended)**
+
+   Copy the skill directory to your global Antigravity skills directory:
+
+   ```bash
+   # Create the global skills directory if it doesn't exist
+   mkdir -p ~/.gemini/antigravity-cli/skills/
+
+   # Copy the skill directory
+   cp -r agent-skills/mapi-developer-assistant \
+     ~/.gemini/antigravity-cli/skills/
+   ```
+
+   **Option 2: Project-specific Installation**
+
+   If you want the skill to be available only within a specific project
+   directory:
+
+   ```bash
+   # Navigate to your project directory
+   cd /path/to/your/project
+
+   # Create the project skills directory if it doesn't exist
+   mkdir -p .agents/skills/
+
+   # Copy the skill directory
+   cp -r /path/to/merchant-api-samples/agent-skills/mapi-developer-assistant \
+     .agents/skills/
+   ```
+
+**Verify Installation:**
+
+Start Antigravity CLI in your project or home directory:
+
 ```bash
-# Clone the Repository
-git clone https://github.com/google/merchant-api-samples.git
-
-# Navigate to the specific skill directory
-cd agent-skills/mapi-developer-assistant
-
-# Install the skill locally
-gemini skills install .
-
-# Verify Installation
-gemini skills list
+agy
 ```
 
-You should see `mapi-developer-assistant` in the list.
+In the prompt, type `/skills` to open the skills panel. You should see
+`mapi-developer-assistant` in the list.
 
 ### For Other AI Agents (Claude, Kiro, etc.)
 
@@ -124,11 +148,12 @@ questions.
 
 **Management:**
 
-```bash
-gemini skills list # View all installed skills
-gemini skills disable mapi-developer-assistant
-gemini skills enable mapi-developer-assistant
-```
+To view available skills inside the Antigravity CLI, type `/skills` in the
+prompt.
 
-**Note:** Unlike Gemini CLI, other agents don't have `/skills` commands. The
-skills activate automatically when your question matches their description.
+To uninstall the skill, simply delete the `mapi-developer-assistant` directory
+from where you copied it (either `~/.gemini/antigravity-cli/skills/` or your
+project's `.agents/skills/` directory).
+
+**Note:** Unlike Antigravity CLI, other agents don't have `/skills` commands.
+The skills activate automatically when your question matches their description.

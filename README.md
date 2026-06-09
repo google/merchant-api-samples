@@ -127,7 +127,7 @@ leading to more capable and focused assistance.
 
 Accelerate your Merchant API development with the **mapi-developer-assistant**
 Agent Skill. Use it with AI-powered CLI tools like
-[Gemini CLI](https://geminicli.com) or
+[Antigravity CLI](https://antigravity.google/product/antigravity-cli) or
 [Claude Code](https://code.claude.com) to get interactive expert guidance
 directly in your development environment. These tools load the
 mapi-developer-assistant skill, which then interacts with the MCP server to
