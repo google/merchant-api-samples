@@ -93,6 +93,7 @@
             <type>pom</type>
             <scope>import</scope>
         </dependency>
+
     </dependencies>
   </dependencyManagement>
 
@@ -184,5 +185,8 @@
         <groupId>com.google.api</groupId>
         <artifactId>gax-httpjson</artifactId>
     </dependency>
+
   </dependencies>
+
+
 </project>
