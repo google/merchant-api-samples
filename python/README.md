@@ -11,6 +11,7 @@ the Google Merchant API for Shopping.
 Python >= 3.8
 
 ## Use a virtual environment
+
 ```
 python3 -m venv <your-env>
 source <your-env>/bin/activate
@@ -22,13 +23,13 @@ pip install -r requirements.txt
 For your convenience, you can run the following command from this directory to
 install all needed dependencies via [pip](https://pip.pypa.io/):
 
-    pip install -r requirements.txt
+ pip install -r requirements.txt
 
 ## Setup Authentication and Sample Configuration
 
 If you have not already done so, please read the top-level `README` to discover
-how to set up the authentication configuration. The rest
-of this document assumes you have performed both tasks.
+how to set up the authentication configuration. The rest of this document
+assumes you have performed both tasks.
 
 ## Running the Samples
 
@@ -37,11 +38,18 @@ directory. If not, check out the code to a local directory.
 
 Before calling any `v1` Merchant API method, you will need to register the GCP
 project used to call the APIs. You can do that by running the code sample
-`examples.accounts.developerregistration.v1.register_gcp_sample`.
-More informations can be found [here](https://developers.google.com/merchant/api/guides/quickstart#register_as_a_developer).
+`examples.accounts.developerregistration.v1.register_gcp_sample`. More
+informations can be found
+[here](https://developers.google.com/merchant/api/guides/quickstart#register_as_a_developer).
 
 1.  Start up a sample:
 
         python -m examples.products.v1.list_products_sample
 
 1.  Examine your shell output, be inspired and start hacking an amazing new app!
+
+#### Running Alpha Samples
+
+For instructions on how to install the required alpha client libraries and run
+the alpha samples (located in `v1alpha` subdirectories), please refer to the
+[alpha client repository](https://github.com/google/merchant-api-alpha-client).
