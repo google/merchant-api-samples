@@ -43,10 +43,37 @@ directory. If not, clone the code to a local directory, and set up the project
 appropriately for access to the Google APIs Client Library for Java (see the
 prerequisites section above).
 
-Build and run any of the included samples in your preferred IDE.
+### 2. Build the Project
 
-If using maven, to build and run your samples, navigate to the directory of the
-pom.xml. Then run `mvn compile`.
+Navigate to the `java/` directory and build/compile the project:
+
+```bash
+cd java/
+mvn compile
+```
+
+#### Building and Running Alpha Samples (Optional)
+
+By default, alpha samples (such as reviews) are excluded from the build because
+they require alpha client libraries that are not installed by default.
+
+To compile and run alpha samples:
+
+1.  Install the alpha client library on your local machine by following the
+    instructions in the [alpha client
+    repository](https://github.com/google/merchant-api-alpha-client).
+2.  Build the project using the `allow-alpha` profile:
+
+```bash
+mvn compile -Pallow-alpha
+```
+
+Use the same profile when executing alpha samples. For example:
+
+```bash
+mvn exec:java -Dexec.mainClass="shopping.merchant.samples.reviews.v1alpha.ListProductReviewsSample"
+-Pallow-alpha
+```.
 
 If the code compiles successfully, then run `mvn exec`, followed by the name of
 the sample you wish to execute. The specific syntax is shown in the examples
@@ -65,12 +92,6 @@ Use the following syntax to run the `ListProductsSample` class, for example.
 ```
 mvn exec:java -Dexec.mainClass="shopping.merchant.samples.products.v1.ListProductsSample"
 ```
-
-#### Running Alpha Samples
-
-For instructions on how to install the required alpha client libraries and run
-the alpha samples (located in `v1alpha` subdirectories), please refer to the
-[alpha client repository](https://github.com/google/merchant-api-alpha-client).
 
 Examine your shell output, be inspired and start working on an amazing new app!
 

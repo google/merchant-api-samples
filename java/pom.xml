@@ -40,6 +40,9 @@
         <configuration>
           <source>8</source>
           <target>8</target>
+          <excludes>
+            <exclude>**/v1alpha/**/*.java</exclude>
+          </excludes>
         </configuration>
       </plugin>
       <plugin>
@@ -188,5 +191,46 @@
 
   </dependencies>
 
-
+  <profiles>
+    <profile>
+      <id>e2e-tests</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-failsafe-plugin</artifactId>
+            <version>3.2.2</version>
+            <executions>
+              <execution>
+                <goals>
+                  <goal>integration-test</goal>
+                  <goal>verify</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
+      <id>allow-alpha</id>
+      <dependencies>
+        <dependency>
+          <groupId>com.google.cloud</groupId>
+          <artifactId>gapic-google-cloud-merchant-reviews-v1alpha-java</artifactId>
+          <version>0.0.0-SNAPSHOT</version>
+        </dependency>
+      </dependencies>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+              <excludes combine.self="override"/>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 </project>
