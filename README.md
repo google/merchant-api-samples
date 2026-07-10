@@ -42,8 +42,8 @@ case:
     the service account will be prioritized):
 
     1.  **To use Google Application Default Credentials**
-        1.  follow the directions on the [Google Application Default
-            Credentials](https://developers.google.com/identity/protocols/application-default-credentials)
+        1.  follow the directions on the
+            [Google Application Default Credentials](https://developers.google.com/identity/protocols/application-default-credentials)
             page.
     2.  **To use a service account:**
 
@@ -58,55 +58,68 @@ case:
 
     3.  **to use an OAuth2 client ID:**
 
-        1.  Register your application and [generate OAuth 2.0 Client
-            ID](https://developers.google.com/merchant/api/guides/authorization/access-client-accounts#OAuth2Authorizing).
-            1.  Download your [OAuth2 client credentials](https://console.developers.google.com/apis/credentials)
-            to the file `client-secrets.json` in the configuration subdirectory
-                `$(HOME)/shopping-samples/content`.
+        1.  Register your application and
+            [generate OAuth 2.0 Client ID](https://developers.google.com/merchant/api/guides/authorization/access-client-accounts#OAuth2Authorizing).
+            1.  Download your
+                [OAuth2 client credentials](https://console.developers.google.com/apis/credentials)
+                to the file `client-secrets.json` in the configuration
+                subdirectory `$(HOME)/shopping-samples/content`.
 
 > [!IMPORTANT] The samples assume that you are using an OAuth2 client ID that
 > can use a loopback IP address to retrieve tokens. For web app clients types,
 > you must add "http://127.0.0.1:8080" to the "Authorized redirect URIs" list in
 > your Google Cloud Console project before running samples. Please visit the
-> [OAuth2 for Web
-> Apps](https://developers.google.com/identity/protocols/oauth2/web-server) page
-> and follow the instructions there to create a new OAuth2 client ID to use with
-> the samples.
+> [OAuth2 for Web Apps](https://developers.google.com/identity/protocols/oauth2/web-server)
+> page and follow the instructions there to create a new OAuth2 client ID to use
+> with the samples.
 
 > [!NOTE] If using OAuth2 client credentials, once you have authorized access,
 > your token details will be stored in the `token.json` file in the samples
 > configuration directory. If you have any issues authenticating, remove this
 > file and you will be asked to re-authorize access.
 
-3.  Take the example `merchant-info.json` from this repository root and copy it
+1.  Take the example `merchant-info.json` from this repository root and copy it
     into `$(HOME)/shopping-samples/content`. Next, change its contents
     appropriately. It contains a JSON object with the following field:
 
-    | Field                     | Type   | Description                                    |
-    |---------------------------|--------|------------------------------------------------|
-    | `merchantId`              | number | The Merchant Center ID to run samples against. |
+    Field        | Type   | Description
+    ------------ | ------ | ----------------------------------------------
+    `merchantId` | number | The Merchant Center ID to run samples against.
 
 ## Try Out the Samples
 
-Now that you've configured both the common sample configuration file and set up
-your authentication credentials, it's time to build and run any of the included
-samples. As mentioned before, there are language-specific instructions in the
-`README`s located in each language subdirectory.
+Once you've configured both the common sample configuration file and set up your
+authentication credentials, it's time to build and run any of the included
+samples. Language-specific instructions are provided in the `README`s located in
+each language subdirectory.
 
 > [!IMPORTANT] Before you can run any other Merchant API calls, you need to
 > perform Developer registration API call once. You can do this by calling REST
 > API directly or using your chosen client library and provided code sample. See
-> [Register as a
-> developer](https://developers.google.com/merchant/api/guides/quickstart#register_as_a_developer).
->
+> [Register as a developer](https://developers.google.com/merchant/api/guides/quickstart#register_as_a_developer).
 
 ### Note on Alpha Versions
 
 Some sub-APIs (e.g., `reviews`) are currently only available in `v1alpha`.
 Samples for these sub-APIs are located in `v1alpha` subdirectories within each
 language folder. Instructions for installing the required alpha client libraries
-and running these samples can be found in the [alpha client
-repository](https://github.com/google/merchant-api-alpha-client).
+and running these samples can be found in the
+[alpha client repository](https://github.com/google/merchant-api-alpha-client).
+
+## Repository Structure
+
+This repository contains samples for multiple languages and platforms, organized
+as follows:
+
+*   [`apps_script/`](apps_script/): Google Apps Script samples.
+*   [`dotnet/`](dotnet/): C#/.NET samples (organized as individual project
+    folders).
+*   [`golang/`](golang/): Go samples (using a central runner).
+*   [`java/`](java/): Java samples (Maven project).
+*   [`nodejs/`](nodejs/): Node.js samples.
+*   [`php/`](php/): PHP samples.
+*   [`python/`](python/): Python samples.
+*   [`agent-skills/`](agent-skills/): Agent skills collection for Merchant API.
 
 ## Code Assist Toolkit using MCP
 
@@ -114,8 +127,8 @@ Get assistance with migrating from Content API for Shopping to Merchant API or
 developing new integrations from the Model Context Protocol (MCP) service. It
 provides authoritative context from official Merchant API documentation and code
 samples. You can easily integrate MCP into coding assistant of your choice. For
-more information, see [MAPI Integration and Code Assist Toolkit using
-MCP](https://developers.google.com/merchant/api/guides/devdocs-mcp).
+more information, see
+[MAPI Integration and Code Assist Toolkit using MCP](https://developers.google.com/merchant/api/guides/devdocs-mcp).
 
 We also provide [MCP instructions](devdocs_mcp_instructions.md) you can use to
 instruct your coding assistant on how to migrate and use MCP.
@@ -128,16 +141,16 @@ more capable and focused assistance.
 ## Agent Skills for AI-Assisted Development
 
 Accelerate your Merchant API development with the **mapi-developer-assistant**
-Agent Skill. Use it with AI-powered CLI tools like [Antigravity
-CLI](https://antigravity.google/product/antigravity-cli) or [Claude
-Code](https://code.claude.com) to get interactive expert guidance directly in
-your development environment. These tools load the mapi-developer-assistant
-skill, which then interacts with the MCP server to provide real-time, accurate
-information and code samples.
+Agent Skill. Use it with AI-powered CLI tools like
+[Antigravity CLI](https://antigravity.google/product/antigravity-cli) or
+[Claude Code](https://code.claude.com) to get interactive expert guidance
+directly in your development environment. These tools load the
+mapi-developer-assistant skill, which then interacts with the MCP server to
+provide real-time, accurate information and code samples.
 
-For installation instructions and usage examples, see the [Agent Skills
-README](agent-skills/README.md). For more information, see [Merchant API Agent
-Skills](https://developers.google.com/merchant/api/guides/agentic-tools/integration-and-code-assist#agent-skills).
+For installation instructions and usage examples, see the
+[Agent Skills README](agent-skills/README.md). For more information, see
+[Merchant API Agent Skills](https://developers.google.com/merchant/api/guides/agentic-tools/integration-and-code-assist#agent-skills).
 
 The skill provides:
 

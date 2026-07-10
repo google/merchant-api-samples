@@ -1,4 +1,4 @@
-# Google Merchant API Samples
+# Google Merchant API Java Samples
 
 This is a set of simple samples written in Java, which provide a minimal example
 of Google Shopping integration within a command line application.
@@ -6,42 +6,14 @@ of Google Shopping integration within a command line application.
 This starter project provides a great place to start your experimentation into
 the Merchant API.
 
-## Prerequisites
+--------------------------------------------------------------------------------
 
-Please make sure that you're running Java 8+. If you use Maven, you can use the
-included `pom.xml` to install the required dependencies with the `mvn install`
-command. Otherwise, install the [Merchant API Client Library for
-Java](https://developers.google.com/merchant/api/client-libraries).
+## Prerequisites for Running
 
-> **Note** The Merchant API Client Library for Java is separate for each sub-API
-> you use (e.g. Datasource is one client library, Products is another, etc.),
-> and you need to install each client library separately.
+### 1. System Requirements
 
-## Setup Authentication and Sample Configuration
-
-If you have not already done so, please read the top-level `README` to discover
-how to set up both authentication and the common sample configuration. The rest
-of this document assumes you have performed both tasks.
-
-Note that for the non-service account OAuth2 flow, the application will read and
-store the created OAuth2 credentials from `$(HOME)/shopping-samples/content` in
-a file called `token.json`.
-
-If your refresh token is [revoked or expired for any
-reason](https://developers.google.com/identity/protocols/oauth2#expiration), you
-can try deleting the `token.json` file, then re-running the sample code to
-create and save a new refresh token to see if it fixes your error.
-
-## Running the Samples
-
-We are assuming you've checked out the code and are reading this from a local
-directory. If not, check out the code to a local directory and set up the
-project appropriately for access to the Google APIs Client Library for Java.
-
-This section assumes you've already cloned the code and are reading from a local
-directory. If not, clone the code to a local directory, and set up the project
-appropriately for access to the Google APIs Client Library for Java (see the
-prerequisites section above).
+*   **Java**: Java 8+ is required.
+*   **Maven**: Used for dependency management and running the samples.
 
 ### 2. Build the Project
 
@@ -52,7 +24,39 @@ cd java/
 mvn compile
 ```
 
-#### Building and Running Alpha Samples (Optional)
+### 3. Setup Authentication and Sample Configuration
+
+If you have not already done so, please read the top-level `README.md` to
+discover how to set up both authentication and the common sample configuration.
+
+--------------------------------------------------------------------------------
+
+## Running the Samples
+
+All commands should be run from the `java/` directory.
+
+### 1. Developer Registration
+
+Before calling any `v1` Merchant API method, you must register the GCP project
+used to call the APIs. You only need to do this once.
+
+```bash
+mvn exec:java -Dexec.mainClass="shopping.merchant.samples.accounts.developerregistration.v1.RegisterGcpSample"
+```
+
+For more information, see
+[Register as a developer](https://developers.google.com/merchant/api/guides/quickstart#register_as_a_developer).
+
+### 2. Run a Sample
+
+To run a specific sample, use `mvn exec:java` and specify the main class. For
+example, to list your products, run:
+
+```bash
+mvn exec:java -Dexec.mainClass="shopping.merchant.samples.products.v1.ListProductsSample"
+```
+
+### 3. Building and Running Alpha Samples (Optional)
 
 By default, alpha samples (such as reviews) are excluded from the build because
 they require alpha client libraries that are not installed by default.
@@ -60,8 +64,8 @@ they require alpha client libraries that are not installed by default.
 To compile and run alpha samples:
 
 1.  Install the alpha client library on your local machine by following the
-    instructions in the [alpha client
-    repository](https://github.com/google/merchant-api-alpha-client).
+    instructions in the
+    [alpha client repository](https://github.com/google/merchant-api-alpha-client).
 2.  Build the project using the `allow-alpha` profile:
 
 ```bash
@@ -71,29 +75,9 @@ mvn compile -Pallow-alpha
 Use the same profile when executing alpha samples. For example:
 
 ```bash
-mvn exec:java -Dexec.mainClass="shopping.merchant.samples.reviews.v1alpha.ListProductReviewsSample"
--Pallow-alpha
-```.
-
-If the code compiles successfully, then run `mvn exec`, followed by the name of
-the sample you wish to execute. The specific syntax is shown in the examples
-below.
-
-### Merchant API
-
-Before calling any `v1` Merchant API method, you will need to register the GCP
-project used to call the APIs. You can do that by running the code sample
-`shopping.merchant.samples.accounts.developerregistration.v1.RegisterGcpSample`.
-More informations can be found
-[here](https://developers.google.com/merchant/api/guides/quickstart#register_as_a_developer).
-
-Use the following syntax to run the `ListProductsSample` class, for example.
-
-```
-mvn exec:java -Dexec.mainClass="shopping.merchant.samples.products.v1.ListProductsSample"
+mvn exec:java -Dexec.mainClass="shopping.merchant.samples.reviews.v1alpha.ListProductReviewsSample" -Pallow-alpha
 ```
 
-Examine your shell output, be inspired and start working on an amazing new app!
+--------------------------------------------------------------------------------
 
-We hope these samples give you the inspiration needed to create your new
-application!
+Examine your shell output, be inspired, and start working on an amazing new app!

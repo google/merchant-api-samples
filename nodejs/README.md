@@ -6,33 +6,54 @@ example of Google Shopping integration within a command line application.
 This starter project provides a great place to start your experimentation into
 the Google Merchant API for Shopping.
 
-## Prerequisites
+--------------------------------------------------------------------------------
 
-Node.js >= 18
+## Prerequisites for Running
 
-For your convenience, you can run the following command from this directory to
-install all needed dependencies via [npm](https://www.npmjs.com/):
+### 1. System Requirements
 
-    npm install
+*   Node.js >= 18
 
-## Setup Authentication and Sample Configuration
+### 2. Install Dependencies
 
-If you have not already done so, please read the top-level `README` to discover
-how to set up the authentication configuration. The rest
-of this document assumes you have performed both tasks.
+Run the following commands from the repository root to install all needed
+dependencies:
+
+```bash
+cd nodejs/
+npm install
+```
+
+### 3. Setup Authentication and Sample Configuration
+
+If you have not already done so, please read the top-level `README.md` to
+discover how to set up the authentication configuration.
+
+--------------------------------------------------------------------------------
 
 ## Running the Samples
 
-We are assuming you've checked out the code and are reading this from a local
-directory. If not, check out the code to a local directory.
+All commands should be run from the `nodejs/` directory.
 
-Before calling any `v1` Merchant API method, you will need to register the GCP
-project used to call the APIs. You can do that by running the code sample
-`examples/accounts/developerregistration/v1/register_gcp_sample.js`.
-More informations can be found [here](https://developers.google.com/merchant/api/guides/quickstart#register_as_a_developer).
+### 1. Developer Registration
 
-1.  Start up a sample:
+Before calling any `v1` Merchant API method, you must register the GCP project
+used to call the APIs. You only need to do this once.
 
-        node examples/products/v1/list_products_sample.js
+```bash
+node examples/accounts/developerregistration/v1/register_gcp_sample.js
+```
 
-1.  Examine your shell output, be inspired and start hacking an amazing new app!
+For more information, see
+[Register as a developer](https://developers.google.com/merchant/api/guides/quickstart#register_as_a_developer).
+
+### 2. Run a Sample
+
+To run a specific sample, use `node` followed by the path to the file. For
+example, to list your products, run:
+
+```bash
+node examples/products/v1/list_products_sample.js
+```
+
+Examine your shell output, be inspired, and start hacking an amazing new app!

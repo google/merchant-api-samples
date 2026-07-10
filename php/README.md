@@ -7,65 +7,69 @@ are written to be run as a command line application, not as a webpage.
 This starter project provides a great place to start your experimentation into
 the Google Merchant API for Shopping.
 
+--------------------------------------------------------------------------------
+
+## Prerequisites for Running
+
+### 1. Install Dependencies
+
 A [Composer](https://getcomposer.org/) configuration has been included for
-dependency management.
+dependency management. Run the following commands from the repository root to
+install the necessary dependencies:
 
-## Setup Authentication and Sample Configuration
-
-If you have not already done so, please read the top-level `README` to discover
-how to set up authentication on your local machine. The rest of this document
-assumes you have created either a `client-secrets.json` or
-`service-account.json` file in the correct configuration directory.
-
-If you are using OAuth 2.0 Client IDs and secrets to get a new refresh token,
-you need to run the following file (`GenerateUserCredentials.php`) from the root
-directory, which will generate and store your refresh token, client id, and
-client secret on your local machine in a file called `token.json`. First of all,
-run Composer in the root directory to install the necessary dependencies.
-
-```
+```bash
+cd php/
 composer install
 ```
 
-Below is an example of how to run the `GenerateUserCredentials.php` code sample
-file.
+### 2. Setup Authentication and Sample Configuration
 
-```
+If you have not already done so, please read the top-level `README.md` to
+discover how to set up authentication on your local machine.
+
+If you are using OAuth 2.0 Client IDs, you must generate a refresh token before
+running the samples. Run the following commands from the `php/` directory:
+
+```bash
 php examples/Authentication/GenerateUserCredentials.php
 ```
 
-These samples expect you to authenticate by either having your refresh token
-stored in your root directory on your local machine, or to be using a service
-account to authenticate.
+This will guide you through the authorization flow and store your credentials in
+`token.json` on your local machine (within your configuration directory).
+
+--------------------------------------------------------------------------------
 
 ## Running the Samples
 
-We are assuming you've checked out the code and are reading this from a local
-directory. If not, check out the code to a local directory.
+All commands should be run from the `php/` directory.
 
-1.  If you are using OAuth 2.0 Client IDs and secrets, ensure you've first ran
-    `GenerateUserCredentials.php` and you have a file called `token.json` on
-    your local machine. Once you have the `token.json` file or if you're using a
-    service account to authenticate, proceed to the next step.
+### 1. Developer Registration
 
-1.  Before calling any `v1` Merchant API method, you will need to register the
-    GCP project used to call the APIs. You can do that by running the code
-    sample `examples/accounts/developerregistration/v1/RegisterGcpSample.php`.
-    More informations can be found
-    [here](https://developers.google.com/merchant/api/guides/quickstart#register_as_a_developer).
+Before calling any `v1` Merchant API method, you must register the GCP project
+used to call the APIs. You only need to do this once.
 
-1.  Run one of the following samples on the command line from the root
-    directory. Below is an example of how to run the `ListProductsSample.php`
-    code sample file.
-
+```bash
+php examples/accounts/developerregistration/v1/RegisterGcpSample.php
 ```
+
+For more information, see
+[Register as a developer](https://developers.google.com/merchant/api/guides/quickstart#register_as_a_developer).
+
+### 2. Run a Sample
+
+Once registered, you can run any of the included samples. For example, to list
+your products, run:
+
+```bash
 php examples/products/v1/ListProductsSample.php
 ```
 
-1.  Examine your shell output, be inspired and start hacking an amazing new app!
-
-#### Running Alpha Samples
+### 3. Running Alpha Samples (Optional)
 
 For instructions on how to install the required alpha client libraries and run
 the alpha samples (located in `v1alpha` subdirectories), please refer to the
 [alpha client repository](https://github.com/google/merchant-api-alpha-client).
+
+--------------------------------------------------------------------------------
+
+Examine your shell output, be inspired, and start hacking an amazing new app!

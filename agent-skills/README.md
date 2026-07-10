@@ -1,7 +1,7 @@
 # Merchant API Agent Skills
 
-**Merchant API Agent Skills** is an Agent Skill that provides
-specialized capabilities for Merchant API developers.
+**Merchant API Agent Skills** is an Agent Skill that provides specialized
+capabilities for Merchant API developers.
 
 This Agent Skill encapsulates domain expertise, best practices, and migration
 workflows to help developers integrate, debug, and migrate their Shopping
@@ -12,15 +12,17 @@ integrations more efficiently using AI-powered CLI tools like
 ## Available Skills
 
 ### **mapi-developer-assistant**
+
 General-purpose Merchant API expertise for documentation queries, code
 generation, and troubleshooting.
 
 **Features:**
 
-- API Documentation Expert: Deep understanding of Merchant API resources, methods, and fields
-- Migration Guidance: Helps migrate from Content API to Merchant API
-- Code Generation: Generates idiomatic code snippets (Python, Java, PHP, etc.)
-- Error Troubleshooting: Analyzes API error responses and suggests fixes
+-   API Documentation Expert: Deep understanding of Merchant API resources,
+    methods, and fields
+-   Migration Guidance: Helps migrate from Content API to Merchant API
+-   Code Generation: Generates idiomatic code snippets (Python, Java, PHP, etc.)
+-   Error Troubleshooting: Analyzes API error responses and suggests fixes
 
 **Use when:** You need quick answers about Merchant API, code examples, or error
 troubleshooting.
@@ -55,46 +57,46 @@ agy --version
 
 **Install Merchant API Agent Skill:**
 
-1. **Clone the Repository:**
+1.  **Clone the Repository:**
 
-   ```bash
-   git clone https://github.com/google/merchant-api-samples.git
-   cd merchant-api-samples
-   ```
+    ```bash
+    git clone https://github.com/google/merchant-api-samples.git
+    cd merchant-api-samples
+    ```
 
-2. **Install the Skill:**
+2.  **Install the Skill:**
 
-   You can install the skill either globally or for a specific project.
+    You can install the skill either globally or for a specific project.
 
-   **Option 1: Global Installation (Recommended)**
+    **Option 1: Global Installation (Recommended)**
 
-   Copy the skill directory to your global Antigravity skills directory:
+    Copy the skill directory to your global Antigravity skills directory:
 
-   ```bash
-   # Create the global skills directory if it doesn't exist
-   mkdir -p ~/.gemini/antigravity-cli/skills/
+    ```bash
+    # Create the global skills directory if it doesn't exist
+    mkdir -p ~/.gemini/antigravity-cli/skills/
 
-   # Copy the skill directory
-   cp -r agent-skills/mapi-developer-assistant \
-     ~/.gemini/antigravity-cli/skills/
-   ```
+    # Copy the skill directory
+    cp -r agent-skills/mapi-developer-assistant \
+      ~/.gemini/antigravity-cli/skills/
+    ```
 
-   **Option 2: Project-specific Installation**
+    **Option 2: Project-specific Installation**
 
-   If you want the skill to be available only within a specific project
-   directory:
+    If you want the skill to be available only within a specific project
+    directory:
 
-   ```bash
-   # Navigate to your project directory
-   cd /path/to/your/project
+    ```bash
+    # Navigate to your project directory
+    cd /path/to/your/project
 
-   # Create the project skills directory if it doesn't exist
-   mkdir -p .agents/skills/
+    # Create the project skills directory if it doesn't exist
+    mkdir -p .agents/skills/
 
-   # Copy the skill directory
-   cp -r /path/to/merchant-api-samples/agent-skills/mapi-developer-assistant \
-     .agents/skills/
-   ```
+    # Copy the skill directory
+    cp -r /path/to/merchant-api-samples/agent-skills/mapi-developer-assistant \
+      .agents/skills/
+    ```
 
 **Verify Installation:**
 
@@ -109,28 +111,31 @@ In the prompt, type `/skills` to open the skills panel. You should see
 
 ### For Other AI Agents (Claude, Kiro, etc.)
 
-1. **Clone this repository:**
+1.  **Clone this repository:**
 
-   ```bash
-   git clone https://github.com/google/merchant-api-samples.git
-   ```
+    ```bash
+    git clone https://github.com/google/merchant-api-samples.git
+    ```
 
-2. **Add skills to your agent:**
+2.  **Add skills to your agent:**
 
-   **Claude Code:**
+    **Claude Code:**
 
-   ```bash
-   # Create the skills directory if it doesn't exist
-   mkdir -p .claude/skills/
+    ```bash
+    # Create the skills directory if it doesn't exist
+    mkdir -p .claude/skills/
 
-   # Copy the skill directory to your project
-   cp -r merchant-api-samples/agent-skills/mapi-developer-assistant .claude/skills/
+    # Copy the skill directory to your project
+    cp -r merchant-api-samples/agent-skills/mapi-developer-assistant .claude/skills/
 
-   ```
+    ```
 
-   **Kiro or other agents:**
-   - Add the skill directory (agent-skills/mapi-developer-assistant) to your project workspace.
-   - Ensure your agent has read access to all files in the skill directory (SKILL.md and reference files)
+    **Kiro or other agents:**
+
+    -   Add the skill directory (agent-skills/mapi-developer-assistant) to your
+        project workspace.
+    -   Ensure your agent has read access to all files in the skill directory
+        (SKILL.md and reference files)
 
 ## Usage
 
@@ -141,10 +146,10 @@ questions.
 
 **Example Prompts:**
 
-- "How do I insert a product using the Merchant API in Python?"
-- "What is the difference between ProductInput and Product?"
-- "I'm getting a '400 Bad Request' with validation error. How do I fix this?"
-- "Show me how to handle authentication in Merchant API"
+-   "How do I insert a product using the Merchant API in Python?"
+-   "What is the difference between ProductInput and Product?"
+-   "I'm getting a '400 Bad Request' with validation error. How do I fix this?"
+-   "Show me how to handle authentication in Merchant API"
 
 **Management:**
 
