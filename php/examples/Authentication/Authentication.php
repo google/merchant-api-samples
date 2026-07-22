@@ -194,7 +194,7 @@ class Authentication
                             "The state is empty or doesn't match the expected one."
                                 . PHP_EOL
                         );
-                    };
+                    }
 
                     // Set the authorization code and fetch refresh and access
                     // tokens.
@@ -207,8 +207,8 @@ class Authentication
                          . 'your new refresh token to generate an access token and '
                          . 'succesfully authenticate your request.'
                          . PHP_EOL;
-                   $path = 'web';
-                   if(is_null($json_data[$path])){
+                    $path = 'web';
+                    if(is_null($json_data[$path])){
                         $path = 'installed';
                     }
                     $token_file_credentials = [
