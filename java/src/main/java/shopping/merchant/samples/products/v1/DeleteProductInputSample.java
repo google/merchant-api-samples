@@ -46,6 +46,7 @@ public class DeleteProductInputSample {
             .build()
             .toString();
 
+    // Calls the API and catches and prints any network failures/errors.
     try (ProductInputsServiceClient productInputsServiceClient =
         ProductInputsServiceClient.create(productInputsServiceSettings)) {
       DeleteProductInputRequest request =
@@ -62,7 +63,8 @@ public class DeleteProductInputSample {
 
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
-    // An ID assigned to a product input by Google. In the format: contentLanguage~feedLabel~offerId
+    // An ID assigned to a product input by Google. In the format
+    // contentLanguage~feedLabel~offerId
     String productId = "en~GB~sku123";
 
     // The name of the dataSource from which to delete the product. If it is a primary feed, this

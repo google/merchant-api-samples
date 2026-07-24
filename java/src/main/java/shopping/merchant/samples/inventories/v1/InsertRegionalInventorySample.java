@@ -34,7 +34,7 @@ public class InsertRegionalInventorySample {
     return String.format("accounts/%s/products/%s", accountId, productId);
   }
 
-  public static void insertRegionalInventory(Config config, String productId, String regionId)
+  public static RegionalInventory insertRegionalInventory(Config config, String productId, String regionId)
       throws Exception {
     GoogleCredentials credential = new Authenticator().authenticate();
 
@@ -68,8 +68,7 @@ public class InsertRegionalInventorySample {
       RegionalInventory response = regionalInventoryServiceClient.insertRegionalInventory(request);
       System.out.println("Inserted RegionalInventory Name below");
       System.out.println(response.getName());
-    } catch (Exception e) {
-      System.out.println(e);
+      return response;
     }
   }
 

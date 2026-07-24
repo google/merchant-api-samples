@@ -53,8 +53,6 @@ public class DeleteLocalInventorySample {
       System.out.println(
           "Delete successful, note that it may take up to 30 minutes for the delete to update in"
               + " the system.");
-    } catch (Exception e) {
-      System.out.println(e);
     }
   }
 

@@ -34,7 +34,7 @@ public class InsertLocalInventorySample {
     return String.format("accounts/%s/products/%s", accountId, productId);
   }
 
-  public static void insertLocalInventory(Config config, String productId, String storeCode)
+  public static LocalInventory insertLocalInventory(Config config, String productId, String storeCode)
       throws Exception {
     GoogleCredentials credential = new Authenticator().authenticate();
 
@@ -68,8 +68,7 @@ public class InsertLocalInventorySample {
       LocalInventory response = localInventoryServiceClient.insertLocalInventory(request);
       System.out.println("Inserted LocalInventory Name below");
       System.out.println(response.getName());
-    } catch (Exception e) {
-      System.out.println(e);
+      return response;
     }
   }
 

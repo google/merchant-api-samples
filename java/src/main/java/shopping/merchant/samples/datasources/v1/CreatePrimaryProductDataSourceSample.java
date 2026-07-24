@@ -51,18 +51,6 @@ public class CreatePrimaryProductDataSourceSample {
             .addCountries("GB")
             .setContentLanguage("en")
             .setFeedLabel("GB")
-            // The destinations do not necessarily have to be explicitly listed in which case the
-            // default enabled destinations will be used.
-            .addDestinations(
-                PrimaryProductDataSource.Destination.newBuilder()
-                    .setDestination(DestinationEnum.SHOPPING_ADS)
-                    .setState(PrimaryProductDataSource.Destination.State.ENABLED)
-                    .build())
-            .addDestinations(
-                PrimaryProductDataSource.Destination.newBuilder()
-                    .setDestination(DestinationEnum.FREE_LISTINGS)
-                    .setState(PrimaryProductDataSource.Destination.State.DISABLED)
-                    .build())
             .build();
 
     try (DataSourcesServiceClient dataSourcesServiceClient =
@@ -83,11 +71,6 @@ public class CreatePrimaryProductDataSourceSample {
       System.out.println("Created DataSource Name below");
       System.out.println(response.getName());
       return response.getName();
-    } catch (Exception e) {
-      System.out.println(e);
-      System.exit(1);
-      // Null is necessary to satisfy the compiler as we're not returning a String on failure.
-      return null;
     }
   }
 

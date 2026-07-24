@@ -56,8 +56,6 @@ public class DeleteDataSourceSample {
       System.out.println(
           "Delete successful, note that it may take a few minutes for the delete to update in"
               + " the system.");
-    } catch (Exception e) {
-      System.out.println(e);
     }
   }
 
