@@ -43,7 +43,7 @@ public class ListAccountsSample {
             .setCredentialsProvider(FixedCredentialsProvider.create(credential))
             .build();
 
-    // Calls the API and catches and prints any network failures/errors.
+    // Calls the API and propagates any network failures/errors.
     try (AccountsServiceClient accountsServiceClient =
         AccountsServiceClient.create(accountsServiceSettings)) {
 
@@ -62,9 +62,6 @@ public class ListAccountsSample {
       }
       System.out.print("The following count of accounts were returned: ");
       System.out.println(count);
-    } catch (Exception e) {
-      System.out.println("An error has occured: ");
-      System.out.println(e);
     }
   }
 

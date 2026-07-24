@@ -1,37 +1,22 @@
-// Copyright 2025 Google LLC
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//     https://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-
 package shopping.merchant.samples.accounts.developerregistration.v1;
 
-// [START merchantapi_register_gcp]
+// [START merchantapi_unregister_gcp]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.shopping.merchant.accounts.v1.DeveloperRegistration;
 import com.google.shopping.merchant.accounts.v1.DeveloperRegistrationName;
 import com.google.shopping.merchant.accounts.v1.DeveloperRegistrationServiceClient;
 import com.google.shopping.merchant.accounts.v1.DeveloperRegistrationServiceSettings;
-import com.google.shopping.merchant.accounts.v1.RegisterGcpRequest;
+import com.google.shopping.merchant.accounts.v1.UnregisterGcpRequest;
 import shopping.merchant.samples.utils.Authenticator;
 import shopping.merchant.samples.utils.Config;
 
 /**
- * This class demonstrates how to register the GCP project used to call the Merchant API with a
- * developer email.
+ * This class demonstrates how to unregister the GCP project currently used to call the Merchant API
+ * for a specific account.
  */
-public class RegisterGcpSample {
+public class UnregisterGcpSample {
 
-  public static DeveloperRegistration registerGcp(Config config, String developerEmail) throws Exception {
+  public static void unregisterGcp(Config config) throws Exception {
 
     // Obtains OAuth token based on the user's configuration.
     GoogleCredentials credential = new Authenticator().authenticate();
@@ -54,22 +39,18 @@ public class RegisterGcpSample {
     try (DeveloperRegistrationServiceClient developerRegistrationServiceClient =
         DeveloperRegistrationServiceClient.create(developerRegistrationServiceSettings)) {
 
-      // Creates a request to register the GCP project with the developer email.
-      RegisterGcpRequest request =
-          RegisterGcpRequest.newBuilder().setName(name).setDeveloperEmail(developerEmail).build();
+      // Creates a request to unregister the GCP project.
+      UnregisterGcpRequest request = UnregisterGcpRequest.newBuilder().setName(name).build();
 
-      System.out.println("Sending RegisterGcp request:");
-      DeveloperRegistration response = developerRegistrationServiceClient.registerGcp(request);
-
-      System.out.println(response);
-      return response;
+      System.out.println("Sending UnregisterGcp request for: " + name);
+      developerRegistrationServiceClient.unregisterGcp(request);
+      System.out.println("Unregister GCP successful.");
     }
   }
 
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
-    String developerEmail = "YOUR_EMAIL_HERE"; // Replace with your email
-    registerGcp(config, developerEmail);
+    unregisterGcp(config);
   }
 }
-// [END merchantapi_register_gcp]
+// [END merchantapi_unregister_gcp]
