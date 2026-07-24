@@ -28,7 +28,7 @@ import shopping.merchant.samples.utils.Config;
 /** This class demonstrates how to list quota for a given Merchant Center account. */
 public class ListQuotaSample {
 
-  public static void listQuotas(String accountId) throws Exception {
+  public static ListQuotaGroupsPagedResponse listQuotas(String accountId) throws Exception {
     GoogleCredentials credential = new Authenticator().authenticate();
 
     QuotaServiceSettings quotasServiceSettings =
@@ -56,10 +56,8 @@ public class ListQuotaSample {
       }
       System.out.print("The following count of quota were returned: ");
       System.out.println(count);
-
-    } catch (Exception e) {
-      System.out.println("Failed to list quota.");
-      System.out.println(e);
+      
+      return response;
     }
   }
 
