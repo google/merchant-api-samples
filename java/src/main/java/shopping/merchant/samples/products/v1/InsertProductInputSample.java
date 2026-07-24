@@ -36,7 +36,7 @@ public class InsertProductInputSample {
     return String.format("accounts/%s", accountId);
   }
 
-  public static void insertProductInput(Config config, String dataSource) throws Exception {
+  public static ProductInput insertProductInput(Config config, String dataSource) throws Exception {
 
     // Obtains OAuth token based on the user's configuration.
     GoogleCredentials credential = new Authenticator().authenticate();
@@ -50,7 +50,6 @@ public class InsertProductInputSample {
     // Creates parent to identify where to insert the product.
     String parent = getParent(config.getAccountId().toString());
 
-    // Calls the API and catches and prints any network failures/errors.
     try (ProductInputsServiceClient productInputsServiceClient =
         ProductInputsServiceClient.create(productInputsServiceSettings)) {
 
@@ -98,7 +97,7 @@ public class InsertProductInputSample {
               .setProductInput(
                   ProductInput.newBuilder()
                       .setContentLanguage("en")
-                      .setFeedLabel("label")
+                      .setFeedLabel("GB")
                       .setOfferId("sku123")
                       .setProductAttributes(attributes)
                       .build())
@@ -112,8 +111,7 @@ public class InsertProductInputSample {
       System.out.println(response.getName());
       System.out.println("Inserted Product Name below");
       System.out.println(response.getProduct());
-    } catch (Exception e) {
-      System.out.println(e);
+      return response;
     }
   }
 

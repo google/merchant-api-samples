@@ -46,7 +46,6 @@ public class DeleteProductInputSample {
             .build()
             .toString();
 
-    // Calls the API and catches and prints any network failures/errors.
     try (ProductInputsServiceClient productInputsServiceClient =
         ProductInputsServiceClient.create(productInputsServiceSettings)) {
       DeleteProductInputRequest request =
@@ -58,16 +57,13 @@ public class DeleteProductInputSample {
           "Delete successful, note that it may take a few minutes for the delete to update in"
               + " the system. If you make a products.get or products.list request before a few"
               + " minutes have passed, the old product data may be returned.");
-    } catch (Exception e) {
-      System.out.println(e);
     }
   }
 
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
-    // An ID assigned to a product input by Google. In the format
-    // contentLanguage~feedLabel~offerId
-    String productId = "en~label~sku123";
+    // An ID assigned to a product input by Google. In the format: contentLanguage~feedLabel~offerId
+    String productId = "en~GB~sku123";
 
     // The name of the dataSource from which to delete the product. If it is a primary feed, this
     // will delete the product completely. If it's a supplemental feed, it will only delete the

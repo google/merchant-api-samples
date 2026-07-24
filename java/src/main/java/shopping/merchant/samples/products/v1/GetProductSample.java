@@ -38,7 +38,7 @@ public class GetProductSample {
     return BASE64URL_NOPADDING.encode(productId.getBytes(StandardCharsets.UTF_8));
   }
 
-  public static void getProduct(Config config, String accountId, String productId)
+  public static Product getProduct(Config config, String accountId, String productId)
       throws Exception {
 
     // Obtains OAuth token based on the user's configuration.
@@ -50,7 +50,6 @@ public class GetProductSample {
             .setCredentialsProvider(FixedCredentialsProvider.create(credential))
             .build();
 
-    // Calls the API and catches and prints any network failures/errors.
     try (ProductsServiceClient productsServiceClient =
         ProductsServiceClient.create(productsServiceSettings)) {
 
@@ -65,8 +64,7 @@ public class GetProductSample {
 
       System.out.println("Retrieved Product below");
       System.out.println(response);
-    } catch (Exception e) {
-      System.out.println(e);
+      return response;
     }
   }
 
@@ -76,7 +74,7 @@ public class GetProductSample {
 
     // The name of the `product`, returned after a `Product.insert` request. We recommend
     // having stored this value in your database to use for all future requests.
-    String productId = "en~US~sku123"; // Replace with your actual product ID
+    String productId = "en~GB~sku123"; // Replace with your actual product ID
 
     // Uncomment the following line if the product name contains special characters (such as forward
     // slashes) and needs base64url encoding.

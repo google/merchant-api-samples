@@ -34,7 +34,7 @@ import shopping.merchant.samples.utils.Config;
  */
 public class ListAccountIssuesSample {
 
-  public static void listAccountIssues(Config config) throws Exception {
+  public static ListAccountIssuesPagedResponse listAccountIssues(Config config) throws Exception {
 
     // Obtains OAuth token based on the user's configuration.
     GoogleCredentials credential = new Authenticator().authenticate();
@@ -45,7 +45,6 @@ public class ListAccountIssuesSample {
             .setCredentialsProvider(FixedCredentialsProvider.create(credential))
             .build();
 
-    // Calls the API and catches and prints any network failures/errors.
     try (AccountIssueServiceClient accountIssueServiceClient =
         AccountIssueServiceClient.create(accountIssueServiceSettings)) {
 
@@ -69,11 +68,7 @@ public class ListAccountIssuesSample {
         System.out.println(accountIssue);
         count++;
       }
-      System.out.print("The following count of account issues were returned: ");
-      System.out.println(count);
-    } catch (Exception e) {
-      System.out.println("An error has occured: ");
-      System.out.println(e);
+      return response;
     }
   }
 
