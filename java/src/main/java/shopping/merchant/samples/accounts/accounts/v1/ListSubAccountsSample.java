@@ -31,7 +31,7 @@ public class ListSubAccountsSample {
     return String.format("accounts/%s", accountId);
   }
 
-  public static void listSubAccounts(Config config) throws Exception {
+  public static ListSubAccountsPagedResponse listSubAccounts(Config config) throws Exception {
 
     // Obtains OAuth token based on the user's configuration.
     GoogleCredentials credential = new Authenticator().authenticate();
@@ -66,9 +66,7 @@ public class ListSubAccountsSample {
       }
       System.out.print("The following count of accounts were returned: ");
       System.out.println(count);
-    } catch (Exception e) {
-      System.out.println("An error has occured: ");
-      System.out.println(e);
+      return response;
     }
   }
 

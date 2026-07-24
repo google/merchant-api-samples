@@ -31,7 +31,7 @@ public class DeleteAccountSample {
   // all sub-accounts will also be deleted.
   // Admin user access is required to execute this method.
 
-  public static void deleteAccount(Config config) throws Exception {
+  public static void deleteAccount(Config config, String accountId) throws Exception {
 
     // Obtains OAuth token based on the user's configuration.
     GoogleCredentials credential = new Authenticator().authenticate();
@@ -42,9 +42,6 @@ public class DeleteAccountSample {
             .setCredentialsProvider(FixedCredentialsProvider.create(credential))
             .build();
 
-    // Gets the account ID from the config file.
-    String accountId = config.getAccountId().toString();
-
     // Creates account name to identify the account.
     String name =
         AccountName.newBuilder()
@@ -52,7 +49,7 @@ public class DeleteAccountSample {
             .build()
             .toString();
 
-    // Calls the API and catches and prints any network failures/errors.
+    // Calls the API.
     try (AccountsServiceClient accountsServiceClient =
         AccountsServiceClient.create(accountsServiceSettings)) {
       DeleteAccountRequest request =
@@ -66,9 +63,11 @@ public class DeleteAccountSample {
       System.out.println("Sending Delete Account request");
       accountsServiceClient.deleteAccount(request); // No response returned on success.
       System.out.println("Delete successful.");
-    } catch (Exception e) {
-      System.out.println(e);
     }
+  }
+
+  public static void deleteAccount(Config config) throws Exception {
+    deleteAccount(config, config.getAccountId().toString());
   }
 
   public static void main(String[] args) throws Exception {

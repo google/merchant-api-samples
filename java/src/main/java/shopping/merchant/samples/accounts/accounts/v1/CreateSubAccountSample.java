@@ -33,7 +33,7 @@ public class CreateSubAccountSample {
     return String.format("accounts/%s", accountId);
   }
 
-  public static void createSubAccount(Config config) throws Exception {
+  public static Account createSubAccount(Config config) throws Exception {
 
     // Obtains OAuth token based on the user's configuration.
     GoogleCredentials credential = new Authenticator().authenticate();
@@ -70,10 +70,9 @@ public class CreateSubAccountSample {
       System.out.println("Sending Create SubAccount request");
       Account response = accountsServiceClient.createAndConfigureAccount(request);
       System.out.println("Inserted Account Name below");
-      // Format: `accounts/{account}
+      // Format: `accounts/{account}`
       System.out.println(response.getName());
-    } catch (Exception e) {
-      System.out.println(e);
+      return response;
     }
   }
 

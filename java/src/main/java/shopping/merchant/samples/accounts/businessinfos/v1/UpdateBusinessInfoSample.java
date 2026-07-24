@@ -29,7 +29,7 @@ import shopping.merchant.samples.utils.Config;
 /** This class demonstrates how to update a BusinessInfo to a new address. */
 public class UpdateBusinessInfoSample {
 
-  public static void updateBusinessInfo(Config config) throws Exception {
+  public static BusinessInfo updateBusinessInfo(Config config, String accountId) throws Exception {
 
     GoogleCredentials credential = new Authenticator().authenticate();
 
@@ -41,7 +41,7 @@ public class UpdateBusinessInfoSample {
     // Creates BusinessInfo name to identify BusinessInfo.
     String name =
         BusinessInfoName.newBuilder()
-            .setAccount(config.getAccountId().toString())
+            .setAccount(accountId)
             .build()
             .toString();
 
@@ -75,9 +75,12 @@ public class UpdateBusinessInfoSample {
       BusinessInfo response = businessInfoServiceClient.updateBusinessInfo(request);
       System.out.println("Updated BusinessInfo Name below");
       System.out.println(response.getName());
-    } catch (Exception e) {
-      System.out.println(e);
+      return response;
     }
+  }
+
+  public static BusinessInfo updateBusinessInfo(Config config) throws Exception {
+    return updateBusinessInfo(config, config.getAccountId().toString());
   }
 
   public static void main(String[] args) throws Exception {

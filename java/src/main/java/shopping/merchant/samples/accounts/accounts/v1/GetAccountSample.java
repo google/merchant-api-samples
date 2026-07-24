@@ -27,7 +27,7 @@ import shopping.merchant.samples.utils.Config;
 /** This class demonstrates how to get a single Merchant Center account. */
 public class GetAccountSample {
 
-  public static Account getAccount(Config config) throws Exception {
+  public static Account getAccount(Config config, String accountId) throws Exception {
 
     // Obtains OAuth token based on the user's configuration.
     GoogleCredentials credential = new Authenticator().authenticate();
@@ -37,9 +37,6 @@ public class GetAccountSample {
         AccountsServiceSettings.newBuilder()
             .setCredentialsProvider(FixedCredentialsProvider.create(credential))
             .build();
-
-    // Gets the account ID from the config file.
-    String accountId = config.getAccountId().toString();
 
     // Creates account name to identify account.
     String name = AccountName.newBuilder().setAccount(accountId).build().toString();
@@ -58,6 +55,10 @@ public class GetAccountSample {
       System.out.println(response);
       return response;
     }
+  }
+
+  public static Account getAccount(Config config) throws Exception {
+    return getAccount(config, config.getAccountId().toString());
   }
 
   public static void main(String[] args) throws Exception {
