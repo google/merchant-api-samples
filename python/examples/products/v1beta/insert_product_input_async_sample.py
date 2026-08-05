@@ -17,6 +17,7 @@
 # [START merchantapi_insert_product_input_async]
 import asyncio
 import functools
+import os
 import random
 import string
 
@@ -29,6 +30,12 @@ from google.shopping.merchant_products_v1beta import ProductInputsServiceAsyncCl
 from google.shopping.merchant_products_v1beta import Shipping
 from google.shopping.type import Channel
 from google.shopping.type import Price
+
+# Enable gRPC connection scaling.
+os.environ["GRPC_EXPERIMENTAL_MAX_CONCURRENT_STREAMS_CONNECTION_SCALING"] = (
+    "true"
+)
+os.environ["GRPC_EXPERIMENTS"] = "subchannel_connection_scaling"
 
 # Read merchant account information from the configuration file.
 _ACCOUNT_ID = configuration.Configuration().read_merchant_info()

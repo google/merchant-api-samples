@@ -28,9 +28,7 @@ use Google\Shopping\Merchant\Products\V1\ProductInput;
 use Google\Shopping\Merchant\Products\V1\Client\ProductInputsServiceClient;
 use Google\Shopping\Merchant\Products\V1\Shipping;
 use Google\Shopping\Type\Price;
-use React\EventLoop\Loop;
-use React\Promise\Promise;
-use function React\Promise\all;
+use GuzzleHttp\Promise\Utils;
 
 /**
  * This class demonstrates how to insert multiple product inputs asynchronously.
@@ -123,6 +121,10 @@ class InsertProductInputAsyncSample
      */
     public static function insertProductInputAsyncSample(array $config, string $dataSource): void
     {
+        // Enable gRPC connection scaling.
+        putenv('GRPC_EXPERIMENTAL_MAX_CONCURRENT_STREAMS_CONNECTION_SCALING=true');
+        putenv('GRPC_EXPERIMENTS=subchannel_connection_scaling');
+
         // Fetches OAuth2 credentials for making API calls.
         $credentials = Authentication::useServiceAccountOrTokenFile();
 
@@ -170,35 +172,20 @@ class InsertProductInputAsyncSample
             $promises[] = $promise;
         }
 
-        // Wait for all promises to settle (either resolve or reject).
-        // Reduce::all() creates a single promise that resolves when all input promises resolve.
-        // If any promise rejects, the combined promise will reject.
-        all($promises)->then(
-            function () use (&$insertedProductInputs) {
-                print "All asynchronous requests have completed.\n";
-                // Print details of all successfully inserted products.
-                print "Inserted products below\n";
-                foreach ($insertedProductInputs as $p) {
-                    print_r($p);
-                }
-            },
-            function ($reason) {
-                // This block is executed if any promise in the array rejects.
-                echo "One or more asynchronous requests failed.\n";
-                if ($reason instanceof ApiException) {
-                    echo "API Exception: " . $reason->getMessage() . "\n";
-                } else {
-                    echo "Error: " . $reason . "\n";
-                }
+        // Wait for all promises to complete (whether resolved or rejected).
+        try {
+            Utils::settle($promises)->wait();
+            print "All asynchronous requests have completed.\n";
+            print "Inserted products below:\n";
+            foreach ($insertedProductInputs as $p) {
+                print_r($p);
             }
-        )->always(function () use ($productInputsServiceAsyncClient) {
-            // This 'always' callback ensures the client is closed after all promises settle.
+        } catch (\Throwable $e) {
+            echo "An error occurred while executing requests: " . $e->getMessage() . "\n";
+        } finally {
+            // Ensure the client is closed after all promises settle.
             $productInputsServiceAsyncClient->close();
-        });
-
-        // Run the event loop. This is crucial for asynchronous operations to execute.
-        // The script will block here until all promises are resolved/rejected or the loop is stopped.
-        Loop::run();
+        }
     }
 
     /**

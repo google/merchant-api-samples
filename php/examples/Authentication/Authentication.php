@@ -142,11 +142,8 @@ class Authentication
             // Decode the JSON file.
             $json_data = json_decode($json, true);
 
-            $path = 'web';
+            $path = isset($json_data['web']) ? 'web' : 'installed';
             $redirectUrl = str_replace('tcp:', 'http:', $socket->getAddress());
-            if(is_null($json_data[$path])){
-                $path = 'installed';
-            }
             $oauth2 = new OAuth2(
                 [
                     'clientId' => $json_data[$path]['client_id'],
@@ -207,10 +204,7 @@ class Authentication
                          . 'your new refresh token to generate an access token and '
                          . 'succesfully authenticate your request.'
                          . PHP_EOL;
-                   $path = 'web';
-                   if(is_null($json_data[$path])){
-                        $path = 'installed';
-                    }
+                   $path = isset($json_data['web']) ? 'web' : 'installed';
                     $token_file_credentials = [
                         'client_id' => $json_data[$path]['client_id'],
                         'client_secret' => $json_data[$path]['client_secret'],
