@@ -21,7 +21,7 @@ require (
     golang.org/x/sys v0.45.0 // indirect
     golang.org/x/text v0.37.0 // indirect
     google.golang.org/genproto v0.0.0-20260319201613-d00831a3d3e7 // indirect
-    google.golang.org/genproto/googleapis/api v0.0.0-20260401024825-9d38bb4040a9 // indirect
-    google.golang.org/genproto/googleapis/rpc v0.0.0-20260401001100-f93e5f3e9f0f // indirect
-    google.golang.org/grpc v1.82.1 // indirect
+    google.golang.org/genproto/googleapis/api v0.0.0-20260526163538-3dc84a4a5aaa // indirect
+    google.golang.org/genproto/googleapis/rpc v0.0.0-20260526163538-3dc84a4a5aaa // indirect
+    google.golang.org/grpc v1.83.1 // indirect
 )
