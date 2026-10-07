@@ -39,7 +39,7 @@ async function searchAndPrintReports(accountId) {
   // Define the Merchant Query Language (MQL) query.
   // The commented-out queries below are examples for different report types.
   // For detailed documentation on MQL and available fields, refer to:
-  // https://developers.google.com/merchant/api/reference/rest/reports_v1beta/accounts.reports#ReportRow
+  // https://developers.google.com/merchant/api/reference/rest/reports_v1/accounts.reports#ReportRow
   //
   // This is an example query for the product_view report.
   const query =

@@ -34,7 +34,7 @@ function searchReport() {
     const pageSize = 1000;
     let pageToken;
     // Uncomment the desired query from below. Documentation can be found at
-    // https://developers.google.com/merchant/api/reference/rest/reports_v1beta/accounts.reports#ReportRow
+    // https://developers.google.com/merchant/api/reference/rest/reports_v1/accounts.reports#ReportRow
     // The query below is an example of a query for the product_view.
     const query = 'SELECT offer_id,' +
         'id,' +

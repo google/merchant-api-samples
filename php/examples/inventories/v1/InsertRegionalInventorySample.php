@@ -33,7 +33,7 @@ use Google\Shopping\Type\Price;
  *
  * Replaces the full `RegionalInventory` resource if an entry with the same
  * [`region`]
- * [google.shopping.merchant.inventories.v1beta.RegionalInventory.region]
+ * [google.shopping.merchant.inventories.v1.RegionalInventory.region]
  * already exists for the product.
  *
  * It might take up to 30 minutes for the new or updated `RegionalInventory`

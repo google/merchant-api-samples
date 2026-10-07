@@ -22,14 +22,14 @@ require_once __DIR__ . '/../../../Authentication/Config.php';
 // [START merchantapi_update_automaticimprovements]
 use Google\ApiCore\ApiException;
 use Google\Protobuf\FieldMask;
-use Google\Shopping\Merchant\Accounts\V1beta\AutomaticImageImprovements;
-use Google\Shopping\Merchant\Accounts\V1beta\AutomaticImageImprovements\ImageImprovementsAccountLevelSettings;
-use Google\Shopping\Merchant\Accounts\V1beta\AutomaticImprovements;
-use Google\Shopping\Merchant\Accounts\V1beta\Client\AutomaticImprovementsServiceClient;
-use Google\Shopping\Merchant\Accounts\V1beta\AutomaticItemUpdates;
-use Google\Shopping\Merchant\Accounts\V1beta\AutomaticItemUpdates\ItemUpdatesAccountLevelSettings;
-use Google\Shopping\Merchant\Accounts\V1beta\AutomaticShippingImprovements;
-use Google\Shopping\Merchant\Accounts\V1beta\UpdateAutomaticImprovementsRequest;
+use Google\Shopping\Merchant\Accounts\V1\AutomaticImageImprovements;
+use Google\Shopping\Merchant\Accounts\V1\AutomaticImageImprovements\ImageImprovementsAccountLevelSettings;
+use Google\Shopping\Merchant\Accounts\V1\AutomaticImprovements;
+use Google\Shopping\Merchant\Accounts\V1\Client\AutomaticImprovementsServiceClient;
+use Google\Shopping\Merchant\Accounts\V1\AutomaticItemUpdates;
+use Google\Shopping\Merchant\Accounts\V1\AutomaticItemUpdates\ItemUpdatesAccountLevelSettings;
+use Google\Shopping\Merchant\Accounts\V1\AutomaticShippingImprovements;
+use Google\Shopping\Merchant\Accounts\V1\UpdateAutomaticImprovementsRequest;
 
 /**
  * This class demonstrates how to update AutomaticImprovements to be enabled.

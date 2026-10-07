@@ -33,7 +33,7 @@ use Google\Shopping\Type\Price;
  *
  * Replaces the full `LocalInventory` resource if an entry with the same
  * [`storeCode`]
- * [google.shopping.merchant.inventories.v1beta.LocalInventory.storeCode]
+ * [google.shopping.merchant.inventories.v1.LocalInventory.storeCode]
  * already exists for the product.
  *
  * It might take up to 30 minutes for the new or updated `LocalInventory`
