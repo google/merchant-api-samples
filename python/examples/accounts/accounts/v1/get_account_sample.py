@@ -20,14 +20,12 @@ from examples.authentication import generate_user_credentials
 from google.shopping.merchant_accounts_v1 import AccountsServiceClient
 from google.shopping.merchant_accounts_v1 import GetAccountRequest
 
-_ACCOUNT = configuration.Configuration().read_merchant_info()
-
 
 def get_parent(account_id):
   return f"accounts/{account_id}"
 
 
-def get_account():
+def get_account(account_id: str):
   """Gets a single Merchant Center account."""
 
   # Get OAuth credentials.
@@ -37,7 +35,7 @@ def get_account():
   client = AccountsServiceClient(credentials=credentials)
 
   # Create the account name.
-  name = get_parent(_ACCOUNT)
+  name = get_parent(account_id)
 
   # Create the request.
   request = GetAccountRequest(name=name)
@@ -48,11 +46,14 @@ def get_account():
     response = client.get_account(request=request)
     print("Retrieved Account below")
     print(response)
+    return response
   except RuntimeError as e:
     print(e)
+    raise
 
 
 if __name__ == "__main__":
-  get_account()
+  _account_id = configuration.Configuration().read_merchant_info()
+  get_account(_account_id)
 
 # [END merchantapi_get_account]

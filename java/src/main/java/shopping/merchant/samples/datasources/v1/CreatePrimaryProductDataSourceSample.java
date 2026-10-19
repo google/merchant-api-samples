@@ -51,6 +51,18 @@ public class CreatePrimaryProductDataSourceSample {
             .addCountries("GB")
             .setContentLanguage("en")
             .setFeedLabel("GB")
+            // The destinations do not necessarily have to be explicitly listed in which case the
+            // default enabled destinations will be used.
+            .addDestinations(
+                PrimaryProductDataSource.Destination.newBuilder()
+                    .setDestination(DestinationEnum.FREE_LISTINGS)
+                    .setState(PrimaryProductDataSource.Destination.State.ENABLED)
+                    .build())
+            .addDestinations(
+                PrimaryProductDataSource.Destination.newBuilder()
+                    .setDestination(DestinationEnum.SHOPPING_ADS)
+                    .setState(PrimaryProductDataSource.Destination.State.DISABLED)
+                    .build())
             .build();
 
     try (DataSourcesServiceClient dataSourcesServiceClient =

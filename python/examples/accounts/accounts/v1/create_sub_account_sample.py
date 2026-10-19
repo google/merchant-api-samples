@@ -23,14 +23,12 @@ from google.shopping.merchant_accounts_v1 import AccountAggregation
 from google.shopping.merchant_accounts_v1 import AccountsServiceClient
 from google.shopping.merchant_accounts_v1 import CreateAndConfigureAccountRequest
 
-_ACCOUNT = configuration.Configuration().read_merchant_info()
-
 
 def get_parent(account_id):
   return f"accounts/{account_id}"
 
 
-def create_sub_account():
+def create_sub_account(account_id: str) -> Account:
   """Creates a sub-account under an advanced account."""
 
   # Get OAuth credentials.
@@ -40,7 +38,7 @@ def create_sub_account():
   client = AccountsServiceClient(credentials=credentials)
 
   # Get the parent advanced account ID.
-  parent = get_parent(_ACCOUNT)
+  parent = get_parent(account_id)
 
   # Create the request.
   request = CreateAndConfigureAccountRequest(
@@ -64,11 +62,14 @@ def create_sub_account():
     response = client.create_and_configure_account(request=request)
     print("Inserted Account Name below")
     print(response.name)
+    return response
   except RuntimeError as e:
     print(e)
+    raise
 
 
 if __name__ == "__main__":
-  create_sub_account()
+  _account_id = configuration.Configuration().read_merchant_info()
+  create_sub_account(_account_id)
 
 # [END merchantapi_create_sub_account]

@@ -17,16 +17,22 @@
 # [START merchantapi_register_gcp]
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
+from google.shopping.merchant_accounts_v1 import DeveloperRegistration
 from google.shopping.merchant_accounts_v1 import DeveloperRegistrationServiceClient
 from google.shopping.merchant_accounts_v1 import RegisterGcpRequest
 
 
-def register_gcp(account_id: str, developer_email: str) -> None:
+def register_gcp(
+    account_id: str, developer_email: str
+) -> DeveloperRegistration:
   """Registers the GCP project used to call the Merchant API with a developer email.
 
   Args:
     account_id: The ID of your Merchant Center account.
     developer_email: The email address of the developer to register.
+
+  Returns:
+    The created or updated DeveloperRegistration object.
   """
   # Get OAuth credentials.
   credentials = generate_user_credentials.main()
@@ -49,8 +55,10 @@ def register_gcp(account_id: str, developer_email: str) -> None:
     response = client.register_gcp(request=request)
     print("Registered GCP project successfully:")
     print(response)
+    return response
   except RuntimeError as e:
     print(f"An error occurred: {e}")
+    raise
 
 
 if __name__ == "__main__":

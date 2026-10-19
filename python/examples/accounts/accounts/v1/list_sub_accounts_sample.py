@@ -20,14 +20,12 @@ from examples.authentication import generate_user_credentials
 from google.shopping.merchant_accounts_v1 import AccountsServiceClient
 from google.shopping.merchant_accounts_v1 import ListSubAccountsRequest
 
-_ACCOUNT = configuration.Configuration().read_merchant_info()
-
 
 def get_parent(account_id):
   return f"accounts/{account_id}"
 
 
-def list_sub_accounts():
+def list_sub_accounts(account_id: str):
   """Lists all the subaccounts of an advanced account."""
 
   # Get OAuth credentials.
@@ -37,7 +35,7 @@ def list_sub_accounts():
   client = AccountsServiceClient(credentials=credentials)
 
   # Get the parent advanced account ID.
-  parent = get_parent(_ACCOUNT)
+  parent = get_parent(account_id)
 
   # Create the request.
   request = ListSubAccountsRequest(provider=parent)
@@ -53,13 +51,16 @@ def list_sub_accounts():
       count += 1
 
     print(f"The following count of accounts were returned: {count}")
+    return response
 
   except RuntimeError as e:
     print("An error has occured: ")
     print(e)
+    raise
 
 
 if __name__ == "__main__":
-  list_sub_accounts()
+  _account_id = configuration.Configuration().read_merchant_info()
+  list_sub_accounts(_account_id)
 
 # [END merchantapi_list_subaccounts]

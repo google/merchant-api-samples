@@ -22,14 +22,6 @@ from google.shopping.merchant_products_v1 import Availability
 from google.shopping.merchant_products_v1 import Condition
 from google.shopping.type import Price
 
-_ACCOUNT = configuration.Configuration().read_merchant_info()
-_PARENT = f"accounts/{_ACCOUNT}"
-
-# You can only insert products into datasource types of Input "API" and
-# "FILE", and of Type "Primary" or "Supplemental."
-_DATA_SOURCE = "[INSERT_DATA_SOURCE_HERE]"
-_DATA_SOURCE_NAME = f"accounts/{_ACCOUNT}/dataSources/{_DATA_SOURCE}"
-
 
 def create_product_input():
   """Creates a `ProductInput` resource."""
@@ -74,8 +66,17 @@ def create_product_input():
   )
 
 
-def insert_product_input():
-  """Inserts the specified `ProductInput` resource."""
+def insert_product_input(account_id: str, data_source: str):
+  """Inserts the specified `ProductInput` resource.
+
+  Args:
+    account_id: The Merchant Center account ID.
+    data_source: The resource name of the data source that will own the product
+      input.
+
+  Returns:
+    The inserted `ProductInput` resource.
+  """
 
   # Gets OAuth Credentials.
   credentials = generate_user_credentials.main()
@@ -85,13 +86,15 @@ def insert_product_input():
       credentials=credentials
   )
 
+  parent = f"accounts/{account_id}"
+
   # Creates the request.
   request = merchant_products_v1.InsertProductInputRequest(
-      parent=_PARENT,
+      parent=parent,
       # If this product is already owned by another datasource, when
       # re-inserting, the new datasource will take ownership of the product.
       product_input=create_product_input(),
-      data_source=_DATA_SOURCE_NAME,
+      data_source=data_source,
   )
 
   # Makes the request and catches and prints any error messages.
@@ -101,6 +104,7 @@ def insert_product_input():
     # product by Google. Product ID has the format
     # `contentLanguage~feedLabel~offerId`
     print(f"Input successful: {response}")
+    return response
   except RuntimeError as e:
     print("Input failed")
     print(e)
@@ -108,9 +112,19 @@ def insert_product_input():
     # response. We recommend that you check the Merchant Center to ensure that
     # the product is approved and visible to users before using the product ID
     # in any downstream processes.
+    raise
 
 
 if __name__ == "__main__":
-  insert_product_input()
+  # Retrieves the Merchant Center account ID from the configuration file.
+  merchant_account_id = configuration.Configuration().read_merchant_info()
+  # Identifies the data source that will own the product input.
+  # You can only insert products into datasource types of Input "API" and
+  # "FILE", and of Type "Primary" or "Supplemental."
+  target_data_source = (
+      f"accounts/{merchant_account_id}/dataSources/[INSERT_DATA_SOURCE_HERE]"
+  )
+
+  insert_product_input(merchant_account_id, target_data_source)
 
 # [END merchantapi_insert_product_input]

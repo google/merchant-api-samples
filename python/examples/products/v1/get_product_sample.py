@@ -20,6 +20,7 @@ import base64
 from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
 from google.shopping.merchant_products_v1 import GetProductRequest
+from google.shopping.merchant_products_v1 import Product
 from google.shopping.merchant_products_v1 import ProductsServiceClient
 
 
@@ -38,12 +39,15 @@ def encode_product_id(product_id_to_encode: str) -> str:
   return encoded_bytes.rstrip(b"=").decode("utf-8")
 
 
-def get_product(account_id_arg: str, product_id_arg: str) -> None:
+def get_product(account_id_arg: str, product_id_arg: str) -> Product:
   """Retrieves a single product from a Merchant Center account.
 
   Args:
     account_id_arg: The ID of the Merchant Center account.
     product_id_arg: The ID of the product to retrieve.
+
+  Returns:
+    The retrieved `Product` resource.
   """
   # Gets OAuth Credentials.
   credentials = generate_user_credentials.main()
@@ -64,8 +68,10 @@ def get_product(account_id_arg: str, product_id_arg: str) -> None:
     response = client.get_product(request=request)
     print("Retrieved Product below")
     print(response)
+    return response
   except RuntimeError as e:
     print(e)
+    raise
 
 
 if __name__ == "__main__":

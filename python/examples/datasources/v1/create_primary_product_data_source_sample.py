@@ -21,28 +21,22 @@ from google.shopping.merchant_datasources_v1 import CreateDataSourceRequest
 from google.shopping.merchant_datasources_v1 import DataSource
 from google.shopping.merchant_datasources_v1 import DataSourcesServiceClient
 from google.shopping.merchant_datasources_v1 import PrimaryProductDataSource
-# Used for setting the destination type, e.g., SHOPPING_ADS.
+# Used for setting the destination type, e.g., FREE_LISTINGS.
 from google.shopping.type import types as merchant_api_types
 
 
-# Fetches the Merchant Center account ID from the configuration file.
-# This ID is essential for constructing the 'parent' resource path
-# required by the API.
-_ACCOUNT_ID = configuration.Configuration().read_merchant_info()
-# Constructs the parent resource name format for Data Source operations.
-_PARENT = f"accounts/{_ACCOUNT_ID}"
-
-
-def create_primary_product_data_source(display_name: str) -> None:
+def create_primary_product_data_source(
+    account_id: str, display_name: str
+) -> str:
   """Creates a primary product data source for the 'en' language and 'GB' region, targeting specific destinations.
 
   Args:
+      account_id: The Merchant Center account ID.
       display_name: The user-visible name for the new data source in Merchant
         Center.
 
   Returns:
-      The resource name of the newly created data source if successful,
-      otherwise None.
+      The resource name of the newly created data source.
   """
 
   # Obtains OAuth 2.0 credentials for API authentication.
@@ -65,27 +59,27 @@ def create_primary_product_data_source(display_name: str) -> None:
   # Defines the destinations for this data source and their states.
   # If destinations are not explicitly listed, defaults will be used.
 
-  # Configure Shopping Ads destination (enabled).
-  destination_shopping_ads = PrimaryProductDataSource.Destination()
-  destination_shopping_ads.destination = (
-      merchant_api_types.Destination.DestinationEnum.SHOPPING_ADS
-  )
-  destination_shopping_ads.state = (
-      PrimaryProductDataSource.Destination.State.ENABLED
-  )
-
-  # Configure Free Listings destination (disabled).
+  # Configure Free Listings destination (enabled).
   destination_free_listings = PrimaryProductDataSource.Destination()
   destination_free_listings.destination = (
       merchant_api_types.Destination.DestinationEnum.FREE_LISTINGS
   )
   destination_free_listings.state = (
+      PrimaryProductDataSource.Destination.State.ENABLED
+  )
+
+  # Configure Shopping Ads destination (disabled).
+  destination_shopping_ads = PrimaryProductDataSource.Destination()
+  destination_shopping_ads.destination = (
+      merchant_api_types.Destination.DestinationEnum.SHOPPING_ADS
+  )
+  destination_shopping_ads.state = (
       PrimaryProductDataSource.Destination.State.DISABLED
   )
 
   primary_product_data_source.destinations = [
       destination_free_listings,
-      destination_shopping_ads
+      destination_shopping_ads,
   ]
 
   # Assembles the DataSource object.
@@ -93,9 +87,12 @@ def create_primary_product_data_source(display_name: str) -> None:
   data_source.display_name = display_name
   data_source.primary_product_data_source = primary_product_data_source
 
+  # Constructs the parent resource name format for Data Source operations.
+  parent = f"accounts/{account_id}"
+
   # Prepares the CreateDataSourceRequest.
   # This request includes the parent account and the data source configuration.
-  request = CreateDataSourceRequest(parent=_PARENT, data_source=data_source)
+  request = CreateDataSourceRequest(parent=parent, data_source=data_source)
 
   try:
     # Executes the API call to create the data source.
@@ -104,16 +101,24 @@ def create_primary_product_data_source(display_name: str) -> None:
     # Confirms creation and prints the new data source's name.
     print("Created DataSource Name below")
     print(response)
+    return response.name
   except RuntimeError as e:
     # Handles any errors encountered during the API request.
     print(e)
+    raise
 
 
 if __name__ == "__main__":
+  # Fetches the Merchant Center account ID from the configuration file.
+  # This ID is essential for constructing the 'parent' resource path
+  # required by the API.
+  merchant_account_id = configuration.Configuration().read_merchant_info()
   # Sets the desired display name for the data source in Merchant Center.
   datasource_display_name = "British Primary Product Data"
 
   # Calls the function to create the data source.
-  create_primary_product_data_source(datasource_display_name)
+  create_primary_product_data_source(
+      merchant_account_id, datasource_display_name
+  )
 
 # [END merchantapi_create_primary_product_data_source]

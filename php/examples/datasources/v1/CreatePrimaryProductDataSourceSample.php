@@ -73,11 +73,11 @@ class CreatePrimaryProductDataSourceSample
             // default enabled destinations will be used.
             'destinations' => [
                 new PrimaryProductDataSource\Destination([
-                    'destination' => DestinationEnum::SHOPPING_ADS,
+                    'destination' => DestinationEnum::FREE_LISTINGS,
                     'state' => PrimaryProductDataSource\Destination\State::ENABLED
                 ]),
                 new PrimaryProductDataSource\Destination([
-                    'destination' => DestinationEnum::FREE_LISTINGS,
+                    'destination' => DestinationEnum::SHOPPING_ADS,
                     'state' => PrimaryProductDataSource\Destination\State::DISABLED
                 ])
             ]

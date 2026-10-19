@@ -19,11 +19,8 @@ from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
 from google.shopping import merchant_quota_v1
 
-_ACCOUNT = configuration.Configuration().read_merchant_info()
-_PARENT = f"accounts/{_ACCOUNT}"
 
-
-def list_quotas():
+def list_quotas(account_id: str):
   """This class demonstrates how to list quota for a given Merchant Center account."""
 
   # Gets OAuth Credentials.
@@ -33,25 +30,32 @@ def list_quotas():
   client = merchant_quota_v1.QuotaServiceClient(credentials=credentials)
 
   # Creates the request.
-  request = merchant_quota_v1.ListQuotaGroupsRequest(parent=_PARENT)
+  parent = f"accounts/{account_id}"
+  request = merchant_quota_v1.ListQuotaGroupsRequest(parent=parent)
 
   print("Sending list quotas request:")
   # Makes the request.
-  response = client.list_quota_groups(request=request)
+  try:
+    response = client.list_quota_groups(request=request)
 
-  count = 0
+    count = 0
 
-  # Iterates over all rows in all pages and prints the quota group in each row.
-  # Automatically uses the `next_page_token` if returned to fetch all pages of
-  # data.
-  for quota in response:
-    print(quota)
-    count += 1
-  print("The following count of quota were returned: ")
-  print(count)
+    # Iterates over all rows in all pages and prints the quota group in each
+    # row. Automatically uses the `next_page_token` if returned to fetch all
+    # pages of data.
+    for quota in response:
+      print(quota)
+      count += 1
+    print("The following count of quota were returned: ")
+    print(count)
+    return response
+  except RuntimeError as e:
+    print(e)
+    raise
 
 
 if __name__ == "__main__":
-  list_quotas()
+  _account_id = configuration.Configuration().read_merchant_info()
+  list_quotas(_account_id)
 
 # [END merchantapi_list_quota]

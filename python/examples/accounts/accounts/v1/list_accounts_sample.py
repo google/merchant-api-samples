@@ -26,6 +26,9 @@ def list_accounts():
   Please note that "list_accounts" method charge API quota on behalf of each
   specific user running the request. "list_sub_accounts" method is more suitable
   to list large number of sub-accounts.
+
+  Returns:
+    The ListAccountsPager response containing the accessible accounts.
   """
 
   # Get OAuth credentials.
@@ -47,10 +50,12 @@ def list_accounts():
       print(account)
       count += 1
     print(f"The following count of accounts were returned: {count}")
+    return response
 
   except RuntimeError as e:
     print("An error has occured: ")
     print(e)
+    raise
 
 
 if __name__ == "__main__":

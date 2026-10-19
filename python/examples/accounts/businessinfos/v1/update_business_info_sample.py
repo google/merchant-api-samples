@@ -25,10 +25,9 @@ from google.shopping.merchant_accounts_v1 import UpdateBusinessInfoRequest
 from google.type import postal_address_pb2
 
 FieldMask = field_mask_pb2.FieldMask
-_ACCOUNT = configuration.Configuration().read_merchant_info()
 
 
-def update_business_info():
+def update_business_info(account_id: str) -> BusinessInfo:
   """Updates a BusinessInfo to a new address."""
 
   # Get OAuth credentials
@@ -40,7 +39,7 @@ def update_business_info():
   )
 
   # Create BusinessInfo name
-  name = "accounts/" + _ACCOUNT + "/businessInfo"
+  name = "accounts/" + account_id + "/businessInfo"
 
   # Create a PostalAddress
   address = postal_address_pb2.PostalAddress(
@@ -72,11 +71,14 @@ def update_business_info():
     )
     print("Updated BusinessInfo Name below")
     print(response.name)
+    return response
   except RuntimeError as e:
     print(e)
+    raise
 
 
 if __name__ == "__main__":
-  update_business_info()
+  _account_id = configuration.Configuration().read_merchant_info()
+  update_business_info(_account_id)
 
 # [END merchantapi_update_businessinfo]

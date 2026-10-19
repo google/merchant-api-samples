@@ -19,15 +19,8 @@ from examples.authentication import configuration
 from examples.authentication import generate_user_credentials
 from google.shopping import merchant_datasources_v1
 
-# ENSURE you fill in the datasource ID for the sample to
-# work.
-_ACCOUNT = configuration.Configuration().read_merchant_info()
-# An ID automatically assigned to the datasource after creation by Google.
-_DATASOURCE = "[INSERT_DATASOURCE_HERE]"
-_NAME = f"accounts/{_ACCOUNT}/dataSources/{_DATASOURCE}"
 
-
-def delete_data_source():
+def delete_data_source(account_id: str, datasource_id: str):
   """Deletes the specified `DataSource` resource.
 
   Delete works for any datasource type.
@@ -35,6 +28,10 @@ def delete_data_source():
   primary feed. If a link exists and the Type is "Supplemental", you will need
   to remove the supplemental feed from the default and/or custom rule(s) of any
   primary feed(s) that references it. Then retry the delete.
+
+  Args:
+    account_id: The Merchant Center account ID.
+    datasource_id: The ID of the data source to delete.
   """
 
   # Gets OAuth Credentials.
@@ -45,8 +42,10 @@ def delete_data_source():
       credentials=credentials
   )
 
+  name = f"accounts/{account_id}/dataSources/{datasource_id}"
+
   # Creates the request.
-  request = merchant_datasources_v1.DeleteDataSourceRequest(name=_NAME)
+  request = merchant_datasources_v1.DeleteDataSourceRequest(name=name)
 
   # Makes the request and catches and prints any error messages.
   try:
@@ -56,9 +55,17 @@ def delete_data_source():
   except RuntimeError as e:
     print("Deletion failed")
     print(e)
+    raise
 
 
 if __name__ == "__main__":
-  delete_data_source()
+  # Retrieves the Merchant Center account ID from the configuration file.
+  merchant_account_id = configuration.Configuration().read_merchant_info()
+  # ENSURE you fill in the datasource ID for the sample to
+  # work.
+  # An ID automatically assigned to the datasource after creation by Google.
+  target_datasource = "[INSERT_DATASOURCE_HERE]"
+
+  delete_data_source(merchant_account_id, target_datasource)
 
 # [END merchantapi_delete_data_source]

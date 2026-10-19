@@ -21,11 +21,8 @@ from examples.authentication import generate_user_credentials
 from google.shopping.merchant_accounts_v1 import AccountIssueServiceClient
 from google.shopping.merchant_accounts_v1 import ListAccountIssuesRequest
 
-_ACCOUNT = configuration.Configuration().read_merchant_info()
-_PARENT = f"accounts/{_ACCOUNT}"
 
-
-def list_account_issues():
+def list_account_issues(account_id: str):
   """Lists all the account issues of an account."""
 
   # Gets OAuth Credentials.
@@ -34,7 +31,8 @@ def list_account_issues():
   # Creates a client.
   client = AccountIssueServiceClient(credentials=credentials)
 
-  request = ListAccountIssuesRequest(parent=_PARENT)
+  parent = f"accounts/{account_id}"
+  request = ListAccountIssuesRequest(parent=parent)
 
   print("Sending list account issues request:")
 
@@ -48,13 +46,16 @@ def list_account_issues():
       count += 1
     print("The following count of account issues were returned: ")
     print(count)
+    return response
 
   except RuntimeError as e:
     print("An error has occured: ")
     print(e)
+    raise
 
 
 if __name__ == "__main__":
-  list_account_issues()
+  _account_id = configuration.Configuration().read_merchant_info()
+  list_account_issues(_account_id)
 
 # [END merchantapi_list_account_issues]

@@ -21,14 +21,12 @@ from examples.authentication import generate_user_credentials
 from google.shopping.merchant_accounts_v1 import AccountsServiceClient
 from google.shopping.merchant_accounts_v1 import DeleteAccountRequest
 
-_ACCOUNT = configuration.Configuration().read_merchant_info()
-
 
 def get_parent(account_id):
   return f"accounts/{account_id}"
 
 
-def delete_account():
+def delete_account(account_id: str):
   """Deletes a given Merchant Center account."""
 
   # Get OAuth credentials.
@@ -38,7 +36,7 @@ def delete_account():
   client = AccountsServiceClient(credentials=credentials)
 
   # Create the account name.
-  name = get_parent(_ACCOUNT)
+  name = get_parent(account_id)
 
   # Create the request.
   request = DeleteAccountRequest(name=name, force=True)
@@ -50,9 +48,11 @@ def delete_account():
     print("Delete successful.")
   except RuntimeError as e:
     print(e)
+    raise
 
 
 if __name__ == "__main__":
-  delete_account()
+  _account_id = configuration.Configuration().read_merchant_info()
+  delete_account(_account_id)
 
 # [END merchantapi_delete_account]

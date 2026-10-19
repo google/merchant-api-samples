@@ -20,19 +20,16 @@ from examples.authentication import generate_user_credentials
 from google.shopping import merchant_products_v1
 
 
-_ACCOUNT = configuration.Configuration().read_merchant_info()
+def delete_product_input(account_id: str, product_id: str, data_source: str):
+  """Deletes the specified `ProductInput` resource.
 
-# ENSURE you fill in the product ID and data source for the
-# sample to work.
-# In the format of `contentLanguage~feedLabel~offerId`
-_PRODUCT = "[INSERT_PRODUCT_HERE]"
-_DATA_SOURCE = "[INSERT_DATA_SOURCE_HERE]"
-_NAME = f"accounts/{_ACCOUNT}/productInputs/{_PRODUCT}"
-_DATA_SOURCE_NAME = f"accounts/{_ACCOUNT}/dataSources/{_DATA_SOURCE}"
-
-
-def delete_product_input():
-  """Deletes the specified `ProductInput` resource."""
+  Args:
+    account_id: The Merchant Center account ID.
+    product_id: The ID of the product input to delete, in the format
+      `contentLanguage~feedLabel~offerId`.
+    data_source: The resource name of the data source from which to delete the
+      product.
+  """
 
   # Gets OAuth Credentials.
   credentials = generate_user_credentials.main()
@@ -42,9 +39,11 @@ def delete_product_input():
       credentials=credentials
   )
 
+  name = f"accounts/{account_id}/productInputs/{product_id}"
+
   # Creates the request.
   request = merchant_products_v1.DeleteProductInputRequest(
-      name=_NAME, data_source=_DATA_SOURCE_NAME
+      name=name, data_source=data_source
   )
 
   # Makes the request and catch and print any error messages.
@@ -54,9 +53,23 @@ def delete_product_input():
   except RuntimeError as e:
     print("Deletion failed")
     print(e)
+    raise
 
 
 if __name__ == "__main__":
-  delete_product_input()
+  # Retrieves the Merchant Center account ID from the configuration file.
+  merchant_account_id = configuration.Configuration().read_merchant_info()
+
+  # ENSURE you fill in the product ID and data source for the
+  # sample to work.
+  # In the format of `contentLanguage~feedLabel~offerId`
+  target_product = "[INSERT_PRODUCT_HERE]"
+  target_data_source = (
+      f"accounts/{merchant_account_id}/dataSources/[INSERT_DATA_SOURCE_HERE]"
+  )
+
+  delete_product_input(
+      merchant_account_id, target_product, target_data_source
+  )
 
 # [END merchantapi_delete_product_input]
