@@ -12,22 +12,22 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package shopping.merchant.samples.reviews.v1alpha;
+package shopping.merchant.samples.reviews.v1;
 
-// [START merchantapi_delete_product_review]
+// [START merchantapi_get_product_review]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.shopping.merchant.reviews.v1alpha.DeleteProductReviewRequest;
-import com.google.shopping.merchant.reviews.v1alpha.ProductReviewsServiceClient;
-import com.google.shopping.merchant.reviews.v1alpha.ProductReviewsServiceSettings;
+import com.google.shopping.merchant.reviews.v1.GetProductReviewRequest;
+import com.google.shopping.merchant.reviews.v1.ProductReview;
+import com.google.shopping.merchant.reviews.v1.ProductReviewsServiceClient;
+import com.google.shopping.merchant.reviews.v1.ProductReviewsServiceSettings;
 import shopping.merchant.samples.utils.Authenticator;
 import shopping.merchant.samples.utils.Config;
 
-/** This class demonstrates how to delete a product review. */
-public class DeleteProductReviewSample {
+/** This class demonstrates how to get a product review. */
+public class GetProductReviewSample {
 
-  public static void deleteProductReview(String accountId, String productReviewId)
-      throws Exception {
+  public static void getProductReview(String accountId, String productReviewId) throws Exception {
     GoogleCredentials credential = new Authenticator().authenticate();
 
     ProductReviewsServiceSettings productReviewsServiceSettings =
@@ -38,14 +38,15 @@ public class DeleteProductReviewSample {
     try (ProductReviewsServiceClient productReviewsServiceClient =
         ProductReviewsServiceClient.create(productReviewsServiceSettings)) {
 
-      DeleteProductReviewRequest request =
-          DeleteProductReviewRequest.newBuilder()
+      GetProductReviewRequest request =
+          GetProductReviewRequest.newBuilder()
               .setName(String.format("accounts/%s/productReviews/%s", accountId, productReviewId))
               .build();
 
-      System.out.println("Sending delete product review request:");
-      productReviewsServiceClient.deleteProductReview(request);
-      System.out.println("Product review deleted successfully");
+      System.out.println("Sending get product review request:");
+      ProductReview response = productReviewsServiceClient.getProductReview(request);
+      System.out.println("Product review retrieved successfully:");
+      System.out.println(response.getName());
     } catch (Exception e) {
       System.out.println(e);
     }
@@ -54,7 +55,7 @@ public class DeleteProductReviewSample {
   public static void main(String[] args) throws Exception {
     Config config = Config.load();
     String productReviewId = "YOUR_PRODUCT_REVIEW_ID";
-    deleteProductReview(config.getAccountId().toString(), productReviewId);
+    getProductReview(config.getAccountId().toString(), productReviewId);
   }
 }
-// [END merchantapi_delete_product_review]
+// [END merchantapi_get_product_review]
