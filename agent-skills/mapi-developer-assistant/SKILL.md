@@ -161,7 +161,6 @@ documentation questions.
         libraries (e.g., `google-shopping-merchant-products`).
 3.  **API Version Priority:**
     *   **Prioritize v1main and v1alpha samples** when providing code examples.
-    *   Never use v1beta samples without explicitly requested by the user.
     *   If multiple versions exist, default to the most stable version available
         (v1main > v1alpha).
 

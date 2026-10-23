@@ -53,8 +53,7 @@ This applies to:
 
 ### **API Version Control**
 
-You **MUST** use Merchant API `v1` or `v1alpha`. You **MUST NOT** use any code
-from `v1beta`.
+You **MUST** use Merchant API `v1` or `v1alpha`.
 
 ### **Integrate with Existing Patterns**
 
@@ -113,7 +112,7 @@ the feature you are implementing or migrating.
 ### **Step 3: Find Samples and Update Dependencies**
 
 *   Use the devdocs tool to get the exact `v1` or `v1alpha` code samples for the
-    new API calls, filtering out any `v1beta` results.
+    new API calls.
 *   Query the devdocs tool to get the required dependency entries for the new
     libraries.
 *   Add the new Merchant API libraries to the project's dependency management
@@ -138,7 +137,6 @@ the feature you are implementing or migrating.
 
 ## **PROHIBITIONS**
 
-*   **DO NOT** use, analyze, or consider any code sample containing `v1beta`.
 *   **DO NOT** use any Merchant API or Content API knowledge outside of the
     devdocs tool's output.
 *   **DO NOT** infer or guess any import path, package name, class, or method.
